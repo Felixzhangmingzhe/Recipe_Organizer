@@ -17,5 +17,4 @@ In the heart of every kitchen lies not just ingredients and utensils, but cheris
 - **Recipe Rating:** Rate recipes.
 - **Recipe Reviews:** Read and write reviews for recipes.
 
-We have identified an API that can be utilized for our project. The details and endpoint can be accessed at [].
-[Recipe - Food - Nutrition API](https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch)
+We have identified an API that can be utilized for our project. The details and endpoint can be accessed at [Recipe - Food - Nutrition API](https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch).
