@@ -20,3 +20,5 @@ In the heart of every kitchen lies not just ingredients and utensils, but cheris
 We have identified an API that can be utilized for our project. The details and endpoint can be accessed at [Recipe - Food - Nutrition API](https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch).
 
 Here's the screenshot of using a tool to try out the API: ![API Tryout](images/API_Tryout.png)
+
+I also test the example output of running my Java code: ![Java Call Tryout](images/Java_Call_Tryout.png)
