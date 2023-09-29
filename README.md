@@ -26,11 +26,8 @@ I also test the example output of running my Java code: ![Java Call Tryout](imag
 **A list of any technical problems blocking progress**
 
 - Find and Use an API
-
 - Learn how to use the API
-
 - Learn how to use the API in Java
-
 - Push the code   to GitHub successfully
-
 - Use Git to manage the project
+- How to visualize the data after calling from the API
