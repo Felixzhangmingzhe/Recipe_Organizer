@@ -31,3 +31,6 @@ I also test the example output of running my Java code: ![Java Call Tryout](imag
 - Push the code   to GitHub successfully
 - Use Git to manage the project
 - How to visualize the data after calling from the API
+
+**UML Diagram**
+Based on the entities, we can draw the following UML Diagram: ![UML Diagram](images/UML_Diagram_not_transparent.jpg)
