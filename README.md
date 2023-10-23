@@ -34,3 +34,13 @@ I also test the example output of running my Java code: ![Java Call Tryout](imag
 
 **UML Diagram**
 Based on the entities, we can draw the following UML Diagram: ![UML Diagram](images/UML_Diagram_not_transparent.jpg)
+
+
+
+Week of 10/23 Plan:
+Implement the usercase: create_recipe
+controller:Shizhao,Qipeng
+presenter: Mingzhe, Aria
+interactor: Aria, Shizhao,
+data_access_object:Shizhao, Aria, Qiepng, Mingzhe
+Design a low-fidelity UI design: Aria, Shizhao
