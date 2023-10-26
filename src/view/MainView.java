@@ -28,9 +28,18 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         user = new JButton("User");
         buttons.add(user);
 
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        add(title);
-        add(buttons);
+        recipe.addActionListener(
+            new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("Recipe button clicked");
+                }
+            }
+        );
+
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+        this.add(title);
+        this.add(buttons);
     }
 
     public void addRecipeButtonListener(ActionListener listener) {
@@ -45,6 +54,9 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         user.addActionListener(listener);
     }
 
+    /**
+     * React to a button click that results in evt.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
