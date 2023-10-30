@@ -2,17 +2,18 @@ package entity;
 
 import entity.Recipe;
 
+import java.util.ArrayList;
+
 public class Favorites {
     private int id;
-    private Recipe recipe;
+    private ArrayList<Recipe> recipes;
     Favorites(int id, Recipe recipe) {
         this.id = id;
-        this.recipe = recipe;
+        this.recipes = new ArrayList<Recipe>();
     }
     public int getId() {
         return this.id;
     }
-    public Recipe getRecipe() {
-        return this.recipe;
-    }
+    public ArrayList<Recipe> getRecipes() {
+        return this.recipes;
 }
