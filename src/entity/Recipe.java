@@ -10,6 +10,19 @@ public class Recipe {
         this.title = title;
         this.content = content;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public int getId() {
         return this.id;
     }

@@ -8,15 +8,35 @@ public class User {
     private int id;
     private String username;
     private String password;
-    private ArrayList<src.entity.Favorites> favorites;
+    private ArrayList<entity.Favorites> favorites;
     private ArrayList<Recipe> recipes;
     User(int id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.favorites = new ArrayList<src.entity.Favorites>();
+        this.favorites = new ArrayList<entity.Favorites>();
         this.recipes = new ArrayList<Recipe>();
     }
+
+    public void setId(int id){
+        this.id = id;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setFavorites(ArrayList<Favorites> favoritesArrayList){
+        this.favorites = favoritesArrayList;
+    }
+
+    public void setRecipes(ArrayList<Recipe> recipes) {
+        this.recipes = recipes;
+    }
+
     public int getId() {
         return this.id;
     }
@@ -26,15 +46,16 @@ public class User {
     public String getPassword() {
         return this.password;
     }
-    public ArrayList<src.entity.Favorites> getFavorites() {
+    public ArrayList<entity.Favorites> getFavorites() {
         return this.favorites;
     }
     public ArrayList<Recipe> getRecipes() {
         return this.recipes;
     }
-    public void addFavorite(src.entity.Favorites favorite) {
-        this.favorites.add(favorite);
+    public void addFavorites (entity.Favorites favorites){
+        this.favorites.add(favorites);
     }
+
 
 
 }
