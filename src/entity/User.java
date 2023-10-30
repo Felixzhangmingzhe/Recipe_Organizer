@@ -8,13 +8,13 @@ public class User {
     private int id;
     private String username;
     private String password;
-    private ArrayList<src.entity.Favorites> favorites;
+    private ArrayList<Favorites> favorites;
     private ArrayList<Recipe> recipes;
     User(int id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.favorites = new ArrayList<src.entity.Favorites>();
+        this.favorites = new ArrayList<Favorites>();
         this.recipes = new ArrayList<Recipe>();
     }
     public int getId() {
@@ -26,15 +26,10 @@ public class User {
     public String getPassword() {
         return this.password;
     }
-    public ArrayList<src.entity.Favorites> getFavorites() {
+    public ArrayList<Favorites> getFavorites() {
         return this.favorites;
     }
     public ArrayList<Recipe> getRecipes() {
         return this.recipes;
     }
-    public void addFavorite(src.entity.Favorites favorite) {
-        this.favorites.add(favorite);
-    }
-
-
 }

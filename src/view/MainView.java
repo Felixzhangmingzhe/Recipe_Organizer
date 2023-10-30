@@ -12,7 +12,6 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final JButton recipe;
     private final JButton favorites;
     private final JButton user;
-
     private final JButton cancel;
 
     public MainView(JButton cancel) {
@@ -58,7 +57,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
      * React to a button click that results in evt.
      */
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {JOptionPane.showMessageDialog(this, "MainView: " + e.getActionCommand());
 
     }
 
