@@ -45,4 +45,3 @@ interactor: Aria, Shizhao,
 data_access_object:Shizhao, Aria, Qiepng, Mingzhe
 Design a low-fidelity UI design: Aria, Shizhao
 
-fjdifheuhfufheuhfeuheif

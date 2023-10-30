@@ -58,7 +58,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
      * React to a button click that results in evt.
      */
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {JOptionPane.showMessageDialog(this, "MainView: " + e.getActionCommand());
 
     }
 

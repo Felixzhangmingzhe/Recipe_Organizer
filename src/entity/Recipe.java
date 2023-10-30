@@ -1,28 +1,19 @@
 package entity;
 
+import java.time.LocalDateTime;
 
 public class Recipe {
     private int id;
     private String title;
     private String content;
-    Recipe(int id, String title, String content) {
+
+    private LocalDateTime date;
+    Recipe(int id, String title, String content, LocalDateTime date) {
         this.id = id;
         this.title = title;
         this.content = content;
+        this.date = date;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public int getId() {
         return this.id;
     }
@@ -31,5 +22,8 @@ public class Recipe {
     }
     public String getContent() {
         return this.content;
+    }
+    public LocalDateTime getDate() {
+        return this.date;
     }
 }

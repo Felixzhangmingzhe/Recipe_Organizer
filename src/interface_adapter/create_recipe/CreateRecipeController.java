@@ -1,6 +1,7 @@
 package interface_adapter.create_recipe;
 
 import use_case.create_recipe.CreateRecipeInputBoundary;
+import use_case.create_recipe.CreateRecipeInputData;
 
 public class CreateRecipeController {
     final CreateRecipeInputBoundary createRecipeUseCaseInteractor;
@@ -8,7 +9,9 @@ public class CreateRecipeController {
     public CreateRecipeController(CreateRecipeInputBoundary createRecipeUseCaseInteractor) {
         this.createRecipeUseCaseInteractor = createRecipeUseCaseInteractor;
     }
-    public void execute() {
-        createRecipeUseCaseInteractor.execute();
+  
+    public void execute(String title, String content) {
+        CreateRecipeInputData createRecipeInputData = new CreateRecipeInputData(title, content);
+        createRecipeUseCaseInteractor.execute(createRecipeInputData);
     }
 }
