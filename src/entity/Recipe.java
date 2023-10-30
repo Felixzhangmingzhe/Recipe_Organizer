@@ -1,10 +1,12 @@
 package entity;
+
 import java.time.LocalDateTime;
 
 public class Recipe {
     private int id;
     private String title;
     private String content;
+
     private LocalDateTime date;
     Recipe(int id, String title, String content, LocalDateTime date) {
         this.id = id;

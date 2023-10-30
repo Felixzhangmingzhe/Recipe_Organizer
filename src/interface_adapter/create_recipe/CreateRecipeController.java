@@ -9,6 +9,7 @@ public class CreateRecipeController {
     public CreateRecipeController(CreateRecipeInputBoundary createRecipeUseCaseInteractor) {
         this.createRecipeUseCaseInteractor = createRecipeUseCaseInteractor;
     }
+  
     public void execute(String title, String content) {
         CreateRecipeInputData createRecipeInputData = new CreateRecipeInputData(title, content);
         createRecipeUseCaseInteractor.execute(createRecipeInputData);

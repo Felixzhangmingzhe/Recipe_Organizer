@@ -1,6 +1,5 @@
 package use_case.create_recipe;
 
-
 public class CreateRecipeInputData {
     final private String title;
     final private String content;
@@ -17,5 +16,4 @@ public class CreateRecipeInputData {
     String getContent() {
         return content;
     }
-
 }

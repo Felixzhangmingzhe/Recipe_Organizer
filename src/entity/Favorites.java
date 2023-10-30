@@ -1,7 +1,6 @@
 package entity;
 
 import entity.Recipe;
-
 import java.util.ArrayList;
 
 public class Favorites {
