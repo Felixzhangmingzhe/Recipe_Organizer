@@ -3,15 +3,15 @@ package data_access;
 import entity.Recipe;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject {
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface {
     private String filePath;
 
     public FileRecipeDataAccessObject(String filePath) {
@@ -100,5 +100,49 @@ public class FileRecipeDataAccessObject {
         for (Recipe recipe : allRecipes) {
             System.out.println(recipe);
         }
+    }
+    public boolean existsJudgingbyName(String identifier) {
+        List<Recipe> recipes = readRecipes();
+        for (Recipe recipe : recipes) {
+            if (recipe.getTitle().equals(identifier)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean existsJudgingbyId(int identifier) {
+        List<Recipe> recipes = readRecipes();
+        for (Recipe recipe : recipes) {
+            if (recipe.getId() == identifier) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public int getLastUsedRecipeId() {
+        // 从数据库中读取最后一个菜谱的ID
+        List<Recipe> recipes = readRecipes();
+        int lastUsedId = 0;
+        for (Recipe recipe : recipes) {
+            if (recipe.getId() > lastUsedId) {
+                lastUsedId = recipe.getId();
+            }
+        }
+        return lastUsedId;
+    }
+    // 以上是FileRecipeDataAccessObject的代码
+    @Override
+    public boolean existsByName(String identifier) {
+        return existsJudgingbyName(identifier);
+    }
+
+    @Override
+    public void save(Recipe recipe) {
+        writeRecipe(recipe);
+    }//使用writeRecipe方法来填充
+
+    @Override
+    public int getLastUsedRecipeIdFromDatabase() {
+        return getLastUsedRecipeId();
     }
 }

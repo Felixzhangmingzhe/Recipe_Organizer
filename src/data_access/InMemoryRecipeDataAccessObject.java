@@ -9,18 +9,15 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-// Class: InMemoryRecipeDataAccessObject
 public class InMemoryRecipeDataAccessObject {
     private List<Recipe> recipes;
-    private int lastUsedId; // Track the last used ID
 
     public InMemoryRecipeDataAccessObject() {
         this.recipes = new ArrayList<>();
-        this.lastUsedId = 0; // Initialize the last used ID
     }
 
     public List<Recipe> readRecipes() {
-        return new ArrayList<>(recipes); // Return a copy to prevent external modifications
+        return new ArrayList<>(recipes); // 返回副本，以防止外部修改内部数据
     }
 
     public void writeRecipes() {
@@ -31,12 +28,13 @@ public class InMemoryRecipeDataAccessObject {
             jsonArray.put(jsonRecipe);
         }
 
-        System.out.println(jsonArray); // For simplicity, you can print the JSON array
+        // 这里可以选择将 jsonArray 转换为字符串，或者直接存储 JSONArray 对象
+        // 这里为了简化，直接打印 jsonArray
+        System.out.println(jsonArray);
     }
 
     public void addRecipe(Recipe recipe) {
         recipes.add(recipe);
-        lastUsedId = recipe.getId(); // Update the last used ID when adding a new recipe
     }
 
     private Recipe parseRecipe(JSONObject jsonRecipe) {
@@ -56,17 +54,13 @@ public class InMemoryRecipeDataAccessObject {
         return jsonRecipe;
     }
 
-    public int getLastUsedId() {
-        return lastUsedId;
-    }
-
     public static void main(String[] args) {
         InMemoryRecipeDataAccessObject dao = new InMemoryRecipeDataAccessObject();
         LocalDateTime Date = LocalDateTime.of(2021, 1, 1, 0, 0, 0);
 
         // Adding a recipe
         Recipe newRecipe = new Recipe(
-                dao.getLastUsedId() + 1, // Use the next available ID
+                1,
                 "Spaghetti Bolognese",
                 "Cook the spaghetti. Cook the ground beef. Mix them together.",
                 Date
