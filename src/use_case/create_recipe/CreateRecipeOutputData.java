@@ -1,4 +1,5 @@
 package use_case.create_recipe;
+
 public class CreateRecipeOutputData {
     private final String id;
     private final String title;

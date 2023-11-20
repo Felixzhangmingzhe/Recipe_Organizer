@@ -4,7 +4,6 @@ import use_case.create_recipe.CreateRecipeOutputBoundary;
 import use_case.create_recipe.CreateRecipeOutputData;
 import view.RecipeView;
 
-
 public class CreateRecipePresenter {
     private final CreateRecipeViewModel viewModel;
     private final RecipeView view;
@@ -17,6 +16,5 @@ public class CreateRecipePresenter {
         // Give response to the view model
     }
     public void prepareFailView(String error) {
-
     }
 }

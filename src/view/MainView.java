@@ -12,6 +12,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final JButton recipe;
     private final JButton favorites;
     private final JButton user;
+
     private final JButton cancel;
 
     public MainView(JButton cancel) {

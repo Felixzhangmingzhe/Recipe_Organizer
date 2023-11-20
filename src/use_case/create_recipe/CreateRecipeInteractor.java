@@ -1,5 +1,6 @@
 // Class: CreateRecipeInteractor
 package use_case.create_recipe;
+
 import entity.Recipe;
 import entity.RecipeFactory;
 import use_case.create_recipe.CreateRecipeInputBoundary;
