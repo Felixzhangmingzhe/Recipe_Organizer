@@ -2,11 +2,12 @@ package interface_adapter.create_recipe;
 
 import use_case.create_recipe.CreateRecipeOutputBoundary;
 import use_case.create_recipe.CreateRecipeOutputData;
+import view.RecipeView;
 
 public class CreateRecipePresenter {
     private final CreateRecipeViewModel viewModel;
-    private final CreateRecipeView view;
-    public CreateRecipePresenter(CreateRecipeViewModel viewModel, CreateRecipeView view) {
+    private final RecipeView view;
+    public CreateRecipePresenter(CreateRecipeViewModel viewModel, RecipeView view) {
         this.viewModel = viewModel;
         this.view = view;
     }
