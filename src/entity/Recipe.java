@@ -6,7 +6,7 @@ public class Recipe {
     private String title;
     private String content;
     private LocalDateTime date;
-    Recipe(int id, String title, String content, LocalDateTime date) {
+    public Recipe(int id, String title, String content, LocalDateTime date) {
         this.id = id;
         this.title = title;
         this.content = content;
