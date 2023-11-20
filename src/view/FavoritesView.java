@@ -63,7 +63,7 @@ public class FavoritesView {
                 }
             }
 
-            // If the number of folders is less than 10, fill with blank buttons如果收藏夹数量小于10，则用空白按钮填充
+            // If the number of folders is less than 10, fill with blank buttons如果Recipe数量小于10，则用空白按钮填充
             while (i <= 10) {
                 JButton emptyButton = new JButton();
                 emptyButton.setOpaque(true);
@@ -91,7 +91,7 @@ public class FavoritesView {
             }
         });
     }
-
+    // ToDO: 从JSON文件中读取数据并显示在面板上,应该是使用一个usecase来显示数据吗？？？？？？这个值得解决，或者说显示的代码写在这，得到的数据应该是从usecase中得到的
     // 获取总收藏夹面板
     public JPanel getTotalfavoritesPanel() {
         return TotalFavoritesPanel;

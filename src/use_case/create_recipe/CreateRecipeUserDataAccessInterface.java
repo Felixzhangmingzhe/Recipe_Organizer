@@ -8,5 +8,4 @@ public interface CreateRecipeUserDataAccessInterface {
     void save(Recipe recipe);
 
     int getLastUsedRecipeIdFromDatabase();
-
 }
