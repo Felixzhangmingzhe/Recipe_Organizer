@@ -9,29 +9,34 @@ import java.beans.PropertyChangeListener;
 public class MainView extends JPanel implements ActionListener, PropertyChangeListener{
     public final String viewName = "main";
 
-    private final JButton recipe;
+    private final JButton createRecipe;
+    private final JButton dailySpecial;
     private final JButton favorites;
-    private final JButton user;
+    private final JButton exit;
+    private final JButton allRecipes;
 
-    private final JButton cancel;
+
 
     public MainView(JButton cancel) {
-        this.cancel = cancel;
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JPanel buttons = new JPanel();
-        recipe = new JButton("Recipe");
+        createRecipe = new JButton("Create Recipe");
         buttons.add(recipe);
         favorites = new JButton("Favorites");
         buttons.add(favorites);
-        user = new JButton("User");
-        buttons.add(user);
+        exit = new JButton("Exit");
+        buttons.add(exit);
+        allRecipes = new JButton("All Recipes");
+        buttons.add(allRecipes);
+        dailySpecial = new JButton("Daily Recipe");
+        buttons.add(dailySpecial);
 
-        recipe.addActionListener(
+        createRecipe.addActionListener(//打开菜谱界面（创建菜谱模式）
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    System.out.println("Recipe button clicked");
+
                 }
             }
         );
