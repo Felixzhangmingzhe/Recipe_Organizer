@@ -1,5 +1,7 @@
 package interface_adapter.add_to_favorites;
 
+import use_case.add_to_favorites.*;
+
 public class AddToFavoritesController {
     private final AddToFavoritesInputBoundary interactor;
 
