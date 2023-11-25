@@ -23,7 +23,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
         JPanel buttons = new JPanel();
         createRecipe = new JButton("Create Recipe");
-        buttons.add(recipe);
+        buttons.add(createRecipe);
         favorites = new JButton("Favorites");
         buttons.add(favorites);
         exit = new JButton("Exit");
@@ -45,20 +45,17 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
         this.add(title);
         this.add(buttons);
+        //
+
     }
 
     public void addRecipeButtonListener(ActionListener listener) {
-        recipe.addActionListener(listener);
+        createRecipe.addActionListener(listener);
     }
 
     public void addFavoritesButtonListener(ActionListener listener) {
         favorites.addActionListener(listener);
     }
-
-    public void addUserButtonListener(ActionListener listener) {
-        user.addActionListener(listener);
-    }
-
     /**
      * React to a button click that results in evt.
      */
