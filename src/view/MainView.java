@@ -1,11 +1,17 @@
 package view;
 
+import interface_adapter.view_warehouse.ViewWarehouseState;
+import interface_adapter.view_warehouse.ViewWarehouseViewModel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+// Use Case:View Warehouse
+import interface_adapter.view_warehouse.*;
+import interface_adapter.view_warehouse.*;
 public class MainView extends JPanel implements ActionListener, PropertyChangeListener{
     public final String viewName = "main";
 
@@ -14,6 +20,13 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final JButton favorites;
     private final JButton exit;
     private final JButton allRecipes;
+    // Use Case:View Warehouse
+    private final ViewWarehouseController viewWarehouseController;
+    private final ViewWarehouseViewModel viewWarehouseViewModel;
+    private final ViewWarehouseState viewWarehouseState;
+
+
+
 
 
 
@@ -38,6 +51,15 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                 public void actionPerformed(ActionEvent e) {
                     if (e.getSource() == createRecipe) {//if (e.getSource() == createRecipe)
 
+                    }
+                }
+            }
+        );
+        allRecipes.addActionListener(//打开菜谱界面（浏览菜谱模式）
+            new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
+                        ViewWarehouseState state = ViewWarehouseViewModel.getState();
                     }
                 }
             }

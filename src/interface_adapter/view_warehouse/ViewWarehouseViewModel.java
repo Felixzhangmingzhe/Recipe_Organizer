@@ -1,10 +1,14 @@
-package interface_adapter.open_create_recipe;
+package interface_adapter.view_warehouse;
 
 import interface_adapter.ViewModel;
 
 import java.beans.PropertyChangeListener;
 
-public class OpenCreateRecipeViewModel extends ViewModel{
+public class ViewWarehouseViewModel extends ViewModel {
+    public ViewWarehouseViewModel() {
+        super("ViewWarehouseViewModel");
+    }
+
     @Override
     public void firePropertyChanged() {
 
