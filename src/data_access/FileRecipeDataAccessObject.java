@@ -5,14 +5,14 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
 import use_case.view_favorites.ViewFavoritesUserDataAccessInterface;
-
+import use_case.add_to_favorites.AddToFavoritesDataAccessInterface;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesUserDataAccessInterface {
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesUserDataAccessInterface, AddToFavoritesDataAccessInterface {
     private String filePath;
 
     public FileRecipeDataAccessObject(String filePath) {
@@ -72,7 +72,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         int id = jsonRecipe.getInt("id");
         String content = jsonRecipe.getString("content");
         LocalDateTime date = LocalDateTime.parse(jsonRecipe.getString("date"));
-        return new Recipe(id, title, content, date);
+        boolean isFavorite = jsonRecipe.getBoolean("isFavorite");
+        return new Recipe(id, title, content, date, isFavorite);
     }
 
     private JSONObject createJsonRecipe(Recipe recipe) {
@@ -92,7 +93,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                 1,
                 "Spaghetti Bolognese",
                 "Cook the spaghetti. Cook the ground beef. Mix them together.",
-                Date
+                Date,
+                false
         );
         dao.addRecipe(newRecipe);
 
