@@ -36,7 +36,9 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         createRecipe.addActionListener(//打开菜谱界面（创建菜谱模式）
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
+                    if (e.getSource() == createRecipe) {//if (e.getSource() == createRecipe)
 
+                    }
                 }
             }
         );
