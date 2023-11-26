@@ -22,4 +22,5 @@ public class ViewRecipeInteractor implements ViewRecipeInputBoundary {
             // This could involve calling another method on the outputBoundary to present an error
         }
     }
+
 }

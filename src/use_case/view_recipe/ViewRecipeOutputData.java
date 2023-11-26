@@ -12,4 +12,5 @@ public class ViewRecipeOutputData {
     public Recipe getRecipe() {
         return recipe;
     }
+
 }

@@ -10,4 +10,5 @@ public class ViewRecipeInputData {
     public String getRecipeId() {
         return recipeId;
     }
+
 }

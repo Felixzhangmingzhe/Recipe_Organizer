@@ -14,4 +14,5 @@ public class ViewRecipeController {
         ViewRecipeInputData inputData = new ViewRecipeInputData(recipeId);
         inputBoundary.viewRecipe(inputData);
     }
+
 }

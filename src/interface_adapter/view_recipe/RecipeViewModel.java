@@ -9,4 +9,5 @@ public class RecipeViewModel {
         this.recipe = recipe;
     }
 
+
 }
