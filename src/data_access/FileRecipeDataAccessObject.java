@@ -4,7 +4,6 @@ import entity.Recipe;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
-import use_case.view_favorites.ViewFavoritesUserDataAccessInterface;
 import use_case.add_to_favorites.AddToFavoritesDataAccessInterface;
 import use_case.view_recipe.ViewRecipeDataAccessInterface;
 
@@ -14,7 +13,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesUserDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface {
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface {
     private String filePath;
 
     public FileRecipeDataAccessObject(String filePath) {
