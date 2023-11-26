@@ -93,7 +93,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         int id = jsonRecipe.getInt("id");
         String content = jsonRecipe.getString("content");
         LocalDateTime date = LocalDateTime.parse(jsonRecipe.getString("date"));
-        return new Recipe(id, title, content, date);
+        boolean isFavorite = jsonRecipe.getBoolean("isFavorite");
+        return new Recipe(id, title, content, date, isFavorite);
     }
 
     private JSONObject createJsonRecipe(Recipe recipe) {
@@ -113,7 +114,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                 1,
                 "Spaghetti Bolognese",
                 "Cook the spaghetti. Cook the ground beef. Mix them together.",
-                Date
+                Date,
+                false
         );
         dao.addRecipe(newRecipe);
 
