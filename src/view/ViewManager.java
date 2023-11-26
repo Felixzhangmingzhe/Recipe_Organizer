@@ -1,30 +1,29 @@
 package view;
-
-import interface_adapter.ViewManagerModel;
-
+import entity.Recipe;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+public class ViewManager {
+    private JFrame mainFrame;
 
-public class ViewManager implements PropertyChangeListener {
-    private final CardLayout cardLayout;
-    private final JPanel views;
-    private ViewManagerModel viewManagerModel;
-
-    public ViewManager(JPanel views, CardLayout cardLayout, ViewManagerModel viewManagerModel) {
-        this.views = views;
-        this.cardLayout = cardLayout;
-        this.viewManagerModel = viewManagerModel;
-        this.viewManagerModel.addPropertyChangeListener(this);
+    public ViewManager(JFrame mainFrame) {
+        this.mainFrame = mainFrame;
     }
 
-    @Override
-    public void propertyChange(PropertyChangeEvent evt) {
-        if (evt.getPropertyName().equals("view")) {
-            String viewModelName = (String) evt.getNewValue();
-            cardLayout.show(views, viewModelName);
-        }
+    public void changeView(JPanel newView) {
+        mainFrame.getContentPane().removeAll();
+        mainFrame.getContentPane().add(newView);
+        mainFrame.revalidate();
+        mainFrame.repaint();
+    }
+
+    public void showWarehouseView(List<Recipe> recipes) {
+        WarehouseView warehouseView = new WarehouseView();
+        warehouseView.setRecipes(recipes);
+        changeView(warehouseView);
     }
 }
 

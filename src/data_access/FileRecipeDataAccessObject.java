@@ -4,11 +4,8 @@ import entity.Recipe;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
-import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
-import use_case.view_favorites.ViewFavoritesDataAccessInterface;
 import use_case.add_to_favorites.AddToFavoritesDataAccessInterface;
 import use_case.view_recipe.ViewRecipeDataAccessInterface;
-import use_case.view_warehouse.ViewWarehouseDataAccessInterface;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,7 +13,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface, OpenCreateRecipeDataAccessInterface {
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface {
     private String filePath;
 
     public FileRecipeDataAccessObject(String filePath) {
@@ -34,26 +31,6 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                 JSONObject jsonRecipe = jsonArray.getJSONObject(i);
                 Recipe recipe = parseRecipe(jsonRecipe);
                 recipes.add(recipe);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return recipes;
-    }
-    public List<Recipe> readRecipesInFavorites() {
-        List<Recipe> recipes = new ArrayList<>();
-
-        try {
-            String content = new String(Files.readAllBytes(Paths.get(filePath)));
-            JSONArray jsonArray = new JSONArray(content);
-
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonRecipe = jsonArray.getJSONObject(i);
-                Recipe recipe = parseRecipe(jsonRecipe);
-                if (recipe.getIsFavorite()) {
-                    recipes.add(recipe);
-                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -96,19 +73,16 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         int id = jsonRecipe.getInt("id");
         String content = jsonRecipe.getString("content");
         LocalDateTime date = LocalDateTime.parse(jsonRecipe.getString("date"));
-        boolean isFavorite = jsonRecipe.optBoolean("isFavorite");
-        double calories = jsonRecipe.optDouble("calories");
-        return new Recipe(id, title, content, date, isFavorite,calories);
+        boolean isFavorite = jsonRecipe.getBoolean("isFavorite");
+        return new Recipe(id, title, content, date, isFavorite);
     }
-    // 下面的是写入的代码，但是当改变Recipe的属性时，上面的会报错，但下面的这个不报错，得自己加，注意啦！
+
     private JSONObject createJsonRecipe(Recipe recipe) {
         JSONObject jsonRecipe = new JSONObject();
         jsonRecipe.put("id", recipe.getId());
         jsonRecipe.put("title", recipe.getTitle());
         jsonRecipe.put("content", recipe.getContent());
-        jsonRecipe.put("date", recipe.getDate().toString());// 这里时间变成了字符串
-        jsonRecipe.put("isFavorite", recipe.getIsFavorite());
-        jsonRecipe.put("calories", recipe.getCalories());
+        jsonRecipe.put("date", recipe.getDate().toString());
         return jsonRecipe;
     }
 
@@ -121,8 +95,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                 "Spaghetti Bolognese",
                 "Cook the spaghetti. Cook the ground beef. Mix them together.",
                 Date,
-                false,
-                100
+                false
         );
         dao.addRecipe(newRecipe);
 
@@ -177,23 +150,13 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         return getLastUsedRecipeId();
     }
     @Override
-    public Recipe getRecipeById(int recipeId) {
+    public Recipe getRecipeById(String recipeId) {
         List<Recipe> recipes = readRecipes();
         for (Recipe recipe : recipes) {
-            if (recipe.getId() == recipeId) {
+            if (recipe.getTitle().equals(recipeId)) {
                 return recipe;
             }
         }
         return null;//如果没有找到，返回null,是这样吗，还是返回一个error String
-    }
-
-    @Override
-    public List<Recipe> getFavorites() {
-        return readRecipesInFavorites();
-    }
-
-    @Override
-    public List<Recipe> getAllRecipe() {
-        return readRecipes();
     }
 }
