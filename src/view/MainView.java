@@ -1,7 +1,6 @@
 package view;
 
-import interface_adapter.view_warehouse.ViewWarehouseState;
-import interface_adapter.view_warehouse.ViewWarehouseViewModel;
+import interface_adapter.view_warehouse.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -59,7 +58,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
-                        ViewWarehouseState state = ViewWarehouseViewModel.getState();
+                        ViewWarehouseState state = viewWarehouseViewModel.getState();
                     }
                 }
             }
