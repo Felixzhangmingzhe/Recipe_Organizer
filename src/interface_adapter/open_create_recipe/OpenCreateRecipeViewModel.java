@@ -5,6 +5,10 @@ import interface_adapter.ViewModel;
 import java.beans.PropertyChangeListener;
 
 public class OpenCreateRecipeViewModel extends ViewModel{
+    public OpenCreateRecipeViewModel(String viewName) {
+        super(viewName);
+    }
+
     @Override
     public void firePropertyChanged() {
 
