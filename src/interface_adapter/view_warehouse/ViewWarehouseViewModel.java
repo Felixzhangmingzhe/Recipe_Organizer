@@ -1,7 +1,6 @@
 package interface_adapter.view_warehouse;
 
 import interface_adapter.ViewModel;
-import use_case.view_warehouse.ViewWarehouseState;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 

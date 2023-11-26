@@ -1,8 +1,6 @@
 package interface_adapter.view_warehouse;
 import entity.Recipe;
-
 import java.util.List;
-
 public class ViewWarehouseState {
     private List<Recipe> recipes = new java.util.ArrayList<>();
     private String recipesError = null;

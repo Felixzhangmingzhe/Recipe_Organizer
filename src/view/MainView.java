@@ -1,5 +1,6 @@
 package view;
 
+import entity.Recipe;
 import interface_adapter.view_warehouse.*;
 
 import javax.swing.*;
@@ -8,8 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.List;
 // Use Case:View Warehouse
-import interface_adapter.view_warehouse.*;
 import interface_adapter.view_warehouse.*;
 public class MainView extends JPanel implements ActionListener, PropertyChangeListener{
     public final String viewName = "main";
@@ -22,17 +23,27 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     // Use Case:View Warehouse
     private final ViewWarehouseController viewWarehouseController;
     private final ViewWarehouseViewModel viewWarehouseViewModel;
-    private final ViewWarehouseState viewWarehouseState;
 
 
 
 
 
 
-    public MainView(JButton cancel) {
+    public MainView(ViewWarehouseController viewWarehouseController, ViewWarehouseViewModel viewWarehouseViewModel) {
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
+        // 初始化, 只需要controller和viewmodel
+        // // 初始化ViewWarehouse有关
+        this.viewWarehouseController = viewWarehouseController;
+        this.viewWarehouseViewModel = viewWarehouseViewModel;
 
+
+
+
+
+
+
+        // 添加菜单按钮
         JPanel buttons = new JPanel();
         createRecipe = new JButton("Create Recipe");
         buttons.add(createRecipe);
@@ -58,7 +69,10 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
-                        ViewWarehouseState state = viewWarehouseViewModel.getState();
+                        ViewWarehouseState currentState = viewWarehouseViewModel.getState();
+                        viewWarehouseController.execute();
+                        List< Recipe > recipes = currentState.getRecipes();
+                        // 接下来，把recipes展示出来
                     }
                 }
             }
