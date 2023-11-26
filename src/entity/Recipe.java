@@ -28,4 +28,8 @@ public class Recipe {
     public LocalDateTime getDate() {
         return this.date;
     }
+
+    public boolean getIsFavorite() {
+        return this.isFavorite;
+    }
 }

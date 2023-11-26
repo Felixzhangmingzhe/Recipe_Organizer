@@ -1,11 +1,17 @@
 package view;
 
+import entity.Recipe;
+import interface_adapter.view_warehouse.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.List;
+// Use Case:View Warehouse
+import interface_adapter.view_warehouse.*;
 public class MainView extends JPanel implements ActionListener, PropertyChangeListener{
     public final String viewName = "main";
 
@@ -14,16 +20,33 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final JButton favorites;
     private final JButton exit;
     private final JButton allRecipes;
+    // Use Case:View Warehouse
+    private final ViewWarehouseController viewWarehouseController;
+    private final ViewWarehouseViewModel viewWarehouseViewModel;
 
 
 
-    public MainView(JButton cancel) {
+
+
+
+    public MainView(ViewWarehouseController viewWarehouseController, ViewWarehouseViewModel viewWarehouseViewModel) {
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
+        // 初始化, 只需要controller和viewmodel
+        // // 初始化ViewWarehouse有关
+        this.viewWarehouseController = viewWarehouseController;
+        this.viewWarehouseViewModel = viewWarehouseViewModel;
 
+
+
+
+
+
+
+        // 添加菜单按钮
         JPanel buttons = new JPanel();
         createRecipe = new JButton("Create Recipe");
-        buttons.add(recipe);
+        buttons.add(createRecipe);
         favorites = new JButton("Favorites");
         buttons.add(favorites);
         exit = new JButton("Exit");
@@ -36,7 +59,21 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         createRecipe.addActionListener(//打开菜谱界面（创建菜谱模式）
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
+                    if (e.getSource() == createRecipe) {//if (e.getSource() == createRecipe)
 
+                    }
+                }
+            }
+        );
+        allRecipes.addActionListener(//打开菜谱界面（浏览菜谱模式）
+            new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
+                        ViewWarehouseState currentState = viewWarehouseViewModel.getState();
+                        viewWarehouseController.execute();
+                        List< Recipe > recipes = currentState.getRecipes();
+                        // 接下来，把recipes展示出来
+                    }
                 }
             }
         );
@@ -45,20 +82,17 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
         this.add(title);
         this.add(buttons);
+        //
+
     }
 
     public void addRecipeButtonListener(ActionListener listener) {
-        recipe.addActionListener(listener);
+        createRecipe.addActionListener(listener);
     }
 
     public void addFavoritesButtonListener(ActionListener listener) {
         favorites.addActionListener(listener);
     }
-
-    public void addUserButtonListener(ActionListener listener) {
-        user.addActionListener(listener);
-    }
-
     /**
      * React to a button click that results in evt.
      */

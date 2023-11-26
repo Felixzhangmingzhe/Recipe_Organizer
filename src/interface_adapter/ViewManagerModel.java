@@ -4,6 +4,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 public class ViewManagerModel {
+
     private String activeViewName;
 
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
