@@ -5,5 +5,17 @@ import entity.Recipe;
 import java.util.Map;
 
 public interface ViewRecipeDataAccessInterface {
-    Recipe getRecipeById(String recipeId);
+    public class InMemoryRecipeDataAccess implements ViewRecipeDataAccessInterface {
+        private Map<String, Recipe> recipes;
+
+        public InMemoryRecipeDataAccess(Map<String, Recipe> recipes) {
+            this.recipes = recipes;
+        }
+
+        @Override
+        public Recipe getRecipeById(String recipeId) {
+            return recipes.get(recipeId);
+        }
+    }
+
 }
