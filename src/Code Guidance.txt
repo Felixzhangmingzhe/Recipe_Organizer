@@ -488,6 +488,34 @@ public class SignupState {
 这是最关键的顺序。按照这个顺序写，不懂得再问别人吧。
 
 
+
+然后说View里面的actionListener，这个actionListener是用来监听用户的输入的，然后把用户的输入传递给Controller的execute方法，然后Controller的execute方法会调用Interactor的方法，然后Interactor的方法会调用DataAccessObject的方法，然后DataAccessObject的方法会返回OutputData，然后Interactor的方法会返回OutputData，然后Controller的方法会调用Presenter的方法，然后Presenter的方法会返回ViewModel，然后Controller的方法会返回State，然后View的方法会更新UI。
+        clear.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(clear)) {
+                            ClearState clearState = clearViewModel.getState();
+
+                            clearController.execute();
+                            // Get the deleted usernames from clearViewModel
+                            String deletedUserNames = clearState.getDeletedUserNames();// 原来执行完后的结果在State里面
+
+                            // Show a dialog with the deleted usernames
+                            // It shoulb be like:
+                            // User1
+                            // User2
+                            JOptionPane.showMessageDialog(SignupView.this, deletedUserNames.replaceAll(" ", "\n"));
+                        }
+                    }
+                }
+        );
+String deletedUserNames = clearState.getDeletedUserNames();这一句可以看出，执行完后的结果在State里面，然后再把这个结果传递给View的方法，然后View的方法更新UI。
+这是一个很重要的思路，就是执行完后的结果在State里面，然后再把这个结果传递给View的方法，然后View的方法更新UI。
+这是输出的使用
+
+那么如何获得输入，除了点击。还
+
 （注意，那个在View里被传进来的controller,里面已经有了interactor，而interactor里面已经有了presenter，一层一层已经打包好了才传进View的，它们从哪里来？）
 
 回到开头，我们需要考虑到，View中的Controller是一个需要被传入的参数，那这个参数是从哪来的呢？
