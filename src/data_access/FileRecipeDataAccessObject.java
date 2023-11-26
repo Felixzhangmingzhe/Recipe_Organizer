@@ -6,13 +6,15 @@ import org.json.JSONObject;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
 import use_case.view_favorites.ViewFavoritesUserDataAccessInterface;
 import use_case.add_to_favorites.AddToFavoritesDataAccessInterface;
+import use_case.view_recipe.ViewRecipeDataAccessInterface;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesUserDataAccessInterface, AddToFavoritesDataAccessInterface {
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesUserDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface {
     private String filePath;
 
     public FileRecipeDataAccessObject(String filePath) {
@@ -147,5 +149,15 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     @Override
     public int getLastUsedRecipeIdFromDatabase() {
         return getLastUsedRecipeId();
+    }
+    @Override
+    public Recipe getRecipeById(String recipeId) {
+        List<Recipe> recipes = readRecipes();
+        for (Recipe recipe : recipes) {
+            if (recipe.getTitle().equals(recipeId)) {
+                return recipe;
+            }
+        }
+        return null;//如果没有找到，返回null,是这样吗，还是返回一个error String
     }
 }
