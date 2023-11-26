@@ -1,10 +1,10 @@
-package use_case.delete_recipe_from_favorites;
+package use_case.add_to_favorites;
 
-public class DeleteRecipeFromFavoritesOutputData {
+public class AddToFavoritesOutputData {
     private final boolean success;
     private final String message;
 
-    public DeleteRecipeFromFavoritesOutputData(boolean success, String message) {
+    public AddToFavoritesOutputData(boolean success, String message) {
         this.success = success;
         this.message = message;
     }
