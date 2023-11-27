@@ -1,0 +1,28 @@
+文件 Main.java 实现了一个基于 Java Swing 的图形用户界面应用程序的主入口。下面是对该文件的逐行解释：
+
+package app; - 指定当前类属于 app 包。
+import ... - 导入程序中使用的其他类。例如，data_access.FileUserDataAccessObject 用于数据访问，entity.CommonUserFactory 用于创建用户实体，interface_adapter.* 提供各种界面适配器，view.* 包含用户界面视图等。
+public class Main { - 定义了名为 Main 的公开类。
+public static void main(String[] args) { - 主方法，程序执行的入口点。
+创建和配置主应用程序窗口：
+JFrame application = new JFrame("Login Example"); - 创建一个标题为 "Login Example" 的窗口。
+application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); - 设置窗口关闭时结束程序。
+创建卡片布局和视图容器：
+CardLayout cardLayout = new CardLayout(); - 创建一个卡片布局。
+JPanel views = new JPanel(cardLayout); - 创建一个面板，使用卡片布局。
+application.add(views); - 将面板添加到应用程序窗口。
+初始化视图管理器：
+ViewManagerModel viewManagerModel = new ViewManagerModel(); - 创建一个视图管理器模型。
+new ViewManager(views, cardLayout, viewManagerModel); - 创建并初始化视图管理器。
+初始化视图模型和数据访问对象：
+创建和初始化 LoginViewModel, LoggedInViewModel, SignupViewModel。
+FileUserDataAccessObject userDataAccessObject = new FileUserDataAccessObject("./users.csv", new CommonUserFactory()); - 创建用户数据访问对象，用于处理用户数据。
+处理异常：
+catch (IOException e) { throw new RuntimeException(e); } - 处理可能出现的输入输出异常。
+初始化其他视图和视图模型，添加到视图容器：
+创建 SignupView, LoginView, LoggedInView 等，并将它们添加到 views 面板。
+设置初始视图并使窗口可见：
+viewManagerModel.setActiveView(signupView.viewName); - 设置初始显示的视图。
+application.pack(); - 调整窗口大小以适应其内容。
+application.setVisible(true); - 使窗口可见。
+总体来说，Main.java 实现了一个具有登录、注册和登录后界面的图形用户界面应用程序。它使用 MVC（模型-视图-控制器）架构模式，将用户界面（视图）、数据处理（模型）和业务逻辑（控制器）分离。 ​​
