@@ -1,58 +1,44 @@
 package view;
-// 显示所有数据库里有的食谱
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.database.*;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+
 public class WarehouseView {
-    JPanel WarehousePanel;// 创建总收藏夹面板,显示所有收藏夹
+    JPanel WarehousePanel; // 创建总收藏夹面板，显示所有收藏夹
+
     public WarehouseView() {
         WarehousePanel = new JPanel();
 
         try {
-            FileInputStream serviceAccount = new FileInputStream("path/to/your/serviceAccountKey.json");
+            // 替换成你的 JSON 文件路径
+            File jsonFile = new File("path/to/your/recipes.json");
 
-            FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                    .setDatabaseUrl("https://your-database-name.firebaseio.com/") // 替换成你的数据库URL
-                    .build();
+            JSONParser jsonParser = new JSONParser();
+            JSONArray recipes = (JSONArray) jsonParser.parse(new FileReader(jsonFile));
 
-            FirebaseApp.initializeApp(options);
+            int i = 1;
 
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("recipes");
+            for (Object recipeObj : recipes) {
+                JSONObject recipe = (JSONObject) recipeObj;
+                String recipeName = (String) recipe.get("name");
 
-            ref.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    int i = 1;
+                JLabel recipeLabel = new JLabel("菜谱 " + i + ": " + recipeName);
+                recipeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        String recipeName = snapshot.child("name").getValue(String.class);
+                WarehousePanel.add(recipeLabel);
 
-                        JLabel recipeLabel = new JLabel("菜谱 " + i + ": " + recipeName);
-                        recipeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                i++;
+            }
 
-                        WarehousePanel.add(recipeLabel);
-
-                        i++;
-                    }
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    System.out.println("The read failed: " + databaseError.getCode());
-                }
-            });
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }

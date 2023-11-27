@@ -6,11 +6,14 @@ import java.awt.event.ActionEvent;
 
 import data_access.FileRecipeDataAccessObject;
 import entity.*;
+import interface_adapter.view_warehouse.ViewWarehouseViewModel;
 import view.*;
 import use_case.*;
+import interface_adapter.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 public class Main {
 
     private static void createAndShowGUI() {
@@ -38,7 +41,37 @@ public class Main {
         recipes.add(new Recipe(1, "Chicken Parmesan", "Classic chicken parmesan with marinara sauce and melted cheese.",LocalDateTime.now()));
         return recipes;
     }
-    public static void main(String[] args) {
+    public static <ViewRecipeViewModel> void main(String[] args) {
+        // 这里创建了一个主应用窗口，然后设置了关闭操作
+        JFrame application = new JFrame("Recipe Organizer");
+        application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        // 创建一个 CardLayout，用于管理各个卡片
+        CardLayout cardLayout = new CardLayout();
+        // 创建一个 JPanel，用于存放各个卡片
+        JPanel views = new JPanel(new CardLayout());
+        application.add(views);
+        // 创建用于管理视图的 ViewManager:
+        ViewManagerModel viewManagerModel = new ViewManagerModel();
+        new ViewManager(views, cardLayout, viewManagerModel);
+        // 为每个ViewModel创建一个实例，大家记得要传入自己对应的ViewModel
+        ViewWarehouseViewModel viewWarehouseViewModel = new ViewWarehouseViewModel();
+        ViewRecipeViewModel viewRecipeViewModel = new ViewRecipeViewModel();
+        // 为基于文件的用户数据访问初始化 UserDataAccessObject:
+        FileRecipeDataAccessObject DAO = new FileRecipeDataAccessObject("recipes.json");
+        FileRecipeDataAccessObject viewRecipeDAO = new FileRecipeDataAccessObject("recipes.json");
+        // 创建并将视图添加到主面板:
+        MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewRecipeViewModel, DAO, viewRecipeDAO);
+        views.add(mainView, mainView.viewName);
+        // 设置初始活动视图并使应用程序可见:
+        viewManagerModel.setActiveView(mainView.viewName);
+        viewManagerModel.firePropertyChanged();
+
+        application.pack();
+        application.setVisible(true);
+
+
+    }
+    public static void mainoutdate(String[] args) {
         // Set the file path for the FavoritesView
         FavoritesView favoritesView = new FavoritesView();
 
