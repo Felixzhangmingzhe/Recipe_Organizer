@@ -10,9 +10,10 @@ public class ViewRecipeController {
         this.inputBoundary = inputBoundary;
     }
 
-    public void viewRecipe(String recipeId) {
+    public void execute(int recipeId) {
         ViewRecipeInputData inputData = new ViewRecipeInputData(recipeId);
         inputBoundary.viewRecipe(inputData);
     }
+
 
 }

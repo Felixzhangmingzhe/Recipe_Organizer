@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="xbib.datastructures.json.simple" type="repository">
+    <properties maven-id="org.xbib:datastructures-json-simple:2.0.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/xbib/datastructures-json-simple/2.0.0/datastructures-json-simple-2.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

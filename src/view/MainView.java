@@ -1,5 +1,6 @@
 package view;
 
+import data_access.FileRecipeDataAccessObject;
 import entity.Recipe;
 
 import javax.swing.*;
@@ -10,11 +11,12 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.List;
 // Use Case:View Warehouse
+import interface_adapter.ViewManagerModel;
 import interface_adapter.view_warehouse.*;
 // Use Case:View Favorites
 import interface_adapter.view_favorites.*;
 public class MainView extends JPanel implements ActionListener, PropertyChangeListener{
-    public final String viewName = "main";
+    public final String viewName = "main view";
 
     private final JButton createRecipe;
     private final JButton dailySpecial;
@@ -35,16 +37,17 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
 
     public MainView(ViewWarehouseController viewWarehouseController, ViewWarehouseViewModel viewWarehouseViewModel,
-                    ViewFavoritesController viewFavoritesController, ViewFavoritesViewModel viewFavoritesViewModel) {
+                    ViewFavoritesController viewFavoritesController, ViewFavoritesViewModel viewFavoritesViewModel,
+                    ViewManagerModel viewManagerModel) {
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
         // 初始化, 只需要controller和viewmodel
         // // 初始化ViewWarehouse有关
         this.viewWarehouseController = viewWarehouseController;
         this.viewWarehouseViewModel = viewWarehouseViewModel;
+        // // 初始化ViewFavorites有关
         this.viewFavoritesController = viewFavoritesController;
         this.viewFavoritesViewModel = viewFavoritesViewModel;
-
 
 
 
@@ -107,6 +110,8 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         );
 
     }
+
+
 
     public void addRecipeButtonListener(ActionListener listener) {
         createRecipe.addActionListener(listener);

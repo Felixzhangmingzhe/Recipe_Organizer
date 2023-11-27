@@ -7,6 +7,7 @@ import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
 import use_case.view_favorites.ViewFavoritesDataAccessInterface;
 import use_case.add_to_favorites.AddToFavoritesDataAccessInterface;
 import use_case.view_recipe.ViewRecipeDataAccessInterface;
+import use_case.view_warehouse.ViewWarehouseDataAccessInterface;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface {
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface {
     private String filePath;
 
     public FileRecipeDataAccessObject(String filePath) {
@@ -103,7 +104,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         jsonRecipe.put("id", recipe.getId());
         jsonRecipe.put("title", recipe.getTitle());
         jsonRecipe.put("content", recipe.getContent());
-        jsonRecipe.put("date", recipe.getDate().toString());
+        jsonRecipe.put("date", recipe.getDate().toString());// 这里时间变成了字符串
         return jsonRecipe;
     }
 
@@ -171,10 +172,10 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         return getLastUsedRecipeId();
     }
     @Override
-    public Recipe getRecipeById(String recipeId) {
+    public Recipe getRecipeById(int recipeId) {
         List<Recipe> recipes = readRecipes();
         for (Recipe recipe : recipes) {
-            if (recipe.getTitle().equals(recipeId)) {
+            if (recipe.getId() == recipeId) {
                 return recipe;
             }
         }
@@ -184,5 +185,10 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     @Override
     public List<Recipe> getFavorites() {
         return readRecipesInFavorites();
+    }
+
+    @Override
+    public List<Recipe> getAllRecipe() {
+        return readRecipes();
     }
 }
