@@ -22,5 +22,4 @@ public class ViewFavoritesInteractor implements ViewFavoritesInputBoundary {
     }
 
 
-
 }
