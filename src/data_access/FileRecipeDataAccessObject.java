@@ -4,7 +4,7 @@ import entity.Recipe;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
-import use_case.view_favorites.ViewFavoritesUserDataAccessInterface;
+import use_case.view_favorites.ViewFavoritesDataAccessInterface;
 import use_case.add_to_favorites.AddToFavoritesDataAccessInterface;
 import use_case.view_recipe.ViewRecipeDataAccessInterface;
 
@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesUserDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface {
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface {
     private String filePath;
 
     public FileRecipeDataAccessObject(String filePath) {
@@ -179,5 +179,10 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
             }
         }
         return null;//如果没有找到，返回null,是这样吗，还是返回一个error String
+    }
+
+    @Override
+    public List<Recipe> getFavorites() {
+        return readRecipesInFavorites();
     }
 }
