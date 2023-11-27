@@ -103,7 +103,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         jsonRecipe.put("id", recipe.getId());
         jsonRecipe.put("title", recipe.getTitle());
         jsonRecipe.put("content", recipe.getContent());
-        jsonRecipe.put("date", recipe.getDate().toString());
+        jsonRecipe.put("date", recipe.getDate().toString());// 这里时间变成了字符串
         return jsonRecipe;
     }
 
@@ -171,10 +171,10 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         return getLastUsedRecipeId();
     }
     @Override
-    public Recipe getRecipeById(String recipeId) {
+    public Recipe getRecipeById(int recipeId) {
         List<Recipe> recipes = readRecipes();
         for (Recipe recipe : recipes) {
-            if (recipe.getTitle().equals(recipeId)) {
+            if (recipe.getId() == recipeId) {
                 return recipe;
             }
         }
