@@ -5,5 +5,5 @@ import entity.Recipe;
 import java.util.Map;
 
 public interface ViewRecipeDataAccessInterface {
-    Recipe getRecipeById(String recipeId);
+    Recipe getRecipeById(int recipeId);
 }
