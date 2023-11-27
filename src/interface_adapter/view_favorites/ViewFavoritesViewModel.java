@@ -23,7 +23,6 @@ public class ViewFavoritesViewModel extends ViewModel {
     @Override
     public void firePropertyChanged() {
         support.firePropertyChange("recipes", null, recipes);
-
     }
 
     @Override

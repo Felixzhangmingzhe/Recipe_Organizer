@@ -9,7 +9,6 @@ public class ViewFavoritesController {
 
     public ViewFavoritesController(ViewFavoritesInputBoundary viewFavoritesInteractor) {
         this.viewFavoritesInteractor = viewFavoritesInteractor;
-
     }
 
     public void execute() {
