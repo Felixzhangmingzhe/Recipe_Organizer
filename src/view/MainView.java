@@ -1,7 +1,6 @@
 package view;
 
 import entity.Recipe;
-import interface_adapter.view_warehouse.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +11,8 @@ import java.beans.PropertyChangeListener;
 import java.util.List;
 // Use Case:View Warehouse
 import interface_adapter.view_warehouse.*;
+// Use Case:View Favorites
+import interface_adapter.view_favorites.*;
 public class MainView extends JPanel implements ActionListener, PropertyChangeListener{
     public final String viewName = "main";
 
@@ -24,18 +25,25 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final ViewWarehouseController viewWarehouseController;
     private final ViewWarehouseViewModel viewWarehouseViewModel;
 
+    // Use Case:View Favorites
+    private final ViewFavoritesController viewFavoritesController;
+    private final ViewFavoritesViewModel viewFavoritesViewModel;
 
 
 
 
 
-    public MainView(ViewWarehouseController viewWarehouseController, ViewWarehouseViewModel viewWarehouseViewModel) {
+
+    public MainView(ViewWarehouseController viewWarehouseController, ViewWarehouseViewModel viewWarehouseViewModel,
+                    ViewFavoritesController viewFavoritesController, ViewFavoritesViewModel viewFavoritesViewModel) {
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
         // 初始化, 只需要controller和viewmodel
         // // 初始化ViewWarehouse有关
         this.viewWarehouseController = viewWarehouseController;
         this.viewWarehouseViewModel = viewWarehouseViewModel;
+        this.viewFavoritesController = viewFavoritesController;
+        this.viewFavoritesViewModel = viewFavoritesViewModel;
 
 
 
@@ -83,6 +91,20 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         this.add(title);
         this.add(buttons);
         //
+
+        favorites.addActionListener(
+            new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (e.getSource().equals(favorites)) {
+                        viewFavoritesController.execute();
+                        List< Recipe > recipes = viewFavoritesViewModel.getRecipes();
+                        // 接下来，把recipes展示出来
+                        // 目前
+                    }
+                }
+            }
+        );
 
     }
 
