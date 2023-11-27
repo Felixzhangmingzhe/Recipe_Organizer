@@ -18,6 +18,7 @@ public class ViewFavoritesPresenter implements ViewFavoritesOutputBoundary{
         this.viewRecipeViewModel = viewRecipeViewModel;
     }
 
+
     @Override
     public void prepareSuccessView(ViewFavoritesOutputData viewFavoritesOutputData) {
         viewFavoritesViewModel.setRecipes(viewFavoritesOutputData.getRecipes());

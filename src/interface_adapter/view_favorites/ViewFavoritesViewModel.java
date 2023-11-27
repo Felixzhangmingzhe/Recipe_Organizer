@@ -29,5 +29,6 @@ public class ViewFavoritesViewModel extends ViewModel {
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
+
     }
 }
