@@ -16,7 +16,7 @@ import interface_adapter.view_warehouse.*;
 // Use Case:View Favorites
 import interface_adapter.view_favorites.*;
 public class MainView extends JPanel implements ActionListener, PropertyChangeListener{
-    public final String viewName = "main";
+    public final String viewName = "main view";
 
     private final JButton createRecipe;
     private final JButton dailySpecial;
