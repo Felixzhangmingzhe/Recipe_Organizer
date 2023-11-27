@@ -1,5 +1,7 @@
 package interface_adapter;
 
+import interface_adapter.view_search.ViewSearchState;
+
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
@@ -9,6 +11,7 @@ public class SearchViewModel extends ViewModel {
     public final String SEARCH_BAR_LABEL = "enter xxx";
 
     public final String SIGNUP_BUTTON_LABEL = "Search";
+    private ViewSearchState state = new ViewSearchState();
 
 //    private SignupState state = new SignupState();
 

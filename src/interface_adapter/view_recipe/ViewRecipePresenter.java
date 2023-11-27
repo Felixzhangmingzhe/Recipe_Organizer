@@ -1,6 +1,7 @@
 package interface_adapter.view_recipe;
 
 import interface_adapter.ViewManagerModel;
+import interface_adapter.ViewModel;
 import use_case.view_recipe.ViewRecipeOutputBoundary;
 import use_case.view_recipe.ViewRecipeOutputData;
 
@@ -19,8 +20,8 @@ public class ViewRecipePresenter implements ViewRecipeOutputBoundary {
     }
 
     @Override
-    public void presentRecipe(ViewRecipeOutputData viewRecipeOutputData) {
-        viewRecipeViewModel.setRecipe(viewRecipeOutputData.getRecipe());
+    public void prepareSuccessView(ViewRecipeOutputData response) {
+        viewRecipeViewModel.setRecipe(response.getRecipe());
         viewRecipeViewModel.firePropertyChanged();
         viewManagerModel.setActiveView(viewRecipeViewModel.getViewName());
         viewManagerModel.firePropertyChanged();

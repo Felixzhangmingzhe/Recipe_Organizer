@@ -1,13 +1,13 @@
 package use_case.view_recipe;
 
 public class ViewRecipeInputData {
-    private final String recipeId;
+    private final int recipeId;
 
-    public ViewRecipeInputData(String recipeId) {
+    public ViewRecipeInputData(int recipeId) {
         this.recipeId = recipeId;
     }
 
-    public String getRecipeId() {
+    public int getRecipeId() {
         return recipeId;
     }
 
