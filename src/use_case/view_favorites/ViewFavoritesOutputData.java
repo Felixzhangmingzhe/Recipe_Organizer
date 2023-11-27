@@ -13,5 +13,6 @@ public class ViewFavoritesOutputData {
 
     public List<Recipe> getRecipes() {
         return recipes;
+
     }
 }
