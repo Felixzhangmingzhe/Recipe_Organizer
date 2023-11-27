@@ -9,14 +9,18 @@ import org.json.JSONObject;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-public class WarehouseView {
+public class WarehouseView extends JPanel implements ActionListener, PropertyChangeListener {
     JPanel WarehousePanel; // 创建总仓库面板，显示所有菜谱
     private final ViewRecipeController viewRecipeController;
     JList<String> RecipeList; // 创建菜谱列表
@@ -115,4 +119,12 @@ public class WarehouseView {
         return WarehousePanel;
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JOptionPane.showConfirmDialog(this, "Cancel not implemented yet.");
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+    }
 }

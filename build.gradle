@@ -17,4 +17,5 @@ sourceSets {
 }
 dependencies {
     testImplementation 'junit:junit:4.12'
+    implementation 'org.json:json:20231013'
 }
