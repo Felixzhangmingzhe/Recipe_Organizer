@@ -23,7 +23,7 @@ public class ViewFavoritesPresenter implements ViewFavoritesOutputBoundary{
         viewFavoritesViewModel.setRecipes(viewFavoritesOutputData.getRecipes());
         viewFavoritesViewModel.firePropertyChanged();
         //state在这里整合进了viewManagerModel，这样不知道行不行得通。
-        viewManagerModel.setActiveView(viewFavoritesViewModel.getViewName());
+        viewManagerModel.setActiveView(viewRecipeViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
     }
 }

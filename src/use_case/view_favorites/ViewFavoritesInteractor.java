@@ -21,5 +21,4 @@ public class ViewFavoritesInteractor implements ViewFavoritesInputBoundary {
         viewFavoritesPresenter.prepareSuccessView(viewFavoritesOutputData);
     }
 
-
 }

@@ -1,6 +1,5 @@
 package interface_adapter.view_favorites;
 
-
 import entity.Recipe;
 import interface_adapter.ViewModel;
 
@@ -11,7 +10,7 @@ import java.util.List;
 public class ViewFavoritesViewModel extends ViewModel {
     private List<Recipe> recipes;
     public ViewFavoritesViewModel() {
-        super("Favorites");// 名字怎么命名，命名了有什么用？
+        super("viewFavoritesViewModel");// 名字怎么命名，命名了有什么用？
     }
 
     public void setRecipes(List<Recipe> recipes) {
@@ -24,11 +23,11 @@ public class ViewFavoritesViewModel extends ViewModel {
     @Override
     public void firePropertyChanged() {
         support.firePropertyChange("recipes", null, recipes);
+
     }
 
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
-
     }
 }
