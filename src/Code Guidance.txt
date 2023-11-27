@@ -1,3 +1,4 @@
+################# 第一部分：Use Case(use_case和interface_adapter ##########################
 写use case 和 interface adapter的时候，
 要在use_case里面创建类：XXInputData，XXOutputData, XXInteractor;
 在use_case里面创建接口：XXInputBoundary(这个接口被Interactor实现), XXOutputBoundary(这个接口被Presenter实现)， XXUserDataAccessInterface(这个接口被DataAccessObject实现);
@@ -518,4 +519,130 @@ String deletedUserNames = clearState.getDeletedUserNames();这一句可以看出
 
 （注意，那个在View里被传进来的controller,里面已经有了interactor，而interactor里面已经有了presenter，一层一层已经打包好了才传进View的，它们从哪里来？）
 
-回到开头，我们需要考虑到，View中的Controller是一个需要被传入的参数，那这个参数是从哪来的呢？
+################# 第二部分：Main ##########################
+
+回到开头，我们需要考虑到，View中的Controller是一个需要被传入的参数，那这个参数是从哪来的呢？Main吗？
+
+先不管这些，看看week5里面的Main函数：
+“
+package app;
+
+import data_access.FileUserDataAccessObject;
+import entity.CommonUserFactory;
+import interface_adapter.clear_users.ClearViewModel;
+import interface_adapter.login.LoginViewModel;
+import interface_adapter.logged_in.LoggedInViewModel;
+import interface_adapter.signup.SignupViewModel;
+import interface_adapter.ViewManagerModel;
+import interface_adapter.clear_users.ClearViewModel;
+import use_case.clear_users.ClearUserDataAccessInterface;
+import use_case.login.LoginUserDataAccessInterface;
+import view.LoggedInView;
+import view.LoginView;
+import view.SignupView;
+import view.ViewManager;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        // Build the main program window, the main panel containing the
+        // various cards, and the layout, and stitch them together.
+
+        // The main application window.
+        JFrame application = new JFrame("Login Example");——————————————————————————｜
+        application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);———————｜———————————————这里是创建了一个主应用窗口，然后设置了关闭窗口的方式
+
+        CardLayout cardLayout = new CardLayout();————————————————————————初始化用于视图的 CardLayout，CardLayout 是一种布局管理器，允许在同一个容器中显示多个组件，但一次只有一个组件可见。这种布局通常用于创建向导式界面或在不同视图之间切换。
+
+        // The various View objects. Only one view is visible at a time.
+        JPanel views = new JPanel(cardLayout);
+        application.add(views); ————————————-创建用于视图的面板:此面板将容纳应用程序的各种视图。CardLayout 用于此面板，表示它将管理在不同视图之间的切换。
+
+        // This keeps track of and manages which view is currently showing.
+        ViewManagerModel viewManagerModel = new ViewManagerModel();
+        new ViewManager(views, cardLayout, viewManagerModel);
+
+        // The data for the views, such as username and password, are in the ViewModels.
+        // This information will be changed by a presenter object that is reporting the
+        // results from the use case. The ViewModels are observable, and will
+        // be observed by the Views.
+        LoginViewModel loginViewModel = new LoginViewModel();
+        LoggedInViewModel loggedInViewModel = new LoggedInViewModel();
+        SignupViewModel signupViewModel = new SignupViewModel();
+
+        FileUserDataAccessObject userDataAccessObject;
+        try {
+            userDataAccessObject = new FileUserDataAccessObject("./users.csv", new CommonUserFactory());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        ClearViewModel clearViewModel = new ClearViewModel();
+        ClearUserDataAccessInterface clearUserDataAccessObject = userDataAccessObject;
+        SignupView signupView = SignupUseCaseFactory.create(viewManagerModel, loginViewModel, signupViewModel, userDataAccessObject, clearViewModel, clearUserDataAccessObject);
+        views.add(signupView, signupView.viewName);
+
+        LoginView loginView = LoginUseCaseFactory.create(viewManagerModel, loginViewModel, loggedInViewModel, userDataAccessObject);
+        views.add(loginView, loginView.viewName);
+
+        LoggedInView loggedInView = new LoggedInView(loggedInViewModel);
+        views.add(loggedInView, loggedInView.viewName);
+
+        viewManagerModel.setActiveView(signupView.viewName);
+        viewManagerModel.firePropertyChanged();
+
+        application.pack();
+        application.setVisible(true);
+    }
+}
+”
+
+
+################# 第三部分：如何写view ##########################
+
+
+################# 第四部分：如何写DataaccessObject ##########################
+
+
+
+################# 第五部分：两个view是怎么转换view的 ##########################
+拿signup和login来说，他们的view是不一样的。
+而转换的方式可能是signup presenter 调用了setActiveView方法，然后传入了loginViewModel.getViewName()，这个方法是在viewManagerModel里面的。
+“
+viewManagerModel.setActiveView(loginViewModel.getViewName());<——————————————————————————————————————这里用到了ViewModel的方法，用来更新ViewModel,而且我知道为什么要viewname了。
+”
+那么getViewName()从哪来的呢？
+“
+package interface_adapter;
+
+import java.beans.PropertyChangeListener;
+
+public abstract class ViewModel {
+
+    private String viewName;
+
+    public ViewModel(String viewName) {
+        this.viewName = viewName;
+    }
+    public String getViewName() {<——————————————————————这里来的（妈妈生的）
+        return this.viewName;
+    }
+
+    public abstract void firePropertyChanged();
+    public abstract void addPropertyChangeListener(PropertyChangeListener listener);
+
+
+}
+”
+但这里实现的效果是：输入用户名，密码，重复密码，点击signup后，直接跳到了loginviewmodel对应的。
+但我自己要实现的viewwarehouse，实际上没有两个viewmodel。（难道是运行viewManagerModel.setActiveView(viewRecipeModel.getViewName())?)
+
+
+################# 第六部分：同一个View里如果我有两个模式怎么转换 ##########################
+如果分模式，会更复杂，
+直接分成两个view就可以了
+
+比如说，阅读和编辑recipe看似是recipe的一体两面，但实际上可以通过写RecipeView和EdittingView来实现。
