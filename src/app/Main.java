@@ -23,7 +23,7 @@ public class Main {
         // 创建一个 CardLayout，用于管理各个卡片
         CardLayout cardLayout = new CardLayout();
         // 创建一个 JPanel，用于存放各个卡片
-        JPanel views = new JPanel(new CardLayout());
+        JPanel views = new JPanel(cardLayout);
         application.add(views);
         // 创建用于管理视图的 ViewManager:
         ViewManagerModel viewManagerModel = new ViewManagerModel();
@@ -35,7 +35,7 @@ public class Main {
         // 为基于文件的用户数据访问初始化 UserDataAccessObject:
         FileRecipeDataAccessObject DAO = new FileRecipeDataAccessObject("recipes.json");
         FileRecipeDataAccessObject viewRecipeDAO = new FileRecipeDataAccessObject("recipes.json");
-        // 创建并将视图添加到主面板:
+        // 创建并将视图添加到主面板:主视图
         MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, DAO,viewRecipeViewModel);
         views.add(mainView, mainView.viewName);
         // 设置初始活动视图并使应用程序可见:
@@ -50,6 +50,11 @@ public class Main {
         RecipePresetter recipePresetter = new RecipePresetter();
         FileRecipeDataAccessObject prDAO = new FileRecipeDataAccessObject("recipes.json");
         recipePresetter.presetData(prDAO);
+        // 创建并将视图添加到主面板:仓库视图
+        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, viewRecipeDAO);
+        views.add(warehouseView, warehouseView.viewName);
+        // 创建并将视图添加到主面板:收藏夹视图
+
 
     }
 // 之前写的main被我删了重写了一个

@@ -16,8 +16,7 @@ import interface_adapter.view_warehouse.*;
 // Use Case:View Favorites
 import interface_adapter.view_favorites.*;
 public class MainView extends JPanel implements ActionListener, PropertyChangeListener{
-    public final String viewName = "main view";
-
+    public final String viewName = "Initial Interface";
     private final JButton createRecipe;
     private final JButton dailySpecial;
     private final JButton favorites;
@@ -66,6 +65,13 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         buttons.add(allRecipes);
         dailySpecial = new JButton("Daily Recipe");
         buttons.add(dailySpecial);
+        JList<String> TestList = new JList<>();
+        TestList.setPreferredSize(new Dimension(600, 400));
+        TestList.setBackground(Color.WHITE);
+        TestList.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        TestList.setVisible(true);
+        buttons.add(TestList);
+
 
         createRecipe.addActionListener(//打开菜谱界面（创建菜谱模式）
             new ActionListener() {
@@ -82,12 +88,17 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
                         ViewWarehouseState currentState = viewWarehouseViewModel.getState();
                         viewWarehouseController.execute();
-                        List< Recipe > recipes = currentState.getRecipes();
-                        // 接下来，把recipes展示出来
                     }
                 }
             }
         );
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 在这里添加退出应用程序的逻辑
+                System.exit(0); // 或者其他你认为合适的退出逻辑
+            }
+        });
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
@@ -108,7 +119,13 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                 }
             }
         );
-
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 在这里添加退出应用程序的逻辑
+                System.exit(0); // 或者其他你认为合适的退出逻辑
+            }
+        });
     }
 
 
