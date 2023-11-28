@@ -8,7 +8,7 @@ public class RecipeFactory {
      * @param content
      * @return
      */
-    public Recipe create(int id, String title, String content, LocalDateTime date, Boolean isFavorite) {
-        return new Recipe(id, title, content, date, isFavorite);
+    public Recipe create(int id, String title, String content, LocalDateTime date, Boolean isFavorite,double calories) {
+        return new Recipe(id, title, content, date, isFavorite, calories);
     }
 }

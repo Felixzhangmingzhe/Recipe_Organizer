@@ -4,6 +4,7 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
 import use_case.view_warehouse.ViewWarehouseOutputBoundary;
 import use_case.view_warehouse.ViewWarehouseOutputData;
+import view.WarehouseView;
 
 public class ViewWarehousePresenter implements ViewWarehouseOutputBoundary {
     private final ViewWarehouseViewModel viewWarehouseViewModel;
@@ -22,8 +23,9 @@ public class ViewWarehousePresenter implements ViewWarehouseOutputBoundary {
         viewWarehouseState.setRecipes(viewWarehouseOutputData.getRecipes());
         viewWarehouseViewModel.setState(viewWarehouseState);
         viewWarehouseViewModel.firePropertyChanged();
-        viewManagerModel.setActiveView(viewRecipeViewModel.getViewName());
+        viewManagerModel.setActiveView(viewWarehouseViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
+        // 创建并登陆新的视图？
     }
 
 }
