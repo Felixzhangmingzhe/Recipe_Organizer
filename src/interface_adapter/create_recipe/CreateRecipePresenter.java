@@ -1,34 +1,19 @@
 package interface_adapter.create_recipe;
 
-import interface_adapter.ViewManagerModel;
 import use_case.create_recipe.CreateRecipeOutputData;
 import view.ReadRecipeView;
-import view.ViewManager;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class CreateRecipePresenter {
     private final CreateRecipeViewModel viewModel;
-    private final ViewManagerModel viewManagerModel;
-    public CreateRecipePresenter(CreateRecipeViewModel viewModel, ViewManagerModel viewManagerModel) {
+    private final ReadRecipeView view;
+    public CreateRecipePresenter(CreateRecipeViewModel viewModel, ReadRecipeView view) {
         this.viewModel = viewModel;
-        this.viewManagerModel = viewManagerModel;
+        this.view = view;
     }
     public void prepareSucessView(CreateRecipeOutputData response) {
-        // On success, switch to the login view.
-        CreateRecipeState state = viewModel.getState();
-        state.setRecipeName(response.getTitle());
-        state.setContent(response.getContent());
-        this.viewModel.setState(state);// 等等，他在SignupPresenter里面，为什么要改LoginViewModel的state？
-        viewModel.firePropertyChanged();
-
-        viewManagerModel.setActiveView(viewModel.getViewName());
-        viewManagerModel.firePropertyChanged();
+        // On success, switch to the clear view.
+        // Give response to the view model
     }
     public void prepareFailView(String error) {
-        CreateRecipeState state = viewModel.getState();
-        state.setRecipeNameError(error);
-        viewModel.firePropertyChanged();
     }
 }

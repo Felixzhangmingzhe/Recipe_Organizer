@@ -1,163 +1,43 @@
 package view;
 
-import interface_adapter.Back.BackController;
-import interface_adapter.Back.BackViewModel;
-import interface_adapter.create_recipe.CreateRecipeController;
-import interface_adapter.create_recipe.CreateRecipeViewModel;
-import interface_adapter.create_recipe.CreateRecipeState;
-
 import javax.swing.*;
-import javax.swing.text.View;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 public class EditRecipeView extends JPanel implements ActionListener, PropertyChangeListener {
     private final JButton saveButton;
     private final JButton cancelButton;
-    private final JTextArea recipeNameField;
+    private final JTextField recipeNameField;
     private final JTextArea recipeContentArea;
-    public String viewName = "edit recipe";
-    // Use Case: Back
-    private BackController backController;
-    private BackViewModel backViewModel;
-    // Use Case: Create Recipe
-    private CreateRecipeController createRecipeController;
-    private CreateRecipeViewModel createRecipeViewModel;
 
-    public EditRecipeView(BackController backController, BackViewModel backViewModel,
-                          CreateRecipeController createRecipeController, CreateRecipeViewModel createRecipeViewModel) {
-        this.backController = backController;
-        this.backViewModel = backViewModel;
-        this.createRecipeController = createRecipeController;
-        this.createRecipeViewModel = createRecipeViewModel;
+    public EditRecipeView() {
         // 初始化界面元素
         JLabel titleLabel = new JLabel("Edit Recipe");
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        recipeNameField = new JTextArea();
+        recipeNameField = new JTextField();
         recipeContentArea = new JTextArea();
         saveButton = new JButton("Save");
-        cancelButton = new JButton("Back");
+        cancelButton = new JButton("Cancel");
 
         // 设置布局
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        // 添加元素到面板,使用 GridBagLayout
-        setLayout(new GridBagLayout());
-
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.WEST;
-        gbc.insets = new Insets(5, 5, 5, 5);
-        add(titleLabel, gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        add(new JLabel("Recipe Name:"), gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = 1;
-        gbc.weightx = 1.0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.gridwidth = 2;
-        add(new JScrollPane(recipeNameField), gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 2;
-        add(new JLabel("Content:"), gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = 2;
-        gbc.weighty = 1.0;
-        gbc.gridwidth = 2;
-        gbc.fill = GridBagConstraints.BOTH;
-        add(new JScrollPane(recipeContentArea), gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 3;
-        gbc.weighty = 0.0;
-        gbc.fill = GridBagConstraints.NONE;
-        add(saveButton, gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = 3;
-        add(cancelButton, gbc);
+        // 添加元素到面板
+        this.add(titleLabel);
+        this.add(new JLabel("Recipe Name:"));
+        this.add(recipeNameField);
+        this.add(new JLabel("Recipe Content:"));
+        this.add(new JScrollPane(recipeContentArea));
+        this.add(saveButton);
+        this.add(cancelButton);
 
         // 添加事件监听器
-        saveButton.addActionListener(
-                new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (e.getSource().equals(saveButton)) {
-                            CreateRecipeState currentState = createRecipeViewModel.getState();
-                            createRecipeController.execute(
-                                    currentState.getRecipeName(),
-                                    currentState.getContent()
-                            );
-                        }
-                    }
-                });
-
-        cancelButton.addActionListener(
-                new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (e.getSource().equals(cancelButton)) {
-                        }
-                        // 处理取消按钮点击事件，可能需要关闭编辑界面
-                        // 执行取消逻辑...
-                        backController.execute();
-                    }
-                }
-        );
-
-
-
-
-        // Add AddKeyListener to the recipeNameField
-        recipeNameField.addKeyListener(
-                new KeyListener() {
-                    @Override
-                    public void keyTyped(KeyEvent e) {
-                        CreateRecipeState currentState = createRecipeViewModel.getState();
-                        currentState.setRecipeName(recipeNameField.getText() + e.getKeyChar());
-                        createRecipeViewModel.setState(currentState);
-
-                    }
-
-                    @Override
-                    public void keyPressed(KeyEvent e) {
-                    }
-
-                    @Override
-                    public void keyReleased(KeyEvent e) {
-                }
-            }
-        );
-        // Add AddKeyListener to the recipeContentArea
-        recipeContentArea.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                CreateRecipeState currentState = createRecipeViewModel.getState();
-                currentState.setContent(recipeContentArea.getText() + e.getKeyChar());
-                createRecipeViewModel.setState(currentState);
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-            }
-        });
+        saveButton.addActionListener(this);
+        cancelButton.addActionListener(this);
     }
 
     public void addSaveButtonListener(ActionListener listener) {
