@@ -43,7 +43,8 @@ public class InMemoryRecipeDataAccessObject {
         String content = jsonRecipe.getString("content");
         LocalDateTime date = LocalDateTime.parse(jsonRecipe.getString("date"));
         boolean isFavorite = jsonRecipe.getBoolean("isFavorite");
-        return new Recipe(id, title, content, date, isFavorite);
+        double calories = jsonRecipe.getDouble("calories");
+        return new Recipe(id, title, content, date, isFavorite, calories);
     }
 
     private JSONObject createJsonRecipe(Recipe recipe) {
@@ -52,6 +53,8 @@ public class InMemoryRecipeDataAccessObject {
         jsonRecipe.put("title", recipe.getTitle());
         jsonRecipe.put("content", recipe.getContent());
         jsonRecipe.put("date", recipe.getDate().toString());
+        jsonRecipe.put("isFavorite", recipe.getIsFavorite());
+        jsonRecipe.put("calories", recipe.getCalories());
         return jsonRecipe;
     }
 
@@ -65,7 +68,8 @@ public class InMemoryRecipeDataAccessObject {
                 "Spaghetti Bolognese",
                 "Cook the spaghetti. Cook the ground beef. Mix them together.",
                 Date,
-                false
+                false,
+                1000
         );
         dao.addRecipe(newRecipe);
 

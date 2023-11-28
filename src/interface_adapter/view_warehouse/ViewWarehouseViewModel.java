@@ -5,9 +5,11 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 public class ViewWarehouseViewModel extends ViewModel {
+    public final String TITLE_LABEL = "Recipe Warehouse";
+
     private ViewWarehouseState state = new ViewWarehouseState();
     public ViewWarehouseViewModel() {
-        super("ViewWarehouseViewModel");
+        super("Warehouse View");
     }
     public void setState(ViewWarehouseState state) {
         this.state = state;

@@ -11,7 +11,7 @@ public class ViewRecipeViewModel extends ViewModel {
     private Recipe recipe;
 
     public ViewRecipeViewModel() {
-        super("viewRecipeViewModel");
+        super("Recipe View");
     }
 
     public void setRecipe(Recipe recipe) {
