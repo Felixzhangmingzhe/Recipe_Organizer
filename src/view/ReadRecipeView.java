@@ -1,16 +1,13 @@
 package view;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.*;
 
-public class RecipeView extends JFrame implements ActionListener{
+public class ReadRecipeView extends JFrame implements ActionListener{
     JPanel searchPanel;// 用来放搜索框和搜索按钮，以及显示搜索结果
     JPanel recipePanel;// 用来显示菜谱
     JPanel editPanel;// 用来放编辑按钮，以及显示编辑过程
@@ -25,7 +22,7 @@ public class RecipeView extends JFrame implements ActionListener{
         String password = "your_password";
         return DriverManager.getConnection(url, username, password);
     }
-    public RecipeView() {
+    public ReadRecipeView() {
         // 创建搜索界面，包括搜索框和搜索按钮
         searchPanel = new JPanel();
         JButton searchButton = new JButton("Search Recipe");
@@ -112,7 +109,7 @@ public class RecipeView extends JFrame implements ActionListener{
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            RecipeView view = new RecipeView();
+            ReadRecipeView view = new ReadRecipeView();
             view.setVisible(true);
         });
     }// 用来显示搜索界面

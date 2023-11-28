@@ -35,6 +35,7 @@ public class Main {
         // 为基于文件的用户数据访问初始化 UserDataAccessObject:
         FileRecipeDataAccessObject DAO = new FileRecipeDataAccessObject("recipes.json");
         FileRecipeDataAccessObject viewRecipeDAO = new FileRecipeDataAccessObject("recipes.json");
+        FileRecipeDataAccessObject warehouseDAO = new FileRecipeDataAccessObject("recipes.json");
         // 创建并将视图添加到主面板:主视图
         MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, DAO,viewRecipeViewModel);
         views.add(mainView, mainView.viewName);
@@ -51,8 +52,10 @@ public class Main {
         FileRecipeDataAccessObject prDAO = new FileRecipeDataAccessObject("recipes.json");
         recipePresetter.presetData(prDAO);
         // 创建并将视图添加到主面板:仓库视图
-        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, viewRecipeDAO);
+        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, warehouseDAO);
         views.add(warehouseView, warehouseView.viewName);
+        // viewManagerModel.setActiveView(warehouseView.viewName);//这样写，还是什么都没显示，说明就是warehouseView的问题
+        // viewManagerModel.firePropertyChanged();
         // 创建并将视图添加到主面板:收藏夹视图
 
 

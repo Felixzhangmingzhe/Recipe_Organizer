@@ -51,7 +51,7 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
             JSONArray recipesArray = readJsonFile(jsonFilePath);
 
             // 将菜单数据添加到 JList
-            DefaultListModel<String> titleList = new DefaultListModel<>();
+            DefaultListModel titleList = new DefaultListModel<>();
             DefaultListModel<Integer> idList = new DefaultListModel<>();
             DefaultListModel<String> contentList = new DefaultListModel<>();
             DefaultListModel< LocalDateTime > dateList = new DefaultListModel<>();
@@ -80,10 +80,7 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
 
             }
             System.out.println("recipeList: " + titleList);//说明有
-            titleList.addElement("test");
-            RecipeList = new JList();
-            System.out.println(titleList.size());
-            RecipeList.setModel(titleList);
+            RecipeList = new JList<>(titleList);
 
             // 为 JList 添加鼠标点击事件监听器
 
@@ -117,6 +114,7 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
         }
         back = new JButton("Return");
         WarehousePanel.add(back, BorderLayout.SOUTH);
+        this.add(WarehousePanel);
     }
 
 
