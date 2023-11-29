@@ -50,6 +50,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     ViewManagerModel viewManagerModel) {
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
+
         // 初始化, 只需要controller和viewmodel
         // // 初始化ViewWarehouse有关
         this.viewWarehouseController = viewWarehouseController;
