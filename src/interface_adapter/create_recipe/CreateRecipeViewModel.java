@@ -7,7 +7,7 @@ import java.beans.PropertyChangeSupport;
 
 public class CreateRecipeViewModel extends ViewModel {
     private CreateRecipeState state = new CreateRecipeState();
-    public CreateRecipeViewModel() {super("Read Recipe");}
+    public CreateRecipeViewModel() {super("XXXXX view");}
 
     public void setState(CreateRecipeState state) {
         this.state = state;
