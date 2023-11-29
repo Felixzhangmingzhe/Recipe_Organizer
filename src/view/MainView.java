@@ -10,8 +10,13 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.List;
+import java.util.concurrent.Executor;
 // Use Case:View Warehouse
 import interface_adapter.ViewManagerModel;
+import interface_adapter.create_recipe.CreateRecipeController;
+import interface_adapter.create_recipe.CreateRecipeViewModel;
+import interface_adapter.open_create_recipe.OpenCreateRecipeController;
+import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
 import interface_adapter.view_warehouse.*;
 // Use Case:View Favorites
 import interface_adapter.view_favorites.*;
@@ -30,6 +35,10 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final ViewFavoritesController viewFavoritesController;
     private final ViewFavoritesViewModel viewFavoritesViewModel;
 
+    // Use Case:Open Create Recipe
+    private final OpenCreateRecipeViewModel openCreateRecipeViewModel;
+    private final OpenCreateRecipeController openCreateRecipeController;
+
 
 
 
@@ -37,6 +46,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
     public MainView(ViewWarehouseController viewWarehouseController, ViewWarehouseViewModel viewWarehouseViewModel,
                     ViewFavoritesController viewFavoritesController, ViewFavoritesViewModel viewFavoritesViewModel,
+                    OpenCreateRecipeViewModel openCreateRecipeViewModel, OpenCreateRecipeController openCreateRecipeController,
                     ViewManagerModel viewManagerModel) {
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -47,7 +57,9 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         // // 初始化ViewFavorites有关
         this.viewFavoritesController = viewFavoritesController;
         this.viewFavoritesViewModel = viewFavoritesViewModel;
-
+        // // 初始化OpenCreateRecipe有关
+        this.openCreateRecipeViewModel = openCreateRecipeViewModel;
+        this.openCreateRecipeController = openCreateRecipeController;
 
 
 
@@ -77,7 +89,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     if (e.getSource() == createRecipe) {//if (e.getSource() == createRecipe)
-
+                        openCreateRecipeController.execute();
                     }
                 }
             }
