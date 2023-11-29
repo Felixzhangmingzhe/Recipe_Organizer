@@ -77,12 +77,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         buttons.add(allRecipes);
         dailySpecial = new JButton("Daily Recipe");
         buttons.add(dailySpecial);
-        JList<String> TestList = new JList<>();
-        TestList.setPreferredSize(new Dimension(600, 400));
-        TestList.setBackground(Color.WHITE);
-        TestList.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
-        TestList.setVisible(true);
-        buttons.add(TestList);
+
 
 
         createRecipe.addActionListener(//打开菜谱界面（创建菜谱模式）
