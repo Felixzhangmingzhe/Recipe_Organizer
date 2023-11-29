@@ -1,17 +1,28 @@
 package interface_adapter.create_recipe;
 
-public class CreateRecipeViewModel {
-    private int recipeId = 0;
-    private String recipeTitle = "";
-    private String recipeContent = "";
-    public void setRecipeId(String recipeId) {
-        this.recipeId = Integer.parseInt(recipeId);
+import interface_adapter.ViewModel;
+
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
+public class CreateRecipeViewModel extends ViewModel {
+    private CreateRecipeState state = new CreateRecipeState();
+    public CreateRecipeViewModel() {super("XXXXX view");}
+
+    public void setState(CreateRecipeState state) {
+        this.state = state;
     }
-    public void setRecipeTitle(String recipeTitle) {
-        this.recipeTitle = recipeTitle;
+    public CreateRecipeState getState() {
+        return state;
     }
-    public void setRecipeContent(String recipeContent) {
-        this.recipeContent = recipeContent;
+    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
+    @Override
+    public void firePropertyChanged() {
+            support.firePropertyChange("state", null, this.state);
     }
 
+    @Override
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        support.addPropertyChangeListener(listener);
+    }
 }

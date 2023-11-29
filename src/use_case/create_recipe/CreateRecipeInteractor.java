@@ -31,7 +31,8 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
         } else {
             int id = getNextRecipeId(); // Implement this method to get the next ID from the database
             LocalDateTime now = LocalDateTime.now();
-            Recipe recipe = recipeFactory.create(id, createRecipeInputData.getTitle(), createRecipeInputData.getContent(), now, false,1);
+            double calories = getCalsByName(createRecipeInputData.getTitle());
+            Recipe recipe = recipeFactory.create(id, createRecipeInputData.getTitle(), createRecipeInputData.getContent(), now, false,calories);
             createRecipeUserDataAccessInterface.save(recipe);
 
             // Output the recipe to the view
@@ -39,6 +40,11 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
             createRecipeOutputBoundary.prepareSuccessView(createRecipeOutputData);
         }
     }
+
+    private double getCalsByName(String title) {
+        // TODO: Implement this method to get the calories from the USDA database,using API.
+    }
+
     private int getNextRecipeId() {
         int lastUsedId = createRecipeUserDataAccessInterface.getLastUsedRecipeIdFromDatabase();
         return lastUsedId + 1;
