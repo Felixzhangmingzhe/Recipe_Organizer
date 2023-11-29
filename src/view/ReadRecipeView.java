@@ -1,116 +1,125 @@
 package view;
 
+import interface_adapter.Back.BackController;
+import interface_adapter.Back.BackViewModel;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
-import java.util.ArrayList;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.sql.*;
 
-public class ReadRecipeView extends JFrame implements ActionListener{
-    JPanel searchPanel;// 用来放搜索框和搜索按钮，以及显示搜索结果
-    JPanel recipePanel;// 用来显示菜谱
-    JPanel editPanel;// 用来放编辑按钮，以及显示编辑过程
-    // 用来用来搜索的存储菜谱
-    private List<String> recipes = new ArrayList<>();
-    private JTextField searchTextField;
-    private Connection getConnection() throws SQLException {
-        // 这里假设你在数据库中有一个名为recipes的表，包含一个名为name的列存储菜谱名
-        // 这里是chatgpt给我的示例代码，具体要看我们选择的数据库
-        String url = "jdbc:mysql://localhost:3306/your_database_name";
-        String username = "your_username";
-        String password = "your_password";
-        return DriverManager.getConnection(url, username, password);
-    }
-    public ReadRecipeView() {
-        // 创建搜索界面，包括搜索框和搜索按钮
-        searchPanel = new JPanel();
-        JButton searchButton = new JButton("Search Recipe");
-        searchPanel.add(searchButton);// 将按钮添加到面板中
-        searchButton.addActionListener(this);
-        searchTextField = new JTextField(20);
-        searchPanel.add(searchTextField);// 将搜索框添加到面板中
-        // 在构造函数中初始化recipes列表
-        try {
-            Connection connection = getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT name FROM recipes");
+public class ReadRecipeView extends JFrame implements ActionListener, PropertyChangeListener {
 
-            while (resultSet.next()) {
-                String recipeName = resultSet.getString("name");
-                recipes.add(recipeName);
-            }
+    private final String viewName = "Read Recipe";
+    private final JButton backButton;
+    private final JButton favoritesButton;
+    private final JButton cookedButton;
+    private final JButton editButton;
 
-            resultSet.close();
-            statement.close();
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        // 注意，这里只是一个例子，具体要看我们选择的数据库
-        // 创建编辑界面
-        editPanel = new JPanel();
-        JButton editButton = new JButton("Edit Recipe");
-        editPanel.add(editButton);
+    // Components for displaying recipe information
+    private final JLabel recipeNameLabel;
+    private final JTextArea recipeContentTextArea;
+    private final JLabel caloriesLabel;
+    private final JLabel lastEditTimeLabel;
+    // Use Case: Back
+    private BackController backController;
+    private BackViewModel backViewModel;
+
+    public ReadRecipeView(BackViewModel backViewModel, BackController backController) {
+        // Initialize view model and controller
+        this.backViewModel = backViewModel;
+        this.backController = backController;
+        // Initialize components
+        recipeNameLabel = new JLabel("Recipe Name");
+        recipeContentTextArea = new JTextArea("Recipe Content");
+        caloriesLabel = new JLabel("Calories: ");
+        lastEditTimeLabel = new JLabel("Last Edited: ");
+
+        // Initialize buttons
+        backButton = new JButton("Back");
+        favoritesButton = new JButton("Favorites");
+        cookedButton = new JButton("Cooked");
+        editButton = new JButton("Edit");
+
+        // Add action listeners to buttons
+        backButton.addActionListener(this);
+        favoritesButton.addActionListener(this);
+        cookedButton.addActionListener(this);
         editButton.addActionListener(this);
-        // 创建显示界面
-        recipePanel = new JPanel();
-        JButton recipeButton = new JButton("Recipe");
-        recipePanel.add(recipeButton);
-        recipeButton.addActionListener(this);
-        // 默认显示显示界面
-        showRecipePanel();
+
+        // Set layout manager
+        setLayout(new BorderLayout());
+
+        // Add components to the frame
+        add(recipeNameLabel, BorderLayout.NORTH);
+        add(new JScrollPane(recipeContentTextArea), BorderLayout.CENTER);
+
+        // Create a panel for additional information (calories and last edit time)
+        JPanel infoPanel = new JPanel();
+        infoPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+        infoPanel.add(caloriesLabel);
+        infoPanel.add(lastEditTimeLabel);
+        add(infoPanel, BorderLayout.SOUTH);
+
+        // Create a panel for buttons
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(backButton);
+        buttonPanel.add(favoritesButton);
+        buttonPanel.add(cookedButton);
+        buttonPanel.add(editButton);
+        add(buttonPanel, BorderLayout.SOUTH);
     }
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equals("Search Recipe")) {
-            showSearchPanel();
-        } else if (e.getActionCommand().equals("Edit Recipe")) {
-            showEditPanel();
-        } else if (e.getActionCommand().equals("Recipe")) {
-            showRecipePanel();
+        // Handle button actions
+        if (e.getSource() == backButton) {
+            // Implement action for back button
+            // For example, go back to the previous view
+        } else if (e.getSource() == favoritesButton) {
+            // Implement action for favorites button
+            // For example, add the recipe to favorites
+        } else if (e.getSource() == cookedButton) {
+            // Implement action for cooked button
+            // For example, mark the recipe as cooked
+        } else if (e.getSource() == editButton) {
+            // Implement action for edit button
+            // For example, open the edit view for this recipe
         }
     }
-    private void showSearchPanel() {
-        getContentPane().removeAll();
-        getContentPane().add(searchPanel);
-        revalidate();
-        repaint();
-    }// 用来显示搜索结果
 
-    private void showEditPanel() {
-        String searchText = searchTextField.getText().toLowerCase(); // 获取用户输入并转为小写
-        List<String> matchingRecipes = new ArrayList<>();
-
-        for (String recipe : recipes) {
-            if (recipe.toLowerCase().contains(searchText)) {
-                matchingRecipes.add(recipe);
-            }
-        }// 将匹配的菜谱添加到matchingRecipes列表中
-
-        // 创建一个新的面板来显示搜索结果
-        JPanel searchResultPanel = new JPanel();
-        for (String recipe : matchingRecipes) {
-            searchResultPanel.add(new JLabel(recipe));
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        // Update view based on property changes
+        if (evt.getPropertyName().equals("recipeName")) {
+            recipeNameLabel.setText(evt.getNewValue().toString());
+        } else if (evt.getPropertyName().equals("recipeContent")) {
+            recipeContentTextArea.setText(evt.getNewValue().toString());
+        } else if (evt.getPropertyName().equals("calories")) {
+            caloriesLabel.setText("Calories: " + evt.getNewValue().toString());
+        } else if (evt.getPropertyName().equals("lastEditTime")) {
+            lastEditTimeLabel.setText("Last Edited: " + evt.getNewValue().toString());
         }
+    }
 
-        getContentPane().removeAll();
-        getContentPane().add(searchResultPanel);
-        revalidate();
-        repaint();
-    }// 用来显示编辑界面
+    // Add methods to update the view with recipe information
+    public void setRecipeName(String recipeName) {
+        recipeNameLabel.setText(recipeName);
+    }
 
-    private void showRecipePanel() {
-        getContentPane().removeAll();
-        getContentPane().add(recipePanel);
-        revalidate();
-        repaint();
-    }// 用来显示显示界面
+    public void setRecipeContent(String recipeContent) {
+        recipeContentTextArea.setText(recipeContent);
+    }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            ReadRecipeView view = new ReadRecipeView();
-            view.setVisible(true);
-        });
-    }// 用来显示搜索界面
+    public void setCalories(int calories) {
+        caloriesLabel.setText("Calories: " + calories);
+    }
+
+    public void setLastEditTime(String lastEditTime) {
+        lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
+    }
 }
