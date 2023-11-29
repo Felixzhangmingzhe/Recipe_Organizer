@@ -1,6 +1,10 @@
 package view;
 
+import interface_adapter.Back.BackController;
+import interface_adapter.Back.BackViewModel;
+
 import javax.swing.*;
+import javax.swing.text.View;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,8 +16,14 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
     private final JButton cancelButton;
     private final JTextField recipeNameField;
     private final JTextArea recipeContentArea;
+    public String viewName = "edit recipe";
+    // Use Case: Back
+    private BackController backController;
+    private BackViewModel backViewModel;
 
-    public EditRecipeView() {
+    public EditRecipeView(BackController backController, BackViewModel backViewModel) {
+        this.backController = backController;
+        this.backViewModel = backViewModel;
         // 初始化界面元素
         JLabel titleLabel = new JLabel("Edit Recipe");
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -21,7 +31,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
         recipeNameField = new JTextField();
         recipeContentArea = new JTextArea();
         saveButton = new JButton("Save");
-        cancelButton = new JButton("Cancel");
+        cancelButton = new JButton("Back");
 
         // 设置布局
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -37,7 +47,18 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
 
         // 添加事件监听器
         saveButton.addActionListener(this);
-        cancelButton.addActionListener(this);
+        cancelButton.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(cancelButton)) {
+                        }
+                        // 处理取消按钮点击事件，可能需要关闭编辑界面
+                        // 执行取消逻辑...
+                        backController.execute();
+                    }
+                }
+        );
     }
 
     public void addSaveButtonListener(ActionListener listener) {

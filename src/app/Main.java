@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import data_access.FileRecipeDataAccessObject;
 import entity.*;
 // 引入各个用例的ViewModel
+import interface_adapter.Back.BackViewModel;
+import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
 import interface_adapter.view_warehouse.ViewWarehouseViewModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
 import interface_adapter.view_favorites.ViewFavoritesViewModel;
@@ -32,12 +34,14 @@ public class Main {
         ViewWarehouseViewModel viewWarehouseViewModel = new ViewWarehouseViewModel();
         ViewFavoritesViewModel viewFavoritesViewModel = new ViewFavoritesViewModel();
         ViewRecipeViewModel viewRecipeViewModel = new ViewRecipeViewModel();
+        OpenCreateRecipeViewModel openCreateRecipeViewModel = new OpenCreateRecipeViewModel();
+        BackViewModel backViewModel = new BackViewModel();
         // 为基于文件的用户数据访问初始化 UserDataAccessObject:
         FileRecipeDataAccessObject DAO = new FileRecipeDataAccessObject("recipes.json");
         FileRecipeDataAccessObject viewRecipeDAO = new FileRecipeDataAccessObject("recipes.json");
         FileRecipeDataAccessObject warehouseDAO = new FileRecipeDataAccessObject("recipes.json");
         // 创建并将视图添加到主面板:主视图
-        MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, DAO,viewRecipeViewModel);
+        MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, openCreateRecipeViewModel,DAO,viewRecipeViewModel);
         views.add(mainView, mainView.viewName);
         // 设置初始活动视图并使应用程序可见:
         viewManagerModel.setActiveView(mainView.viewName);
@@ -52,12 +56,14 @@ public class Main {
         FileRecipeDataAccessObject prDAO = new FileRecipeDataAccessObject("recipes.json");
         recipePresetter.presetData(prDAO);
         // 创建并将视图添加到主面板:仓库视图
-        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, warehouseDAO);
+        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, warehouseDAO,backViewModel);
         views.add(warehouseView, warehouseView.viewName);
         // viewManagerModel.setActiveView(warehouseView.viewName);//这样写，还是什么都没显示，说明就是warehouseView的问题
         // viewManagerModel.firePropertyChanged();
         // 创建并将视图添加到主面板:收藏夹视图
-
+        // 创建并将视图添加到主面板:编辑菜谱视图
+        EditRecipeView editRecipeView = EditRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel);
+        views.add(editRecipeView, editRecipeView.viewName);
 
     }
 // 之前写的main被我删了重写了一个

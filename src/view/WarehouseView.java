@@ -2,6 +2,7 @@ package view;
 
 import entity.Recipe;
 import entity.RecipeFactory;
+import interface_adapter.Back.BackController;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.view_recipe.ViewRecipeController;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
@@ -28,15 +29,24 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
     private final ViewRecipeController viewRecipeController;
     JList<String> RecipeList; // 创建菜谱列表
     JButton back; // 创建菜谱按钮
+    private final ViewRecipeViewModel viewRecipeViewModel;
+
+    private final BackController backController;
+    private final ViewManagerModel viewManagerModel;
 
     public WarehouseView(ViewRecipeController viewRecipeController, ViewRecipeViewModel viewRecipeViewModel,
+                         BackController backController,
                          ViewManagerModel viewManagerModel) {
         JLabel title = new JLabel("Recipe Warehouse");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-
-
+        this.viewRecipeViewModel = viewRecipeViewModel;
         this.viewRecipeController = viewRecipeController;
+        this.backController = backController;
+        this.viewManagerModel = viewManagerModel;
+
+
+
         JPanel WarehousePanel = new JPanel();
         WarehousePanel.setLayout(new BorderLayout());
         WarehousePanel.setPreferredSize(new Dimension(600, 400));
@@ -112,8 +122,16 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
             e.printStackTrace();
             System.out.println("Failed to read recipes.json");
         }
-        back = new JButton("Return");
+        back = new JButton("Back");
         WarehousePanel.add(back, BorderLayout.SOUTH);
+        back.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource().equals(back)) {
+                    backController.execute()
+                    ;
+                }
+            }
+        });
         this.add(WarehousePanel);
     }
 
