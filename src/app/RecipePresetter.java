@@ -20,9 +20,10 @@ public class RecipePresetter implements DataPresetter{
                 "Spaghetti Bolognese",
                 "Cook the spaghetti. Cook the ground beef. Mix them together.",
                 date,
-                false
+                false,
+                1000
         );
-        dao.addRecipe(newRecipe);
+        if (!dao.existsJudgingbyId(newRecipe.getId())){dao.addRecipe(newRecipe);}
 
         // Adding more recipes for pre-setting data
         Recipe pastaRecipe = recipeFactory.create(
@@ -30,18 +31,20 @@ public class RecipePresetter implements DataPresetter{
                 "Pasta Carbonara",
                 "Boil the pasta. Mix eggs, cheese, and bacon. Combine with pasta.",
                 date,
-                false
+                false,
+                1200
         );
-        dao.addRecipe(pastaRecipe);
+        if (!dao.existsJudgingbyId(pastaRecipe.getId())){dao.addRecipe(pastaRecipe);}
 
         Recipe saladRecipe = recipeFactory.create(
                 3,
                 "Caesar Salad",
                 "Chop lettuce. Add croutons, parmesan, and dressing. Toss well.",
                 date,
-                true
+                true,
+                800
         );
-        dao.addRecipe(saladRecipe);
+        if (!dao.existsJudgingbyId(saladRecipe.getId())) {dao.addRecipe(saladRecipe);}
     }
     // 这里可以使用api来获取一些网络上的菜谱，然后添加到数据库中
 }

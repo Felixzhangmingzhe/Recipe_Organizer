@@ -2,7 +2,10 @@ package view;
 
 import entity.Recipe;
 import entity.RecipeFactory;
+import interface_adapter.Back.BackController;
+import interface_adapter.ViewManagerModel;
 import interface_adapter.view_recipe.ViewRecipeController;
+import interface_adapter.view_recipe.ViewRecipeViewModel;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -21,13 +24,30 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class WarehouseView extends JPanel implements ActionListener, PropertyChangeListener {
-    JPanel WarehousePanel; // 创建总仓库面板，显示所有菜谱
+    public static final String viewName = "Warehouse View";
+
     private final ViewRecipeController viewRecipeController;
     JList<String> RecipeList; // 创建菜谱列表
+    JButton back; // 创建菜谱按钮
+    private final ViewRecipeViewModel viewRecipeViewModel;
 
-    public WarehouseView(ViewRecipeController viewRecipeController) {
+    private final BackController backController;
+    private final ViewManagerModel viewManagerModel;
+
+    public WarehouseView(ViewRecipeController viewRecipeController, ViewRecipeViewModel viewRecipeViewModel,
+                         BackController backController,
+                         ViewManagerModel viewManagerModel) {
+        JLabel title = new JLabel("Recipe Warehouse");
+        title.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        this.viewRecipeViewModel = viewRecipeViewModel;
         this.viewRecipeController = viewRecipeController;
-        WarehousePanel = new JPanel();
+        this.backController = backController;
+        this.viewManagerModel = viewManagerModel;
+
+
+
+        JPanel WarehousePanel = new JPanel();
         WarehousePanel.setLayout(new BorderLayout());
         WarehousePanel.setPreferredSize(new Dimension(600, 400));
         WarehousePanel.setBackground(Color.WHITE);
@@ -35,21 +55,18 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
         WarehousePanel.setVisible(true);
 
         // 读取并显示菜谱列表
-        readAndDisplayRecipeList();
-    }
-
-    private void readAndDisplayRecipeList() {
         try {
             // 从 JSON 文件中读取菜单数据
             String jsonFilePath = "recipes.json"; // 假设文件名为 recipes.json
             JSONArray recipesArray = readJsonFile(jsonFilePath);
 
             // 将菜单数据添加到 JList
-            DefaultListModel<String> titleList = new DefaultListModel<>();
+            DefaultListModel titleList = new DefaultListModel<>();
             DefaultListModel<Integer> idList = new DefaultListModel<>();
             DefaultListModel<String> contentList = new DefaultListModel<>();
             DefaultListModel< LocalDateTime > dateList = new DefaultListModel<>();
             DefaultListModel<Boolean> isFavoriteList = new DefaultListModel<>();
+            DefaultListModel<Double> caloriesList = new DefaultListModel<>();
             DefaultListModel<Recipe> recipeList = new DefaultListModel<>();
             for (int i = 0; i < recipesArray.length(); i++) {
                 JSONObject recipeObject = recipesArray.getJSONObject(i);
@@ -58,8 +75,9 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
                 String recipeContent = recipeObject.getString("content");
                 LocalDateTime recipeDate = LocalDateTime.parse(recipeObject.getString("date"));
                 Boolean recipeIsFavorite = recipeObject.getBoolean("isFavorite");
+                double recipeCalories = recipeObject.getDouble("calories");
                 RecipeFactory recipeFactory = new RecipeFactory();
-                Recipe recipe = recipeFactory.create(recipeId, recipeTitle, recipeContent, recipeDate, recipeIsFavorite);
+                Recipe recipe = recipeFactory.create(recipeId, recipeTitle, recipeContent, recipeDate, recipeIsFavorite, recipeCalories);
 
                 // 将菜谱数据添加到 JList
                 titleList.addElement(recipeTitle);
@@ -67,13 +85,24 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
                 contentList.addElement(recipeContent);
                 dateList.addElement(recipeDate);
                 isFavoriteList.addElement(recipeIsFavorite);
+                caloriesList.addElement(recipeCalories);
                 recipeList.addElement(recipe);
 
             }
-
+            System.out.println("recipeList: " + titleList);//说明有
             RecipeList = new JList<>(titleList);
 
             // 为 JList 添加鼠标点击事件监听器
+
+
+            // 创建带有滚动条的滚动面板
+            JScrollPane scrollPane = new JScrollPane(RecipeList);
+            scrollPane.setPreferredSize(new Dimension(600, 400));
+            scrollPane.setBackground(Color.WHITE);
+            scrollPane.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+            scrollPane.setVisible(true);
+            // 将滚动面板添加到主窗体的中央区域
+            WarehousePanel.add(scrollPane);
             RecipeList.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
@@ -89,16 +118,23 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
                 }
             });
 
-            // 创建带有滚动条的滚动面板
-            JScrollPane scrollPane = new JScrollPane(RecipeList);
-
-            // 将滚动面板添加到主窗体的中央区域
-            WarehousePanel.add(scrollPane, BorderLayout.CENTER);
-
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Failed to read recipes.json");
         }
+        back = new JButton("Back");
+        WarehousePanel.add(back, BorderLayout.SOUTH);
+        back.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource().equals(back)) {
+                    backController.execute()
+                    ;
+                }
+            }
+        });
+        this.add(WarehousePanel);
     }
+
 
     private JSONArray readJsonFile(String filePath) throws IOException {
         File file = new File(filePath);
@@ -115,8 +151,9 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
         return new JSONArray(content.toString());
     }
 
-    public JPanel getWarehousePanel() {
-        return WarehousePanel;
+
+    public static String getViewName() {
+        return viewName;
     }
 
     @Override
@@ -128,3 +165,4 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
     public void propertyChange(PropertyChangeEvent evt) {
     }
 }
+// 弹出窗口

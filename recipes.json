@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2021-01-01T00:00",
+    "id": 1,
+    "calories": 1000,
+    "title": "Spaghetti Bolognese",
+    "content": "Cook the spaghetti. Cook the ground beef. Mix them together.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 2,
+    "calories": 1200,
+    "title": "Pasta Carbonara",
+    "content": "Boil the pasta. Mix eggs, cheese, and bacon. Combine with pasta.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 3,
+    "calories": 800,
+    "title": "Caesar Salad",
+    "content": "Chop lettuce. Add croutons, parmesan, and dressing. Toss well.",
+    "isFavorite": true
+  }
+]
