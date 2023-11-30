@@ -1,34 +1,38 @@
 package interface_adapter.create_recipe;
 
 import interface_adapter.ViewManagerModel;
+import use_case.create_recipe.CreateRecipeOutputBoundary;
 import use_case.create_recipe.CreateRecipeOutputData;
-import view.ReadRecipeView;
-import view.ViewManager;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
-public class CreateRecipePresenter {
-    private final CreateRecipeViewModel viewModel;
+public class CreateRecipePresenter implements CreateRecipeOutputBoundary {
+    private final CreateRecipeViewModel createRecipeViewModel;
     private final ViewManagerModel viewManagerModel;
-    public CreateRecipePresenter(CreateRecipeViewModel viewModel, ViewManagerModel viewManagerModel) {
-        this.viewModel = viewModel;
+    public CreateRecipePresenter(CreateRecipeViewModel createRecipeViewModel, ViewManagerModel viewManagerModel) {
+        this.createRecipeViewModel = createRecipeViewModel;
         this.viewManagerModel = viewManagerModel;
     }
-    public void prepareSucessView(CreateRecipeOutputData response) {
+    @Override
+    public void prepareSuccessView(CreateRecipeOutputData response) {
         // On success, switch to the login view.
-        CreateRecipeState state = viewModel.getState();
+        CreateRecipeState state = createRecipeViewModel.getState();
         state.setRecipeName(response.getTitle());
         state.setContent(response.getContent());
-        this.viewModel.setState(state);// 等等，他在SignupPresenter里面，为什么要改LoginViewModel的state？
-        viewModel.firePropertyChanged();
-
-        viewManagerModel.setActiveView(viewModel.getViewName());
+        System.out.println(response.getContent());
+        state.setCreatedAt(response.getCreatedAt());
+        state.setCalories(response.getCalories());
+        this.createRecipeViewModel.setState(state);
+        createRecipeViewModel.firePropertyChanged();
+        viewManagerModel.setActiveView(createRecipeViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
+        System.out.println(state.getContent());
+
     }
+    @Override
     public void prepareFailView(String error) {
-        CreateRecipeState state = viewModel.getState();
-        state.setRecipeNameError(error);
-        viewModel.firePropertyChanged();
+        if (error.equals("conflict")) {
+            CreateRecipeState state = createRecipeViewModel.getState();
+            state.setConflictError("Recipe name already exists");
+            createRecipeViewModel.firePropertyChanged();
+        }
     }
 }

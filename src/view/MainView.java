@@ -111,7 +111,6 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
                         ViewWarehouseState currentState = viewWarehouseViewModel.getState();
                         viewWarehouseController.execute();
-                        List<Recipe> recipes = currentState.getRecipes();
                     }
                 }
             }
@@ -170,6 +169,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-
+        System.out.println("MainView is running");
+        JOptionPane.showMessageDialog(this, "MainView: " + evt.getPropertyName() + " " + evt.getNewValue());
     }
 }

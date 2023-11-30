@@ -54,7 +54,7 @@ public class Main {
         MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, openCreateRecipeViewModel,DAO,viewRecipeViewModel);
         mainView.setPreferredSize(new Dimension(800, 600));
         views.add(mainView, mainView.viewName);
-        // 设置初始活动视图并使应用程序可见:
+        // 这四句可以用来在一开始显示view
         viewManagerModel.setActiveView(mainView.viewName);
         viewManagerModel.firePropertyChanged();
 
@@ -67,8 +67,10 @@ public class Main {
         FileRecipeDataAccessObject prDAO = new FileRecipeDataAccessObject("recipes.json");
         recipePresetter.presetData(prDAO);
         // 创建并将视图添加到主面板:仓库视图
-        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, warehouseDAO,backViewModel);
+        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewWarehouseViewModel,viewManagerModel, warehouseDAO,backViewModel);
         views.add(warehouseView, warehouseView.viewName);
+
+
         // viewManagerModel.setActiveView(warehouseView.viewName);//这样写，还是什么都没显示，说明就是warehouseView的问题
         // viewManagerModel.firePropertyChanged();
         // 创建并将视图添加到主面板:收藏夹视图
@@ -78,7 +80,7 @@ public class Main {
         EditRecipeView editRecipeView = EditRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,DAO);
         views.add(editRecipeView, editRecipeView.viewName);
         // 创建并将视图添加到主面板:查看菜谱视图
-        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,viewRecipeDAO);
+        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,viewRecipeDAO);
         views.add(viewRecipeView, viewRecipeView.viewName);
         // 创建并将视图添加到主面板:创建菜谱视图
 

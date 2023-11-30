@@ -2,6 +2,8 @@ package view;
 
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackViewModel;
+import interface_adapter.create_recipe.CreateRecipeState;
+import interface_adapter.create_recipe.CreateRecipeViewModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,9 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.sql.*;
 
-public class ReadRecipeView extends JFrame implements ActionListener, PropertyChangeListener {
+public class ReadRecipeView extends JPanel implements ActionListener, PropertyChangeListener {
 
     public final String viewName = "Read Recipe";
     private final JButton backButton;
@@ -24,17 +25,23 @@ public class ReadRecipeView extends JFrame implements ActionListener, PropertyCh
     private final JTextArea recipeContentTextArea;
     private final JLabel caloriesLabel;
     private final JLabel lastEditTimeLabel;
+    private final CreateRecipeViewModel createRecipeViewModel;
+
     // Use Case: Back
     private BackController backController;
     private BackViewModel backViewModel;
 
-    public ReadRecipeView(BackViewModel backViewModel, BackController backController) {
+    public ReadRecipeView(BackViewModel backViewModel, BackController backController, CreateRecipeViewModel createRecipeViewModel) {
         // Initialize view model and controller
         this.backViewModel = backViewModel;
         this.backController = backController;
+        this.createRecipeViewModel = createRecipeViewModel;
+        this.createRecipeViewModel.addPropertyChangeListener(this);
+
         // Initialize components
         recipeNameLabel = new JLabel("Recipe Name");
         recipeContentTextArea = new JTextArea("Recipe Content");
+        recipeContentTextArea.setEditable(false);
         caloriesLabel = new JLabel("Calories: ");
         lastEditTimeLabel = new JLabel("Last Edited: ");
 
@@ -73,20 +80,19 @@ public class ReadRecipeView extends JFrame implements ActionListener, PropertyCh
         add(buttonPanel, BorderLayout.SOUTH);
     }
 
-
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent evt) {
         // Handle button actions
-        if (e.getSource() == backButton) {
+        if (evt.getSource() == backButton) {
             // Implement action for back button
-            // For example, go back to the previous view
-        } else if (e.getSource() == favoritesButton) {
+            backController.execute();
+        } else if (evt.getSource() == favoritesButton) {
             // Implement action for favorites button
             // For example, add the recipe to favorites
-        } else if (e.getSource() == cookedButton) {
+        } else if (evt.getSource() == cookedButton) {
             // Implement action for cooked button
             // For example, mark the recipe as cooked
-        } else if (e.getSource() == editButton) {
+        } else if (evt.getSource() == editButton) {
             // Implement action for edit button
             // For example, open the edit view for this recipe
         }
@@ -95,31 +101,22 @@ public class ReadRecipeView extends JFrame implements ActionListener, PropertyCh
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         // Update view based on property changes
-        if (evt.getPropertyName().equals("recipeName")) {
-            recipeNameLabel.setText(evt.getNewValue().toString());
-        } else if (evt.getPropertyName().equals("recipeContent")) {
-            recipeContentTextArea.setText(evt.getNewValue().toString());
-        } else if (evt.getPropertyName().equals("calories")) {
-            caloriesLabel.setText("Calories: " + evt.getNewValue().toString());
-        } else if (evt.getPropertyName().equals("lastEditTime")) {
-            lastEditTimeLabel.setText("Last Edited: " + evt.getNewValue().toString());
-        }
+        CreateRecipeState currentState = createRecipeViewModel.getState();
+        getAndDisplay(currentState);
     }
 
-    // Add methods to update the view with recipe information
-    public void setRecipeName(String recipeName) {
-        recipeNameLabel.setText(recipeName);
-    }
+    public void getAndDisplay(CreateRecipeState currentState) {
+        // Update the labels and text area with the recipe information
+        String recipeName = currentState.getRecipeName();
+        String recipeContent = currentState.getContent();
+        String calories = String.valueOf(currentState.getCalories());
+        String lastEditTime = String.valueOf(currentState.getCreatedAt());
 
-    public void setRecipeContent(String recipeContent) {
+        recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);
-    }
-
-    public void setCalories(int calories) {
         caloriesLabel.setText("Calories: " + calories);
-    }
-
-    public void setLastEditTime(String lastEditTime) {
         lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
+
+
     }
 }

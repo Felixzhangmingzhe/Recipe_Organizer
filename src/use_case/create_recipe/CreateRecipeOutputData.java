@@ -1,21 +1,24 @@
 package use_case.create_recipe;
 
+import java.time.LocalDateTime;
+
 public class CreateRecipeOutputData {
-    private final String id;
+    private final int id;
     private final String title;
     private final String content;
     private final boolean isFavorite;
     private final double calories;
-
-    public CreateRecipeOutputData(String id, String title, String content, boolean isFavorite, double calories) {
+    private final LocalDateTime createdAt;
+    public CreateRecipeOutputData(int id, String title, String content, boolean isFavorite, double calories, LocalDateTime createdAt) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.isFavorite = isFavorite;
         this.calories = calories;
+        this.createdAt = createdAt;
 
     }
-    public String getId() {
+    public int getId() {
         return id;
     }
     public String getTitle() {
@@ -29,6 +32,9 @@ public class CreateRecipeOutputData {
     }
     public double getCalories() {
         return calories;
+    }
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
 }
