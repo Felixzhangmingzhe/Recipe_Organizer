@@ -10,7 +10,7 @@ import java.util.List;
 public class ViewFavoritesViewModel extends ViewModel {
     private List<Recipe> recipes;
     public ViewFavoritesViewModel() {
-        super("viewFavoritesViewModel");// 名字怎么命名，命名了有什么用？
+        super("");// 名字怎么命名，命名了有什么用？
     }
 
     public void setRecipes(List<Recipe> recipes) {
