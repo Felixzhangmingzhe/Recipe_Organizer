@@ -169,8 +169,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
 
     @Override
     public void save(Recipe recipe) {
-        writeRecipe(recipe);
-    }//使用writeRecipe方法来填充
+        addRecipe(recipe);
+    }//使用addRecipe方法来填充,这样不会覆盖
 
     @Override
     public int getLastUsedRecipeIdFromDatabase() {

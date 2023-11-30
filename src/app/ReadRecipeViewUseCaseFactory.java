@@ -14,10 +14,11 @@ import view.ReadRecipeView;
 
 public class ReadRecipeViewUseCaseFactory {
     public static ReadRecipeView create(BackViewModel backViewModel, ViewManagerModel viewManagerModel,
+                                        CreateRecipeViewModel createRecipeViewModel,
                                         FileRecipeDataAccessObject dao) {
         BackController backController = createBackController(backViewModel, viewManagerModel);
 
-        return new ReadRecipeView(backViewModel, backController);
+        return new ReadRecipeView(backViewModel, backController,createRecipeViewModel);
     }
     public static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel) {
         BackOutputBoundary backOutputBoundary = new BackPresenter(viewManagerModel, backViewModel);

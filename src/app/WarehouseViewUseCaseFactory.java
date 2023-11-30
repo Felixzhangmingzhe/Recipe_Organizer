@@ -8,6 +8,7 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.view_recipe.ViewRecipeController;
 import interface_adapter.view_recipe.ViewRecipePresenter;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
+import interface_adapter.view_warehouse.ViewWarehouseViewModel;
 import use_case.Back.BackInputBoundary;
 import use_case.Back.BackInteractor;
 import use_case.Back.BackOutputBoundary;
@@ -19,10 +20,10 @@ import use_case.view_warehouse.ViewWarehouseInteractor;
 import view.WarehouseView;
 
 public class WarehouseViewUseCaseFactory {
-    public static WarehouseView create(ViewRecipeViewModel viewRecipeViewModel, ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao,BackViewModel backViewModel) {
+    public static WarehouseView create(ViewRecipeViewModel viewRecipeViewModel, ViewWarehouseViewModel viewWarehouseViewModel,ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao, BackViewModel backViewModel) {
         ViewRecipeController viewRecipeController1 = createViewRecipeController(viewRecipeViewModel, viewManagerModel, dao);
         BackController backController = createBackController(backViewModel, viewManagerModel);
-        return new WarehouseView(viewRecipeController1, viewRecipeViewModel, backController,viewManagerModel);
+        return new WarehouseView(viewRecipeController1, viewRecipeViewModel, backController,viewWarehouseViewModel,viewManagerModel);
     }
 
     private static ViewRecipeController createViewRecipeController(ViewRecipeViewModel viewRecipeViewModel, ViewManagerModel viewWarehouseViewModel, FileRecipeDataAccessObject dao) {

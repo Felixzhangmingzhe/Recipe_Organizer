@@ -7,7 +7,6 @@ import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.create_recipe.CreateRecipeState;
 
 import javax.swing.*;
-import javax.swing.text.View;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -183,6 +182,18 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        // 处理属性变化事件
+        CreateRecipeState currentState = createRecipeViewModel.getState();
+        getAndDisplayCreateRecipeError(currentState);
+    }
+    public void getAndDisplayCreateRecipeError(CreateRecipeState state) {
+        if (state.getRecipeNameError() != null) {
+            JOptionPane.showMessageDialog(this, state.getRecipeNameError());
+        }
+        else if (state.getContentError() != null) {
+            JOptionPane.showMessageDialog(this, state.getContentError());
+        }
+        else if (state.getConflictError() != null) {
+            JOptionPane.showMessageDialog(this, state.getConflictError());
+        }
     }
 }
