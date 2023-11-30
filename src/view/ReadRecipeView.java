@@ -11,9 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.sql.*;
 
-public class ReadRecipeView extends JFrame implements ActionListener, PropertyChangeListener {
+public class ReadRecipeView extends JPanel implements ActionListener, PropertyChangeListener {
 
     public final String viewName = "Read Recipe";
     private final JButton backButton;
@@ -27,6 +26,7 @@ public class ReadRecipeView extends JFrame implements ActionListener, PropertyCh
     private final JLabel caloriesLabel;
     private final JLabel lastEditTimeLabel;
     private final CreateRecipeViewModel createRecipeViewModel;
+
     // Use Case: Back
     private BackController backController;
     private BackViewModel backViewModel;
@@ -37,9 +37,11 @@ public class ReadRecipeView extends JFrame implements ActionListener, PropertyCh
         this.backController = backController;
         this.createRecipeViewModel = createRecipeViewModel;
         this.createRecipeViewModel.addPropertyChangeListener(this);
+
         // Initialize components
         recipeNameLabel = new JLabel("Recipe Name");
         recipeContentTextArea = new JTextArea("Recipe Content");
+        recipeContentTextArea.setEditable(false);
         caloriesLabel = new JLabel("Calories: ");
         lastEditTimeLabel = new JLabel("Last Edited: ");
 
@@ -78,26 +80,43 @@ public class ReadRecipeView extends JFrame implements ActionListener, PropertyCh
         add(buttonPanel, BorderLayout.SOUTH);
     }
 
-
     @Override
     public void actionPerformed(ActionEvent evt) {
-        System.out.println("Click " + evt.getActionCommand());
+        // Handle button actions
+        if (evt.getSource() == backButton) {
+            // Implement action for back button
+            backController.execute();
+        } else if (evt.getSource() == favoritesButton) {
+            // Implement action for favorites button
+            // For example, add the recipe to favorites
+        } else if (evt.getSource() == cookedButton) {
+            // Implement action for cooked button
+            // For example, mark the recipe as cooked
+        } else if (evt.getSource() == editButton) {
+            // Implement action for edit button
+            // For example, open the edit view for this recipe
+        }
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+        // Update view based on property changes
         CreateRecipeState currentState = createRecipeViewModel.getState();
         getAndDisplay(currentState);
     }
+
     public void getAndDisplay(CreateRecipeState currentState) {
+        // Update the labels and text area with the recipe information
         String recipeName = currentState.getRecipeName();
-        String recipeContent = currentState.getRecipeContent();
-        String calories = currentState.getCalories();
-        String lastEditTime = currentState.getLastEditTime();
-        recipeNameLabel.setText(recipeName);
+        String recipeContent = currentState.getContent();
+        String calories = String.valueOf(currentState.getCalories());
+        String lastEditTime = String.valueOf(currentState.getCreatedAt());
+
+        recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);
         caloriesLabel.setText("Calories: " + calories);
         lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
-    }
 
+
+    }
 }

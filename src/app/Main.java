@@ -54,7 +54,7 @@ public class Main {
         MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, openCreateRecipeViewModel,DAO,viewRecipeViewModel);
         mainView.setPreferredSize(new Dimension(800, 600));
         views.add(mainView, mainView.viewName);
-        // 设置初始活动视图并使应用程序可见:
+        // 这四句可以用来在一开始显示view
         viewManagerModel.setActiveView(mainView.viewName);
         viewManagerModel.firePropertyChanged();
 
@@ -69,6 +69,8 @@ public class Main {
         // 创建并将视图添加到主面板:仓库视图
         WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewWarehouseViewModel,viewManagerModel, warehouseDAO,backViewModel);
         views.add(warehouseView, warehouseView.viewName);
+
+
         // viewManagerModel.setActiveView(warehouseView.viewName);//这样写，还是什么都没显示，说明就是warehouseView的问题
         // viewManagerModel.firePropertyChanged();
         // 创建并将视图添加到主面板:收藏夹视图

@@ -183,6 +183,12 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        // 处理属性变化事件
+        CreateRecipeState currentState = createRecipeViewModel.getState();
+        
+    }
+    public getAndDisplayCreateRecipeError() {
+        CreateRecipeState currentState = createRecipeViewModel.getState();
+        currentState.setRecipeNameError(error);
+        createRecipeViewModel.firePropertyChanged();
     }
 }

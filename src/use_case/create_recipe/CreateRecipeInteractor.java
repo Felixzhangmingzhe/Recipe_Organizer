@@ -30,7 +30,9 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
         if (createRecipeInputData.getTitle().equals("")) {
             createRecipePresenter.prepareFailView("Title is empty");
         } else if (createRecipeInputData.getContent().equals("")) {
-            createRecipePresenter.prepareFailView("Content is empty");
+            createRecipePresenter.prepareFailView("Content is empty");}
+        else if (createRecipeUserDataAccessInterface.existsByName(createRecipeInputData.getTitle())) {
+            createRecipePresenter.prepareFailView("Recipe already exists");
         } else {
             int id = getNextRecipeId(); // Implement this method to get the next ID from the database
             LocalDateTime now = LocalDateTime.now();
@@ -38,7 +40,7 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
             Recipe recipe = recipeFactory.create(id, createRecipeInputData.getTitle(), createRecipeInputData.getContent(), now, false,calories);
             createRecipeUserDataAccessInterface.save(recipe);
             // Output the recipe to the view
-            CreateRecipeOutputData createRecipeOutputData = new CreateRecipeOutputData(recipe.getTitle(), recipe.getContent(), recipe.getDate().toString(), recipe.getIsFavorite(), recipe.getCalories());
+            CreateRecipeOutputData createRecipeOutputData = new CreateRecipeOutputData(recipe.getId(),recipe.getTitle(), recipe.getContent(),recipe.getIsFavorite(), recipe.getCalories(), recipe.getDate());
             createRecipePresenter.prepareSuccessView(createRecipeOutputData);// 为啥菜谱会清空？
         }
     }
