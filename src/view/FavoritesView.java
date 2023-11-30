@@ -34,7 +34,8 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
     private final BackController backController;
     private final ViewManagerModel viewManagerModel;
 
-    public FavoritesView(ViewRecipeController viewRecipeController, ViewRecipeViewModel viewRecipeViewModel,
+    public FavoritesView(ViewRecipeController viewRecipeController,
+                         ViewRecipeViewModel viewRecipeViewModel,
                          BackController backController,
                          ViewManagerModel viewManagerModel) {
         JLabel title = new JLabel("Favorite Recipes");
@@ -68,8 +69,11 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
             DefaultListModel<Boolean> isFavoriteList = new DefaultListModel<>();
             DefaultListModel<Double> caloriesList = new DefaultListModel<>();
             DefaultListModel<Recipe> recipeList = new DefaultListModel<>();
+
             for (int i = 0; i < recipesArray.length(); i++) {
+
                 JSONObject recipeObject = recipesArray.getJSONObject(i);
+
                 if (recipeObject.getBoolean("isFavorite") == true) {
                     String recipeTitle = recipeObject.getString("title");
                     Integer recipeId = recipeObject.getInt("id");
