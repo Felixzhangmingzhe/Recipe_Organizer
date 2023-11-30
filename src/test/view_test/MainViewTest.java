@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
 
 public class MainViewTest {
 
+
     private MainView mainView;
 
     // 在每个测试之前执行的设置方法

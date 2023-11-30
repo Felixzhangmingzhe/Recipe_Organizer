@@ -16,6 +16,7 @@ public class ViewManagerTest {
 
     private ViewManager viewManager;
     private JPanel views;
+
     private CardLayout cardLayout;
     private ViewManagerModel stubViewManagerModel;
 
