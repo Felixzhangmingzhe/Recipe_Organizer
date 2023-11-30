@@ -1,5 +1,6 @@
 package interface_adapter.view_favorites;
 
+
 import entity.Recipe;
 import interface_adapter.ViewModel;
 
