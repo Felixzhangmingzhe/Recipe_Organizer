@@ -5,6 +5,7 @@ import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackPresenter;
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.ViewManagerModel;
+import interface_adapter.view_favorites.ViewFavoritesViewModel;
 import interface_adapter.view_recipe.ViewRecipeController;
 import interface_adapter.view_recipe.ViewRecipePresenter;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
@@ -22,10 +23,11 @@ import view.WarehouseView;
 public class FavoritesViewUseCaseFactory {
     public static FavoritesView create(ViewRecipeViewModel viewRecipeViewModel,
                                        ViewManagerModel viewManagerModel,
+                                       ViewFavoritesViewModel viewFavoritesViewModel,
                                        FileRecipeDataAccessObject dao, BackViewModel backViewModel) {
         ViewRecipeController viewRecipeController1 = createViewRecipeController(viewRecipeViewModel, viewManagerModel, dao);
         BackController backController = createBackController(backViewModel, viewManagerModel);
-        return new FavoritesView(viewRecipeController1, viewRecipeViewModel, backController,viewManagerModel);
+        return new FavoritesView(viewRecipeController1, viewRecipeViewModel, backController,viewFavoritesViewModel,viewManagerModel);
     }
 
 
