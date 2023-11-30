@@ -82,6 +82,7 @@ public class Main {
         views.add(viewRecipeView, viewRecipeView.viewName);
         // 创建并将视图添加到主面板:创建菜谱视图
 
+
     }
 // 之前写的main被我删了重写了一个
 }
