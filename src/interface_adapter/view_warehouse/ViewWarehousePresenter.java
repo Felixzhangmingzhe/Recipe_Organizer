@@ -21,7 +21,9 @@ public class ViewWarehousePresenter implements ViewWarehouseOutputBoundary {
     public void prepareSuccessView(ViewWarehouseOutputData viewWarehouseOutputData) {
         ViewWarehouseState viewWarehouseState = viewWarehouseViewModel.getState();
         viewWarehouseState.setRecipes(viewWarehouseOutputData.getRecipes());
+        System.out.println("ViewWarehousePresenter: " + viewWarehouseState.getRecipes().size());// Trace the execution, Ensure this program execute.
         viewWarehouseViewModel.setState(viewWarehouseState);
+        System.out.println("ViewWarehousePresenter model: " + viewWarehouseViewModel.getState().getRecipes().size());// Trace the execution, Ensure this program execute.
         viewWarehouseViewModel.firePropertyChanged();
         viewManagerModel.setActiveView(viewWarehouseViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
