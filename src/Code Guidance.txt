@@ -602,6 +602,10 @@ public class Main {
 
 
 ################# 第三部分：如何写view ##########################
+view要更新怎么办？在实例化函数里写一个        this.loginViewModel = loginViewModel;
+                             this.loginViewModel.addPropertyChangeListener(this);
+                            然后在最后写一个    public void propertyChange(PropertyChangeEvent evt)
+view 不显示怎么办？
 
 
 ################# 第四部分：如何写DataaccessObject ##########################

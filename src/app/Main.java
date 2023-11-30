@@ -67,7 +67,7 @@ public class Main {
         FileRecipeDataAccessObject prDAO = new FileRecipeDataAccessObject("recipes.json");
         recipePresetter.presetData(prDAO);
         // 创建并将视图添加到主面板:仓库视图
-        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, warehouseDAO,backViewModel);
+        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewWarehouseViewModel,viewManagerModel, warehouseDAO,backViewModel);
         views.add(warehouseView, warehouseView.viewName);
         // viewManagerModel.setActiveView(warehouseView.viewName);//这样写，还是什么都没显示，说明就是warehouseView的问题
         // viewManagerModel.firePropertyChanged();

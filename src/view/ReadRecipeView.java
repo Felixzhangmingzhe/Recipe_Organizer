@@ -2,6 +2,7 @@ package view;
 
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackViewModel;
+import interface_adapter.create_recipe.CreateRecipeViewModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,14 +25,17 @@ public class ReadRecipeView extends JFrame implements ActionListener, PropertyCh
     private final JTextArea recipeContentTextArea;
     private final JLabel caloriesLabel;
     private final JLabel lastEditTimeLabel;
+    private final CreateRecipeViewModel createRecipeViewModel;
     // Use Case: Back
     private BackController backController;
     private BackViewModel backViewModel;
 
-    public ReadRecipeView(BackViewModel backViewModel, BackController backController) {
+    public ReadRecipeView(BackViewModel backViewModel, BackController backController, CreateRecipeViewModel createRecipeViewModel) {
         // Initialize view model and controller
         this.backViewModel = backViewModel;
         this.backController = backController;
+        this.createRecipeViewModel = createRecipeViewModel;
+        this.createRecipeViewModel.addPropertyChangeListener(this);
         // Initialize components
         recipeNameLabel = new JLabel("Recipe Name");
         recipeContentTextArea = new JTextArea("Recipe Content");
