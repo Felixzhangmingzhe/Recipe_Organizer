@@ -31,4 +31,5 @@ public class FavoritesViewTest {
     // 测试 showTotalFavorites 和 showSingleFolder 方法
     // 这里的测试可能需要根据实际的 GUI 行为进行调整
     // 由于这些方法涉及到显示 JFrame，可能需要特定的策略来测试 GUI 行为
+
 }

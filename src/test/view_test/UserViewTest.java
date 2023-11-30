@@ -7,4 +7,5 @@ import static org.junit.Assert.*;
 public class UserViewTest {
 
     //这玩意我们真的要吗我们好像都没有UserView
+
 }

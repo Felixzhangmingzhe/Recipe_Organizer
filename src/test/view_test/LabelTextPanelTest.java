@@ -8,4 +8,5 @@ public class LabelTextPanelTest {
 
     //这个应该存在test吗
 
+
 }
