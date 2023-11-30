@@ -1,25 +1,21 @@
 package interface_adapter.view_recipe;
 
-import interface_adapter.ViewManagerModel;
-import interface_adapter.ViewModel;
 import use_case.view_recipe.ViewRecipeOutputBoundary;
 import use_case.view_recipe.ViewRecipeOutputData;
 
-public class ViewRecipePresenter implements ViewRecipeOutputBoundary {
-    private final ViewRecipeViewModel viewRecipeViewModel;
-    private final ViewManagerModel viewManagerModel;
+import javax.swing.text.View;
 
-    public ViewRecipePresenter(ViewRecipeViewModel viewRecipeViewModel,
-                               ViewManagerModel viewManagerModel) {
-        this.viewRecipeViewModel = viewRecipeViewModel;
-        this.viewManagerModel = viewManagerModel;
+public class ViewRecipePresenter implements ViewRecipeOutputBoundary {
+    private final View view;
+
+    public ViewRecipePresenter(View view) {
+        this.view = view;
     }
+
     @Override
-    public void prepareSuccessView(ViewRecipeOutputData response) {
-        viewRecipeViewModel.setRecipe(response.getRecipe());
-        viewRecipeViewModel.firePropertyChanged();
-        viewManagerModel.setActiveView(viewRecipeViewModel.getViewName());
-        viewManagerModel.firePropertyChanged();
+    public void presentRecipe(ViewRecipeOutputData outputData) {
+        RecipeViewModel viewModel = new RecipeViewModel(outputData.getRecipe());
+        view.displayRecipeDetails(viewModel);
     }
 }
 
