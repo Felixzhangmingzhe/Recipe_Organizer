@@ -155,6 +155,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-
+        System.out.println("MainView is running");
+        JOptionPane.showMessageDialog(this, "MainView: " + evt.getPropertyName() + " " + evt.getNewValue());
     }
 }
