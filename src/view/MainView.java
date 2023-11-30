@@ -96,6 +96,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
                         ViewWarehouseState currentState = viewWarehouseViewModel.getState();
                         viewWarehouseController.execute();
+                        List<Recipe> recipes = currentState.getRecipes();
                     }
                 }
             }
@@ -120,7 +121,6 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                 public void actionPerformed(ActionEvent e) {
                     if (e.getSource().equals(favorites)) {
                         viewFavoritesController.execute();
-                        List< Recipe > recipes = viewFavoritesViewModel.getRecipes();
                         // 接下来，把recipes展示出来
                         // 目前
                     }

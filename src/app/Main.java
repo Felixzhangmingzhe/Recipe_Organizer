@@ -72,12 +72,16 @@ public class Main {
         // viewManagerModel.setActiveView(warehouseView.viewName);//这样写，还是什么都没显示，说明就是warehouseView的问题
         // viewManagerModel.firePropertyChanged();
         // 创建并将视图添加到主面板:收藏夹视图
+        FavoritesView favoritesView = FavoritesViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, warehouseDAO,backViewModel);
+        views.add(favoritesView, favoritesView.viewName);
         // 创建并将视图添加到主面板:编辑菜谱视图
         EditRecipeView editRecipeView = EditRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,DAO);
         views.add(editRecipeView, editRecipeView.viewName);
         // 创建并将视图添加到主面板:查看菜谱视图
-        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,warehouseDAO);
+        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,viewRecipeDAO);
         views.add(viewRecipeView, viewRecipeView.viewName);
+        // 创建并将视图添加到主面板:创建菜谱视图
+
     }
 // 之前写的main被我删了重写了一个
 }
