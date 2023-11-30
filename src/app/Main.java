@@ -77,7 +77,7 @@ public class Main {
         views.add(editRecipeView, editRecipeView.viewName);
         // 创建并将视图添加到主面板:查看菜谱视图
         ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,viewRecipeDAO);
-
+        views.add(viewRecipeView, viewRecipeView.viewName);
     }
 // 之前写的main被我删了重写了一个
 }

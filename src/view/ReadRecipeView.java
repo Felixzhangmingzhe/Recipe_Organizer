@@ -13,7 +13,7 @@ import java.sql.*;
 
 public class ReadRecipeView extends JFrame implements ActionListener, PropertyChangeListener {
 
-    private final String viewName = "Read Recipe";
+    public final String viewName = "Read Recipe";
     private final JButton backButton;
     private final JButton favoritesButton;
     private final JButton cookedButton;

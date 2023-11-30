@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="fasterxml.jackson.datatype.json" type="repository">
+    <properties maven-id="com.fasterxml.jackson:jackson-datatype-json-org:1.8.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/jackson-datatype-json-org/1.8.0/jackson-datatype-json-org-1.8.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-asl/1.8.6/jackson-mapper-asl-1.8.6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-asl/1.8.6/jackson-core-asl-1.8.6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/json/json/20090211/json-20090211.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
