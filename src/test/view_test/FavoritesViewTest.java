@@ -17,6 +17,7 @@ public class FavoritesViewTest {
     }
 
     @Test
+
     public void testTotalFavoritesPanelNotNull() {
         // 检查 TotalFavoritesPanel 是否被正确初始化
         assertNotNull("TotalFavoritesPanel 不应为 null", favoritesView.getTotalfavoritesPanel());

@@ -4,12 +4,11 @@ import entity.Recipe;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
-import use_case.view_favorites.ViewFavoritesUserDataAccessInterface;
-
+import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
+import use_case.view_favorites.ViewFavoritesDataAccessInterface;
 import use_case.add_to_favorites.AddToFavoritesDataAccessInterface;
 import use_case.view_recipe.ViewRecipeDataAccessInterface;
-
-
+import use_case.view_warehouse.ViewWarehouseDataAccessInterface;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,10 +16,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesUserDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface {
-
-
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface, OpenCreateRecipeDataAccessInterface {
     private String filePath;
 
     public FileRecipeDataAccessObject(String filePath) {
@@ -100,16 +96,19 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         int id = jsonRecipe.getInt("id");
         String content = jsonRecipe.getString("content");
         LocalDateTime date = LocalDateTime.parse(jsonRecipe.getString("date"));
-        boolean isFavorite = jsonRecipe.getBoolean("isFavorite");
-        return new Recipe(id, title, content, date, isFavorite);
+        boolean isFavorite = jsonRecipe.optBoolean("isFavorite");
+        double calories = jsonRecipe.optDouble("calories");
+        return new Recipe(id, title, content, date, isFavorite,calories);
     }
-
+    // 下面的是写入的代码，但是当改变Recipe的属性时，上面的会报错，但下面的这个不报错，得自己加，注意啦！
     private JSONObject createJsonRecipe(Recipe recipe) {
         JSONObject jsonRecipe = new JSONObject();
         jsonRecipe.put("id", recipe.getId());
         jsonRecipe.put("title", recipe.getTitle());
         jsonRecipe.put("content", recipe.getContent());
         jsonRecipe.put("date", recipe.getDate().toString());// 这里时间变成了字符串
+        jsonRecipe.put("isFavorite", recipe.getIsFavorite());
+        jsonRecipe.put("calories", recipe.getCalories());
         return jsonRecipe;
     }
 
@@ -122,7 +121,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                 "Spaghetti Bolognese",
                 "Cook the spaghetti. Cook the ground beef. Mix them together.",
                 Date,
-                false
+                false,
+                100
         );
         dao.addRecipe(newRecipe);
 
@@ -176,7 +176,6 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     public int getLastUsedRecipeIdFromDatabase() {
         return getLastUsedRecipeId();
     }
-
     @Override
     public Recipe getRecipeById(int recipeId) {
         List<Recipe> recipes = readRecipes();
@@ -186,6 +185,15 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
             }
         }
         return null;//如果没有找到，返回null,是这样吗，还是返回一个error String
+    }
 
+    @Override
+    public List<Recipe> getFavorites() {
+        return readRecipesInFavorites();
+    }
+
+    @Override
+    public List<Recipe> getAllRecipe() {
+        return readRecipes();
     }
 }

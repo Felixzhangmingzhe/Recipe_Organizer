@@ -27,6 +27,7 @@ public class WarehouseViewTest {
         warehouseView = new WarehouseView(mockViewRecipeController);
     }
 
+
     @Test
     public void testWarehousePanelNotNull() {
         // 测试 WarehousePanel 是否正确初始化

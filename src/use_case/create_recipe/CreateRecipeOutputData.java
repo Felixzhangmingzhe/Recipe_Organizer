@@ -4,12 +4,16 @@ public class CreateRecipeOutputData {
     private final String id;
     private final String title;
     private final String content;
-    private boolean useCaseFailed;
-    public CreateRecipeOutputData(String id, String title, String content, boolean useCaseFailed) {
+    private final boolean isFavorite;
+    private final double calories;
+
+    public CreateRecipeOutputData(String id, String title, String content, boolean isFavorite, double calories) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.useCaseFailed = useCaseFailed;
+        this.isFavorite = isFavorite;
+        this.calories = calories;
+
     }
     public String getId() {
         return id;
@@ -20,4 +24,11 @@ public class CreateRecipeOutputData {
     public String getContent() {
         return content;
     }
+    public boolean getisFavorite() {
+        return isFavorite;
+    }
+    public double getCalories() {
+        return calories;
+    }
+
 }

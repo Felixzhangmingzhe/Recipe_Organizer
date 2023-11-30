@@ -14,4 +14,6 @@ public class CreateRecipeController {
         CreateRecipeInputData createRecipeInputData = new CreateRecipeInputData(title, content);
         createRecipeUseCaseInteractor.execute(createRecipeInputData);
     }
+
+
 }

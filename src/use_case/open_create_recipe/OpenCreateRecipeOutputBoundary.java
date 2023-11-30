@@ -1,4 +1,5 @@
 package use_case.open_create_recipe;
 
-public class OpenCreateRecipeOutputBoundary {
+public interface OpenCreateRecipeOutputBoundary {
+    void prepareSuccessView();
 }
