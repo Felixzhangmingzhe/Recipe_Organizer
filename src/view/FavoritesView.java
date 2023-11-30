@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class FavoritesView extends JPanel implements ActionListener, PropertyChangeListener {
-    public static final String viewName = "Warehouse View";
+    public static final String viewName = "Favorites";
 
     private final ViewRecipeController viewRecipeController;
     JList<String> RecipeList; // 创建菜谱列表
@@ -69,9 +69,8 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
             DefaultListModel<Double> caloriesList = new DefaultListModel<>();
             DefaultListModel<Recipe> recipeList = new DefaultListModel<>();
             for (int i = 0; i < recipesArray.length(); i++) {
-                JSONObject recipeObject = null;
+                JSONObject recipeObject = recipesArray.getJSONObject(i);
                 if (recipeObject.getBoolean("isFavorite") == true) {
-                    recipeObject = recipesArray.getJSONObject(i);
                     String recipeTitle = recipeObject.getString("title");
                     Integer recipeId = recipeObject.getInt("id");
                     String recipeContent = recipeObject.getString("content");
