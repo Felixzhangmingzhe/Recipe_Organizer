@@ -6,6 +6,7 @@ import interface_adapter.Back.BackController;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.view_recipe.ViewRecipeController;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
+import interface_adapter.view_warehouse.ViewWarehouseState;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -22,6 +23,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class WarehouseView extends JPanel implements ActionListener, PropertyChangeListener {
     public static final String viewName = "Warehouse View";
@@ -46,14 +48,34 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
         this.viewManagerModel = viewManagerModel;
 
 
-
         JPanel WarehousePanel = new JPanel();
         WarehousePanel.setLayout(new BorderLayout());
         WarehousePanel.setPreferredSize(new Dimension(600, 400));
         WarehousePanel.setBackground(Color.WHITE);
         WarehousePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         WarehousePanel.setVisible(true);
+        // Display the recipe list
+        display(WarehousePanel);
 
+
+
+
+
+        // Create a button to go back to the main menu
+        back = new JButton("Back");
+        WarehousePanel.add(back, BorderLayout.SOUTH);
+        back.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource().equals(back)) {
+                    backController.execute()
+                    ;
+                }
+            }
+        });
+        this.add(WarehousePanel);
+    }
+
+    public void display(JPanel WarehousePanel) {
         // 读取并显示菜谱列表
         try {
             // 从 JSON 文件中读取菜单数据
@@ -122,17 +144,6 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
             e.printStackTrace();
             System.out.println("Failed to read recipes.json");
         }
-        back = new JButton("Back");
-        WarehousePanel.add(back, BorderLayout.SOUTH);
-        back.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(e.getSource().equals(back)) {
-                    backController.execute()
-                    ;
-                }
-            }
-        });
-        this.add(WarehousePanel);
     }
 
 
@@ -163,6 +174,10 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+    }
+    private void getDataAndDisplay(ViewWarehouseState state) {
+        List<Recipe> recipes = state.getRecipes();
+
     }
 }
 // 弹出窗口
