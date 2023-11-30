@@ -1,6 +1,5 @@
 package view;
 
-import data_access.FileRecipeDataAccessObject;
 import entity.Recipe;
 
 import javax.swing.*;
@@ -10,13 +9,12 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.List;
-import java.util.concurrent.Executor;
 // Use Case:View Warehouse
 import interface_adapter.ViewManagerModel;
-import interface_adapter.create_recipe.CreateRecipeController;
-import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeController;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
+import interface_adapter.view_search.ViewSearchController;
+import interface_adapter.view_search.ViewSearchViewModel;
 import interface_adapter.view_warehouse.*;
 // Use Case:View Favorites
 import interface_adapter.view_favorites.*;
@@ -27,6 +25,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final JButton favorites;
     private final JButton exit;
     private final JButton allRecipes;
+    private final JButton search;
     // Use Case:View Warehouse
     private final ViewWarehouseController viewWarehouseController;
     private final ViewWarehouseViewModel viewWarehouseViewModel;
@@ -39,6 +38,10 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final OpenCreateRecipeViewModel openCreateRecipeViewModel;
     private final OpenCreateRecipeController openCreateRecipeController;
 
+    // Use Case:View Search
+    private final ViewSearchController viewSearchController;
+    private final ViewSearchViewModel viewSearchViewModel;
+
 
 
 
@@ -47,7 +50,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     public MainView(ViewWarehouseController viewWarehouseController, ViewWarehouseViewModel viewWarehouseViewModel,
                     ViewFavoritesController viewFavoritesController, ViewFavoritesViewModel viewFavoritesViewModel,
                     OpenCreateRecipeViewModel openCreateRecipeViewModel, OpenCreateRecipeController openCreateRecipeController,
-                    ViewManagerModel viewManagerModel) {
+                    ViewManagerModel viewManagerModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel) {
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
@@ -61,6 +64,9 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         // // 初始化OpenCreateRecipe有关
         this.openCreateRecipeViewModel = openCreateRecipeViewModel;
         this.openCreateRecipeController = openCreateRecipeController;
+        // // 初始化ViewSearch有关
+        this.viewSearchViewModel = viewSearchViewModel;
+        this.viewSearchController = viewSearchController;
 
 
 
@@ -78,6 +84,8 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         buttons.add(allRecipes);
         dailySpecial = new JButton("Daily Recipe");
         buttons.add(dailySpecial);
+        search = new JButton("Search");
+        buttons.add(search);
 
 
 
