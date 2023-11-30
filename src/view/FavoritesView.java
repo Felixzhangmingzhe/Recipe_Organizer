@@ -1,13 +1,12 @@
 package view;
 
 import entity.Recipe;
-import entity.RecipeFactory;
 import interface_adapter.Back.BackController;
 import interface_adapter.ViewManagerModel;
+import interface_adapter.view_favorites.ViewFavoritesViewModel;
 import interface_adapter.view_recipe.ViewRecipeController;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 
 import javax.swing.*;
@@ -22,21 +21,26 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class FavoritesView extends JPanel implements ActionListener, PropertyChangeListener {
     public static final String viewName = "Favorites";
 
     private final ViewRecipeController viewRecipeController;
     JList<String> RecipeList; // 创建菜谱列表
+    private List<Recipe> favoriteRecipes;
+    JPanel FavoritesPanel = new JPanel();
     JButton back; // 创建菜谱按钮
     private final ViewRecipeViewModel viewRecipeViewModel;
 
     private final BackController backController;
     private final ViewManagerModel viewManagerModel;
+    private final ViewFavoritesViewModel viewFavoritesViewModel;
 
     public FavoritesView(ViewRecipeController viewRecipeController,
                          ViewRecipeViewModel viewRecipeViewModel,
                          BackController backController,
+                         ViewFavoritesViewModel viewFavoritesViewModel,
                          ViewManagerModel viewManagerModel) {
         JLabel title = new JLabel("Favorite Recipes");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -45,59 +49,52 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
         this.viewRecipeController = viewRecipeController;
         this.backController = backController;
         this.viewManagerModel = viewManagerModel;
+        this.viewRecipeViewModel.addPropertyChangeListener(this);
+        this.viewFavoritesViewModel = viewFavoritesViewModel;
+        this.viewFavoritesViewModel.addPropertyChangeListener(this);
 
 
 
-        JPanel FavoritesPanel = new JPanel();
+        // 初始化界面元素
         FavoritesPanel.setLayout(new BorderLayout());
         FavoritesPanel.setPreferredSize(new Dimension(600, 400));
         FavoritesPanel.setBackground(Color.WHITE);
         FavoritesPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         FavoritesPanel.setVisible(true);
 
-        // 读取并显示菜谱列表
-        try {
-            // 从 JSON 文件中读取菜单数据
-            String jsonFilePath = "recipes.json"; // 假设文件名为 recipes.json
-            JSONArray recipesArray = readJsonFile(jsonFilePath);
+        // 初始化 RecipeList
+        RecipeList = new JList<>();
+        RecipeList.setModel(new DefaultListModel<>());
 
-            // 将菜单数据添加到 JList
+        // Display the recipe list
+
+        if (favoriteRecipes != null) {
             DefaultListModel titleList = new DefaultListModel<>();
             DefaultListModel<Integer> idList = new DefaultListModel<>();
             DefaultListModel<String> contentList = new DefaultListModel<>();
-            DefaultListModel< LocalDateTime > dateList = new DefaultListModel<>();
+            DefaultListModel<LocalDateTime> dateList = new DefaultListModel<>();
             DefaultListModel<Boolean> isFavoriteList = new DefaultListModel<>();
             DefaultListModel<Double> caloriesList = new DefaultListModel<>();
             DefaultListModel<Recipe> recipeList = new DefaultListModel<>();
+            for (Recipe recipe: favoriteRecipes) {
+                String recipeTitle = recipe.getTitle();
+                Integer recipeId = recipe.getId();
+                String recipeContent = recipe.getContent();
+                LocalDateTime recipeDate = recipe.getDate();
+                Boolean recipeIsFavorite = recipe.getIsFavorite();
+                double recipeCalories = recipe.getCalories();
 
-            for (int i = 0; i < recipesArray.length(); i++) {
-
-                JSONObject recipeObject = recipesArray.getJSONObject(i);
-
-                if (recipeObject.getBoolean("isFavorite") == true) {
-                    String recipeTitle = recipeObject.getString("title");
-                    Integer recipeId = recipeObject.getInt("id");
-                    String recipeContent = recipeObject.getString("content");
-                    LocalDateTime recipeDate = LocalDateTime.parse(recipeObject.getString("date"));
-                    Boolean recipeIsFavorite = recipeObject.getBoolean("isFavorite");
-                    double recipeCalories = recipeObject.getDouble("calories");
-                    RecipeFactory recipeFactory = new RecipeFactory();
-                    Recipe recipe = recipeFactory.create(recipeId, recipeTitle, recipeContent, recipeDate, recipeIsFavorite, recipeCalories);
-                    // 将菜谱数据添加到 JList
-                    titleList.addElement(recipeTitle);
-                    idList.addElement(recipeId);
-                    contentList.addElement(recipeContent);
-                    dateList.addElement(recipeDate);
-                    isFavoriteList.addElement(recipeIsFavorite);
-                    caloriesList.addElement(recipeCalories);
-                    recipeList.addElement(recipe);
-                }
-
-
+                // 将菜谱数据添加到 JList
+                titleList.addElement(recipeTitle);
+                idList.addElement(recipeId);
+                contentList.addElement(recipeContent);
+                dateList.addElement(recipeDate);
+                isFavoriteList.addElement(recipeIsFavorite);
+                caloriesList.addElement(recipeCalories);
+                recipeList.addElement(recipe);
             }
             System.out.println("recipeList: " + titleList);//说明有
             RecipeList = new JList<>(titleList);
-
             // 为 JList 添加鼠标点击事件监听器
 
 
@@ -115,7 +112,7 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
                     if (e.getClickCount() == 1) { // 处理单击事件
                         int selectedIndex = RecipeList.getSelectedIndex();
                         if (selectedIndex != -1) {
-                            Recipe selectedRecipe = recipeList.getElementAt(selectedIndex);
+                            Recipe selectedRecipe = favoriteRecipes.get(selectedIndex);
                             // 在这里处理点击事件，可以获取完整的 Recipe 对象
                             viewRecipeController.execute(selectedRecipe.getId());
                             System.out.println("Clicked on recipe: " + selectedRecipe.getTitle());
@@ -123,10 +120,9 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
                     }
                 }
             });
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Failed to read recipes.json");
+            System.out.println("Exit Recipe");
+        } else {
+            System.out.println("No recipes found.");
         }
         back = new JButton("Back");
         FavoritesPanel.add(back, BorderLayout.SOUTH);
@@ -140,7 +136,65 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
         });
         this.add(FavoritesPanel);
     }
+    public void display(JPanel panel) {
+        if (favoriteRecipes != null) {
+            DefaultListModel titleList = new DefaultListModel<>();
+            DefaultListModel<Integer> idList = new DefaultListModel<>();
+            DefaultListModel<String> contentList = new DefaultListModel<>();
+            DefaultListModel<LocalDateTime> dateList = new DefaultListModel<>();
+            DefaultListModel<Boolean> isFavoriteList = new DefaultListModel<>();
+            DefaultListModel<Double> caloriesList = new DefaultListModel<>();
+            DefaultListModel<Recipe> recipeList = new DefaultListModel<>();
+            for (Recipe recipe: favoriteRecipes) {
+                String recipeTitle = recipe.getTitle();
+                Integer recipeId = recipe.getId();
+                String recipeContent = recipe.getContent();
+                LocalDateTime recipeDate = recipe.getDate();
+                Boolean recipeIsFavorite = recipe.getIsFavorite();
+                double recipeCalories = recipe.getCalories();
 
+                // 将菜谱数据添加到 JList
+                titleList.addElement(recipeTitle);
+                idList.addElement(recipeId);
+                contentList.addElement(recipeContent);
+                dateList.addElement(recipeDate);
+                isFavoriteList.addElement(recipeIsFavorite);
+                caloriesList.addElement(recipeCalories);
+                recipeList.addElement(recipe);
+            }
+            System.out.println("recipeList: " + titleList);//说明有
+            RecipeList = new JList<>(titleList);
+            // 为 JList 添加鼠标点击事件监听器
+
+
+            // 创建带有滚动条的滚动面板
+            JScrollPane scrollPane = new JScrollPane(RecipeList);
+            scrollPane.setPreferredSize(new Dimension(600, 400));
+            scrollPane.setBackground(Color.WHITE);
+            scrollPane.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+            scrollPane.setVisible(true);
+            // 将滚动面板添加到主窗体的中央区域
+            FavoritesPanel.add(scrollPane);
+            RecipeList.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    if (e.getClickCount() == 1) { // 处理单击事件
+                        int selectedIndex = RecipeList.getSelectedIndex();
+                        if (selectedIndex != -1) {
+                            Recipe selectedRecipe = favoriteRecipes.get(selectedIndex);
+                            // 在这里处理点击事件，可以获取完整的 Recipe 对象
+                            viewRecipeController.execute(selectedRecipe.getId());
+                            System.out.println("Clicked on recipe: " + selectedRecipe.getTitle());
+                        }
+                    }
+                }
+            });
+            System.out.println("Exit Recipe");
+        } else {
+            System.out.println("No recipes found.");
+        }
+
+    }
 
     private JSONArray readJsonFile(String filePath) throws IOException {
         File file = new File(filePath);
@@ -169,6 +223,21 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+        ViewFavoritesViewModel currentState = viewFavoritesViewModel;
+        getAndDisplay(currentState);
+    }
+    public void getAndDisplay(ViewFavoritesViewModel currentState){
+            favoriteRecipes = currentState.getRecipes();
+            System.out.println(favoriteRecipes.size());
+            DefaultListModel titleList = new DefaultListModel<>();
+            for (Recipe recipe : favoriteRecipes) {
+                titleList.addElement(recipe.getTitle());
+            }
+            if (favoriteRecipes != null){
+                System.out.println("recipeList: " + titleList);//说明有
+            }
+            RecipeList.setModel(titleList);
+            display(FavoritesPanel);
+
     }
 }
-// 弹出窗口
