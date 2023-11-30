@@ -29,8 +29,10 @@ public class CreateRecipePresenter implements CreateRecipeOutputBoundary {
     }
     @Override
     public void prepareFailView(String error) {
-        CreateRecipeState state = createRecipeViewModel.getState();
-        state.setRecipeNameError(error);
-        createRecipeViewModel.firePropertyChanged();
+        if (error.equals("conflict")) {
+            CreateRecipeState state = createRecipeViewModel.getState();
+            state.setConflictError("Recipe name already exists");
+            createRecipeViewModel.firePropertyChanged();
+        }
     }
 }

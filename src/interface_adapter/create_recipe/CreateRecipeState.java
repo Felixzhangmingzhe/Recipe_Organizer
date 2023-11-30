@@ -11,6 +11,7 @@ public class CreateRecipeState {
     private String createdAtError = null;
     private double calories;
     private String caloriesError = null;
+    private String conflictError = null;
 
     public CreateRecipeState(CreateRecipeState copy) {
         recipeName = copy.recipeName;
@@ -44,6 +45,9 @@ public class CreateRecipeState {
     public String getCaloriesError() {
         return caloriesError;
     }
+    public String getConflictError() {
+        return conflictError;
+    }
 
 
 
@@ -75,5 +79,9 @@ public class CreateRecipeState {
     public void setCaloriesError(String caloriesError) {
         this.caloriesError = caloriesError;
     }
+    public void setConflictError(String conflictError) {
+        this.conflictError = conflictError;
+    }
+
 
 }
