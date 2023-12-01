@@ -237,12 +237,6 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         return readRecipes();
     }
 
-
-    @Override
-    public Recipe getRecipeByTitle(String title) {
-        return getRecipeByName(title);
-    }
-
     @Override
     public void updateRecipe(int id, String title, String content, LocalDateTime date, boolean isFavorite, double calories) {
         update(id, title, content, date, isFavorite, calories);

@@ -5,9 +5,6 @@ import entity.Recipe;
 import java.time.LocalDateTime;
 
 public interface AddToFavoritesDataAccessInterface {
-    boolean existsById(int recipeId);
-
-    void save(int userId, int recipeId);
 
     Recipe getRecipeByTitle(String title);
 

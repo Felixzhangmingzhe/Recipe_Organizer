@@ -11,15 +11,6 @@ public class AddToFavoritesInteractor implements AddToFavoritesInputBoundary {
         this.presenter = presenter;
     }
 
-//    @Override
-//    public void execute(AddToFavoritesInputData inputData) {
-//        if (inputData.getId() < 0) {
-//            presenter.prepareFailView("Invalid ID");
-//        } else {
-//            userDataAccess.addToFavorites(inputData.getId());
-//            presenter.prepareSuccessView();
-//        }
-//    }
     @Override
     public void execute(AddToFavoritesInputData inputData) {
         Recipe recipe = userDataAccess.getRecipeByTitle(inputData.getTitle());
