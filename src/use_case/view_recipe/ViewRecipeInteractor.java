@@ -13,13 +13,12 @@ public class ViewRecipeInteractor implements ViewRecipeInputBoundary {
 
     @Override
     public void viewRecipe(ViewRecipeInputData inputData) {
-        Recipe recipe = dataAccess.getRecipeById(inputData.getRecipeId());
+        Recipe recipe = dataAccess.getRecipeByTitle(inputData.getTitle());
         if (recipe != null) {
-            ViewRecipeOutputData outputData = new ViewRecipeOutputData(recipe);
+            ViewRecipeOutputData outputData = new ViewRecipeOutputData(recipe.getTitle(), recipe.getContent(), recipe.getDate(), recipe.getCalories());
             viewRecipePresenter.prepareSuccessView(outputData);
         } else {
-            // Handle the case where the recipe is not found
-            // This could involve calling another method on the outputBoundary to present an error
+            viewRecipePresenter.prepareFailView("Recipe not found.");
         }
     }
 

@@ -23,16 +23,26 @@ public class CreateRecipePresenter implements CreateRecipeOutputBoundary {
         this.createRecipeViewModel.setState(state);
         createRecipeViewModel.firePropertyChanged();
         viewManagerModel.setActiveView(createRecipeViewModel.getViewName());
-        viewManagerModel.firePropertyChanged();
+        viewManagerModel.firePropertyChanged();// this evt is state.
         System.out.println(state.getContent());
 
     }
     @Override
     public void prepareFailView(String error) {
-        if (error.equals("conflict")) {
+        if (error.equals("Recipe already exists")) {
             CreateRecipeState state = createRecipeViewModel.getState();
             state.setConflictError("Recipe name already exists");
             createRecipeViewModel.firePropertyChanged();
+        } else if (error.equals("Title is empty")) {
+            CreateRecipeState state = createRecipeViewModel.getState();
+            state.setRecipeNameError("Title is empty");
+            createRecipeViewModel.firePropertyChanged();
+        } else if (error.equals("Content is empty")) {
+            CreateRecipeState state = createRecipeViewModel.getState();
+            state.setContentError("Content is empty");
+            createRecipeViewModel.firePropertyChanged();
         }
+        System.out.println(error);
+        createRecipeViewModel.firePropertyChanged();
     }
 }

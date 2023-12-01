@@ -1,7 +1,28 @@
 TODO list:
-+* Add a way to avoid repeated Recipes with the same name(name is unique)
++* Add display of recipe date and calories
++* Make the recipe can be added to favorites and if successful, there will be a message
++* it's better that if a recipe isfavorite, the button will be of name "remove from favorites"
+    while if it's not favorite, the button will be of name "add to favorites"
++* Add a way to click cooked and record the data of the recipe
++* Add a way to edit the recipe
++* Add a way to delete the recipe
+
+
+
+
+
+
+
+
+
+
+
+Done list:
 +* make ReadRecipeView visible
     why is it not visible?
     May because createRecipeViewModel and createRecipePresent are not injected in the constructor of ReadRecipeView
     Or because the view is not binded to the viewmodel.
     Or there is something wrong with the view it self.
++* Add a way to avoid repeated Recipes with the same name(name is unique)
++* Make the recipe can be viewed from the Warehouse View
+    can be re-open, but viewRecipe usecase won;t make read recipe view update.
