@@ -100,6 +100,7 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+        System.out.println(evt.getPropertyName());
         // Update view based on property changes
         CreateRecipeState currentState = createRecipeViewModel.getState();
         getAndDisplay(currentState);
@@ -116,7 +117,5 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         recipeContentTextArea.setText(recipeContent);
         caloriesLabel.setText("Calories: " + calories);
         lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
-
-
     }
 }

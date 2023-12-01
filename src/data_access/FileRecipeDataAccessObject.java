@@ -161,6 +161,35 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         }
         return lastUsedId;
     }
+    public Recipe getRecipeByName(String identifier) {
+        List<Recipe> recipes = readRecipes();
+        for (Recipe recipe : recipes) {
+            if (recipe.getTitle().equals(identifier)) {
+                return recipe;
+            }
+        }
+        return null;
+    }
+    public void update(int id, String title, String content, LocalDateTime date, boolean isFavorite, double calories) {
+        // 读取所有食谱
+        List<Recipe> recipes = readRecipes();
+        // 创建更新后的食谱列表
+        List<Recipe> updatedRecipes = new ArrayList<>();
+
+        for (Recipe recipe : recipes) {
+            if (recipe.getId() == id) {
+                // 创建新的食谱实例来替换旧的
+                Recipe updatedRecipe = new Recipe(id, title, content, date, isFavorite, calories);
+                updatedRecipes.add(updatedRecipe);
+            } else {
+                updatedRecipes.add(recipe);
+            }
+        }
+
+        // 将更新后的食谱列表写回文件
+        writeRecipes(updatedRecipes);
+    }
+
     // 以上是FileRecipeDataAccessObject的代码
     @Override
     public boolean existsByName(String identifier) {
@@ -195,5 +224,16 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     @Override
     public List<Recipe> getAllRecipe() {
         return readRecipes();
+    }
+
+
+    @Override
+    public Recipe getRecipeByTitle(String title) {
+        return getRecipeByName(title);
+    }
+
+    @Override
+    public void updateRecipe(int id, String title, String content, LocalDateTime date, boolean isFavorite, double calories) {
+        update(id, title, content, date, isFavorite, calories);
     }
 }

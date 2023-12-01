@@ -3,9 +3,11 @@ package use_case.add_to_favorites;
 import entity.Recipe;
 
 public class AddToFavoritesInputData {
+    private final int id;
     private final String title;
 
-    public AddToFavoritesInputData(String title) {
+    public AddToFavoritesInputData(String title, int id) {
+        this.id = id;
         this.title = title;
     }
 
@@ -13,7 +15,7 @@ public class AddToFavoritesInputData {
         return title;
     }
 
-//    public int getId() {
-//
-//    }
+    int getId() {
+        return id;
+    }
 }
