@@ -10,6 +10,7 @@ import entity.*;
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
+import interface_adapter.view_search.ViewSearchViewModel;
 import interface_adapter.view_warehouse.ViewWarehouseViewModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
 import interface_adapter.view_favorites.ViewFavoritesViewModel;
@@ -41,6 +42,7 @@ public class Main {
         OpenCreateRecipeViewModel openCreateRecipeViewModel = new OpenCreateRecipeViewModel();
         BackViewModel backViewModel = new BackViewModel();
         CreateRecipeViewModel createRecipeViewModel = new CreateRecipeViewModel();
+        ViewSearchViewModel viewSearchViewModel = new ViewSearchViewModel();
 
 
 
@@ -51,7 +53,7 @@ public class Main {
         FileRecipeDataAccessObject viewRecipeDAO = new FileRecipeDataAccessObject("recipes.json");
         FileRecipeDataAccessObject warehouseDAO = new FileRecipeDataAccessObject("recipes.json");
         // 创建并将视图添加到主面板:主视图
-        MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, openCreateRecipeViewModel,DAO,viewRecipeViewModel);
+        MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, openCreateRecipeViewModel,DAO,viewRecipeViewModel,viewSearchViewModel);
         mainView.setPreferredSize(new Dimension(800, 600));
         views.add(mainView, mainView.viewName);
         // 这四句可以用来在一开始显示view
@@ -83,6 +85,8 @@ public class Main {
         ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,viewRecipeViewModel,viewRecipeDAO);
         views.add(viewRecipeView, viewRecipeView.viewName);
         // 创建并将视图添加到主面板:创建菜谱视图
+        SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, DAO, backViewModel);
+        views.add(viewSearchView.getSearchView(), viewSearchView.viewName);
 
 
     }
