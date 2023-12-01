@@ -1,13 +1,15 @@
 package use_case.add_to_favorites;
 
-public class AddToFavoritesInputData {
-    private final String recipeId;
+import entity.Recipe;
 
-    public AddToFavoritesInputData(String recipeId) {
-        this.recipeId = recipeId;
+public class AddToFavoritesInputData {
+    private final String title;
+
+    public AddToFavoritesInputData(String title) {
+        this.title = title;
     }
 
-    public String getRecipeId() {
-        return recipeId;
+    public String getTitle() {
+        return title;
     }
 }

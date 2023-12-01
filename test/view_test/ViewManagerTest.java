@@ -12,6 +12,7 @@ import java.beans.PropertyChangeListener;
 
 import static org.junit.Assert.*;
 
+
 public class ViewManagerTest {
 
     private ViewManager viewManager;

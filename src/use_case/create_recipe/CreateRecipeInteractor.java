@@ -6,6 +6,8 @@ import entity.Recipe;
 import entity.RecipeFactory;
 
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 
 // import API
@@ -17,7 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
     final CreateRecipeOutputBoundary createRecipePresenter;
     final CreateRecipeUserDataAccessInterface createRecipeUserDataAccessInterface;
-    private static final String apiToken = "gjpWnTK/4FKbbjdR40qx1Q==Mr2JvBrcJXuKu5aR";
+    private static final String apiToken = "o2vhKjkn5tmz+/B9kpjD6Q==mOt0YRhnaodNiwxj";
 
     final RecipeFactory recipeFactory;
     public CreateRecipeInteractor(CreateRecipeOutputBoundary createRecipePresenter, CreateRecipeUserDataAccessInterface createRecipeUserDataAccessInterface, RecipeFactory recipeFactory) {
@@ -45,7 +47,7 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
         }
     }
     public static double fetchCaloriesData(String recipeName) throws IOException {
-        URL url = new URL("https://api.api-ninjas.com/v1/nutrition?query=%s".formatted(recipeName));
+        URL url = new URL("https://api.api-ninjas.com/v1/nutrition?query=" + URLEncoder.encode(recipeName, StandardCharsets.UTF_8));
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestProperty("X-Api-Key" , apiToken);
