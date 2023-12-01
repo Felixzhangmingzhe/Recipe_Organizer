@@ -28,6 +28,7 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
 
     private final ViewRecipeController viewRecipeController;
     JList<String> RecipeList; // 创建菜谱列表
+    JScrollPane scrollPane;
     private List<Recipe> favoriteRecipes;
     JPanel FavoritesPanel = new JPanel();
     JButton back; // 创建菜谱按钮
@@ -65,65 +66,9 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
         // 初始化 RecipeList
         RecipeList = new JList<>();
         RecipeList.setModel(new DefaultListModel<>());
-
-        // Display the recipe list
-
-        if (favoriteRecipes != null) {
-            DefaultListModel titleList = new DefaultListModel<>();
-            DefaultListModel<Integer> idList = new DefaultListModel<>();
-            DefaultListModel<String> contentList = new DefaultListModel<>();
-            DefaultListModel<LocalDateTime> dateList = new DefaultListModel<>();
-            DefaultListModel<Boolean> isFavoriteList = new DefaultListModel<>();
-            DefaultListModel<Double> caloriesList = new DefaultListModel<>();
-            DefaultListModel<Recipe> recipeList = new DefaultListModel<>();
-            for (Recipe recipe: favoriteRecipes) {
-                String recipeTitle = recipe.getTitle();
-                Integer recipeId = recipe.getId();
-                String recipeContent = recipe.getContent();
-                LocalDateTime recipeDate = recipe.getDate();
-                Boolean recipeIsFavorite = recipe.getIsFavorite();
-                double recipeCalories = recipe.getCalories();
-
-                // 将菜谱数据添加到 JList
-                titleList.addElement(recipeTitle);
-                idList.addElement(recipeId);
-                contentList.addElement(recipeContent);
-                dateList.addElement(recipeDate);
-                isFavoriteList.addElement(recipeIsFavorite);
-                caloriesList.addElement(recipeCalories);
-                recipeList.addElement(recipe);
-            }
-            System.out.println("recipeList: " + titleList);//说明有
-            RecipeList = new JList<>(titleList);
-            // 为 JList 添加鼠标点击事件监听器
+        scrollPane = new JScrollPane(RecipeList);
 
 
-            // 创建带有滚动条的滚动面板
-            JScrollPane scrollPane = new JScrollPane(RecipeList);
-            scrollPane.setPreferredSize(new Dimension(600, 400));
-            scrollPane.setBackground(Color.WHITE);
-            scrollPane.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
-            scrollPane.setVisible(true);
-            // 将滚动面板添加到主窗体的中央区域
-            FavoritesPanel.add(scrollPane);
-            RecipeList.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    if (e.getClickCount() == 1) { // 处理单击事件
-                        int selectedIndex = RecipeList.getSelectedIndex();
-                        if (selectedIndex != -1) {
-                            Recipe selectedRecipe = favoriteRecipes.get(selectedIndex);
-                            // 在这里处理点击事件，可以获取完整的 Recipe 对象
-                            viewRecipeController.execute(selectedRecipe.getId());
-                            System.out.println("Clicked on recipe: " + selectedRecipe.getTitle());
-                        }
-                    }
-                }
-            });
-            System.out.println("Exit Recipe");
-        } else {
-            System.out.println("No recipes found.");
-        }
         back = new JButton("Back");
         FavoritesPanel.add(back, BorderLayout.SOUTH);
         back.addActionListener(new ActionListener() {
@@ -135,40 +80,11 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
             }
         });
         this.add(FavoritesPanel);
+        System.out.println("FavoritesView instantiated run");
     }
     public void display(JPanel panel) {
         if (favoriteRecipes != null) {
-            DefaultListModel titleList = new DefaultListModel<>();
-            DefaultListModel<Integer> idList = new DefaultListModel<>();
-            DefaultListModel<String> contentList = new DefaultListModel<>();
-            DefaultListModel<LocalDateTime> dateList = new DefaultListModel<>();
-            DefaultListModel<Boolean> isFavoriteList = new DefaultListModel<>();
-            DefaultListModel<Double> caloriesList = new DefaultListModel<>();
-            DefaultListModel<Recipe> recipeList = new DefaultListModel<>();
-            for (Recipe recipe: favoriteRecipes) {
-                String recipeTitle = recipe.getTitle();
-                Integer recipeId = recipe.getId();
-                String recipeContent = recipe.getContent();
-                LocalDateTime recipeDate = recipe.getDate();
-                Boolean recipeIsFavorite = recipe.getIsFavorite();
-                double recipeCalories = recipe.getCalories();
-
-                // 将菜谱数据添加到 JList
-                titleList.addElement(recipeTitle);
-                idList.addElement(recipeId);
-                contentList.addElement(recipeContent);
-                dateList.addElement(recipeDate);
-                isFavoriteList.addElement(recipeIsFavorite);
-                caloriesList.addElement(recipeCalories);
-                recipeList.addElement(recipe);
-            }
-            System.out.println("recipeList: " + titleList);//说明有
-            RecipeList = new JList<>(titleList);
-            // 为 JList 添加鼠标点击事件监听器
-
-
-            // 创建带有滚动条的滚动面板
-            JScrollPane scrollPane = new JScrollPane(RecipeList);
+            scrollPane.setViewportView(RecipeList);
             scrollPane.setPreferredSize(new Dimension(600, 400));
             scrollPane.setBackground(Color.WHITE);
             scrollPane.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
@@ -179,39 +95,22 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     if (e.getClickCount() == 1) { // 处理单击事件
-                        int selectedIndex = RecipeList.getSelectedIndex();
-                        if (selectedIndex != -1) {
-                            Recipe selectedRecipe = favoriteRecipes.get(selectedIndex);
+                        String selectedRecipeTitle = RecipeList.getSelectedValue();
+                        System.out.println("The program arriving at mouseclicked");
+                        if (selectedRecipeTitle != null) {
                             // 在这里处理点击事件，可以获取完整的 Recipe 对象
-                            viewRecipeController.execute(selectedRecipe.getId());
-                            System.out.println("Clicked on recipe: " + selectedRecipe.getTitle());
+                            viewRecipeController.execute(selectedRecipeTitle);
+                            System.out.println("Clicked on recipe: " + selectedRecipeTitle);
                         }
                     }
                 }
             });
-            System.out.println("Exit Recipe");
+            System.out.println("Recipe exit report in display");
         } else {
             System.out.println("No recipes found.");
         }
 
     }
-
-    private JSONArray readJsonFile(String filePath) throws IOException {
-        File file = new File(filePath);
-        FileReader reader = new FileReader(file);
-
-        StringBuilder content = new StringBuilder();
-        int character;
-        while ((character = reader.read()) != -1) {
-            content.append((char) character);
-        }
-
-        reader.close();
-
-        return new JSONArray(content.toString());
-    }
-
-
     public static String getViewName() {
         return viewName;
     }
@@ -233,11 +132,9 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
             for (Recipe recipe : favoriteRecipes) {
                 titleList.addElement(recipe.getTitle());
             }
-            if (favoriteRecipes != null){
-                System.out.println("recipeList: " + titleList);//说明有
-            }
+            System.out.println("getAndDisplay run");
+            System.out.println("recipeList: " + titleList);//说明有
             RecipeList.setModel(titleList);
             display(FavoritesPanel);
-
     }
 }

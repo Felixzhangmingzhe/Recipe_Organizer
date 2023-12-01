@@ -15,7 +15,7 @@ import use_case.Back.BackOutputBoundary;
 import use_case.create_recipe.*;
 import view.EditRecipeView;
 
-public class EditRecipeViewUseCaseFactory {
+public class EditRecipeViewUseCaseFactory extends UseCaseFactory {
     public static EditRecipeView create(BackViewModel backViewModel, ViewManagerModel viewManagerModel, CreateRecipeViewModel createRecipeViewModel, FileRecipeDataAccessObject dao) {
         BackController backController = createBackController(backViewModel, viewManagerModel);
         CreateRecipeController createRecipeController = createCreateRecipeController(createRecipeViewModel, viewManagerModel,dao);

@@ -26,7 +26,7 @@ import use_case.view_warehouse.ViewWarehouseInteractor;
 import use_case.view_warehouse.ViewWarehouseOutputBoundary;
 import view.MainView;
 
-public class MainViewUseCaseFactory {
+public class MainViewUseCaseFactory extends UseCaseFactory {
     public static MainView create(ViewManagerModel viewManagerModel, ViewWarehouseViewModel viewWarehouseViewModel, ViewFavoritesViewModel viewFavoritesViewModel,
                                     OpenCreateRecipeViewModel openCreateRecipeViewModel,
                                   FileRecipeDataAccessObject dao, ViewRecipeViewModel viewRecipeViewModel) {

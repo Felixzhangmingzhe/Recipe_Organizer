@@ -34,6 +34,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
         this.backViewModel = backViewModel;
         this.createRecipeController = createRecipeController;
         this.createRecipeViewModel = createRecipeViewModel;
+        this.createRecipeViewModel.addPropertyChangeListener(this);
         // 初始化界面元素
         JLabel titleLabel = new JLabel("Edit Recipe");
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);

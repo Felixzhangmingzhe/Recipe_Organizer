@@ -16,10 +16,20 @@ public class ViewRecipePresenter implements ViewRecipeOutputBoundary {
 
     @Override
     public void prepareSuccessView(ViewRecipeOutputData outputData) {
-        viewRecipeViewModel.setRecipe(outputData.getRecipe());
-        viewRecipeViewModel.firePropertyChanged();
+        viewRecipeViewModel.setTitle(outputData.getTitle());
+        viewRecipeViewModel.setContent(outputData.getContent());
+        viewRecipeViewModel.setCreationTime(outputData.getCreationTime());
+        viewRecipeViewModel.setCalories(outputData.getCalories());
+        viewRecipeViewModel.firePropertyChanged();// this evt is recipe.
         viewManagerModel.setActiveView(viewRecipeViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
+    }
+
+    @Override
+    public void prepareFailView(String errorMessage) {
+        viewRecipeViewModel.setNoRecipeFoundMessage(errorMessage);
+        viewRecipeViewModel.firePropertyChanged();
+        // TODO: warehouse or favotites
     }
 }
 
