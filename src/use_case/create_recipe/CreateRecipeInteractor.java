@@ -48,7 +48,7 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
         URL url = new URL("https://api.api-ninjas.com/v1/nutrition?query=%s".formatted(recipeName));
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestProperty("Authorization", "Bearer " + apiToken);
+        connection.setRequestProperty("X-Api-Key" , apiToken);
         connection.setRequestProperty("Accept", "application/json");
 
         try (InputStream responseStream = connection.getInputStream()) {
