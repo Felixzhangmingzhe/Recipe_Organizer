@@ -36,7 +36,7 @@ import use_case.view_search.ViewSearchInteractor;
 
 import view.MainView;
 
-public class MainViewUseCaseFactory {
+public class MainViewUseCaseFactory extends UseCaseFactory {
     public static MainView create(ViewManagerModel viewManagerModel, ViewWarehouseViewModel viewWarehouseViewModel, ViewFavoritesViewModel viewFavoritesViewModel,
                                   OpenCreateRecipeViewModel openCreateRecipeViewModel,
                                   FileRecipeDataAccessObject dao, ViewRecipeViewModel viewRecipeViewModel, ViewSearchViewModel viewSearchViewModel) {

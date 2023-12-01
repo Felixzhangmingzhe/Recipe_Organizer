@@ -188,6 +188,17 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     }
 
     @Override
+    public Recipe getRecipeByTitle(String title) {
+        List<Recipe> recipes = readRecipes();
+        for (Recipe recipe : recipes) {
+            if (recipe.getTitle().equals(title)) {
+                return recipe;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public List<Recipe> getFavorites() {
         return readRecipesInFavorites();
     }

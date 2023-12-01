@@ -19,7 +19,7 @@ import use_case.view_warehouse.ViewWarehouseInputBoundary;
 import use_case.view_warehouse.ViewWarehouseInteractor;
 import view.WarehouseView;
 
-public class WarehouseViewUseCaseFactory {
+public class WarehouseViewUseCaseFactory extends UseCaseFactory {
     public static WarehouseView create(ViewRecipeViewModel viewRecipeViewModel, ViewWarehouseViewModel viewWarehouseViewModel,ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao, BackViewModel backViewModel) {
         ViewRecipeController viewRecipeController1 = createViewRecipeController(viewRecipeViewModel, viewManagerModel, dao);
         BackController backController = createBackController(backViewModel, viewManagerModel);
