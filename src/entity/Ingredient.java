@@ -9,4 +9,18 @@ public class Ingredient {
         this.ingredient_name = ingredient_name;
         this.ingredient_type = ingredient_type;
     }
+
+
+
+
+    public int getId() {
+        return id;
+    }
+    public String getIngredient_name() {
+        return ingredient_name;
+    }
+    public String getIngredient_type() {
+        return ingredient_type;
+    }
+
 }
