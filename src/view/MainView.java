@@ -105,6 +105,15 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                 }
             }
         );
+        search.addActionListener(//搜索菜谱界面
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource() == search) {//if (e.getSource() == createRecipe)
+                            viewSearchController.execute();
+                        }
+                    }
+                }
+        );
         allRecipes.addActionListener(//打开菜谱界面（浏览菜谱模式）
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
