@@ -122,8 +122,10 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        ViewFavoritesViewModel currentState = viewFavoritesViewModel;
-        getAndDisplay(currentState);
+        if (evt.getPropertyName().equals("recipes")) {// since viewRecipeViewModel and viewFavoritesViewModel are both propertyChangeListeners, we need to distinguish them
+            ViewFavoritesViewModel currentState = viewFavoritesViewModel;
+            getAndDisplay(currentState);
+        }
     }
     public void getAndDisplay(ViewFavoritesViewModel currentState){
             favoriteRecipes = currentState.getRecipes();
