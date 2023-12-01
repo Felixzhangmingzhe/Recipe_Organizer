@@ -20,7 +20,7 @@ import view.WarehouseView;
 
 
 
-public class FavoritesViewUseCaseFactory {
+public class FavoritesViewUseCaseFactory extends UseCaseFactory {
     public static FavoritesView create(ViewRecipeViewModel viewRecipeViewModel,
                                        ViewManagerModel viewManagerModel,
                                        ViewFavoritesViewModel viewFavoritesViewModel,
