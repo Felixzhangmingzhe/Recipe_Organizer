@@ -12,17 +12,17 @@ public class CookedInteractor implements CookedInputBoundary{
     }
 
     @Override
-    public void execute() {
-        //Recipe recipe = cookedDataAccessInterface.getRecipeByRecipeTitle(inputData.getRecipeTitle());
-        if (true) {//recipe.getCooked())
+    public void execute(CookedInputData inputData) {
+        Recipe recipe = cookedDataAccessInterface.getRecipeByRecipeTitle(inputData.getRecipeTitle());
+        if (recipe.getIsCooked()) {
             CookedOutputData outputData = new CookedOutputData(false);
-            // cookedPresenter.prepareFailView(
+            cookedPresenter.prepareFailView(outputData);
         } else {
             RecipeFactory recipeFactory = new RecipeFactory();
-            // Recipe updatedRecipe = recipeFactory.create(recipe.getId(),recipe.getTitle(),recipe.getContent(),recipe.getDate(),recipe.getIsFavorite(),recipe.getCalories(),true);
-            // cookedDataAccessInterface.updateCookedRecipe(updatedRecipe);
+            Recipe updatedRecipe = recipeFactory.create(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(), recipe.getIsFavorite(),  recipe.getCalories(), true);
+            cookedDataAccessInterface.updateCookedRecipe(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(), recipe.getIsFavorite(), true, recipe.getCalories());
             CookedOutputData outputData = new CookedOutputData(true);
-            // cookedPresenter.prepareSuccessView(updatedRecipe);
+            cookedPresenter.prepareSuccessView(outputData);
         }
 
     }

@@ -8,6 +8,9 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.add_to_favorites.AddToFavoritesController;
 import interface_adapter.add_to_favorites.AddToFavoritesPresenter;
 import interface_adapter.add_to_favorites.AddToFavoritesViewModel;
+import interface_adapter.cooked.CookedController;
+import interface_adapter.cooked.CookedPresenter;
+import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeController;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
@@ -17,6 +20,8 @@ import use_case.Back.BackOutputBoundary;
 import use_case.add_to_favorites.AddToFavoritesInputBoundary;
 import use_case.add_to_favorites.AddToFavoritesInteractor;
 import use_case.add_to_favorites.AddToFavoritesOutputBoundary;
+import use_case.cooked.CookedInputBoundary;
+import use_case.cooked.CookedOutputBoundary;
 import view.ReadRecipeView;
 
 public class ReadRecipeViewUseCaseFactory extends UseCaseFactory {
@@ -24,10 +29,18 @@ public class ReadRecipeViewUseCaseFactory extends UseCaseFactory {
                                         CreateRecipeViewModel createRecipeViewModel,
                                         ViewRecipeViewModel viewRecipeViewModel,
                                         AddToFavoritesViewModel addToFavoritesViewModel,
+                                        CookedViewModel cookedViewModel,
                                         FileRecipeDataAccessObject dao) {
         BackController backController = createBackController(backViewModel, viewManagerModel);
         AddToFavoritesController addToFavotitesController = createAddToFavoritesController(addToFavoritesViewModel, viewManagerModel, dao);
-        return new ReadRecipeView(backViewModel, backController,viewRecipeViewModel, createRecipeViewModel, addToFavotitesController, addToFavoritesViewModel);
+        CookedController cookedController = createCookedController(cookedViewModel, viewManagerModel, dao);
+        return new ReadRecipeView(backViewModel, backController,viewRecipeViewModel, createRecipeViewModel, addToFavotitesController, addToFavoritesViewModel, cookedViewModel, cookedController);
+    }
+
+    private static CookedController createCookedController(CookedViewModel cookedViewModel, ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao) {
+        CookedOutputBoundary cookedOutputBoundary = new CookedPresenter(cookedViewModel, viewManagerModel);
+        CookedInputBoundary cookedInputBoundary = new use_case.cooked.CookedInteractor(cookedOutputBoundary, dao);
+        return new CookedController(cookedInputBoundary);
     }
 
     private static AddToFavoritesController createAddToFavoritesController(AddToFavoritesViewModel addToFavoritesViewModel, ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao) {

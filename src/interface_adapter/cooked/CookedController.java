@@ -10,6 +10,6 @@ public class CookedController {
     }
     public void execute(String recipeTitle) {
         CookedInputData inputData = new CookedInputData(recipeTitle);
-        cookedInteractor.execute();
+        cookedInteractor.execute(inputData);
     }
 }

@@ -39,7 +39,7 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
             int id = getNextRecipeId(); // Implement this method to get the next ID from the database
             LocalDateTime now = LocalDateTime.now();
             double calories = getCalsByName(createRecipeInputData.getTitle());
-            Recipe recipe = recipeFactory.create(id, createRecipeInputData.getTitle(), createRecipeInputData.getContent(), now, false,calories);
+            Recipe recipe = recipeFactory.create(id, createRecipeInputData.getTitle(), createRecipeInputData.getContent(), now, false, calories, false);
             createRecipeUserDataAccessInterface.save(recipe);
             // Output the recipe to the view
             CreateRecipeOutputData createRecipeOutputData = new CreateRecipeOutputData(recipe.getId(),recipe.getTitle(), recipe.getContent(),recipe.getIsFavorite(), recipe.getCalories(), recipe.getDate());

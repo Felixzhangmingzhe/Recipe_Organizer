@@ -21,7 +21,8 @@ public class RecipePresetter implements DataPresetter{
                 "Cook the spaghetti. Cook the ground beef. Mix them together.",
                 date,
                 false,
-                1000
+                1000,
+                false
         );
         if (!dao.existsJudgingbyId(newRecipe.getId())){dao.addRecipe(newRecipe);}
 
@@ -32,7 +33,8 @@ public class RecipePresetter implements DataPresetter{
                 "Boil the pasta. Mix eggs, cheese, and bacon. Combine with pasta.",
                 date,
                 false,
-                1200
+                1200,
+                false
         );
         if (!dao.existsJudgingbyId(pastaRecipe.getId())){dao.addRecipe(pastaRecipe);}
 
@@ -42,7 +44,8 @@ public class RecipePresetter implements DataPresetter{
                 "Chop lettuce. Add croutons, parmesan, and dressing. Toss well.",
                 date,
                 true,
-                800
+                800,
+                false
         );
         if (!dao.existsJudgingbyId(saladRecipe.getId())) {dao.addRecipe(saladRecipe);}
     }

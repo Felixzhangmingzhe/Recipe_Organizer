@@ -16,12 +16,12 @@ public class AddToFavoritesInteractor implements AddToFavoritesInputBoundary {
         Recipe recipe = userDataAccess.getRecipeByTitle(inputData.getTitle());
         if (recipe.getIsFavorite()) {
             boolean isFavorite = false;
-            userDataAccess.updateRecipe(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(),isFavorite , recipe.getCalories());
+            userDataAccess.updateRecipe(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(),isFavorite , recipe.getIsCooked(), recipe.getCalories());
             AddToFavoritesOutputData outputData = new AddToFavoritesOutputData("", "Recipe is deleted from favorites");
             presenter.prepareSuccessView(outputData);
         } else {
             boolean isFavorite = true;
-            userDataAccess.updateRecipe(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(), isFavorite, recipe.getCalories());
+            userDataAccess.updateRecipe(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(), isFavorite, recipe.getIsCooked(), recipe.getCalories());
             AddToFavoritesOutputData outputData = new AddToFavoritesOutputData("Recipe added to favorites", "" );
             presenter.prepareSuccessView(outputData);
         }

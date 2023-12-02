@@ -1,6 +1,6 @@
 package use_case.cooked;
 
 public interface CookedInputBoundary {
-    public void execute();
+    void execute(CookedInputData inputData);
     }
 

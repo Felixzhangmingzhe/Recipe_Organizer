@@ -5,6 +5,9 @@ import interface_adapter.Back.BackViewModel;
 import interface_adapter.add_to_favorites.AddToFavoritesController;
 import interface_adapter.add_to_favorites.AddToFavoritesState;
 import interface_adapter.add_to_favorites.AddToFavoritesViewModel;
+import interface_adapter.cooked.CookedController;
+import interface_adapter.cooked.CookedState;
+import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeState;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
@@ -39,9 +42,13 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
     // Use Case: Add to Favorites
     private AddToFavoritesController addToFavoritesController;
     private AddToFavoritesViewModel addToFavoritesViewModel;
+    // Use Case: Cooked
+    private CookedController cookedController;
+    private CookedViewModel cookedViewModel;
 
     public ReadRecipeView(BackViewModel backViewModel, BackController backController, ViewRecipeViewModel viewRecipeViewModel, CreateRecipeViewModel createRecipeViewModel
-    , AddToFavoritesController addToFavoritesController, AddToFavoritesViewModel addToFavoritesViewModel) {
+    , AddToFavoritesController addToFavoritesController, AddToFavoritesViewModel addToFavoritesViewModel,
+                           CookedViewModel cookedViewModel, CookedController cookedController) {
         // Initialize view model and controller
         this.backViewModel = backViewModel;
         this.backController = backController;
@@ -52,6 +59,9 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         this.addToFavoritesController = addToFavoritesController;
         this.addToFavoritesViewModel = addToFavoritesViewModel;
         this.addToFavoritesViewModel.addPropertyChangeListener(this);//Listen to the change of addToFavoritesViewModel
+        this.cookedController = cookedController;
+        this.cookedViewModel = cookedViewModel;
+        this.cookedViewModel.addPropertyChangeListener(this);//Listen to the change of cookedViewModel
 
         // Initialize String RecipeName
         recipeName = "";
@@ -109,7 +119,7 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
             System.out.println("favorites button clicked");
         } else if (evt.getSource() == cookedButton) {
             // Implement action for cooked button
-            // For example, mark the recipe as cooked
+            cookedController.execute(recipeName);
         } else if (evt.getSource() == editButton) {
             // Implement action for edit button
             // For example, open the edit view for this recipe
@@ -129,6 +139,9 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         } else if (evt.getPropertyName().equals("add")) {
             getAndDisplay(addToFavoritesViewModel.getState());
             updateFavoritesButton(addToFavoritesViewModel.getState());
+        }else if (evt.getPropertyName().equals("cooked")) {
+            System.out.println("cooked property changed");
+            getAndDisplay((CookedState) evt.getNewValue());
         }
     }
 
@@ -165,6 +178,15 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         } else{
             System.out.println("removeFromFavoritesMessage is " + removeFromFavoritesMessage);
             JOptionPane.showMessageDialog(this, removeFromFavoritesMessage);
+        }
+    }
+    public void getAndDisplay(CookedState currentState) {
+        // Show the message that A. has been added to favorites.B. has been removed from favorites
+        boolean firstCookedSuccess = currentState.getSetCookedSuccess();
+        if (firstCookedSuccess) {
+            JOptionPane.showMessageDialog(this, "Hooray! For the first time you cooked this recipe!");
+        } else {
+            JOptionPane.showMessageDialog(this, "You have already cooked this recipe!");
         }
     }
     private void updateFavoritesButton(AddToFavoritesState currentState) {
