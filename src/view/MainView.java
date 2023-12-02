@@ -1,25 +1,19 @@
 package view;
 
-import entity.Recipe;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.List;
-
-import java.util.concurrent.Executor;
-import data_access.FileRecipeDataAccessObject;
-
-import interface_adapter.create_recipe.CreateRecipeController;
-import interface_adapter.create_recipe.CreateRecipeViewModel;
 
 // Use Case:View Warehouse
 import interface_adapter.ViewManagerModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeController;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
+import interface_adapter.show_daily_special.ShowDailySpecialController;
+import interface_adapter.show_daily_special.ShowDailySpecialState;
+import interface_adapter.show_daily_special.ShowDailySpecialViewModel;
 import interface_adapter.view_search.ViewSearchController;
 import interface_adapter.view_search.ViewSearchState;
 import interface_adapter.view_search.ViewSearchViewModel;
@@ -50,6 +44,11 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final ViewSearchController viewSearchController;
     private final ViewSearchViewModel viewSearchViewModel;
 
+    // Use Case:Show Daily Special
+    private final ShowDailySpecialViewModel showDailySpecialViewModel;
+    private final ShowDailySpecialController showDailySpecialController;
+
+
 
 
 
@@ -58,7 +57,10 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     public MainView(ViewWarehouseController viewWarehouseController, ViewWarehouseViewModel viewWarehouseViewModel,
                     ViewFavoritesController viewFavoritesController, ViewFavoritesViewModel viewFavoritesViewModel,
                     OpenCreateRecipeViewModel openCreateRecipeViewModel, OpenCreateRecipeController openCreateRecipeController,
-                    ViewManagerModel viewManagerModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel) {
+                    ViewManagerModel viewManagerModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel, ShowDailySpecialViewModel showDailySpecialViewModel, ShowDailySpecialController showDailySpecialController) {
+        //初始化Daily Special有关
+        this.showDailySpecialViewModel = showDailySpecialViewModel;
+        this.showDailySpecialController = showDailySpecialController;
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
@@ -125,6 +127,16 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     }
                 }
             }
+        );
+        dailySpecial.addActionListener(//打开菜谱界面（浏览菜谱模式）
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource() == dailySpecial) {//if (e.getSource() == createRecipe)
+                            ShowDailySpecialState currentState = showDailySpecialViewModel.getState();
+                            showDailySpecialController.execute();
+                        }
+                    }
+                }
         );
         exit.addActionListener(new ActionListener() {
             @Override

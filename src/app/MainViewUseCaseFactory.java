@@ -30,7 +30,6 @@ import use_case.view_warehouse.ViewWarehouseInteractor;
 import use_case.view_warehouse.ViewWarehouseOutputBoundary;
 
 import use_case.view_search.ViewSearchInputBoundary;
-import use_case.view_search.ViewSearchDataAccessInterface;
 import use_case.view_search.ViewSearchOutputBoundary;
 import use_case.view_search.ViewSearchInteractor;
 
@@ -47,7 +46,7 @@ public class MainViewUseCaseFactory extends UseCaseFactory {
             ViewSearchController viewSearchController = createViewSearchController(viewManagerModel, viewSearchViewModel, dao);
             OpenCreateRecipeController openCreateRecipeController = createOpenCreateRecipeController(viewManagerModel, openCreateRecipeViewModel, dao);
 
-            return new MainView(viewWarehouseController, viewWarehouseViewModel, viewFavoritesController, viewFavoritesViewModel, openCreateRecipeViewModel, openCreateRecipeController,viewManagerModel, viewSearchController, viewSearchViewModel);
+            return new MainView(viewWarehouseController, viewWarehouseViewModel, viewFavoritesController, viewFavoritesViewModel, openCreateRecipeViewModel, openCreateRecipeController,viewManagerModel, viewSearchController, viewSearchViewModel, showDailySpecialViewModel, showDailySpecialController);
         }catch (Exception e) {
             e.printStackTrace();
             return null;

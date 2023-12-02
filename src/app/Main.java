@@ -9,6 +9,7 @@ import interface_adapter.Back.BackViewModel;
 import interface_adapter.click_search.ClickSearchViewModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
+import interface_adapter.show_daily_special.ShowDailySpecialViewModel;
 import interface_adapter.view_search.ViewSearchViewModel;
 import interface_adapter.view_warehouse.ViewWarehouseViewModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
@@ -43,6 +44,7 @@ public class Main {
         CreateRecipeViewModel createRecipeViewModel = new CreateRecipeViewModel();
         ViewSearchViewModel viewSearchViewModel = new ViewSearchViewModel();
         ClickSearchViewModel clickSearchViewModel = new ClickSearchViewModel();
+        ShowDailySpecialViewModel showDailySpecialViewModel = new ShowDailySpecialViewModel();
 
 
 
