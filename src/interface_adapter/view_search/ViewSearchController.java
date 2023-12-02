@@ -4,7 +4,7 @@ import use_case.view_search.ViewSearchInputBoundary;
 
 public class ViewSearchController {
 
-    private final ViewSearchInputBoundary viewSearchInteractor;
+    final ViewSearchInputBoundary viewSearchInteractor;
 
     public ViewSearchController(ViewSearchInputBoundary viewSearchInteractor) {
         this.viewSearchInteractor = viewSearchInteractor;
