@@ -3,7 +3,6 @@ package view;
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.view_search.ViewSearchController;
-import interface_adapter.view_search.ViewSearchState;
 import interface_adapter.view_search.ViewSearchViewModel;
 
 import javax.swing.*;
@@ -16,10 +15,6 @@ public class SearchView implements ActionListener, PropertyChangeListener {
 
     public String viewName = "search";
     private JPanel SearchPanel;
-
-
-
-
     private JButton buttonSearch;
     private JButton returnButton;
     private JPanel labelPanel;
@@ -28,54 +23,54 @@ public class SearchView implements ActionListener, PropertyChangeListener {
     private BackController backController;
     private BackViewModel backViewModel;
 
-    //Use Case: Search
+    // Use Case: Search
     private ViewSearchController searchController;
     private ViewSearchViewModel searchViewModel;
 
-    public JPanel getSearchPanel() {
-        return SearchPanel;
-    }
+    public SearchView(BackController backController, BackViewModel backViewModel,
+                      ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel) {
+        // 初始化面板和组件
+        initComponents();
 
-    public SearchView(BackController backController, BackViewModel backViewModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel){
-//        initComponents();
         this.backController = backController;
         this.backViewModel = backViewModel;
         this.searchController = viewSearchController;
         this.searchViewModel = viewSearchViewModel;
         this.searchViewModel.addPropertyChangeListener(this);
-
-
     }
 
-    public SearchView() {
-        buttonSearch.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+    private void initComponents() {
+        // 创建并设置 SearchPanel
+        SearchPanel = new JPanel();
+        // 可以在这里添加其他组件设置，比如布局等
 
-            }
-        });
+        // 创建按钮并添加事件监听器
+        buttonSearch = new JButton("Search");
+        buttonSearch.addActionListener(this);
+
+        returnButton = new JButton("Return");
+        returnButton.addActionListener(this);
+
+        // 添加按钮到面板
+        SearchPanel.add(buttonSearch);
+        SearchPanel.add(returnButton);
+
+        // 其他组件的初始化...
+    }
+
+    public JPanel getSearchPanel() {
+        return SearchPanel;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == buttonSearch) {
-//            // 处理保存按钮点击事件，可能需要获取输入的菜谱信息并保存
-//            String recipeName = recipeNameField.getText();
-//            String recipeContent = recipeContentArea.getText();
-            searchController.execute();
-            // 执行保存逻辑...
-        } else if (e.getSource() == returnButton) {
-            // 处理取消按钮点击事件，可能需要关闭编辑界面
-            // 执行取消逻辑...
-            backController.execute();
-        }
+
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        ViewSearchState currentState = searchViewModel.getState();
-//        JOptionPane.showMessageDialog(this, currentState.getSearchResult());
-
 
     }
+
+    // 其他方法...
 }

@@ -84,7 +84,7 @@ public class Main {
         views.add(viewRecipeView, viewRecipeView.viewName);
         // 创建并将视图添加到主面板:创建菜谱视图
         SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, backViewModel);
-        System.out.println(viewSearchView.getSearchPanel() == null);
+//        System.out.println(viewSearchView.getSearchPanel() == null);嘿嘿
         views.add(viewSearchView.getSearchPanel(), viewSearchView.viewName);
         // 创建并将视图添加到主面板:搜索菜谱视图
     }
