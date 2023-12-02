@@ -7,15 +7,16 @@ public class Recipe {
     private String title;
     private String content;
     private boolean isFavorite;
+    private boolean isCooked;
     private double calories;
-
     private LocalDateTime date;
-    public Recipe(int id, String title, String content, LocalDateTime date, boolean isFavorite, double calories) {
+    public Recipe(int id, String title, String content, LocalDateTime date, boolean isFavorite, boolean isCooked, double calories) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.date = date;
         this.isFavorite = isFavorite;
+        this.isCooked = isCooked;
         this.calories = calories;
     }
     public int getId() {
@@ -33,6 +34,9 @@ public class Recipe {
 
     public boolean getIsFavorite() {
         return this.isFavorite;
+    }
+    public boolean getIsCooked() {
+        return this.isCooked;
     }
 
     public double getCalories() {return this.calories;}

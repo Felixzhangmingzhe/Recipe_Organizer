@@ -1,10 +1,13 @@
 // Class: FileRecipeDataAccessObject
 package data_access;
 import entity.Recipe;
+import entity.RecipeFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.cooked.CookedDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
 import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
+import use_case.show_daily_special.ShowDailySpecialDataAccessInterface;
 import use_case.view_favorites.ViewFavoritesDataAccessInterface;
 import use_case.add_to_favorites.AddToFavoritesDataAccessInterface;
 import use_case.view_recipe.ViewRecipeDataAccessInterface;
@@ -16,7 +19,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface, OpenCreateRecipeDataAccessInterface {
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface,
+        AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface,
+        OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface {
     private String filePath;
 
     public FileRecipeDataAccessObject(String filePath) {
@@ -97,8 +102,9 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         String content = jsonRecipe.getString("content");
         LocalDateTime date = LocalDateTime.parse(jsonRecipe.getString("date"));
         boolean isFavorite = jsonRecipe.optBoolean("isFavorite");
+        boolean isCooked = jsonRecipe.optBoolean("isCooked");
         double calories = jsonRecipe.optDouble("calories");
-        return new Recipe(id, title, content, date, isFavorite,calories);
+        return new Recipe(id, title, content, date, isFavorite, isCooked, calories);
     }
     // 下面的是写入的代码，但是当改变Recipe的属性时，上面的会报错，但下面的这个不报错，得自己加，注意啦！
     private JSONObject createJsonRecipe(Recipe recipe) {
@@ -108,6 +114,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         jsonRecipe.put("content", recipe.getContent());
         jsonRecipe.put("date", recipe.getDate().toString());// 这里时间变成了字符串
         jsonRecipe.put("isFavorite", recipe.getIsFavorite());
+        jsonRecipe.put("isCooked", recipe.getIsCooked());
         jsonRecipe.put("calories", recipe.getCalories());
         return jsonRecipe;
     }
@@ -121,6 +128,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                 "Spaghetti Bolognese",
                 "Cook the spaghetti. Cook the ground beef. Mix them together.",
                 Date,
+                false,
                 false,
                 100
         );
@@ -170,7 +178,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         }
         return null;
     }
-    public void update(int id, String title, String content, LocalDateTime date, boolean isFavorite, double calories) {
+    public void update(int id, String title, String content, LocalDateTime date, boolean isFavorite, boolean isCooked, double calories) {
         // 读取所有食谱
         List<Recipe> recipes = readRecipes();
         // 创建更新后的食谱列表
@@ -179,7 +187,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         for (Recipe recipe : recipes) {
             if (recipe.getId() == id) {
                 // 创建新的食谱实例来替换旧的
-                Recipe updatedRecipe = new Recipe(id, title, content, date, isFavorite, calories);
+                RecipeFactory recipeFactory = new RecipeFactory();
+                Recipe updatedRecipe = recipeFactory.create(id, title, content, date, isFavorite,calories, isCooked);
                 updatedRecipes.add(updatedRecipe);
             } else {
                 updatedRecipes.add(recipe);
@@ -238,7 +247,24 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     }
 
     @Override
-    public void updateRecipe(int id, String title, String content, LocalDateTime date, boolean isFavorite, double calories) {
-        update(id, title, content, date, isFavorite, calories);
+    public void updateRecipe(int id, String title, String content, LocalDateTime date, boolean isFavorite,boolean isCooked, double calories) {
+        update(id, title, content, date, isFavorite, isCooked, calories);
+    }
+
+    @Override
+    public Recipe getRecipeByRecipeTitle(String recipeTitle) {
+        return getRecipeByName(recipeTitle);
+    }
+
+    @Override
+    public void updateCookedRecipe(int id, String title, String content, LocalDateTime date, boolean isFavorite,boolean isCooked, double calories) {
+        update(id, title, content, date, isFavorite, isCooked, calories);
+    }
+
+    @Override
+    public Recipe getDailySpecial() {
+        List<Recipe> recipes = readRecipes();
+        int random = (int) Math.floor(Math.random()*recipes.size());
+        return recipes.get(random);
     }
 }

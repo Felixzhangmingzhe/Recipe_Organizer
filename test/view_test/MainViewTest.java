@@ -19,6 +19,7 @@ public class MainViewTest {
     private MainView mainView;
 
     // 在每个测试之前执行的设置方法
+
     @Before
     public void setUp() {
         // 假设 MainView 可以在不需要额外依赖的情况下初始化

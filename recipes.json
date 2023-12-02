@@ -4,6 +4,7 @@
     "id": 6,
     "calories": -1,
     "title": "b",
+    "isCooked": false,
     "content": "12",
     "isFavorite": false
   },
@@ -12,6 +13,7 @@
     "id": 1,
     "calories": 1000,
     "title": "Spaghetti Bolognese",
+    "isCooked": false,
     "content": "Cook the spaghetti. Cook the ground beef. Mix them together.",
     "isFavorite": false
   },
@@ -20,6 +22,7 @@
     "id": 2,
     "calories": 1200,
     "title": "Pasta Carbonara",
+    "isCooked": false,
     "content": "Boil the pasta. Mix eggs, cheese, and bacon. Combine with pasta.",
     "isFavorite": false
   },
@@ -28,6 +31,7 @@
     "id": 3,
     "calories": 800,
     "title": "Caesar Salad",
+    "isCooked": false,
     "content": "Chop lettuce. Add croutons, parmesan, and dressing. Toss well.",
     "isFavorite": true
   },
@@ -36,6 +40,7 @@
     "id": 7,
     "calories": -1,
     "title": "C",
+    "isCooked": false,
     "content": "21",
     "isFavorite": false
   },
@@ -44,6 +49,7 @@
     "id": 8,
     "calories": -1,
     "title": "21",
+    "isCooked": false,
     "content": "2023-11-29T22:26:10.033732",
     "isFavorite": false
   },
@@ -52,6 +58,7 @@
     "id": 9,
     "calories": -1,
     "title": "12",
+    "isCooked": true,
     "content": "WW",
     "isFavorite": false
   },
@@ -60,6 +67,7 @@
     "id": 10,
     "calories": -1,
     "title": "WW",
+    "isCooked": false,
     "content": "2023-11-29T22:30:36.656641",
     "isFavorite": false
   },
@@ -68,6 +76,7 @@
     "id": 11,
     "calories": -1,
     "title": "1",
+    "isCooked": false,
     "content": "234r432",
     "isFavorite": false
   },
@@ -76,6 +85,7 @@
     "id": 12,
     "calories": -1,
     "title": "234r432",
+    "isCooked": true,
     "content": "2023-11-29T22:41:54.589537",
     "isFavorite": false
   },
@@ -84,6 +94,7 @@
     "id": 13,
     "calories": -1,
     "title": "egg",
+    "isCooked": false,
     "content": "qgfdssfwng",
     "isFavorite": false
   },
@@ -92,6 +103,7 @@
     "id": 14,
     "calories": -1,
     "title": "qgfdssfwng",
+    "isCooked": false,
     "content": "2023-11-29T22:57:55.650859",
     "isFavorite": false
   },
@@ -100,6 +112,7 @@
     "id": 15,
     "calories": -1,
     "title": "12",
+    "isCooked": false,
     "content": "23",
     "isFavorite": false
   },
@@ -108,6 +121,7 @@
     "id": 16,
     "calories": -1,
     "title": "23",
+    "isCooked": false,
     "content": "2023-11-29T22:59:53.269643",
     "isFavorite": false
   },
@@ -116,6 +130,7 @@
     "id": 17,
     "calories": -1,
     "title": "2023-11-29T22:59:53.269643",
+    "isCooked": false,
     "content": "2023-11-29T22:59:59.724540",
     "isFavorite": false
   },
@@ -124,6 +139,7 @@
     "id": 18,
     "calories": -1,
     "title": "2023-11-29T22:59:59.724540",
+    "isCooked": false,
     "content": "2023-11-29T23:00:01.109127",
     "isFavorite": false
   },
@@ -132,6 +148,7 @@
     "id": 19,
     "calories": -1,
     "title": "12123",
+    "isCooked": false,
     "content": "2023-11-29T23:00:01.675465",
     "isFavorite": false
   },
@@ -140,6 +157,7 @@
     "id": 20,
     "calories": -1,
     "title": "2023-11-29T23:00:01.675465",
+    "isCooked": false,
     "content": "2023-11-29T23:00:09.724019",
     "isFavorite": false
   },
@@ -148,6 +166,7 @@
     "id": 21,
     "calories": -1,
     "title": "2023-11-29T23:00:09.724019",
+    "isCooked": false,
     "content": "2023-11-29T23:01:31.643169",
     "isFavorite": false
   },
@@ -156,6 +175,7 @@
     "id": 22,
     "calories": -1,
     "title": "2023-11-29T23:01:31.643169",
+    "isCooked": false,
     "content": "2023-11-29T23:01:33.742220",
     "isFavorite": false
   },
@@ -164,6 +184,7 @@
     "id": 23,
     "calories": -1,
     "title": "2023-11-29T23:01:33.742220",
+    "isCooked": false,
     "content": "2023-11-29T23:01:34.082908",
     "isFavorite": false
   },
@@ -172,6 +193,7 @@
     "id": 24,
     "calories": -1,
     "title": "2023-11-29T23:01:34.082908",
+    "isCooked": false,
     "content": "2023-11-29T23:01:34.305778",
     "isFavorite": false
   },
@@ -180,6 +202,7 @@
     "id": 25,
     "calories": -1,
     "title": "si",
+    "isCooked": false,
     "content": "1",
     "isFavorite": false
   },
@@ -188,6 +211,7 @@
     "id": 26,
     "calories": -1,
     "title": "123",
+    "isCooked": false,
     "content": "123",
     "isFavorite": false
   },
@@ -196,6 +220,7 @@
     "id": 27,
     "calories": -1,
     "title": "123",
+    "isCooked": false,
     "content": "2023-11-29T23:03:10.940828",
     "isFavorite": false
   },
@@ -204,6 +229,7 @@
     "id": 28,
     "calories": -1,
     "title": "12323456787ytreert",
+    "isCooked": false,
     "content": "1234",
     "isFavorite": false
   },
@@ -212,6 +238,7 @@
     "id": 29,
     "calories": -1,
     "title": "New",
+    "isCooked": false,
     "content": "12",
     "isFavorite": false
   },
@@ -220,6 +247,7 @@
     "id": 30,
     "calories": -1,
     "title": "1234",
+    "isCooked": false,
     "content": "13",
     "isFavorite": false
   },
@@ -228,6 +256,7 @@
     "id": 31,
     "calories": -1,
     "title": "12312345676543212345665432",
+    "isCooked": false,
     "content": "3422gfvefdfb",
     "isFavorite": false
   },
@@ -236,6 +265,7 @@
     "id": 32,
     "calories": -1,
     "title": "垃圾",
+    "isCooked": false,
     "content": "1",
     "isFavorite": false
   },
@@ -244,6 +274,7 @@
     "id": 33,
     "calories": -1,
     "title": "1",
+    "isCooked": false,
     "content": "1111",
     "isFavorite": false
   },
@@ -252,14 +283,16 @@
     "id": 34,
     "calories": -1,
     "title": "123e",
+    "isCooked": false,
     "content": "d123e",
-    "isFavorite": true
+    "isFavorite": false
   },
   {
     "date": "2023-11-30T16:10:32.946415",
     "id": 35,
     "calories": -1,
     "title": "臭臭",
+    "isCooked": false,
     "content": "123拉出来",
     "isFavorite": false
   },
@@ -268,6 +301,7 @@
     "id": 36,
     "calories": -1,
     "title": "的厨房大显身手我的人非常的欣赏我",
+    "isCooked": false,
     "content": "1\t起啊完色电热毯热瓦全球儿童热",
     "isFavorite": false
   },
@@ -276,55 +310,8 @@
     "id": 37,
     "calories": -1,
     "title": "瑞环",
+    "isCooked": false,
     "content": "瑞环肉好吃",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T19:32:56.325037",
-    "id": 38,
-    "calories": -1,
-    "title": "11234",
-    "content": "1",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T19:33:31.673808",
-    "id": 39,
-    "calories": -1,
-    "title": "qq",
-    "content": "1",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T19:34:24.056788",
-    "id": 40,
-    "calories": -1,
-    "title": "qqq",
-    "content": "qqqq",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T19:40:15.724282",
-    "id": 41,
-    "calories": -1,
-    "title": "qqqq",
-    "content": "qqqq",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T19:43:39.190120",
-    "id": 42,
-    "calories": -1,
-    "title": "1111q",
-    "content": "1",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T20:45:52.134229",
-    "id": 43,
-    "calories": -1,
-    "title": "qqqqq",
-    "content": "qq",
     "isFavorite": false
   }
 ]

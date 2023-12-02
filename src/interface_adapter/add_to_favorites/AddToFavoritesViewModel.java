@@ -20,7 +20,7 @@ public class AddToFavoritesViewModel extends ViewModel {
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
     @Override
     public void firePropertyChanged() {
-        support.firePropertyChange("state", null, state);
+        support.firePropertyChange("add", null, state);
     }
 
     @Override
