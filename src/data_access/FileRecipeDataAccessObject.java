@@ -1,8 +1,11 @@
 // Class: FileRecipeDataAccessObject
 package data_access;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.Recipe;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.click_search.ClickSearchDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
 import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
 import use_case.view_favorites.ViewFavoritesDataAccessInterface;
@@ -11,13 +14,20 @@ import use_case.view_recipe.ViewRecipeDataAccessInterface;
 import use_case.view_warehouse.ViewWarehouseDataAccessInterface;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface, OpenCreateRecipeDataAccessInterface {
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface, OpenCreateRecipeDataAccessInterface, ClickSearchDataAccessInterface{
     private String filePath;
+    private static final String apiToken = "o2vhKjkn5tmz+/B9kpjD6Q==mOt0YRhnaodNiwxj";
 
     public FileRecipeDataAccessObject(String filePath) {
         this.filePath = filePath;
@@ -241,4 +251,68 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     public void updateRecipe(int id, String title, String content, LocalDateTime date, boolean isFavorite, double calories) {
         update(id, title, content, date, isFavorite, calories);
     }
-}
+
+    @Override
+    public boolean isRecipeExist(String title) {
+        if (getRecipeByTitle(title) != null) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public List<Recipe> getRecipesFromAPI(String title) throws IOException {
+        List<Recipe> resultRecipe = new ArrayList<>();
+        List<Recipe> existRecipe = readRecipes();
+
+        //先去API获取数据
+
+        URL url = new URL("https://api.api-ninjas.com/v1/recipe?query=" + URLEncoder.encode(title, StandardCharsets.UTF_8));
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestProperty("X-Api-Key" , apiToken);
+        connection.setRequestProperty("Accept", "application/json");
+
+        try (InputStream responseStream = connection.getInputStream()) {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(responseStream);
+            if (root.isArray()) {
+                // 遍历前五个元素（如果它们存在）
+                for (int i = 0; i < Math.min(root.size(), 5); i++) {
+                    JsonNode recipe = root.get(i);
+                    String recipeTitle = recipe.path("title").asText();
+                    String recipeInstructions = recipe.path("instructions").asText();
+                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, 0);
+                    resultRecipe.add(newRecipe);
+                }
+            }
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        //再去数据库获取数据
+        //如果数据库中没有，就直接返回API的数据
+        //如果数据库中有，就把API的数据和数据库的数据合并，返回
+
+        if (!isRecipeExist(title)){
+            for (Recipe recipe: resultRecipe){
+                addRecipe(recipe);
+            }
+            return resultRecipe;
+        }else{ //存在完全一样的菜谱
+            for (Recipe recipe: resultRecipe){
+                if (isRecipeExist(recipe.getTitle())){
+                    continue;
+            }else {
+                    addRecipe(recipe);
+                }
+            }
+        }
+        return resultRecipe;
+    }
+
+
+
+
+} // End of class FileRecipeDataAccessObject
