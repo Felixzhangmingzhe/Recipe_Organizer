@@ -1,4 +1,34 @@
 package interface_adapter.show_daily_special;
 
-public class ShowDailySpecialPresenter {
+import interface_adapter.ViewManagerModel;
+import use_case.show_daily_special.ShowDailySpecialOutputBoundary;
+import use_case.show_daily_special.ShowDailySpecialOutputData;
+
+public class ShowDailySpecialPresenter implements ShowDailySpecialOutputBoundary {
+
+    private final ShowDailySpecialViewModel showDailySpecialViewModel;
+    private final ViewManagerModel viewManagerModel;
+
+    public ShowDailySpecialPresenter(ShowDailySpecialViewModel showDailySpecialViewModel, ViewManagerModel viewManagerModel) {
+        this.showDailySpecialViewModel = showDailySpecialViewModel;
+        this.viewManagerModel = viewManagerModel;
+    }
+
+
+    @Override
+    public void prepareSuccessView(ShowDailySpecialOutputData showDailySpecialOutputData) {
+        ShowDailySpecialState state = showDailySpecialViewModel.getState();
+        state.setTitle(showDailySpecialOutputData.getDailySpecialRecipe().getTitle());
+        state.setContent(showDailySpecialOutputData.getDailySpecialRecipe().getContent());
+        state.setCreationTime(showDailySpecialOutputData.getDailySpecialRecipe().getCreationTime());
+        state.setCalories(showDailySpecialOutputData.getDailySpecialRecipe().getCalories());
+        this.showDailySpecialViewModel.setState(state);
+
+        showDailySpecialViewModel.firePropertyChanged();
+        viewManagerModel.setActiveView(showDailySpecialViewModel.getViewName());
+        viewManagerModel.firePropertyChanged();// this evt is state.
+        System.out.println(state.getContent());
+
+        System.out.println("Daily special is " + showDailySpecialOutputData.getDailySpecialRecipe().getTitle());
+    }
 }
