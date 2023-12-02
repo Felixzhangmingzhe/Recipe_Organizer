@@ -1,25 +1,19 @@
 package app;
 
-import data_access.FileRecipeDataAccessObject;
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackPresenter;
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.ViewManagerModel;
-import interface_adapter.view_recipe.ViewRecipeController;
-import interface_adapter.view_recipe.ViewRecipePresenter;
-import interface_adapter.view_recipe.ViewRecipeViewModel;
 import interface_adapter.view_search.ViewSearchController;
+import interface_adapter.view_search.ViewSearchPresenter;
 import interface_adapter.view_search.ViewSearchViewModel;
 import use_case.Back.BackInputBoundary;
 import use_case.Back.BackInteractor;
 import use_case.Back.BackOutputBoundary;
-import use_case.view_recipe.ViewRecipeInputBoundary;
-import use_case.view_recipe.ViewRecipeInteractor;
-import use_case.view_recipe.ViewRecipeOutputBoundary;
-import use_case.view_search.ViewSearchOutputBoundary;
+import use_case.view_search.ViewSearchInputBoundary;
+import use_case.view_search.ViewSearchInteractor;
 import view.SearchView;
-
-import static app.MainViewUseCaseFactory.createViewSearchController;
+import view.SearchView1;
 
 public class ViewSearchUseCaseFactory {
 
@@ -28,10 +22,16 @@ public class ViewSearchUseCaseFactory {
 //        BackController backController = createBackController(backViewModel, viewManagerModel);
 //        return new WarehouseView(viewRecipeController1, viewRecipeViewModel, backController,viewWarehouseViewModel,viewManagerModel);
 //    }
-    public static SearchView create(ViewSearchViewModel viewSearchViewModel, ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao, BackViewModel backViewModel){
-        ViewSearchController viewSearchController = createViewSearchController(viewManagerModel, viewSearchViewModel, dao);
+    public static SearchView create(ViewSearchViewModel viewSearchViewModel, ViewManagerModel viewManagerModel, BackViewModel backViewModel){
+        ViewSearchController viewSearchController = createViewSearchController(viewManagerModel, viewSearchViewModel);
         BackController backController = createBackController(backViewModel, viewManagerModel);
-        return new SearchView();
+        return new SearchView(backController, backViewModel, viewSearchController, viewSearchViewModel);
+    }
+
+    private static ViewSearchController createViewSearchController(ViewManagerModel viewManagerModel, ViewSearchViewModel viewSearchViewModel) {
+        ViewSearchPresenter viewSearchOutputBoundary = new ViewSearchPresenter(viewSearchViewModel, viewManagerModel);
+        ViewSearchInputBoundary viewSearchInputBoundary = new ViewSearchInteractor(viewSearchOutputBoundary);
+        return new ViewSearchController(viewSearchInputBoundary);
     }
 
 

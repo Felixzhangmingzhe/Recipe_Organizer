@@ -21,6 +21,7 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeController;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
 import interface_adapter.view_search.ViewSearchController;
+import interface_adapter.view_search.ViewSearchState;
 import interface_adapter.view_search.ViewSearchViewModel;
 import interface_adapter.view_warehouse.*;
 // Use Case:View Favorites
@@ -109,6 +110,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         if (e.getSource() == search) {//if (e.getSource() == createRecipe)
+                            ViewSearchState currentState = viewSearchViewModel.getState();
                             viewSearchController.execute();
                         }
                     }

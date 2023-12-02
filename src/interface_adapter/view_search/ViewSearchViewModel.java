@@ -9,8 +9,10 @@ import java.beans.PropertyChangeSupport;
 
 public class ViewSearchViewModel extends ViewModel {
 
+    private ViewSearchState state;
+
     public ViewSearchViewModel() {
-        super("Search View");
+        super("search");
     }
 
     private PropertyChangeSupport support = new PropertyChangeSupport(this);
@@ -22,5 +24,9 @@ public class ViewSearchViewModel extends ViewModel {
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
+    }
+
+    public ViewSearchState getState() {
+        return state;
     }
 }
