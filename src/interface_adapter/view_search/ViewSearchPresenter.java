@@ -7,7 +7,7 @@ import use_case.view_warehouse.ViewWarehouseOutputData;
 
 public class ViewSearchPresenter implements ViewSearchOutputBoundary {
 
-    private ViewSearchViewModel viewSearchViewModel;
+    private final ViewSearchViewModel viewSearchViewModel;
     private ViewManagerModel viewManagerModel;
 
     public ViewSearchPresenter(ViewSearchViewModel viewSearchViewModel, ViewManagerModel viewManagerModel) {
@@ -18,9 +18,8 @@ public class ViewSearchPresenter implements ViewSearchOutputBoundary {
     public void prepareSuccessView() {
         //
         viewSearchViewModel.firePropertyChanged();
-        viewManagerModel.setActiveView("search");
+        viewManagerModel.setActiveView(viewSearchViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
-        // MainView 添加监听器，监听 viewManagerModel 的变化，变化后调用 viewManagerModel.getActiveView() 获取当前活跃的 view，然后根据 view 的名字显示对应的 view
 
     }
 }
