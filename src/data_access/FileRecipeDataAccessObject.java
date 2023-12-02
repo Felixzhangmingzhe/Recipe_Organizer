@@ -8,6 +8,7 @@ import org.json.JSONObject;
 import use_case.click_search.ClickSearchDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
 import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
+import use_case.show_daily_special.ShowDailySpecialDataAccessInterface;
 import use_case.view_favorites.ViewFavoritesDataAccessInterface;
 import use_case.add_to_favorites.AddToFavoritesDataAccessInterface;
 import use_case.view_recipe.ViewRecipeDataAccessInterface;
@@ -25,7 +26,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface, OpenCreateRecipeDataAccessInterface, ClickSearchDataAccessInterface{
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface, OpenCreateRecipeDataAccessInterface, ClickSearchDataAccessInterface, ShowDailySpecialDataAccessInterface {
     private String filePath;
     private static final String apiToken = "o2vhKjkn5tmz+/B9kpjD6Q==mOt0YRhnaodNiwxj";
 
@@ -314,6 +315,10 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     }
 
 
-
-
+    @Override
+    public Recipe getDailySpecial() {
+        List<Recipe> recipes = readRecipes();
+        int random = (int) Math.floor(Math.random()*recipes.size());
+        return recipes.get(random);
+    }
 } // End of class FileRecipeDataAccessObject
