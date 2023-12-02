@@ -14,6 +14,7 @@ public class ViewRecipeViewModel extends ViewModel {
     private LocalDateTime creationTime;
     private double calories;
     private String noRecipeFoundMessage;
+    private boolean isFavorite;
 
     public ViewRecipeViewModel() {
         super("Read Recipe");
@@ -62,4 +63,8 @@ public class ViewRecipeViewModel extends ViewModel {
     public String getNoRecipeFoundMessage() {
         return noRecipeFoundMessage;
     }
+
+    public void setIsFavorite(boolean isFavorite) {this.isFavorite = isFavorite;}
+
+    public boolean getIsFavorite() {return isFavorite;}
 }

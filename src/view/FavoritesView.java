@@ -50,7 +50,6 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
         this.viewRecipeController = viewRecipeController;
         this.backController = backController;
         this.viewManagerModel = viewManagerModel;
-        this.viewRecipeViewModel.addPropertyChangeListener(this);
         this.viewFavoritesViewModel = viewFavoritesViewModel;
         this.viewFavoritesViewModel.addPropertyChangeListener(this);
 

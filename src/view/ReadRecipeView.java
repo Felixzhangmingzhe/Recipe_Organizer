@@ -2,6 +2,9 @@ package view;
 
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackViewModel;
+import interface_adapter.add_to_favorites.AddToFavoritesController;
+import interface_adapter.add_to_favorites.AddToFavoritesState;
+import interface_adapter.add_to_favorites.AddToFavoritesViewModel;
 import interface_adapter.create_recipe.CreateRecipeState;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
@@ -28,20 +31,30 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
     private final JLabel lastEditTimeLabel;
     private final CreateRecipeViewModel createRecipeViewModel;
     private final ViewRecipeViewModel viewRecipeViewModel;
+    private String recipeName;
 
     // Use Case: Back
     private BackController backController;
     private BackViewModel backViewModel;
+    // Use Case: Add to Favorites
+    private AddToFavoritesController addToFavoritesController;
+    private AddToFavoritesViewModel addToFavoritesViewModel;
 
-    public ReadRecipeView(BackViewModel backViewModel, BackController backController, ViewRecipeViewModel viewRecipeViewModel, CreateRecipeViewModel createRecipeViewModel) {
+    public ReadRecipeView(BackViewModel backViewModel, BackController backController, ViewRecipeViewModel viewRecipeViewModel, CreateRecipeViewModel createRecipeViewModel
+    , AddToFavoritesController addToFavoritesController, AddToFavoritesViewModel addToFavoritesViewModel) {
         // Initialize view model and controller
         this.backViewModel = backViewModel;
         this.backController = backController;
         this.createRecipeViewModel = createRecipeViewModel;
-        this.createRecipeViewModel.addPropertyChangeListener(this);
+        this.createRecipeViewModel.addPropertyChangeListener(this);//Listen to the change of createRecipeViewModel
         this.viewRecipeViewModel = viewRecipeViewModel;
-        this.viewRecipeViewModel.addPropertyChangeListener(this);
+        this.viewRecipeViewModel.addPropertyChangeListener(this);//Listen to the change of viewRecipeViewModel
+        this.addToFavoritesController = addToFavoritesController;
+        this.addToFavoritesViewModel = addToFavoritesViewModel;
+        this.addToFavoritesViewModel.addPropertyChangeListener(this);//Listen to the change of addToFavoritesViewModel
 
+        // Initialize String RecipeName
+        recipeName = "";
         // Initialize components
         recipeNameLabel = new JLabel("Recipe Name");
         recipeContentTextArea = new JTextArea("Recipe Content");
@@ -56,16 +69,7 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         editButton = new JButton("Edit");
 
         // Add action listeners to buttons
-        backButton.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        if (evt.getSource().equals(backButton)) {
-                            backController.execute();
-                        }
-                    }
-                }
-        );
-
+        backButton.addActionListener(this);
         favoritesButton.addActionListener(this);
         cookedButton.addActionListener(this);
         editButton.addActionListener(this);
@@ -101,7 +105,8 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
             backController.execute();
         } else if (evt.getSource() == favoritesButton) {
             // Implement action for favorites button
-            // For example, add the recipe to favorites
+            addToFavoritesController.execute(recipeName);
+            System.out.println("favorites button clicked");
         } else if (evt.getSource() == cookedButton) {
             // Implement action for cooked button
             // For example, mark the recipe as cooked
@@ -117,8 +122,13 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
 
         if (evt.getPropertyName().equals("state")) {
             getAndDisplay(createRecipeViewModel.getState());
+            updateFavoritesButton(createRecipeViewModel.getState());
         } else if (evt.getPropertyName().equals("recipe")) {
             getAndDisplay(viewRecipeViewModel);
+            updateFavoritesButton(viewRecipeViewModel);
+        } else if (evt.getPropertyName().equals("add")) {
+            getAndDisplay(addToFavoritesViewModel.getState());
+            updateFavoritesButton(addToFavoritesViewModel.getState());
         }
     }
 
@@ -136,7 +146,7 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
     }
     public void getAndDisplay(ViewRecipeViewModel currentState) {
         // Update the labels and text area with the recipe information
-        String recipeName = currentState.getTitle();
+        recipeName = currentState.getTitle();
         String recipeContent = currentState.getContent();
         String calories = String.valueOf(currentState.getCalories());
         String lastEditTime = String.valueOf(currentState.getCreationTime());
@@ -145,5 +155,53 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         recipeContentTextArea.setText(recipeContent);
         caloriesLabel.setText("Calories: " + calories);
         lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
+    }
+    public void getAndDisplay(AddToFavoritesState currentState) {
+        // Show the message that A. has been added to favorites.B. has been removed from favorites
+        String addToFavoritesMessage = currentState.getAddToFavoritesMessage();
+        String removeFromFavoritesMessage = currentState.getDeleteFromFavoritesMessage();
+        if (addToFavoritesMessage != "") {
+            JOptionPane.showMessageDialog(this, addToFavoritesMessage);
+        } else{
+            System.out.println("removeFromFavoritesMessage is " + removeFromFavoritesMessage);
+            JOptionPane.showMessageDialog(this, removeFromFavoritesMessage);
+        }
+    }
+    private void updateFavoritesButton(AddToFavoritesState currentState) {
+        // 根据 addToFavoritesViewModel 或其他相关信息判断 Recipe 是否在 favorites 中
+        String addToFavoritesMessage = currentState.getAddToFavoritesMessage();
+        boolean isInFavorites;
+        if (addToFavoritesMessage != "") {
+            isInFavorites = true;
+        } else {
+            isInFavorites = false;
+        }
+
+        // 更新按钮标签
+        if (isInFavorites) {
+            favoritesButton.setText("Unfavorite");
+        } else {
+            favoritesButton.setText("Favorite");
+        }
+    }
+    private void updateFavoritesButton(CreateRecipeState currentState) {
+        // According to the createRecipeViewModel or other related information to determine whether the recipe is in favorites
+        boolean isInFavorites = currentState.getIsInFavorites();
+        // 更新按钮标签
+        if (isInFavorites) {
+            favoritesButton.setText("Unfavorite");
+        } else {
+            favoritesButton.setText("Favorite");
+        }
+    }
+    private void updateFavoritesButton(ViewRecipeViewModel currentState) {
+        // According to the createRecipeViewModel or other related information to determine whether the recipe is in favorites
+        boolean isInFavorites = currentState.getIsFavorite();
+        // 更新按钮标签
+        if (isInFavorites) {
+            favoritesButton.setText("Unfavorite");
+        } else {
+            favoritesButton.setText("Favorite");
+        }
     }
 }

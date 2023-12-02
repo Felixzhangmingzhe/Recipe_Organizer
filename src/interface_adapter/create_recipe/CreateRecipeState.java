@@ -9,6 +9,9 @@ public class CreateRecipeState {
     private String contentError = null;
     private LocalDateTime createdAt = null;
     private String createdAtError = null;
+    private boolean isInFavorites;
+    private String isInFavoritesError = null;
+
     private double calories;
     private String caloriesError = null;
     private String conflictError = null;
@@ -48,6 +51,12 @@ public class CreateRecipeState {
     public String getConflictError() {
         return conflictError;
     }
+    public boolean getIsInFavorites() {
+        return isInFavorites;
+    }
+    public String getIsInFavoritesError() {
+        return isInFavoritesError;
+    }
 
 
 
@@ -82,6 +91,10 @@ public class CreateRecipeState {
     public void setConflictError(String conflictError) {
         this.conflictError = conflictError;
     }
-
-
+    public void setIsInFavorites(boolean isInFavorites) {
+        this.isInFavorites = isInFavorites;
+    }
+    public void setIsInFavoritesError(String isInFavoritesError) {
+        this.isInFavoritesError = isInFavoritesError;
+    }
 }

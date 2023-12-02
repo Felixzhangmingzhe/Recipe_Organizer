@@ -8,6 +8,7 @@ import data_access.FileRecipeDataAccessObject;
 import entity.*;
 // 引入各个用例的ViewModel
 import interface_adapter.Back.BackViewModel;
+import interface_adapter.add_to_favorites.AddToFavoritesViewModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
 import interface_adapter.view_search.ViewSearchViewModel;
@@ -43,6 +44,7 @@ public class Main {
         BackViewModel backViewModel = new BackViewModel();
         CreateRecipeViewModel createRecipeViewModel = new CreateRecipeViewModel();
         ViewSearchViewModel viewSearchViewModel = new ViewSearchViewModel();
+        AddToFavoritesViewModel addToFavoritesViewModel = new AddToFavoritesViewModel();
 
 
 
@@ -82,7 +84,7 @@ public class Main {
         EditRecipeView editRecipeView = EditRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,DAO);
         views.add(editRecipeView, editRecipeView.viewName);
         // 创建并将视图添加到主面板:查看菜谱视图
-        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,viewRecipeViewModel,viewRecipeDAO);
+        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,viewRecipeViewModel,addToFavoritesViewModel,viewRecipeDAO);
         views.add(viewRecipeView, viewRecipeView.viewName);
         // 创建并将视图添加到主面板:创建菜谱视图
         SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, DAO, backViewModel);

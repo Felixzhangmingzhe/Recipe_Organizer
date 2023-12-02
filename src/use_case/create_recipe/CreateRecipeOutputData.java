@@ -36,5 +36,4 @@ public class CreateRecipeOutputData {
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
-
 }

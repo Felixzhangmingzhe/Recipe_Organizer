@@ -1,9 +1,9 @@
 TODO list:
 +* Add display of recipe date and calories
-+* Make the recipe can be added to favorites and if successful, there will be a message
 +* it's better that if a recipe isfavorite, the button will be of name "remove from favorites"
-    while if it's not favorite, the button will be of name "add to favorites"
+    while if it's not favorite, the button will be of name "add to favorites"(这个亟待解决)
 +* Add a way to click cooked and record the data of the recipe
++* Add a way to calculate cooked vatality of the user.
 +* Add a way to edit the recipe
 +* Add a way to delete the recipe
 
@@ -26,3 +26,4 @@ Done list:
 +* Add a way to avoid repeated Recipes with the same name(name is unique)
 +* Make the recipe can be viewed from the Warehouse View
     can be re-open, but viewRecipe usecase won;t make read recipe view update.
++* Make the recipe can be added to favorites and if successful, there will be a message.
