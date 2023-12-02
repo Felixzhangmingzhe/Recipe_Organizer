@@ -20,6 +20,7 @@ public class CreateRecipePresenter implements CreateRecipeOutputBoundary {
         System.out.println(response.getContent());
         state.setCreatedAt(response.getCreatedAt());
         state.setCalories(response.getCalories());
+        state.setIsInFavorites(response.getisFavorite());
         this.createRecipeViewModel.setState(state);
         createRecipeViewModel.firePropertyChanged();
         viewManagerModel.setActiveView(createRecipeViewModel.getViewName());

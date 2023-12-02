@@ -15,7 +15,7 @@ public class ViewRecipeInteractor implements ViewRecipeInputBoundary {
     public void viewRecipe(ViewRecipeInputData inputData) {
         Recipe recipe = dataAccess.getRecipeByTitle(inputData.getTitle());
         if (recipe != null) {
-            ViewRecipeOutputData outputData = new ViewRecipeOutputData(recipe.getTitle(), recipe.getContent(), recipe.getDate(), recipe.getCalories());
+            ViewRecipeOutputData outputData = new ViewRecipeOutputData(recipe.getTitle(), recipe.getContent(), recipe.getDate(), recipe.getCalories(),recipe.getIsFavorite());
             viewRecipePresenter.prepareSuccessView(outputData);
         } else {
             viewRecipePresenter.prepareFailView("Recipe not found.");

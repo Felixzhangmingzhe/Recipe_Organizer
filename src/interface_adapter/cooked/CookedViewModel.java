@@ -1,26 +1,26 @@
-package interface_adapter.add_to_favorites;
-
+package interface_adapter.cooked;
 import interface_adapter.ViewModel;
+import interface_adapter.add_to_favorites.AddToFavoritesState;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+public class CookedViewModel extends ViewModel {
+    private CookedState state = new CookedState();
 
-public class AddToFavoritesViewModel extends ViewModel {
-    private AddToFavoritesState state = new AddToFavoritesState();
-
-    public AddToFavoritesViewModel() {
+    public CookedViewModel() {
         super("Read Recipe");
     }
-    public AddToFavoritesState getState() {
+
+    public CookedState getState() {
         return state;
     }
-    public void setState(AddToFavoritesState state) {
+    public void setState(CookedState state) {
         this.state = state;
     }
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
     @Override
     public void firePropertyChanged() {
-        support.firePropertyChange("add", null, state);
+        support.firePropertyChange("cooked", null, state);
     }
 
     @Override
