@@ -15,6 +15,7 @@ import use_case.Back.BackOutputBoundary;
 import use_case.show_daily_special.ShowDailySpecialInputBoundary;
 import use_case.show_daily_special.ShowDailySpecialInteractor;
 import use_case.show_daily_special.ShowDailySpecialOutputBoundary;
+import view.DailySpecialView;
 import view.ReadRecipeView;
 
 public class ShowDailySpecialUseCaseFactory extends UseCaseFactory{
@@ -26,14 +27,25 @@ public class ShowDailySpecialUseCaseFactory extends UseCaseFactory{
 //        return new ShowDailySpecialController(showDailySpecialInputBoundary);
 //    }
 
-    public static ReadRecipeView create(BackViewModel backViewModel, ViewManagerModel viewManagerModel,
-                                        ShowDailySpecialViewModel showDailySpecialViewModel,
-                                        ViewRecipeViewModel viewRecipeViewModel,
-                                        CreateRecipeViewModel createRecipeViewModel,
-                                        FileRecipeDataAccessObject dao) {
+
+//    public static ReadRecipeView create(BackViewModel backViewModel, ViewManagerModel viewManagerModel,
+//                                        ShowDailySpecialViewModel showDailySpecialViewModel,
+//                                        ViewRecipeViewModel viewRecipeViewModel,
+//                                        CreateRecipeViewModel createRecipeViewModel,
+//                                        FileRecipeDataAccessObject dao) {
+//        BackController backController = createBackController(backViewModel, viewManagerModel);
+//
+//        return new ReadRecipeView(backViewModel, backController,viewRecipeViewModel,createRecipeViewModel, showDailySpecialViewModel);
+//    }
+    //不用你了
+
+    public static DailySpecialView create(BackViewModel backViewModel, ViewManagerModel viewManagerModel,
+                                          ShowDailySpecialViewModel showDailySpecialViewModel,
+                                          ViewRecipeViewModel viewRecipeViewModel,
+                                          FileRecipeDataAccessObject dao) {
         BackController backController = createBackController(backViewModel, viewManagerModel);
 
-        return new ReadRecipeView(backViewModel, backController,viewRecipeViewModel,createRecipeViewModel, showDailySpecialViewModel);
+        return new DailySpecialView(backViewModel, backController,viewRecipeViewModel, showDailySpecialViewModel);
     }
     public static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel) {
         BackOutputBoundary backOutputBoundary = new BackPresenter(viewManagerModel, backViewModel);

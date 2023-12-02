@@ -10,7 +10,7 @@ public class ShowDailySpecialViewModel extends ViewModel {
     private ShowDailySpecialState state;
 
     public ShowDailySpecialViewModel() {
-        super("Show Daily Special");
+        super("Daily Special");
     }
 
     public void setState(ShowDailySpecialState state) {
