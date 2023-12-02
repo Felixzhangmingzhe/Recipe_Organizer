@@ -40,4 +40,9 @@ public class Recipe {
     }
 
     public double getCalories() {return this.calories;}
+
+    public LocalDateTime getCreationTime() {
+        return this.date;
+    }
+
 }

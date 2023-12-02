@@ -1,27 +1,34 @@
 // Class: FileRecipeDataAccessObject
 package data_access;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.Recipe;
-import entity.RecipeFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import use_case.cooked.CookedDataAccessInterface;
+import use_case.click_search.ClickSearchDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
 import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
+import use_case.show_daily_special.ShowDailySpecialDataAccessInterface;
 import use_case.view_favorites.ViewFavoritesDataAccessInterface;
 import use_case.add_to_favorites.AddToFavoritesDataAccessInterface;
 import use_case.view_recipe.ViewRecipeDataAccessInterface;
 import use_case.view_warehouse.ViewWarehouseDataAccessInterface;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface,
-        AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface,
-        OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface {
+public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface, AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface, OpenCreateRecipeDataAccessInterface, ClickSearchDataAccessInterface, ShowDailySpecialDataAccessInterface {
     private String filePath;
+    private static final String apiToken = "o2vhKjkn5tmz+/B9kpjD6Q==mOt0YRhnaodNiwxj";
 
     public FileRecipeDataAccessObject(String filePath) {
         this.filePath = filePath;
@@ -101,9 +108,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         String content = jsonRecipe.getString("content");
         LocalDateTime date = LocalDateTime.parse(jsonRecipe.getString("date"));
         boolean isFavorite = jsonRecipe.optBoolean("isFavorite");
-        boolean isCooked = jsonRecipe.optBoolean("isCooked");
         double calories = jsonRecipe.optDouble("calories");
-        return new Recipe(id, title, content, date, isFavorite, isCooked, calories);
+        return new Recipe(id, title, content, date, isFavorite,calories);
     }
     // 下面的是写入的代码，但是当改变Recipe的属性时，上面的会报错，但下面的这个不报错，得自己加，注意啦！
     private JSONObject createJsonRecipe(Recipe recipe) {
@@ -113,7 +119,6 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         jsonRecipe.put("content", recipe.getContent());
         jsonRecipe.put("date", recipe.getDate().toString());// 这里时间变成了字符串
         jsonRecipe.put("isFavorite", recipe.getIsFavorite());
-        jsonRecipe.put("isCooked", recipe.getIsCooked());
         jsonRecipe.put("calories", recipe.getCalories());
         return jsonRecipe;
     }
@@ -127,7 +132,6 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                 "Spaghetti Bolognese",
                 "Cook the spaghetti. Cook the ground beef. Mix them together.",
                 Date,
-                false,
                 false,
                 100
         );
@@ -177,7 +181,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         }
         return null;
     }
-    public void update(int id, String title, String content, LocalDateTime date, boolean isFavorite, boolean isCooked, double calories) {
+    public void update(int id, String title, String content, LocalDateTime date, boolean isFavorite, double calories) {
         // 读取所有食谱
         List<Recipe> recipes = readRecipes();
         // 创建更新后的食谱列表
@@ -186,8 +190,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         for (Recipe recipe : recipes) {
             if (recipe.getId() == id) {
                 // 创建新的食谱实例来替换旧的
-                RecipeFactory recipeFactory = new RecipeFactory();
-                Recipe updatedRecipe = recipeFactory.create(id, title, content, date, isFavorite,calories, isCooked);
+                Recipe updatedRecipe = new Recipe(id, title, content, date, isFavorite, calories);
                 updatedRecipes.add(updatedRecipe);
             } else {
                 updatedRecipes.add(recipe);
@@ -246,17 +249,76 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     }
 
     @Override
-    public void updateRecipe(int id, String title, String content, LocalDateTime date, boolean isFavorite,boolean isCooked, double calories) {
-        update(id, title, content, date, isFavorite, isCooked, calories);
+    public void updateRecipe(int id, String title, String content, LocalDateTime date, boolean isFavorite, double calories) {
+        update(id, title, content, date, isFavorite, calories);
     }
 
     @Override
-    public Recipe getRecipeByRecipeTitle(String recipeTitle) {
-        return getRecipeByName(recipeTitle);
+    public boolean isRecipeExist(String title) {
+        if (getRecipeByTitle(title) != null) {
+            return true;
+        }
+        return false;
     }
 
     @Override
-    public void updateCookedRecipe(int id, String title, String content, LocalDateTime date, boolean isFavorite,boolean isCooked, double calories) {
-        update(id, title, content, date, isFavorite, isCooked, calories);
+    public List<Recipe> getRecipesFromAPI(String title) throws IOException {
+        List<Recipe> resultRecipe = new ArrayList<>();
+        List<Recipe> existRecipe = readRecipes();
+
+        //先去API获取数据
+
+        URL url = new URL("https://api.api-ninjas.com/v1/recipe?query=" + URLEncoder.encode(title, StandardCharsets.UTF_8));
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestProperty("X-Api-Key" , apiToken);
+        connection.setRequestProperty("Accept", "application/json");
+
+        try (InputStream responseStream = connection.getInputStream()) {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(responseStream);
+            if (root.isArray()) {
+                // 遍历前五个元素（如果它们存在）
+                for (int i = 0; i < Math.min(root.size(), 5); i++) {
+                    JsonNode recipe = root.get(i);
+                    String recipeTitle = recipe.path("title").asText();
+                    String recipeInstructions = recipe.path("instructions").asText();
+                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, 0);
+                    resultRecipe.add(newRecipe);
+                }
+            }
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        //再去数据库获取数据
+        //如果数据库中没有，就直接返回API的数据
+        //如果数据库中有，就把API的数据和数据库的数据合并，返回
+
+        if (!isRecipeExist(title)){
+            for (Recipe recipe: resultRecipe){
+                addRecipe(recipe);
+            }
+            return resultRecipe;
+        }else{ //存在完全一样的菜谱
+            for (Recipe recipe: resultRecipe){
+                if (isRecipeExist(recipe.getTitle())){
+                    continue;
+            }else {
+                    addRecipe(recipe);
+                }
+            }
+        }
+        System.out.println(resultRecipe);
+        return resultRecipe;
     }
-}
+
+
+    @Override
+    public Recipe getDailySpecial() {
+        List<Recipe> recipes = readRecipes();
+        int random = (int) Math.floor(Math.random()*recipes.size());
+        return recipes.get(random);
+    }
+} // End of class FileRecipeDataAccessObject
