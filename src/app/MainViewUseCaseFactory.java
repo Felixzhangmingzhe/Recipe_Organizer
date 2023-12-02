@@ -52,7 +52,7 @@ public class MainViewUseCaseFactory extends UseCaseFactory {
             // 生成各个用例的Controller
             ViewWarehouseController viewWarehouseController = createViewWarehouseController(viewManagerModel, viewWarehouseViewModel, dao, viewRecipeViewModel);
             ViewFavoritesController viewFavoritesController = createViewFavoritesController(viewManagerModel, viewFavoritesViewModel, dao, viewRecipeViewModel);
-            ViewSearchController viewSearchController = createViewSearchController(viewManagerModel, viewSearchViewModel, dao);
+            ViewSearchController viewSearchController = createViewSearchController(viewManagerModel, viewSearchViewModel);
             OpenCreateRecipeController openCreateRecipeController = createOpenCreateRecipeController(viewManagerModel, openCreateRecipeViewModel, dao);
             ShowDailySpecialController showDailySpecialController = createShowDailySpecialController(viewManagerModel, showDailySpecialViewModel, dao);
 
@@ -62,12 +62,6 @@ public class MainViewUseCaseFactory extends UseCaseFactory {
             e.printStackTrace();
             return null;
         }
-    }
-
-    static ViewSearchController createViewSearchController(ViewManagerModel viewManagerModel, ViewSearchViewModel viewSearchViewModel, FileRecipeDataAccessObject dao) {
-        ViewSearchOutputBoundary viewSearchOutputBoundary = (ViewSearchOutputBoundary) new ViewSearchPresenter(viewSearchViewModel, viewManagerModel);
-        ViewSearchInputBoundary viewSearchInputBoundary = new ViewSearchInteractor((ViewSearchPresenter) viewSearchOutputBoundary);
-        return new ViewSearchController(viewSearchInputBoundary);
     }
 
     private static ViewFavoritesController createViewFavoritesController(ViewManagerModel viewManagerModel, ViewFavoritesViewModel viewFavoritesViewModel, FileRecipeDataAccessObject dao, ViewRecipeViewModel viewRecipeViewModel) {
@@ -90,6 +84,12 @@ public class MainViewUseCaseFactory extends UseCaseFactory {
         ShowDailySpecialOutputBoundary showDailySpecialOutputBoundary = (ShowDailySpecialOutputBoundary) new ShowDailySpecialPresenter(showDailySpecialViewModel,viewManagerModel);
         ShowDailySpecialInputBoundary showDailySpecialInputBoundary = new ShowDailySpecialInteractor((ShowDailySpecialOutputBoundary) showDailySpecialOutputBoundary, (ShowDailySpecialDataAccessInterface) dao);
         return new ShowDailySpecialController(showDailySpecialInputBoundary);
+    }
+
+    static ViewSearchController createViewSearchController(ViewManagerModel viewManagerModel, ViewSearchViewModel viewSearchViewModel) {
+        ViewSearchPresenter viewSearchOutputBoundary = new ViewSearchPresenter(viewSearchViewModel, viewManagerModel);
+        ViewSearchInputBoundary viewSearchInputBoundary = new ViewSearchInteractor(viewSearchOutputBoundary);
+        return new ViewSearchController(viewSearchInputBoundary);
     }
 
 
