@@ -2,6 +2,10 @@ package view;
 
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackViewModel;
+import interface_adapter.click_search.ClickSearchController;
+import interface_adapter.click_search.ClickSearchState;
+import interface_adapter.click_search.ClickSearchViewModel;
+import interface_adapter.create_recipe.CreateRecipeState;
 import interface_adapter.view_search.ViewSearchController;
 import interface_adapter.view_search.ViewSearchState;
 import interface_adapter.view_search.ViewSearchViewModel;
@@ -11,10 +15,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-public class SearchView implements ActionListener, PropertyChangeListener{
+public class SearchView extends Component implements ActionListener, PropertyChangeListener{
 
     public final String viewName = "search";
 
@@ -33,12 +39,15 @@ public class SearchView implements ActionListener, PropertyChangeListener{
     private ViewSearchController searchController;
     private ViewSearchViewModel searchViewModel;
 
+    private ClickSearchController clickSearchController;
+    private ClickSearchViewModel clickSearchViewModel;
+
 
     public JPanel getSearchMainPanel() {
         return SearchPanel;
     }
 
-    public SearchView(BackController backController, BackViewModel backViewModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel){
+    public SearchView(BackController backController, BackViewModel backViewModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel, ClickSearchController clickSearchController, ClickSearchViewModel clickSearchViewModel) {
         initComponents();
 
 
@@ -47,6 +56,9 @@ public class SearchView implements ActionListener, PropertyChangeListener{
         this.searchController = viewSearchController;
         this.searchViewModel = viewSearchViewModel;
         this.searchViewModel.addPropertyChangeListener(this);
+        
+        this.clickSearchController = clickSearchController;
+        this.clickSearchViewModel = clickSearchViewModel;
 
 //        JFrame frame = new JFrame("SearchView");
 //        frame.setContentPane(new SearchView(backController, backViewModel, viewSearchController, viewSearchViewModel).SearchPanel);
@@ -70,16 +82,50 @@ public class SearchView implements ActionListener, PropertyChangeListener{
 //        this.add(returnButton);
 
 
+        searchTextField.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // 这里什么都不做
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // 这里也什么都不做
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                // 在这里处理文本更新
+                ClickSearchState currentState = clickSearchViewModel.getState();
+                if (currentState != null){
+                    currentState.setSearchQuery(searchTextField.getText());
+                    clickSearchViewModel.setState(currentState);
+                } else{
+                    currentState = new ClickSearchState();
+                    currentState.setSearchQuery(searchTextField.getText());
+                    clickSearchViewModel.setState(currentState);
+                }
+
+//                currentState.setSearchQuery(searchTextField.getText());
+//                clickSearchViewModel.setState(currentState);
+
+//                ViewSearchState currentState = searchViewModel.getState();
+//                currentState.setSearchQuery(searchTextField.getText());
+//                viewSearchViewModel.setState(currentState);
+            }
+        });
 
         buttonSearch.addActionListener(
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         if (e.getSource().equals(buttonSearch)) {
+                            ClickSearchState currentState = clickSearchViewModel.getState();
+                            clickSearchController.execute(currentState.getSearchQuery());
                         }
                         // 处理取消按钮点击事件，可能需要关闭编辑界面
                         // 执行取消逻辑...
-                        searchController.execute();
+
                     }
                 }
         );
@@ -138,7 +184,7 @@ public class SearchView implements ActionListener, PropertyChangeListener{
 //            // 处理保存按钮点击事件，可能需要获取输入的菜谱信息并保存
 //            String recipeName = recipeNameField.getText();
 //            String recipeContent = recipeContentArea.getText();
-            searchController.execute();
+            clickSearchController.execute(searchViewModel.getState().getSearchQuery());
             // 执行保存逻辑...
         } else if (e.getSource() == returnButton) {
             // 处理取消按钮点击事件，可能需要关闭编辑界面
@@ -149,11 +195,18 @@ public class SearchView implements ActionListener, PropertyChangeListener{
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        ViewSearchState currentState = searchViewModel.getState();
+//        ViewSearchState currentState = searchViewModel.getState();
 //        JOptionPane.showMessageDialog(this, currentState.getSearchResult());
-
-
+        ClickSearchState clickSearchState = clickSearchViewModel.getState();
+        getAndDisplaySearchRecipeError(clickSearchState);
     }
+
+    public void getAndDisplaySearchRecipeError(ClickSearchState state) {
+        if (state.getSearchError() != null) {
+            JOptionPane.showMessageDialog(this, state.getSearchError());
+        }
+    }
+
 
     public JPanel getSearchPanel() {
         return SearchPanel;

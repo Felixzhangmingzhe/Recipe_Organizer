@@ -309,6 +309,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                 }
             }
         }
+        System.out.println(resultRecipe);
         return resultRecipe;
     }
 

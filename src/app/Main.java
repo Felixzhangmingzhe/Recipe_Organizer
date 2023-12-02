@@ -6,6 +6,7 @@ import java.awt.*;
 import data_access.FileRecipeDataAccessObject;
 // 引入各个用例的ViewModel
 import interface_adapter.Back.BackViewModel;
+import interface_adapter.click_search.ClickSearchViewModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
 import interface_adapter.view_search.ViewSearchViewModel;
@@ -41,6 +42,7 @@ public class Main {
         BackViewModel backViewModel = new BackViewModel();
         CreateRecipeViewModel createRecipeViewModel = new CreateRecipeViewModel();
         ViewSearchViewModel viewSearchViewModel = new ViewSearchViewModel();
+        ClickSearchViewModel clickSearchViewModel = new ClickSearchViewModel();
 
 
 
@@ -83,7 +85,7 @@ public class Main {
         ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,viewRecipeViewModel,viewRecipeDAO);
         views.add(viewRecipeView, viewRecipeView.viewName);
         // 创建并将视图添加到主面板:创建菜谱视图
-        SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, backViewModel);
+        SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, backViewModel, clickSearchViewModel, DAO);
 //        System.out.println(viewSearchView.getSearchPanel() == null);嘿嘿
         views.add(viewSearchView.getSearchPanel(), viewSearchView.viewName);
         // 创建并将视图添加到主面板:搜索菜谱视图

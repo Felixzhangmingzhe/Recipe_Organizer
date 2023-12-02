@@ -1,6 +1,7 @@
 package interface_adapter.click_search;
 
 import interface_adapter.ViewManagerModel;
+import interface_adapter.create_recipe.CreateRecipeState;
 import use_case.click_search.ClickSearchOutputBoundary;
 import use_case.click_search.ClickSearchOutputData;
 
@@ -26,8 +27,14 @@ public class ClickSearchPresenter implements ClickSearchOutputBoundary {
 
     }
 
+
     @Override
     public void prepareFailView(String error) {
+        if (error.equals("Cannot find recipe")) {
+            ClickSearchState state = clickSearchViewModel.getState();
+            state.setSearchError("Cannot find recipe");
+            clickSearchViewModel.firePropertyChanged();
+        }
 
     }
 }

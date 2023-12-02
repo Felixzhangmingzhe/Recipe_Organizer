@@ -15,6 +15,11 @@ public class ViewSearchViewModel extends ViewModel {
         super("search");
     }
 
+    public void setState(ViewSearchState state) {
+        this.state = state;
+    }
+
+
     private PropertyChangeSupport support = new PropertyChangeSupport(this);
     @Override
     public void firePropertyChanged() {
