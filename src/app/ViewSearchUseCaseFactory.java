@@ -13,7 +13,7 @@ import use_case.Back.BackOutputBoundary;
 import use_case.view_search.ViewSearchInputBoundary;
 import use_case.view_search.ViewSearchInteractor;
 import view.SearchView;
-import view.SearchView1;
+import view.SearchViewCard;
 
 public class ViewSearchUseCaseFactory {
 
