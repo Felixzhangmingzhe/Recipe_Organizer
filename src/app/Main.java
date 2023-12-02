@@ -9,6 +9,7 @@ import entity.*;
 // 引入各个用例的ViewModel
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.add_to_favorites.AddToFavoritesViewModel;
+import interface_adapter.click_search.ClickSearchViewModel;
 import interface_adapter.cooked.CookedController;
 import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
@@ -50,6 +51,7 @@ public class Main {
         AddToFavoritesViewModel addToFavoritesViewModel = new AddToFavoritesViewModel();
         CookedViewModel cookedViewModel = new CookedViewModel();
         ShowDailySpecialViewModel showDailySpecialViewModel = new ShowDailySpecialViewModel();
+        ClickSearchViewModel clickSearchViewModel = new ClickSearchViewModel();
 
 
 
@@ -98,7 +100,7 @@ public class Main {
         views.add(dailySpecialView, dailySpecialView.viewName);
 
         // 创建并将视图添加到主面板:搜索菜谱视图
-        SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, DAO, backViewModel);
+        SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, backViewModel, clickSearchViewModel, DAO);
         views.add(viewSearchView.getSearchView(), viewSearchView.viewName);
 
 

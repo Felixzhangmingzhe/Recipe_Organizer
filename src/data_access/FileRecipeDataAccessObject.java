@@ -1,9 +1,12 @@
 // Class: FileRecipeDataAccessObject
 package data_access;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.Recipe;
 import entity.RecipeFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.click_search.ClickSearchDataAccessInterface;
 import use_case.cooked.CookedDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
 import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
@@ -14,6 +17,11 @@ import use_case.view_recipe.ViewRecipeDataAccessInterface;
 import use_case.view_warehouse.ViewWarehouseDataAccessInterface;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -21,8 +29,10 @@ import java.util.List;
 import java.time.LocalDateTime;
 public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface,
         AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface,
-        OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface {
+        OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface, ClickSearchDataAccessInterface {
     private String filePath;
+
+    private static final String apiToken = "o2vhKjkn5tmz+/B9kpjD6Q==mOt0YRhnaodNiwxj";
 
     public FileRecipeDataAccessObject(String filePath) {
         this.filePath = filePath;
@@ -266,5 +276,78 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         List<Recipe> recipes = readRecipes();
         int random = (int) Math.floor(Math.random()*recipes.size());
         return recipes.get(random);
+    }
+
+    @Override
+    public boolean isRecipeExist(String title) {
+        if (getRecipeByTitle(title) != null) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public List<Recipe> getRecipesFromAPI(String title) throws IOException {
+        List<Recipe> resultRecipe = new ArrayList<>();
+        List<Recipe> existRecipe = readRecipes();
+
+        //先去API获取数据
+
+        URL url = new URL("https://api.api-ninjas.com/v1/recipe?query=" + URLEncoder.encode(title, StandardCharsets.UTF_8));
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestProperty("X-Api-Key" , apiToken);
+        connection.setRequestProperty("Accept", "application/json");
+
+        try (InputStream responseStream = connection.getInputStream()) {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(responseStream);
+            if (root.isArray()) {
+                // 遍历前10个元素（如果它们存在）
+                for (int i = 0; i < Math.min(root.size(), 2); i++) {
+                    JsonNode recipe = root.get(i);
+                    String recipeTitle = recipe.path("title").asText();
+                    String recipeInstructions = recipe.path("instructions").asText();
+                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, false,0);
+                    resultRecipe.add(newRecipe);
+                }
+            }
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        //再去数据库获取数据
+        //如果数据库中没有，就直接返回API的数据
+        //如果数据库中有，就把API的数据和数据库的数据合并，返回
+
+        for (Recipe recipe: resultRecipe){
+            System.out.println("这个是"+recipe.getTitle());
+            if (isRecipeExist(recipe.getTitle())){ //如果API的数据在数据库中已经存在，就不加入数据库
+                System.out.println("存在");
+                continue;
+            }else { //如果API的数据在数据库中不存在，就加入数据库
+                System.out.println("不存在");
+                addRecipe(recipe);
+            }
+        } //把API的数据加入数据库
+
+
+//        if (!isRecipeExist(title)){ //不存在完全一样的菜谱
+//            for (Recipe recipe: resultRecipe){
+//                addRecipe(recipe); //把API的数据加入数据库
+//            }
+//            return resultRecipe;
+//        }else{ //存在完全一样的菜谱
+//            for (Recipe recipe: resultRecipe){
+//                if (isRecipeExist(recipe.getTitle())){ //如果API的数据在数据库中已经存在，就不加入数据库
+//                    continue;
+//                }else { //如果API的数据在数据库中不存在，就加入数据库
+//                    addRecipe(recipe);
+//                }
+//            }
+//        }
+
+        return resultRecipe;
     }
 }
