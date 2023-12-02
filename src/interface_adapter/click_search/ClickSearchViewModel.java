@@ -1,15 +1,16 @@
 package interface_adapter.click_search;
 
 import interface_adapter.ViewModel;
+import interface_adapter.view_warehouse.ViewWarehouseViewModel;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
-public class ClickSearchViewModel extends ViewModel {
+public class ClickSearchViewModel extends ViewWarehouseViewModel {
     private ClickSearchState state;
 
     public ClickSearchViewModel() {
-        super("Search Result");
+        super();
     }
 
     public void setState(ClickSearchState state) {

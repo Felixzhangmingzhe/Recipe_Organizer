@@ -1,43 +1,51 @@
 package interface_adapter.click_search;
 
 import entity.Recipe;
+import interface_adapter.view_warehouse.ViewWarehouseState;
 
 import java.util.List;
 
-public class ClickSearchState {
+public class ClickSearchState extends ViewWarehouseState {
 
     private String searchQuery;
     private String searchError;
 
-    private List<Recipe> searchedRecipes;
+    private List<Recipe> recipes = new java.util.ArrayList<>();
+    private String recipesError = null;
 
-
-    public ClickSearchState(String searchQuery, String searchError) {
-        this.searchQuery = searchQuery;
-        this.searchError = searchError;
-    }
 
     public ClickSearchState() {
+        super();
+        this.searchQuery = "";
+        this.searchError = null;
     }
 
-    public List<Recipe> getSearchedRecipes() {
-        return searchedRecipes;
+    @Override
+    public List<Recipe> getRecipes() {
+        return recipes;
     }
 
-    public void setSearchedRecipes(List<Recipe> searchedRecipes) {
-        this.searchedRecipes = searchedRecipes;
+    @Override
+    public void setRecipes(List<Recipe> recipes) {
+        this.recipes = recipes;
     }
 
-    public String getSearchQuery() {
-        return searchQuery;
+    @Override
+    public String getRecipesError() {
+        return recipesError;
+    }
+
+    @Override
+    public void setRecipesError(String recipesError) {
+        this.recipesError = recipesError;
     }
 
     public String getSearchError() {
         return searchError;
     }
 
-    public boolean hasSearchError() {
-        return searchError != null;
+    public String getSearchQuery() {
+        return searchQuery;
     }
 
     public void setSearchError(String searchError) {
