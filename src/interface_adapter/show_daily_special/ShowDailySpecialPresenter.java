@@ -17,7 +17,8 @@ public class ShowDailySpecialPresenter implements ShowDailySpecialOutputBoundary
 
     @Override
     public void prepareSuccessView(ShowDailySpecialOutputData showDailySpecialOutputData) {
-        ShowDailySpecialState state = showDailySpecialViewModel.getState();
+        ShowDailySpecialState state = new ShowDailySpecialState();
+//        System.out.println(showDailySpecialOutputData.getDailySpecialRecipe().getTitle());//看看有没有拿到数据-有
         state.setTitle(showDailySpecialOutputData.getDailySpecialRecipe().getTitle());
         state.setContent(showDailySpecialOutputData.getDailySpecialRecipe().getContent());
         state.setCreationTime(showDailySpecialOutputData.getDailySpecialRecipe().getCreationTime());
@@ -27,8 +28,7 @@ public class ShowDailySpecialPresenter implements ShowDailySpecialOutputBoundary
         showDailySpecialViewModel.firePropertyChanged();
         viewManagerModel.setActiveView(showDailySpecialViewModel.getViewName());
         viewManagerModel.firePropertyChanged();// this evt is state.
-        System.out.println(state.getContent());
-
+//        System.out.println(state.getContent());
         System.out.println("Daily special is " + showDailySpecialOutputData.getDailySpecialRecipe().getTitle());
     }
 }
