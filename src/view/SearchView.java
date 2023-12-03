@@ -40,11 +40,6 @@ public class SearchView extends Component implements ActionListener, PropertyCha
     private ClickSearchController clickSearchController;
     private ClickSearchViewModel clickSearchViewModel;
 
-
-    public JPanel getSearchMainPanel() {
-        return SearchPanel;
-    }
-
     public SearchView(BackController backController, BackViewModel backViewModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel, ClickSearchController clickSearchController, ClickSearchViewModel clickSearchViewModel) {
         initComponents();
 
@@ -164,17 +159,10 @@ public class SearchView extends Component implements ActionListener, PropertyCha
         // 其他组件的初始化...
     }
 
-//    private void initComponents() {
-//    }
-
-
     public JPanel getSearchView() {
-        return SearchPanel;
+        return LabelPanel;
     }
 
-//    public SearchView() {
-//        //不知道干嘛因为不会空着来吧
-//    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

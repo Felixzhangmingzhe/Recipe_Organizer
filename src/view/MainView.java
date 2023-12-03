@@ -85,6 +85,38 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 //        // 将 JLabel 添加到 JPanel
 //        this.add(imageLabel);
 
+        // 假设您已经有了一个名为 imageLabel 的 JLabel 对象
+
+// 调整 ImageIcon 大小
+        ImageIcon originalIcon = new ImageIcon("src/view/platePal-logo.png"); // 替换为您的图片路径
+        Image image = originalIcon.getImage();
+// 增加尺寸至原来的1.5倍
+        // 指定新的宽度和高度，根据需要调整这些值
+        int newWidth = 250; // 或者根据视图大小更小的值
+        int newHeight = 250; // 或者根据视图大小更小的值
+        Image newimg = image.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+        ImageIcon imageIcon = new ImageIcon(newimg);
+
+// 为 JLabel 设置新的 ImageIcon
+        JLabel imageLabel = new JLabel(imageIcon);
+
+// 将 JLabel 设置为居中对齐
+        imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+// 添加到面板
+// 创建一个新的 JPanel 来放置 JLabel，确保它可以居中
+        JPanel imagePanel = new JPanel();
+        imagePanel.setLayout(new BoxLayout(imagePanel, BoxLayout.LINE_AXIS));
+        imagePanel.add(Box.createHorizontalGlue()); // 添加弹性空白区域
+        imagePanel.add(imageLabel);
+        imagePanel.add(Box.createHorizontalGlue()); // 添加弹性空白区域
+
+// 现在将这个新的 imagePanel 添加到主视图中
+// 例如，如果您的主视图使用 BoxLayout，则可以这样添加：
+        this.add(imagePanel);
+
+
+
 
 
         // 初始化, 只需要controller和viewmodel
@@ -108,20 +140,54 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
 
 
-        // 添加菜单按钮
-        JPanel buttons = new JPanel();
+//        // 添加菜单按钮
+//        JPanel buttons = new JPanel();
+//        createRecipe = new JButton("Create Recipe");
+//        buttons.add(createRecipe);
+//        favorites = new JButton("Favorites");
+//        buttons.add(favorites);
+//        exit = new JButton("Exit");
+//        buttons.add(exit);
+//        allRecipes = new JButton("All Recipes");
+//        buttons.add(allRecipes);
+//        dailySpecial = new JButton("Daily Recipe");
+//        buttons.add(dailySpecial);
+//        search = new JButton("Search");
+//        buttons.add(search);
+
+
+// 在构造函数中，添加按钮到两个不同的面板
+        JPanel topRowButtons = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        JPanel bottomRowButtons = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+
+// 创建并添加按钮到第一排
         createRecipe = new JButton("Create Recipe");
-        buttons.add(createRecipe);
-        favorites = new JButton("Favorites");
-        buttons.add(favorites);
-        exit = new JButton("Exit");
-        buttons.add(exit);
+        topRowButtons.add(createRecipe);
+
         allRecipes = new JButton("All Recipes");
-        buttons.add(allRecipes);
+        topRowButtons.add(allRecipes);
+
         dailySpecial = new JButton("Daily Recipe");
-        buttons.add(dailySpecial);
+        topRowButtons.add(dailySpecial);
+
+// 创建并添加按钮到第二排
+        favorites = new JButton("Favorites");
+        bottomRowButtons.add(favorites);
+
         search = new JButton("Search");
-        buttons.add(search);
+        bottomRowButtons.add(search);
+
+        exit = new JButton("Exit");
+        bottomRowButtons.add(exit);
+
+// 设置主面板的布局为 BoxLayout，以便垂直排列组件
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+// 添加标题、两排按钮面板和 logo 到主面板
+        this.add(title);
+        this.add(imageLabel);
+        this.add(topRowButtons);
+        this.add(bottomRowButtons);
 
 
 
@@ -165,8 +231,8 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        this.add(title);
-        this.add(buttons);
+//        this.add(title);
+//        this.add(buttons);
         //
 
         favorites.addActionListener(

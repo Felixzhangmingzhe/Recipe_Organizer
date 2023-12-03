@@ -92,5 +92,11 @@ public class MainViewUseCaseFactory extends UseCaseFactory {
         return new ViewSearchController(viewSearchInputBoundary);
     }
 
+    static ViewSearchController createViewNewSearchController(ViewManagerModel viewManagerModel, ViewSearchViewModel viewSearchViewModel) {
+        ViewSearchPresenter viewSearchOutputBoundary = new ViewSearchPresenter(viewSearchViewModel, viewManagerModel);
+        ViewSearchInputBoundary viewSearchInputBoundary = new ViewSearchInteractor(viewSearchOutputBoundary);
+        return new ViewSearchController(viewSearchInputBoundary);
+    }
+
 
 }
