@@ -1,7 +1,8 @@
 package interface_adapter.edit_recipe;
 
 import interface_adapter.ViewManagerModel;
-import use_case.edit_recipe.*;
+import use_case.edit_recipe.EditRecipeOutputBoundary;
+import use_case.edit_recipe.EditRecipeOutputData;
 
 public class EditRecipePresenter implements EditRecipeOutputBoundary {
     private final EditRecipeViewModel viewModel;

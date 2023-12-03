@@ -1,6 +1,7 @@
 package interface_adapter.edit_recipe;
 
-import use_case.edit_recipe.*;
+import use_case.edit_recipe.EditRecipeInputBoundary;
+import use_case.edit_recipe.EditRecipeInputData;
 
 public class EditRecipeController {
     private final EditRecipeInputBoundary interactor;

@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.IOException;
 import java.util.List;
 
 import java.util.concurrent.Executor;
@@ -69,6 +70,55 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+//        //logo
+//        // 创建 ImageIcon
+//        ImageIcon originalIcon = new ImageIcon("src/view/platePal-logo.png"); // 将 "path/to/your/image.png" 替换为您的图片文件路径
+//        // 获取原始图片并调整大小
+//        Image image = originalIcon.getImage();
+//        int newWidth = 200;
+//        int newHeight = 200;
+//        Image newimg = image.getScaledInstance(newWidth, newHeight,  java.awt.Image.SCALE_SMOOTH); // newWidth 和 newHeight 是新的宽度和高度
+//        ImageIcon imageIcon = new ImageIcon(newimg);
+//
+//        // 创建 JLabel 并设置新的 ImageIcon
+//        JLabel imageLabel = new JLabel(imageIcon);
+//        // 将 JLabel 添加到 JPanel
+//        this.add(imageLabel);
+
+        // 假设您已经有了一个名为 imageLabel 的 JLabel 对象
+
+// 调整 ImageIcon 大小
+        ImageIcon originalIcon = new ImageIcon("src/view/platePal-logo.png"); // 替换为您的图片路径
+        Image image = originalIcon.getImage();
+// 增加尺寸至原来的1.5倍
+        // 指定新的宽度和高度，根据需要调整这些值
+        int newWidth = 250; // 或者根据视图大小更小的值
+        int newHeight = 250; // 或者根据视图大小更小的值
+        Image newimg = image.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+        ImageIcon imageIcon = new ImageIcon(newimg);
+
+// 为 JLabel 设置新的 ImageIcon
+        JLabel imageLabel = new JLabel(imageIcon);
+
+// 将 JLabel 设置为居中对齐
+        imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+// 添加到面板
+// 创建一个新的 JPanel 来放置 JLabel，确保它可以居中
+        JPanel imagePanel = new JPanel();
+        imagePanel.setLayout(new BoxLayout(imagePanel, BoxLayout.LINE_AXIS));
+        imagePanel.add(Box.createHorizontalGlue()); // 添加弹性空白区域
+        imagePanel.add(imageLabel);
+        imagePanel.add(Box.createHorizontalGlue()); // 添加弹性空白区域
+
+// 现在将这个新的 imagePanel 添加到主视图中
+// 例如，如果您的主视图使用 BoxLayout，则可以这样添加：
+        this.add(imagePanel);
+
+
+
+
+
         // 初始化, 只需要controller和viewmodel
         // // 初始化ViewWarehouse有关
         this.viewWarehouseController = viewWarehouseController;
@@ -90,31 +140,67 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
 
 
-        // 添加菜单按钮
-        JPanel buttons = new JPanel();
+//        // 添加菜单按钮
+//        JPanel buttons = new JPanel();
+//        createRecipe = new JButton("Create Recipe");
+//        buttons.add(createRecipe);
+//        favorites = new JButton("Favorites");
+//        buttons.add(favorites);
+//        exit = new JButton("Exit");
+//        buttons.add(exit);
+//        allRecipes = new JButton("All Recipes");
+//        buttons.add(allRecipes);
+//        dailySpecial = new JButton("Daily Recipe");
+//        buttons.add(dailySpecial);
+//        search = new JButton("Search");
+//        buttons.add(search);
+
+
+// 在构造函数中，添加按钮到两个不同的面板
+        JPanel topRowButtons = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        JPanel bottomRowButtons = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+
+// 创建并添加按钮到第一排
         createRecipe = new JButton("Create Recipe");
-        buttons.add(createRecipe);
-        favorites = new JButton("Favorites");
-        buttons.add(favorites);
-        exit = new JButton("Exit");
-        buttons.add(exit);
+        topRowButtons.add(createRecipe);
+
         allRecipes = new JButton("All Recipes");
-        buttons.add(allRecipes);
+        topRowButtons.add(allRecipes);
+
         dailySpecial = new JButton("Daily Recipe");
-        buttons.add(dailySpecial);
+        topRowButtons.add(dailySpecial);
+
+// 创建并添加按钮到第二排
+        favorites = new JButton("Favorites");
+        bottomRowButtons.add(favorites);
+
         search = new JButton("Search");
-        buttons.add(search);
+        bottomRowButtons.add(search);
+
+        exit = new JButton("Exit");
+        bottomRowButtons.add(exit);
+
+// 设置主面板的布局为 BoxLayout，以便垂直排列组件
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+// 添加标题、两排按钮面板和 logo 到主面板
+        this.add(title);
+        this.add(imageLabel);
+        this.add(topRowButtons);
+        this.add(bottomRowButtons);
+
+
 
 
 
         createRecipe.addActionListener(//打开菜谱界面（创建菜谱模式）
-            new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    if (e.getSource() == createRecipe) {//if (e.getSource() == createRecipe)
-                        openCreateRecipeController.execute();
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource() == createRecipe) {//if (e.getSource() == createRecipe)
+                            openCreateRecipeController.execute();
+                        }
                     }
                 }
-            }
         );
         search.addActionListener(//搜索菜谱界面
                 new ActionListener() {
@@ -126,14 +212,14 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                 }
         );
         allRecipes.addActionListener(//打开菜谱界面（浏览菜谱模式）
-            new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
-                        ViewWarehouseState currentState = viewWarehouseViewModel.getState();
-                        viewWarehouseController.execute();
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
+                            ViewWarehouseState currentState = viewWarehouseViewModel.getState();
+                            viewWarehouseController.execute();
+                        }
                     }
                 }
-            }
         );
         exit.addActionListener(new ActionListener() {
             @Override
@@ -145,28 +231,32 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        this.add(title);
-        this.add(buttons);
+//        this.add(title);
+//        this.add(buttons);
         //
 
         favorites.addActionListener(
-            new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    if (e.getSource().equals(favorites)) {
-                        viewFavoritesController.execute();
-                        // 接下来，把recipes展示出来
-                        // 目前
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(favorites)) {
+                            viewFavoritesController.execute();
+                            // 接下来，把recipes展示出来
+                            // 目前
+                        }
                     }
                 }
-            }
         );
         dailySpecial.addActionListener(//打开菜谱界面（浏览菜谱模式）
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         if (e.getSource() == dailySpecial) {//if (e.getSource() == createRecipe)
                             ShowDailySpecialState currentState = showDailySpecialViewModel.getState();
-                            showDailySpecialController.execute();
+                            try {
+                                showDailySpecialController.execute();
+                            } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            }
                         }
                     }
                 }

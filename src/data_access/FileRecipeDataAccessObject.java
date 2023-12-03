@@ -1,9 +1,12 @@
-// Class: FileRecipeDataAccessObject
 package data_access;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.Recipe;
 import entity.RecipeFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.click_search.ClickSearchDataAccessInterface;
 import use_case.cooked.CookedDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
 import use_case.jump_to_edit.JumpToEditDataAccessInterface;
@@ -15,16 +18,25 @@ import use_case.view_recipe.ViewRecipeDataAccessInterface;
 import use_case.view_warehouse.ViewWarehouseDataAccessInterface;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
+
 public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface,
         AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface,
-        JumpToEditDataAccessInterface,
-        OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface {
+        JumpToEditDataAccessInterface, OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface,
+        ShowDailySpecialDataAccessInterface, ClickSearchDataAccessInterface {
     private String filePath;
+
+    private static final String apiToken = "o2vhKjkn5tmz+/B9kpjD6Q==mOt0YRhnaodNiwxj";
 
     public FileRecipeDataAccessObject(String filePath) {
         this.filePath = filePath;
@@ -266,9 +278,110 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     }
 
     @Override
-    public Recipe getDailySpecial() {
-        List<Recipe> recipes = readRecipes();
-        int random = (int) Math.floor(Math.random()*recipes.size());
-        return recipes.get(random);
+    public Recipe getDailySpecial() throws IOException {
+        String randomChar = "ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwyz";
+        int randomInLetter = (int) Math.floor(Math.random()*randomChar.length());
+        List<Recipe> recipes = getRecipesOnlyFromAPI(randomChar.substring(randomInLetter, randomInLetter+1));
+
+        if (recipes!= null){
+            int randomInRecipe = (int) Math.floor(Math.random()*recipes.size());
+            Recipe recipe = recipes.get(randomInRecipe);
+            addRecipe(recipe);
+            return recipe;
+        }
+        return null;
+    }
+
+    private List<Recipe> getRecipesOnlyFromAPI(String substring) throws IOException {
+        List<Recipe> resultRecipe = new ArrayList<>();
+
+        URL url = new URL("https://api.api-ninjas.com/v1/recipe?query=" + URLEncoder.encode(substring, StandardCharsets.UTF_8));
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestProperty("X-Api-Key" , apiToken);
+        connection.setRequestProperty("Accept", "application/json");
+
+        try (InputStream responseStream = connection.getInputStream()) {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(responseStream);
+            if (root.isArray()) {
+                // 遍历前10个元素（如果它们存在）
+                for (int i = 0; i < Math.min(root.size(), 5); i++) {
+                    JsonNode recipe = root.get(i);
+                    String recipeTitle = recipe.path("title").asText();
+                    String recipeInstructions = recipe.path("instructions").asText();
+                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, false,0);
+                    resultRecipe.add(newRecipe);
+                }
+            }
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return resultRecipe;
+    }
+
+    @Override
+    public boolean isRecipeExist(String title) {
+        return getRecipeByTitle(title) != null;
+    }
+
+    @Override
+    public List<Recipe> getRecipesFromAPI(String title) throws IOException {
+        List<Recipe> resultRecipe = new ArrayList<>();
+        List<Recipe> existRecipe = readRecipes();
+
+        //先从数据库获取数据
+        for (Recipe recipe: existRecipe){
+            if (recipe.getTitle().contains(title)){
+                resultRecipe.add(recipe);
+            }
+        }
+
+
+        //再去API获取数据
+
+        URL url = new URL("https://api.api-ninjas.com/v1/recipe?query=" + URLEncoder.encode(title, StandardCharsets.UTF_8));
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestProperty("X-Api-Key" , apiToken);
+        connection.setRequestProperty("Accept", "application/json");
+
+        try (InputStream responseStream = connection.getInputStream()) {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(responseStream);
+            if (root.isArray()) {
+                // 遍历前10个元素（如果它们存在）
+                for (int i = 0; i < Math.min(root.size(), 10); i++) {
+                    JsonNode recipe = root.get(i);
+                    String recipeTitle = recipe.path("title").asText();
+                    String recipeInstructions = recipe.path("instructions").asText();
+                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, false,0);
+                    resultRecipe.add(newRecipe);
+                }
+            }
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        //再去数据库获取数据
+        //如果数据库中没有，就直接返回API的数据
+        //如果数据库中有，就把API的数据和数据库的数据合并，返回
+
+        for (Recipe recipe: resultRecipe){
+//            System.out.println("这个是"+recipe.getTitle());
+            if (isRecipeExist(recipe.getTitle())){ //如果API的数据在数据库中已经存在，就不加入数据库
+//                System.out.println("存在");
+                  continue;
+            }else { //如果API的数据在数据库中不存在，就加入数据库
+//                System.out.println("不存在");
+                addRecipe(recipe);
+            }
+        } //把API的数据加入数据库
+
+
+        return resultRecipe;
     }
 }

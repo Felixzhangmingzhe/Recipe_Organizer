@@ -10,7 +10,7 @@ public class ShowDailySpecialViewModel extends ViewModel {
     private ShowDailySpecialState state;
 
     public ShowDailySpecialViewModel() {
-        super("Daily Special");
+        super("Read Recipe");
     }
 
     public void setState(ShowDailySpecialState state) {
@@ -24,7 +24,7 @@ public class ShowDailySpecialViewModel extends ViewModel {
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
     @Override
     public void firePropertyChanged() {
-        support.firePropertyChange("state", null, this.state);
+        support.firePropertyChange("daily special", null, this.state);
     }
 
     @Override

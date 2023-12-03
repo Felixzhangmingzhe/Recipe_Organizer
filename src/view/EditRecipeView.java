@@ -165,6 +165,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
             public void keyReleased(KeyEvent e) {
             }
         });
+
 //        Add AddKeyListener to the recipeContentArea
 //        recipeContentArea.addKeyListener(new KeyListener() {
 //            @Override
@@ -238,6 +239,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
             getAndDisplayJumpToEdit(state);
         }
     }
+
     public void getAndDisplayCreateRecipeError(CreateRecipeState state) {
         if (state.getRecipeNameError() != null) {
             JOptionPane.showMessageDialog(this, state.getRecipeNameError());
@@ -249,6 +251,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
             JOptionPane.showMessageDialog(this, state.getConflictError());
         }
     }
+
     public void getAndDisplayJumpToEdit(JumpToEditState state) {
         String recipeName = state.getRecipeTitle();
         String recipeContent = state.getRecipeContent() ;

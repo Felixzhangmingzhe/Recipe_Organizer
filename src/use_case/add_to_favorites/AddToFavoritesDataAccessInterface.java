@@ -1,7 +1,6 @@
 package use_case.add_to_favorites;
 
 import entity.Recipe;
-
 import java.time.LocalDateTime;
 
 public interface AddToFavoritesDataAccessInterface {

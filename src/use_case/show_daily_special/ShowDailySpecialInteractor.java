@@ -2,6 +2,8 @@ package use_case.show_daily_special;
 
 import entity.Recipe;
 
+import java.io.IOException;
+
 public class ShowDailySpecialInteractor implements ShowDailySpecialInputBoundary{
     private ShowDailySpecialOutputBoundary showDailySpecialPresenter;
     private ShowDailySpecialDataAccessInterface showDailySpecialDataAccessInterface;
@@ -13,7 +15,7 @@ public class ShowDailySpecialInteractor implements ShowDailySpecialInputBoundary
         this.showDailySpecialDataAccessInterface = showDailySpecialDataAccessInterface;
     }
 
-    public void execute() {
+    public void execute() throws IOException {
         Recipe dailySpecial = showDailySpecialDataAccessInterface.getDailySpecial();
         ShowDailySpecialOutputData showDailySpecialOutputData = new ShowDailySpecialOutputData(dailySpecial);
 //        System.out.println("Daily special is " + dailySpecial.getTitle());

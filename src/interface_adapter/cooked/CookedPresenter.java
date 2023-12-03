@@ -1,6 +1,5 @@
 package interface_adapter.cooked;
 
-import entity.Recipe;
 import interface_adapter.ViewManagerModel;
 import use_case.cooked.CookedOutputBoundary;
 import use_case.cooked.CookedOutputData;
