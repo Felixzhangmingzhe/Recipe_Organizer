@@ -76,9 +76,9 @@
     "id": 11,
     "calories": -1,
     "title": "1",
-    "isCooked": false,
+    "isCooked": true,
     "content": "234r432",
-    "isFavorite": false
+    "isFavorite": true
   },
   {
     "date": "2023-11-29T22:42:04.194274",
@@ -312,6 +312,123 @@
     "title": "瑞环",
     "isCooked": false,
     "content": "瑞环肉好吃",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T16:39:41.745113",
+    "id": 38,
+    "calories": 0,
+    "title": "Electronic Gourmet's French Onion Soup",
+    "isCooked": false,
+    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T16:39:41.747260",
+    "id": 38,
+    "calories": 0,
+    "title": "Electronic Gourmet's Garlic Soup",
+    "isCooked": false,
+    "content": "1) Put the oil and garlic into a very heavy large pot. Saute until almost golden brown in colour. Add the water, salt, monosodium glutamate and stock. 2) Simmer for 3 hours. Check the seasoning. 3) To serve: Place a slice of bread in each soup bowl. Put a ladle of the hot soup in the bowl and immediately, on top of the bread, break an egg. The egg will congeal and the bread will go to the bottom of the bowl. Note: Can be made a day ahead and refrigerated. To serve, follow step 3.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T16:58:16.776660",
+    "id": 39,
+    "calories": 0,
+    "title": "Stufffed Pepper Casserole",
+    "isCooked": false,
+    "content": "Cut tops off peppers and clean inside. Cook peppers in water to cover for 20 minutes. Brown ground beef and onions. Add seasonings, rice, corn, and tomato sauce. Heat until bubbly. Spoon filling into peppers; place in casserole dish. Place extra filling, if any, around peppers. Bake at 350 degrees for 20-25 minutes. Mrs. Robert F. Lewis",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T17:52:49.933913",
+    "id": 40,
+    "calories": 0,
+    "title": "Xxxx-Hot Carribbean Habanero Hot Sauce",
+    "isCooked": false,
+    "content": "~Hydrate the dried jalapenos. Retain approx. 1/4 cup of the liquid. ~Chop all solids. Throw into blender with liquid ingredients. \"Liquify\" for a good, long time ... goal here is to do away with all chunks of anything. Note: I left seeds & \"flesh\" of peppers intact. For a more mild sauce, you may want to extract these ~Once mixture is very smooth, cook over very low heat for 30-60 minutes. Stir often. During this time, taste (as much as you are able to), and add add'l amounts of desired ingredients until you acheive the taste you desire. Goal is to come up with a sauce that is sweet at first taste, then leaves a healthy amount of pain as the taste fades away. ~Remove from heat, cool 30-60 minutes. ~Strain mixture to extract liquid, leave behind seeds, pulp, etc. This will take a while - be patient. ~Store extracted liquid in an air-tight container, or in a sealed bottle. Time will increase heat & taste. Note: Like many cooks, I created this with no precise measurements ... it was a total experiment & actually turned out very well (though very painful). Please feel free to alter/experiment.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T17:52:49.937413",
+    "id": 40,
+    "calories": 0,
+    "title": "Fresh Fruit Trifle Xxxj77a",
+    "isCooked": false,
+    "content": "*Suggested: strawberries, nectarines, grapes, oranges and/or pineapple.=14 Heat oven to 350 degrees. Prepare and bake cake mix according to package directions. Cool completely in pan tipped on side on cooling rack. Remove from pan. Tear into bite-sized pieces.=14 In medium bowl, combine milk, yogurt and orange peel; blend well. Add pudding mix; beat until well blended. Let stand 5 minutes.=14",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T19:31:10.306973",
+    "id": 41,
+    "calories": 0,
+    "title": "Elegant White Cake",
+    "isCooked": false,
+    "content": "Preheat oven to 375F. Grease and flour two 8\" round pans. Combine Basic Cake Mix and milk in a large bowl. Beat at medium speed 2 minutes. Scrape bowl and beaters. Add egg whites and vanilla. Beat 2 more minutes. Pour into prepared pans. Bake 20 to 25 minutes, till a toothpick inserted in center comes out clean. Cool in pans 10 minutes, then cool on wire racks. Frost as desired.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T19:31:10.308488",
+    "id": 41,
+    "calories": 0,
+    "title": "Emily's White Cake",
+    "isCooked": false,
+    "content": "Cream Crisco. Add sugar slowly and cream together. Sift dry ingredients and add alternately with the liquid. Add flavoring, beat mixture thoroughly and last fold in stiffly beaten whites of eggs. Prepare layer-cake tins by greasing them with a mixture of Crisco and flour. Pour in cake mixture; put in moderate oven, allow to rise for five minutes, increase heat to bake; at the end of fifteen minutes, reduce heat to allow cake to shrink from pan. Entire time for baking twenty minutes. NOTE: I copied this faithfully from the source, THE WAYS OF COOKING\" circa",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T19:34:36.679681",
+    "id": 42,
+    "calories": 0,
+    "title": "Willie G's Oyster Bar Trash",
+    "isCooked": false,
+    "content": "Heat a cast iron skillet. Add 1 - 2 oz. of clarified butter. Add shrimp and cook until halfway done. Add crab meat and sprinkle with blackening seasoning. Mix shrimp and crab meat together. Spoon onto a plate serve with white rice. Serves 2.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T19:34:36.681880",
+    "id": 42,
+    "calories": 0,
+    "title": "\"Trash Bag\" Taco Salad",
+    "isCooked": false,
+    "content": "Brown beef, drain. Add taco seasoning and prepare according to package directions. Cool. Toss with remaining ingredients in a large plastic bag or container. MEAL-MASTER RECIPES LIST SERVER",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T19:43:17.258214",
+    "id": 43,
+    "calories": 0,
+    "title": "No-Yolk Deviled Eggs",
+    "isCooked": false,
+    "content": "Boil 10 eggs. Slice eggs in half lengthwise; remove yolks and discard (or give to your dog or cat). Set whites aside. In a small bowl, prepare mashed potatoes by mashing together boiled potato, sour cream, skim milk, horseradish, and salt and pepper. Add mayonnaise, mustard, and food coloring (if desired) to mashed potato mixture. Mix well. Stuff or pipe into egg whites. Sprinkle with paprika. Refrigerate until serving. NOTES : Original recipe did not give ingredients for mashed potatoes. For a different flavor, you could add 1 or 2 tablespoons of sweet pickle relish to the mashed potatoes. Weight Watchers points per serving: 1 \"This lighter recipe still provides traditional deviled egg flavor and appearance,\" conveys Dottie Burton of Cincinnati, Ohio. \"A mashed-potato mixture magically replaces the yolk filling.\"",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T19:43:17.263014",
+    "id": 43,
+    "calories": 0,
+    "title": "What To Do with the Egg Yolks Bread",
+    "isCooked": false,
+    "content": "Butter a 10-inch tube pan; set aside. In a large mixing bowl, combine the yeast, 1 teaspoon sugar, and water. Set aside for 10 minutes. Combine the milk, butter, oil, zest, remaining sugar, and salt and stir into the yeast mixture. Add the egg yolks, stirring well. Add the flour 1/2 cut at a time, stirring well after each addition to incorporate the flour throughly. Knead 5 to 10 minutes until the dough is smooth, elastic, and satiny. Knead in cranberries and pecans. Put the dough back into the bowl, cover, and let rise at room temperature until doubled in bulk. Using a wooden spoon, beat down the risen dough for about a minute. Place the dough in the buttered tube pan and allow it to rise at room temperature until doubled in bulk. Preheat the oven to 375. Bake the bread for 45 to 50 minutes or until it is a dark golden brown and sounds hollow when tapped. Place on a rack to cool or serve warm. Once cooled, the bread is also excellent sliced and toasted.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T19:43:17.266372",
+    "id": 43,
+    "calories": 0,
+    "title": "Egg Yolk",
+    "isCooked": false,
+    "content": "From \"Baby's First Helpings\" by Chris Casson Madden ISBN: 0-385-19143-X Cold water Mother's milk or formula Place egg in a small saucepan and cover with water. Bring to a boil and simmer very gently for 15 minutes. Remove and immediately fill pan with running cold water. Let sit in cold water until shell is cool. Crack open, discard the white and mash the yellow yolk with a fork and add a few drops breast milk or formula. Go easy (small amounts of egg for baby) at first to see if any allergies develop.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T19:43:17.268075",
+    "id": 43,
+    "calories": 0,
+    "title": "Egg Yolk Paint",
+    "isCooked": false,
+    "content": "Blend well 1 egg yolk & 1/4 tsp. water. Divide mixture among several small custard cups. Add a different food coloring to each cup to make bright colors. Paint designs on cookies with small paintbrushes. If paint thickens on standing, add a few drops of water.",
     "isFavorite": false
   }
 ]
