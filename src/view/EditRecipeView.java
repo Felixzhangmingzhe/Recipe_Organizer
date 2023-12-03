@@ -130,9 +130,6 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
                     }
                 }
         );
-
-
-
         recipeTextListener();
     }
 
@@ -155,8 +152,33 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
             }
 
             private void updateState() {
+                recipeNameField.requestFocusInWindow();
                 CreateRecipeState currentState = createRecipeViewModel.getState();
                 currentState.setRecipeName(recipeNameField.getText());
+                createRecipeViewModel.setState(currentState);
+
+            }
+        });
+        recipeContentArea.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                updateState();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                updateState();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                updateState();
+            }
+
+            private void updateState() {
+                recipeContentArea.requestFocusInWindow();
+                CreateRecipeState currentState = createRecipeViewModel.getState();
+                currentState.setContent(recipeContentArea.getText());
                 createRecipeViewModel.setState(currentState);
             }
         });
