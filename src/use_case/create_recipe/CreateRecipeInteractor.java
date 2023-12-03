@@ -1,4 +1,3 @@
-// Class: CreateRecipeInteractor
 package use_case.create_recipe;
 
 import com.fasterxml.jackson.databind.JsonNode;

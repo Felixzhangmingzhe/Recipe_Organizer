@@ -10,6 +10,10 @@ import interface_adapter.cooked.CookedState;
 import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeState;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
+import interface_adapter.edit_recipe.EditRecipeController;
+import interface_adapter.edit_recipe.EditRecipeViewModel;
+import interface_adapter.jump_to_edit.JumpToEditController;
+import interface_adapter.jump_to_edit.JumpToEditViewModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
 
 import javax.swing.*;
@@ -45,10 +49,14 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
     // Use Case: Cooked
     private CookedController cookedController;
     private CookedViewModel cookedViewModel;
+    // Use Case: Jump to Edit
+    private JumpToEditController jumpToEditController;
+    private JumpToEditViewModel jumpToEditViewModel;
 
     public ReadRecipeView(BackViewModel backViewModel, BackController backController, ViewRecipeViewModel viewRecipeViewModel, CreateRecipeViewModel createRecipeViewModel
     , AddToFavoritesController addToFavoritesController, AddToFavoritesViewModel addToFavoritesViewModel,
-                           CookedViewModel cookedViewModel, CookedController cookedController) {
+                          JumpToEditController jumpToEditController, JumpToEditViewModel jumpToEditViewModel,
+                          CookedViewModel cookedViewModel, CookedController cookedController) {
         // Initialize view model and controller
         this.backViewModel = backViewModel;
         this.backController = backController;
@@ -62,6 +70,9 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         this.cookedController = cookedController;
         this.cookedViewModel = cookedViewModel;
         this.cookedViewModel.addPropertyChangeListener(this);//Listen to the change of cookedViewModel
+        this.jumpToEditController = jumpToEditController;
+        this.jumpToEditViewModel = jumpToEditViewModel;
+        this.jumpToEditViewModel.addPropertyChangeListener(this);//Listen to the change of jumpToEditViewModel
 
         // Initialize String RecipeName
         recipeName = "";
@@ -122,7 +133,7 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
             cookedController.execute(recipeName);
         } else if (evt.getSource() == editButton) {
             // Implement action for edit button
-            // For example, open the edit view for this recipe
+            jumpToEditController.execute(recipeName);
         }
     }
 

@@ -1,6 +1,5 @@
 package interface_adapter.Back;
 
-import interface_adapter.ViewManagerModel;
 import interface_adapter.ViewModel;
 import use_case.Back.BackState;
 

@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import use_case.cooked.CookedDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
+import use_case.jump_to_edit.JumpToEditDataAccessInterface;
 import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
 import use_case.show_daily_special.ShowDailySpecialDataAccessInterface;
 import use_case.view_favorites.ViewFavoritesDataAccessInterface;
@@ -21,6 +22,7 @@ import java.util.List;
 import java.time.LocalDateTime;
 public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface,
         AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface,
+        JumpToEditDataAccessInterface,
         OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface {
     private String filePath;
 
@@ -185,7 +187,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         List<Recipe> updatedRecipes = new ArrayList<>();
 
         for (Recipe recipe : recipes) {
-            if (recipe.getId() == id) {
+            if (recipe.getTitle().equals(title)) {
                 // 创建新的食谱实例来替换旧的
                 RecipeFactory recipeFactory = new RecipeFactory();
                 Recipe updatedRecipe = recipeFactory.create(id, title, content, date, isFavorite,calories, isCooked);
@@ -235,6 +237,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         }
         return null;
     }
+
+
 
     @Override
     public List<Recipe> getFavorites() {

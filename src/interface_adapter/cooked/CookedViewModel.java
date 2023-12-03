@@ -1,6 +1,6 @@
 package interface_adapter.cooked;
+
 import interface_adapter.ViewModel;
-import interface_adapter.add_to_favorites.AddToFavoritesState;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;

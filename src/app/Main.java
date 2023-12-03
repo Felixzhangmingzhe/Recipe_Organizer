@@ -2,16 +2,13 @@ package app;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 import data_access.FileRecipeDataAccessObject;
-import entity.*;
-// 引入各个用例的ViewModel
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.add_to_favorites.AddToFavoritesViewModel;
-import interface_adapter.cooked.CookedController;
 import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
+import interface_adapter.jump_to_edit.JumpToEditViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
 import interface_adapter.show_daily_special.ShowDailySpecialViewModel;
 import interface_adapter.view_search.ViewSearchViewModel;
@@ -50,6 +47,7 @@ public class Main {
         AddToFavoritesViewModel addToFavoritesViewModel = new AddToFavoritesViewModel();
         CookedViewModel cookedViewModel = new CookedViewModel();
         ShowDailySpecialViewModel showDailySpecialViewModel = new ShowDailySpecialViewModel();
+        JumpToEditViewModel jumpToEditViewModel = new JumpToEditViewModel();
 
 
 
@@ -86,10 +84,10 @@ public class Main {
         FavoritesView favoritesView = FavoritesViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, viewFavoritesViewModel, warehouseDAO,backViewModel);
         views.add(favoritesView, favoritesView.viewName);
         // 创建并将视图添加到主面板:编辑菜谱视图
-        EditRecipeView editRecipeView = EditRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,DAO);
+        EditRecipeView editRecipeView = EditRecipeViewUseCaseFactory.create(backViewModel, viewManagerModel, createRecipeViewModel, jumpToEditViewModel, DAO);
         views.add(editRecipeView, editRecipeView.viewName);
         // 创建并将视图添加到主面板:查看菜谱视图
-        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,viewRecipeViewModel,addToFavoritesViewModel,cookedViewModel,viewRecipeDAO);
+        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,viewRecipeViewModel,addToFavoritesViewModel,cookedViewModel,jumpToEditViewModel,viewRecipeDAO);
         views.add(viewRecipeView, viewRecipeView.viewName);
         // 创建并将视图添加到主面板:创建菜谱视图
 
@@ -100,9 +98,6 @@ public class Main {
         // 创建并将视图添加到主面板:搜索菜谱视图
         SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, DAO, backViewModel);
         views.add(viewSearchView.getSearchView(), viewSearchView.viewName);
-
-
-
     }
 // 之前写的main被我删了重写了一个
 }
