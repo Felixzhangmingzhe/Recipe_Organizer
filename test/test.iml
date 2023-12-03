@@ -9,6 +9,5 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="org.example.Recipe_Organizer.main" />
     <orderEntry type="library" name="Gradle: junit:junit:4.13.2" level="project" />
-    <orderEntry type="module" module-name="Recipe_Organizer.main" />
   </component>
 </module>

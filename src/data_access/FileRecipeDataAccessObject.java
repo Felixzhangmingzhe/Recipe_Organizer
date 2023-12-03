@@ -1,5 +1,6 @@
 // Class: FileRecipeDataAccessObject
 package data_access;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.Recipe;
@@ -10,6 +11,7 @@ import use_case.Back.BackDataAccessInterface;
 import use_case.click_search.ClickSearchDataAccessInterface;
 import use_case.cooked.CookedDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
+import use_case.jump_to_edit.JumpToEditDataAccessInterface;
 import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
 import use_case.show_daily_special.ShowDailySpecialDataAccessInterface;
 import use_case.view_favorites.ViewFavoritesDataAccessInterface;
@@ -31,8 +33,7 @@ import java.util.List;
 import java.time.LocalDateTime;
 public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface,
         AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface,
-        OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface, ClickSearchDataAccessInterface,
-        BackDataAccessInterface {
+        OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface, ClickSearchDataAccessInterface {
     private String filePath;
 
     private static final String apiToken = "o2vhKjkn5tmz+/B9kpjD6Q==mOt0YRhnaodNiwxj";
@@ -249,6 +250,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         return null;
     }
 
+
+
     @Override
     public List<Recipe> getFavorites() {
         return readRecipesInFavorites();
@@ -321,10 +324,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
 
     @Override
     public boolean isRecipeExist(String title) {
-        if (getRecipeByTitle(title) != null) {
-            return true;
-        }
-        return false;
+        return getRecipeByTitle(title) != null;
     }
 
     @Override

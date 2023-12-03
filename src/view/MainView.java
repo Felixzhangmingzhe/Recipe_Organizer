@@ -195,13 +195,13 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
 
         createRecipe.addActionListener(//打开菜谱界面（创建菜谱模式）
-            new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    if (e.getSource() == createRecipe) {//if (e.getSource() == createRecipe)
-                        openCreateRecipeController.execute();
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource() == createRecipe) {//if (e.getSource() == createRecipe)
+                            openCreateRecipeController.execute();
+                        }
                     }
                 }
-            }
         );
         search.addActionListener(//搜索菜谱界面
                 new ActionListener() {
@@ -213,14 +213,14 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                 }
         );
         allRecipes.addActionListener(//打开菜谱界面（浏览菜谱模式）
-            new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
-                        ViewWarehouseState currentState = viewWarehouseViewModel.getState();
-                        viewWarehouseController.execute();
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource() == allRecipes) {//if (e.getSource() == createRecipe)
+                            ViewWarehouseState currentState = viewWarehouseViewModel.getState();
+                            viewWarehouseController.execute();
+                        }
                     }
                 }
-            }
         );
         exit.addActionListener(new ActionListener() {
             @Override
@@ -237,16 +237,16 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         //
 
         favorites.addActionListener(
-            new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    if (e.getSource().equals(favorites)) {
-                        viewFavoritesController.execute();
-                        // 接下来，把recipes展示出来
-                        // 目前
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(favorites)) {
+                            viewFavoritesController.execute();
+                            // 接下来，把recipes展示出来
+                            // 目前
+                        }
                     }
                 }
-            }
         );
         dailySpecial.addActionListener(//打开菜谱界面（浏览菜谱模式）
                 new ActionListener() {
