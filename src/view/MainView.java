@@ -31,7 +31,8 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final JButton exit;
     private final JButton allRecipes;
     private final JButton search;
-    private JLabel activityLevelLabel;
+    private JButton activityLevelButton;
+    private final JLabel title;
     private int numOfCooked = 0;
     // Use Case:View Warehouse
     private final ViewWarehouseController viewWarehouseController;
@@ -65,7 +66,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     ViewManagerModel viewManagerModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel,
                     BackViewModel backViewModel,
                     ShowDailySpecialViewModel showDailySpecialViewModel, ShowDailySpecialController showDailySpecialController) {
-        JLabel title = new JLabel("Main Menu");
+        title = new JLabel("Are you hungry?");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 //        //logo
@@ -171,6 +172,9 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         topRowButtons.add(dailySpecial);
 
 // 创建并添加按钮到第二排
+        activityLevelButton = new JButton("Activity Level: " + numOfCooked);
+        bottomRowButtons.add(activityLevelButton);
+
         favorites = new JButton("Favorites");
         bottomRowButtons.add(favorites);
 
@@ -272,6 +276,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     }
     public void setNumOfCooked(int numOfCooked) {
         numOfCooked = numOfCooked;
+        activityLevelButton.setText("Activity Level: " + numOfCooked);
     }
 
 
@@ -293,12 +298,17 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+        System.out.println("MainView.propertyChange");
         if (evt.getPropertyName().equals("back")) {
             BackState state = (BackState) evt.getNewValue();
-
+            refreshActivityLevelLabel(state);
         }
     }
-    public void refreshActivityLevelLabel() {
-        activityLevelLabel.setText("Activity Level: " + numOfCooked);
+    public void refreshActivityLevelLabel(BackState state) {
+
+        numOfCooked = state.getNumOfCooked();
+        activityLevelButton.setText("Activity Level: " + numOfCooked);
+        System.out.println("MainView.refreshActivityLevelLabel");
+        title.setText("Have you cooked today?");
     }
 }

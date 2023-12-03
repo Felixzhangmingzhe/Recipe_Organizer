@@ -10,6 +10,7 @@ import interface_adapter.create_recipe.CreateRecipeController;
 import interface_adapter.create_recipe.CreateRecipePresenter;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.jump_to_edit.JumpToEditViewModel;
+import use_case.Back.BackDataAccessInterface;
 import use_case.Back.BackInputBoundary;
 import use_case.Back.BackInteractor;
 import use_case.Back.BackOutputBoundary;
@@ -21,7 +22,7 @@ import view.EditRecipeView;
 
 public class EditRecipeViewUseCaseFactory extends UseCaseFactory {
     public static EditRecipeView create(BackViewModel backViewModel, ViewManagerModel viewManagerModel, CreateRecipeViewModel createRecipeViewModel, JumpToEditViewModel jumpToEditViewModel, FileRecipeDataAccessObject dao) {
-        BackController backController = createBackController(backViewModel, viewManagerModel);
+        BackController backController = createBackController(backViewModel, viewManagerModel,dao);
         CreateRecipeController createRecipeController = createCreateRecipeController(createRecipeViewModel, viewManagerModel, dao);
         return new EditRecipeView(backController, backViewModel, jumpToEditViewModel, createRecipeController, createRecipeViewModel);
     }
@@ -33,9 +34,9 @@ public class EditRecipeViewUseCaseFactory extends UseCaseFactory {
         return new CreateRecipeController(createRecipeInputBoundary);
     }
 
-    public static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel) {
+    public static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel, BackDataAccessInterface dao) {
         BackOutputBoundary backOutputBoundary = new BackPresenter(viewManagerModel, backViewModel);
-        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary);
+        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary,dao);
         return new BackController(backInputBoundary);
     }
 }

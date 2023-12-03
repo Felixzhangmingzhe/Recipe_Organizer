@@ -33,6 +33,7 @@ import java.util.List;
 import java.time.LocalDateTime;
 public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface,
         AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface,
+        BackDataAccessInterface, JumpToEditDataAccessInterface,
         OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface, ClickSearchDataAccessInterface {
     private String filePath;
 

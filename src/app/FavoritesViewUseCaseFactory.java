@@ -9,6 +9,7 @@ import interface_adapter.view_favorites.ViewFavoritesViewModel;
 import interface_adapter.view_recipe.ViewRecipeController;
 import interface_adapter.view_recipe.ViewRecipePresenter;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
+import use_case.Back.BackDataAccessInterface;
 import use_case.Back.BackInputBoundary;
 import use_case.Back.BackInteractor;
 import use_case.Back.BackOutputBoundary;
@@ -26,7 +27,7 @@ public class FavoritesViewUseCaseFactory extends UseCaseFactory {
                                        ViewFavoritesViewModel viewFavoritesViewModel,
                                        FileRecipeDataAccessObject dao, BackViewModel backViewModel) {
         ViewRecipeController viewRecipeController1 = createViewRecipeController(viewRecipeViewModel, viewManagerModel, dao);
-        BackController backController = createBackController(backViewModel, viewManagerModel);
+        BackController backController = createBackController(backViewModel, viewManagerModel,dao);
         return new FavoritesView(viewRecipeController1, viewRecipeViewModel, backController,viewFavoritesViewModel,viewManagerModel);
     }
 
@@ -40,9 +41,9 @@ public class FavoritesViewUseCaseFactory extends UseCaseFactory {
     }
 
 
-    private static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel) {
+    private static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel, BackDataAccessInterface dao) {
         BackOutputBoundary backOutputBoundary = new BackPresenter(viewManagerModel, backViewModel);
-        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary);
+        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary,dao);
         return new BackController(backInputBoundary);
 
     }

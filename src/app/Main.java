@@ -24,7 +24,7 @@ import interface_adapter.*;
 public class Main {
     public static void main(String[] args) {
         // 这里创建了一个主应用窗口，然后设置了关闭操作
-        JFrame application = new JFrame("Recipe Organizer");
+        JFrame application = new JFrame("PlatePal");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         // 创建一个 CardLayout，用于管理各个卡片
         CardLayout cardLayout = new CardLayout();
@@ -59,10 +59,13 @@ public class Main {
         FileRecipeDataAccessObject DAO = new FileRecipeDataAccessObject("recipes.json");
         FileRecipeDataAccessObject viewRecipeDAO = new FileRecipeDataAccessObject("recipes.json");
         FileRecipeDataAccessObject warehouseDAO = new FileRecipeDataAccessObject("recipes.json");
+
         // 创建并将视图添加到主面板:主视图
-        MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, openCreateRecipeViewModel, DAO, viewRecipeViewModel, viewSearchViewModel, showDailySpecialViewModel);
-        mainView.setPreferredSize(new Dimension(800, 600));
+        MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, openCreateRecipeViewModel, backViewModel,DAO, viewRecipeViewModel, viewSearchViewModel, showDailySpecialViewModel);
+        mainView.setPreferredSize(new Dimension(400, 600));
         views.add(mainView, mainView.viewName);
+        int numOfCooked = DAO.getNumOfCooked();
+        mainView.setNumOfCooked(numOfCooked);
         // 这四句可以用来在一开始显示view
         viewManagerModel.setActiveView(mainView.viewName);
         viewManagerModel.firePropertyChanged();
@@ -91,7 +94,6 @@ public class Main {
         // 创建并将视图添加到主面板:查看菜谱视图
         ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel, viewManagerModel, createRecipeViewModel, viewRecipeViewModel, addToFavoritesViewModel, cookedViewModel, jumpToEditViewModel, showDailySpecialViewModel, viewRecipeDAO);
         views.add(viewRecipeView, viewRecipeView.viewName);
-        viewRecipeView.setPreferredSize(new Dimension(800, 600));
         // 创建并将视图添加到主面板:创建菜谱视图
 
         // 创建并将视图添加到主面板:每日推荐菜谱视图

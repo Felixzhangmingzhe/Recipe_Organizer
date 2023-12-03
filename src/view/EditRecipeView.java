@@ -160,6 +160,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
                 createRecipeViewModel.setState(currentState);
             }
         });
+    }
         // Add AddKeyListener to the recipeNameField
 //        recipeNameField.addKeyListener(
 //                new KeyListener() {
@@ -180,34 +181,9 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
 //                }
 //            }
 //        );
-        recipeNameField.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                char keyChar = e.getKeyChar();
-                if (keyChar != KeyEvent.CHAR_UNDEFINED) {
-                    CreateRecipeState currentState = createRecipeViewModel.getState();
-                    currentState.setRecipeName(recipeNameField.getText() + keyChar);
-                    createRecipeViewModel.setState(currentState);
-                }
-            }
 
-        recipeContentArea.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                updateState();
-            }
-            @Override
-            public void keyPressed(KeyEvent e) {
-            }
 
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                updateState();
-            @Override
-            public void keyReleased(KeyEvent e) {
-            }
 
-        });
 
 //        Add AddKeyListener to the recipeContentArea
 //        recipeContentArea.addKeyListener(new KeyListener() {
@@ -227,37 +203,10 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
 //            public void keyReleased(KeyEvent e) {
 //            }
 //        }
-        recipeContentArea.addKeyListener(new KeyListener() {
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                updateState();
-            }
 
-            private void updateState() {
-                CreateRecipeState currentState = createRecipeViewModel.getState();
-                currentState.setContent(recipeContentArea.getText());
-                createRecipeViewModel.setState(currentState);
-            public void keyTyped(KeyEvent e) {
-                char keyChar = e.getKeyChar();
-                if (keyChar != KeyEvent.CHAR_UNDEFINED) {
-                    CreateRecipeState currentState = createRecipeViewModel.getState();
-                    currentState.setContent(recipeContentArea.getText() + keyChar);createRecipeViewModel.setState(currentState);
-                }
-            }
-        });
 
-            @Override
-            public void keyPressed(KeyEvent e) {
 
-            }
 
-            @Override
-            public void keyReleased(KeyEvent e) {
-
-            }
-        }
-        );
-    }
 
     public void addSaveButtonListener(ActionListener listener) {
         saveButton.addActionListener(listener);

@@ -25,7 +25,7 @@ public class BackViewModel extends ViewModel {
 
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
-
+        support.addPropertyChangeListener(listener);
     }
 
 

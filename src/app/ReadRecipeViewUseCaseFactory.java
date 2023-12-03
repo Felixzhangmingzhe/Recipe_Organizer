@@ -46,7 +46,7 @@ public class ReadRecipeViewUseCaseFactory extends UseCaseFactory {
                                         JumpToEditViewModel jumpToEditViewModel,
                                         ShowDailySpecialViewModel showDailySpecialViewModel,
                                         FileRecipeDataAccessObject dao) {
-        BackController backController = createBackController(backViewModel, viewManagerModel);
+        BackController backController = createBackController(backViewModel, viewManagerModel,dao);
         AddToFavoritesController addToFavotitesController = createAddToFavoritesController(addToFavoritesViewModel, viewManagerModel, dao);
         CookedController cookedController = createCookedController(cookedViewModel, viewManagerModel, dao);
         JumpToEditController jumpToEditController = createJumpToEditController(viewManagerModel, jumpToEditViewModel, dao);
@@ -78,9 +78,9 @@ public class ReadRecipeViewUseCaseFactory extends UseCaseFactory {
         return new ShowDailySpecialController(showDailySpecialInputBoundary);
     }
 
-    public static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel) {
+    public static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao) {
         BackOutputBoundary backOutputBoundary = new BackPresenter(viewManagerModel, backViewModel);
-        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary);
+        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary,dao);
         return new BackController(backInputBoundary);
     }
 }

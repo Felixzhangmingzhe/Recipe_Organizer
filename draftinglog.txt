@@ -1,10 +1,8 @@
 TODO list:
-+* Add a way to calculate cooked vatality of the user.Where to show the result?In mainview, the first tab?Can 1
-+* Add a way to edit the recipe 4
+
++* Add a way to edit the recipe 1
 +* Add a way to delete the recipe 2
-+* Add a cooked recipe list in MainView?  3
-
-
++* Output the recipe to a file 3
 
 
 
@@ -27,3 +25,4 @@ Done list:
 +* it's better that if a recipe isfavorite, the button will be of name "remove from favorites"
     while if it's not favorite, the button will be of name "add to favorites"(这个亟待解决)
 +* Add a way to click cooked and record the data of the recipe
++* Add a way to calculate cooked vatality of the user.Where to show the result?In mainview, the first tab?Can

@@ -293,7 +293,7 @@
     "calories": -1,
     "title": "臭臭",
     "isCooked": false,
-    "content": "123拉出�?",
+    "content": "123拉出�?",
     "isFavorite": false
   },
   {
@@ -311,7 +311,7 @@
     "calories": -1,
     "title": "瑞环",
     "isCooked": false,
-    "content": "瑞环肉好�?",
+    "content": "瑞环肉好�?",
     "isFavorite": false
   },
   {
@@ -1266,6 +1266,132 @@
     "title": "// 使用 DocumentListener 监听文本内容变化\n    recipeNameField.getDocument().addDocumentListener(new DocumentListener() {\n        @Override\n        public void insertUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void removeUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void changedUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        private void updateState() {\n            CreateRecipeState currentState = createRecipeViewModel.getState();\n            currentState.setRecipeName(recipeNameField.getText());\n            createRecipeViewModel.setState(currentState);\n        }\n    });\n\n    recipeContentArea.getDocument().addDocumentListener(new DocumentListener() {\n        @Override\n        public void insertUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void removeUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void changedUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        private void updateState() {\n            CreateRecipeState currentState = createRecipeViewModel.getState();\n            currentState.setContent(recipeContentArea.getText());\n            createRecipeViewModel.setState(currentState);\n        }\n    });",
     "isCooked": false,
     "content": "// 使用 DocumentListener 监听文本内容变化\n    recipeNameField.getDocument().addDocumentListener(new DocumentListener() {\n        @Override\n        public void insertUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void removeUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void changedUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        private void updateState() {\n            CreateRecipeState currentState = createRecipeViewModel.getState();\n            currentState.setRecipeName(recipeNameField.getText());\n            createRecipeViewModel.setState(currentState);\n        }\n    });\n\n    recipeContentArea.getDocument().addDocumentListener(new DocumentListener() {\n        @Override\n        public void insertUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void removeUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void changedUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        private void updateState() {\n            CreateRecipeState currentState = createRecipeViewModel.getState();\n            currentState.setContent(recipeContentArea.getText());\n            createRecipeViewModel.setState(currentState);\n        }\n    });",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T15:55:45.908408",
+    "id": 82,
+    "calories": 0,
+    "title": "Elegant and Easy Gourmet Gefilte Fish Pate",
+    "isCooked": false,
+    "content": "Grind fish fine. Saute onions in oil till soft but not brown. Put the fish, onions, eggs, water, matzah meal, salt, white pepper, and sugar in a electric mixer bowl and beat on medium speed for 15 minutes. Grate the carrots and mix well. Pour the mixture into a gerased 12 cup bundt pan. Smooth the top with a spatula and bake in a preheated 325 degree oven for 1 hour in a larger pan filled with 2 inches water. Cover with alum foil and continue baking for 1 hour or until the center is solid. Cool for 5 minutes and then invert onto a flat serving plate. Refrigerate for several hours or over night. Slice as you would a torte and serve as an appetizer, garnished with parsley and served with red horseradish.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:10:57.226815",
+    "id": 83,
+    "calories": 0,
+    "title": "Elegant Seafood Quiche",
+    "isCooked": false,
+    "content": "Preheat oven to 350. Sprinkle cheese, crab flakes, onion, flour, and seasonings on top of pie crust. Beat together eggs and half and half. Pour over cheese mixture. Bake 55-60 minutes or until set. Makes 6 servings. *Can substitute with sharp cheddar cheese",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:11:00.397584",
+    "id": 84,
+    "calories": 0,
+    "title": "Electronic Gourmet's French Dressing",
+    "isCooked": false,
+    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:28:38.828104",
+    "id": 85,
+    "calories": 0,
+    "title": "Electronic Gourmet's Chili",
+    "isCooked": false,
+    "content": "1) Chop the steak into 1 inch cubes. Heat the oil and beef a few cubes at a time, turning to brown on all sides. Add the chopped onions and saute over medium heat for 2 or 3 minutes then add the garlic. 2) Season with salt to taste. Add the boiling water, caraway and sesame seeds and oregano. Reduce heat, cover and simmer for 1 hour. 3) Gradually stir in the chili powder, testing frequently until you achieve the degree of flavour and hotness that suits you. Add olives, cover and simmer for another hour. 4) Taste, and correct the seasoning then mix in kidney beans and heat through. Toasted french bread, tortillas or corn bread go well with this and a crisp green salad. Hints: ===== Beer is the only drink that can stand up to the spiciness of the chili. Cool and freeze in containers. Serving day heat over low heat.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:41:44.328201",
+    "id": 86,
+    "calories": 0,
+    "title": "Elixir of Portobello",
+    "isCooked": false,
+    "content": "To roast the onion, if you have a gas range, simply place the onion right on the burner, in a high flame, and roast, turning with tongs, until the outer skin is charred all the way around. If range is electric, you can roast in a preheated 500 oven. Plunge the onion into ice water to stop the cooking, then rub off the black skin under running water. Render the bacon in a 5 quart pot over high heat until crisp, about 8 minutes. Add 1 pound of the mushrooms, all the bell peppers, the celery and onions and cook, stirring occasionally, for about 5 minutes. Add the syrup, flour, and seasoning mix and stir until the flour is completely absorbed. Stir in the stock and scrape the pot bottom thoroughly. Bring to a boil, add the remaining mushrooms, reduce the heat to medium low and cook at a brisk simmer for 30 minutes. Remove from the heat and serve.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:41:44.383111",
+    "id": 86,
+    "calories": 0,
+    "title": "Emeril's Bloody Mary Mix",
+    "isCooked": false,
+    "content": "In a blender, combine first four ingredients together. Blend until smooth. Season the mixture to taste with the Worcestershire Sauce, hot sauce, salt and pepper. Store the mixture in a non-reactive container. Refrigerate the mixture for a least 6 hours before serving. Yield: about 1 quart",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:41:44.401811",
+    "id": 86,
+    "calories": 0,
+    "title": "Emeril's Rustic Brown Roux",
+    "isCooked": false,
+    "content": "ESSENCE OF EMERIL SHOW#EE2315 In a large saute pan, add the oil. When the pan is smoking hot, carefully whisk in the flour and reduce the heat. Season with salt and pepper. Stir the mixture constantly for 30 minutes or dark brown in color with a nutty aroma. Remove from heat.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:41:44.424412",
+    "id": 86,
+    "calories": 0,
+    "title": "Enchiladas South Texas Style",
+    "isCooked": false,
+    "content": "Melt shortening in heavy skillet. Add the ground meat and brown. Sprinkle meat with flour; mix in skillet. Add tomato sauce and 1 cup water. Mix 1/2 cup water with the chili powder to form a smooth paste; add to the meat mixture. Add salt to taste and garlic powder. Cook over medium heat, uncovered, until it is of gravy consistency. Cover and simmer over very low heat. Add more water if the chili gravy becomes too thick. Dip tortillas one at a time in the hot chili gravy with a wide metal spatula. The tortillas will become pliable almost immediately, which will make rolling the enchiladas easier. Soaking too long will cause the tortillas to fall apart. Place a good sprinkling of grated cheese and minced onion and about a tablespoon of the meat mixture to one side of the center of the tortilla. Roll tortilla tightly around the filling and place loose side down in a glass casserole baking dish. For best results place the enchilidas in a row with sides touching. When all enchiladas have been formed, pour the remaining hot chili gravy over all, and sprinkle generously with grated cheese, and top with chopped onion. Bake at 350 deg. F until the cheese is melted. Serve immediately. NOTES : Serve with canned refried beans, guacamole, picante sauce, tortilla chips, spanish rice, steamed tortillas and butter. For faster preparation, you can layer mixture in a casserole, starting with a little meat sauce in the bottom of the casserole, a layer of torn (in quarters) tortillas, another meat layer, sprinke of cheese and onions, and repeat layers, ending up with a layer of meat sauce topped with cheese and onion on top. Then bake until casserole is hot and cheese is melted.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:41:44.432954",
+    "id": 86,
+    "calories": 0,
+    "title": "Enchiladas with Salsa Mexicana",
+    "isCooked": false,
+    "content": "1. Preheat oven to 350F. Prepare Salsa Mexicana (see recipe) or use a prepared salsa. 2. Lightly spray a 1 2-in. nonstick skillet with vegetable oil cooking spray. Add bell pepper and onion, and cook over medium heat, stirring until softened, about 5 minutes. Add mushrooms, potatoes, garlic and 1/4 cup water and cook, stirring occasionally, until all vegetables are softened, about 10 minutes. Remove the skillet from the heat and stir in spinach, cilantro and red pepper flakes until spinach is wilted. Add feta and stir to blend. 3. Lightly spray an 8-in. square baking pan with vegetable oil. Warm each tortilla in a dry skillet over medium heat, about 1 minute per side. Place 1/3 cup of vegetable mixture in the lower part of each tortilla and roll up. Carefully place enchiladas seam side down in the baking pan, brush lightly with some of the liquid from the salsa, cover with foil and bake for 20 minutes. 4. To serve, divide lettuce among 6 plates. Place enchiladas on top of the lettuce. Top with salsa and garnish with cilantro sprigs. Notes: A nicely spiced entree, these light enchiladas are filled with veggies instead of the typical beef, pork or chicken. A bit of feta cheese is in the wrap for tangy flavor and creaminess. >from Kitpath with a little help from mcbuster 2.0d",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:41:44.445694",
+    "id": 86,
+    "calories": 0,
+    "title": "Fresh Green and Wax Beans",
+    "isCooked": false,
+    "content": "1. Wash and cut beans into 1 1/2 inch pieces. 2. Place in a deep 2-quart, heat-resistant, non-metallic casserole with the water. 3. Heat, covered, in Microwave Oven 12 minutes or until tender. Stir occasionally during cooking. 4. Drain water and season to taste.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:41:44.451707",
+    "id": 86,
+    "calories": 0,
+    "title": "Grandma Elaine's Ice Box Cake",
+    "isCooked": false,
+    "content": "Use a glass pyrex dish or brownie pan. Whip in a medium bowl all of the cream, when whipped add sugar and vanilla extract. Drain pinapple. Wash and slice strawberries. Peel and slice bananas. Layer in whipped cream, cookies, fruit, whipped cream, cookies, fruit until the dish is almost filled to the top (about 4 or 5 layers). Chill for a few hours and serve. NOTES : Recipe courtesy of Erica Miller and her Grandma Elaine",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:41:44.456411",
+    "id": 86,
+    "calories": 0,
+    "title": "Gravad Lax",
+    "isCooked": false,
+    "content": "Fillet and debone the salmon. Rinse, dry and lay fillets (flesh up) side-by-side on a sheet of foil. Roughly chop the dill; mix with the other ingredients and sprinkle over one of the fillets. Place the other fillet flesh down on top; fold over the foil and seal it tightly all the way around. Put into a dish and add a weight to the top; then place into a refrigerator for 48 hours. Turn the parcel after 12 hours and baste both sides with juices. Carve into thin slices as you would for smoked salmon. Arrange on each plate, accompanied with a dressing or green salad.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:41:44.461701",
+    "id": 86,
+    "calories": 0,
+    "title": "Gravad Lax ( Tessa )",
+    "isCooked": false,
+    "content": "This is method of curing fresh fish, in this case salmon, which is very easy to do at home and which is gentler (and therefore often more acceptable to children) than the more usual smoked salmon. The cured dish is not at all salty and makes a simple and fresh starter. Skin and pin-bone the salmon, taking care that all visible bones are removed. Remove and discard any dark flesh under the skin. Wash and dry the fish. Mix together the salt, sugar, pepper and half the dill. Sprinkle half the cure mixture over the fish (patting it into the flesh), put the salmon into a shallow dish (china is good), turn and sprinkle the remainder. Cover the fish tightly with food wrap and keep refrigerated overnight, turning the fish and basting it with the juices at frequent intervals. The next day remove the salmon, rinse it and then pat dry with kitchen paper. Sprinkle the remaining dill over the top side of the dish, patting it in with your hands. To serve slice very thinly with a sharp knife from top to bottom giving small thin slices edged with bright green dill. Some spring onion and creme fraiche goes well with it. Per serving: 1 Calories (kcal); trace Total Fat; (18% calories from fat); trace Protein; trace Carbohydrate; 0mg Cholesterol; 2mg Sodium Food Exchanges: 0 Grain(Starch); 0 Lean Meat; 0 Vegetable; 0 Fruit; 0 Fat; 0 Other Carbohydrates",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T16:54:47.791755",
+    "id": 87,
+    "calories": 0,
+    "title": "Electric Bread - Sticky Buns",
+    "isCooked": false,
+    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.",
     "isFavorite": false
   }
 ]
