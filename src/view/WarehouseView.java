@@ -143,7 +143,12 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
         }else if (evt.getPropertyName().equals("search")) {
             ClickSearchState state = (ClickSearchState) evt.getNewValue();
             System.out.println("被触发“propertyChange”事件");
-            getDataAndDisplay(state);
+            if (state.getSearchError() != null) {
+                getDataAndDisplay(state);
+            }
+            else {
+                JOptionPane.showMessageDialog(this, "No recipes found");
+            }
         }
     }
 
@@ -163,6 +168,9 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
     public void getDataAndDisplay(ClickSearchState state) {
         recipes = state.getRecipes();
         System.out.println(recipes.size());
+//        if (recipes.size() == 0){
+//            JOptionPane.showMessageDialog(this, "No recipes found");
+//        }
         DefaultListModel titleList = new DefaultListModel<>();
         for (Recipe recipe : recipes) {
             titleList.addElement(recipe.getTitle());
