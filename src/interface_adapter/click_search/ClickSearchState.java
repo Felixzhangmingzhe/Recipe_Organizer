@@ -5,7 +5,7 @@ import interface_adapter.view_warehouse.ViewWarehouseState;
 
 import java.util.List;
 
-public class ClickSearchState extends ViewWarehouseState {
+public class ClickSearchState {
 
     private String searchQuery;
     private String searchError;
@@ -20,22 +20,19 @@ public class ClickSearchState extends ViewWarehouseState {
         this.searchError = null;
     }
 
-    @Override
     public List<Recipe> getRecipes() {
         return recipes;
     }
 
-    @Override
     public void setRecipes(List<Recipe> recipes) {
         this.recipes = recipes;
     }
 
-    @Override
+
     public String getRecipesError() {
         return recipesError;
     }
 
-    @Override
     public void setRecipesError(String recipesError) {
         this.recipesError = recipesError;
     }

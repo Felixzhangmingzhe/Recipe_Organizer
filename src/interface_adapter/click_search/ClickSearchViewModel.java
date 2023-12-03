@@ -6,11 +6,11 @@ import interface_adapter.view_warehouse.ViewWarehouseViewModel;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
-public class ClickSearchViewModel extends ViewWarehouseViewModel {
+public class ClickSearchViewModel extends ViewModel {
     private ClickSearchState state;
 
     public ClickSearchViewModel() {
-        super();
+        super("Warehouse View");
     }
 
     public void setState(ClickSearchState state) {
@@ -24,7 +24,7 @@ public class ClickSearchViewModel extends ViewWarehouseViewModel {
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
     @Override
     public void firePropertyChanged() {
-        support.firePropertyChange("state", null, this.state);
+        support.firePropertyChange("search", null, this.state);
     }
 
     @Override

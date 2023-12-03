@@ -21,8 +21,7 @@ public class ViewSearchViewModel extends ViewModel {
     private PropertyChangeSupport support = new PropertyChangeSupport(this);
     @Override
     public void firePropertyChanged() {
-//        support.firePropertyChange();
-        //不太确定怎么change
+        support.firePropertyChange("state", null, this.state);
     }
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {

@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.IOException;
 import java.util.List;
 
 import java.util.concurrent.Executor;
@@ -69,6 +70,23 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+//        //logo
+//        // 创建 ImageIcon
+//        ImageIcon originalIcon = new ImageIcon("src/view/platePal-logo.png"); // 将 "path/to/your/image.png" 替换为您的图片文件路径
+//        // 获取原始图片并调整大小
+//        Image image = originalIcon.getImage();
+//        int newWidth = 200;
+//        int newHeight = 200;
+//        Image newimg = image.getScaledInstance(newWidth, newHeight,  java.awt.Image.SCALE_SMOOTH); // newWidth 和 newHeight 是新的宽度和高度
+//        ImageIcon imageIcon = new ImageIcon(newimg);
+//
+//        // 创建 JLabel 并设置新的 ImageIcon
+//        JLabel imageLabel = new JLabel(imageIcon);
+//        // 将 JLabel 添加到 JPanel
+//        this.add(imageLabel);
+
+
+
         // 初始化, 只需要controller和viewmodel
         // // 初始化ViewWarehouse有关
         this.viewWarehouseController = viewWarehouseController;
@@ -104,6 +122,8 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         buttons.add(dailySpecial);
         search = new JButton("Search");
         buttons.add(search);
+
+
 
 
 
@@ -166,7 +186,11 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     public void actionPerformed(ActionEvent e) {
                         if (e.getSource() == dailySpecial) {//if (e.getSource() == createRecipe)
                             ShowDailySpecialState currentState = showDailySpecialViewModel.getState();
-                            showDailySpecialController.execute();
+                            try {
+                                showDailySpecialController.execute();
+                            } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            }
                         }
                     }
                 }
