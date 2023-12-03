@@ -87,16 +87,17 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         // Set layout manager
         setLayout(new BorderLayout());
 
-        // Add components to the frame
+        // Add components to the panel
         add(recipeNameLabel, BorderLayout.NORTH);
         add(new JScrollPane(recipeContentTextArea), BorderLayout.CENTER);
+
 
         // Create a panel for additional information (calories and last edit time)
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         infoPanel.add(caloriesLabel);
         infoPanel.add(lastEditTimeLabel);
-        add(infoPanel, BorderLayout.SOUTH);
+        add(infoPanel, BorderLayout.CENTER);
 
         // Create a panel for buttons
         JPanel buttonPanel = new JPanel();
