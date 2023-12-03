@@ -537,7 +537,7 @@
     "title": "Electronic Gourmet's French Dressing",
     "isCooked": false,
     "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
+    "isFavorite": true
   },
   {
     "date": "2023-12-02T20:59:44.886399",
@@ -627,6 +627,15 @@
     "title": "Penne Saporite \"Il Frantoio\"(Penne W/tomato&s",
     "isCooked": false,
     "content": ": Heat oil in skillet over med low heat. Add onion & cook, stirring, til soft, sweet & slightly carmelized, about 10min. Add garlic & red pepper flakes & cook, stirring for 1min. to release fragrence. Add bell pepper, tomatoes & salt. Cover, adjust heat to maintain simmer, & stew, stirring occasinally, til vegetables are very soft, about 15min. : Transfer mixture to food processor or blender & puree, adding stock or water as needed to make a smooth sauce. Return to skillet. Reheat gently; taste & season w/S&P. Keep warm. : Meanwhile, cook penne in large pot of salted boiling water til al dente, 8-10min. Drain, then transfer to warm bowl. Add sauce & toss. Serve immediately on warm plates. See Eating Well,Oct'95,pp68",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T01:12:22.486728",
+    "id": 55,
+    "calories": 0,
+    "title": "Electronic Gourmet's French Dressing",
+    "isCooked": false,
+    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
     "isFavorite": false
   }
 ]
