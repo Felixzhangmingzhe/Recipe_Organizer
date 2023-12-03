@@ -22,7 +22,7 @@
     "id": 2,
     "calories": 1200,
     "title": "Pasta Carbonara",
-    "isCooked": false,
+    "isCooked": true,
     "content": "Boil the pasta. Mix eggs, cheese, and bacon. Combine with pasta.",
     "isFavorite": false
   },
@@ -312,6 +312,15 @@
     "title": "瑞环",
     "isCooked": false,
     "content": "瑞环肉好吃",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T01:11:24.549735",
+    "id": 38,
+    "calories": -1,
+    "title": "肉肉",
+    "isCooked": false,
+    "content": "1234567898765432",
     "isFavorite": false
   }
 ]
