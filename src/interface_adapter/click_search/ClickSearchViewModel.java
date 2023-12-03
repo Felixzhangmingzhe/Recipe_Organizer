@@ -1,34 +1,35 @@
-package interface_adapter.show_daily_special;
+package interface_adapter.click_search;
 
 import interface_adapter.ViewModel;
+import interface_adapter.view_warehouse.ViewWarehouseViewModel;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
-public class ShowDailySpecialViewModel extends ViewModel {
+public class ClickSearchViewModel extends ViewModel {
+    private ClickSearchState state;
 
-    private ShowDailySpecialState state;
-
-    public ShowDailySpecialViewModel() {
-        super("Read Recipe");
+    public ClickSearchViewModel() {
+        super("Warehouse View");
     }
 
-    public void setState(ShowDailySpecialState state) {
+    public void setState(ClickSearchState state) {
         this.state = state;
     }
 
-    public ShowDailySpecialState getState() {
+    public ClickSearchState getState() {
         return state;
     }
 
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
     @Override
     public void firePropertyChanged() {
-        support.firePropertyChange("daily special", null, this.state);
+        support.firePropertyChange("search", null, this.state);
     }
 
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
     }
+
 }

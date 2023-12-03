@@ -9,10 +9,12 @@ import entity.*;
 // 引入各个用例的ViewModel
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.add_to_favorites.AddToFavoritesViewModel;
+import interface_adapter.click_search.ClickSearchViewModel;
 import interface_adapter.cooked.CookedController;
 import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
+import interface_adapter.show_daily_special.ShowDailySpecialViewModel;
 import interface_adapter.view_search.ViewSearchViewModel;
 import interface_adapter.view_warehouse.ViewWarehouseViewModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
@@ -48,6 +50,8 @@ public class Main {
         ViewSearchViewModel viewSearchViewModel = new ViewSearchViewModel();
         AddToFavoritesViewModel addToFavoritesViewModel = new AddToFavoritesViewModel();
         CookedViewModel cookedViewModel = new CookedViewModel();
+        ShowDailySpecialViewModel showDailySpecialViewModel = new ShowDailySpecialViewModel();
+        ClickSearchViewModel clickSearchViewModel = new ClickSearchViewModel();
 
 
 
@@ -58,7 +62,7 @@ public class Main {
         FileRecipeDataAccessObject viewRecipeDAO = new FileRecipeDataAccessObject("recipes.json");
         FileRecipeDataAccessObject warehouseDAO = new FileRecipeDataAccessObject("recipes.json");
         // 创建并将视图添加到主面板:主视图
-        MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, openCreateRecipeViewModel,DAO,viewRecipeViewModel,viewSearchViewModel);
+        MainView mainView = MainViewUseCaseFactory.create(viewManagerModel, viewWarehouseViewModel, viewFavoritesViewModel, openCreateRecipeViewModel,DAO,viewRecipeViewModel,viewSearchViewModel,showDailySpecialViewModel);
         mainView.setPreferredSize(new Dimension(800, 600));
         views.add(mainView, mainView.viewName);
         // 这四句可以用来在一开始显示view
@@ -74,7 +78,7 @@ public class Main {
         FileRecipeDataAccessObject prDAO = new FileRecipeDataAccessObject("recipes.json");
         recipePresetter.presetData(prDAO);
         // 创建并将视图添加到主面板:仓库视图
-        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewWarehouseViewModel,viewManagerModel, warehouseDAO,backViewModel);
+        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewWarehouseViewModel,viewManagerModel, warehouseDAO,clickSearchViewModel,backViewModel);
         views.add(warehouseView, warehouseView.viewName);
 
 
@@ -87,11 +91,18 @@ public class Main {
         EditRecipeView editRecipeView = EditRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,DAO);
         views.add(editRecipeView, editRecipeView.viewName);
         // 创建并将视图添加到主面板:查看菜谱视图
-        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,viewRecipeViewModel,addToFavoritesViewModel,cookedViewModel,viewRecipeDAO);
+        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel,viewManagerModel,createRecipeViewModel,viewRecipeViewModel,addToFavoritesViewModel,cookedViewModel,showDailySpecialViewModel, viewRecipeDAO);
         views.add(viewRecipeView, viewRecipeView.viewName);
         // 创建并将视图添加到主面板:创建菜谱视图
-        SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, DAO, backViewModel);
+
+        // 创建并将视图添加到主面板:每日推荐菜谱视图
+        DailySpecialView dailySpecialView = ShowDailySpecialUseCaseFactory.create(backViewModel, viewManagerModel, showDailySpecialViewModel, viewRecipeViewModel, DAO);
+        views.add(dailySpecialView, dailySpecialView.viewName);
+
+        // 创建并将视图添加到主面板:搜索菜谱视图
+        SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, backViewModel, clickSearchViewModel, DAO);
         views.add(viewSearchView.getSearchView(), viewSearchView.viewName);
+
 
 
     }

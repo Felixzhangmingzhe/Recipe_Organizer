@@ -1,5 +1,5 @@
 package use_case.show_daily_special;
 
 public interface ShowDailySpecialOutputBoundary {
-    void prepareSuccessView();
+    void prepareSuccessView(ShowDailySpecialOutputData showDailySpecialOutputData);
 }

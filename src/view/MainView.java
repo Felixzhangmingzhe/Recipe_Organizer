@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.IOException;
 import java.util.List;
 
 import java.util.concurrent.Executor;
@@ -20,6 +21,9 @@ import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeController;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
+import interface_adapter.show_daily_special.ShowDailySpecialController;
+import interface_adapter.show_daily_special.ShowDailySpecialState;
+import interface_adapter.show_daily_special.ShowDailySpecialViewModel;
 import interface_adapter.view_search.ViewSearchController;
 import interface_adapter.view_search.ViewSearchViewModel;
 import interface_adapter.view_warehouse.*;
@@ -49,6 +53,10 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final ViewSearchController viewSearchController;
     private final ViewSearchViewModel viewSearchViewModel;
 
+    // Use Case:Show Daily Special
+    private final ShowDailySpecialViewModel showDailySpecialViewModel;
+    private final ShowDailySpecialController showDailySpecialController;
+
 
 
 
@@ -57,9 +65,27 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     public MainView(ViewWarehouseController viewWarehouseController, ViewWarehouseViewModel viewWarehouseViewModel,
                     ViewFavoritesController viewFavoritesController, ViewFavoritesViewModel viewFavoritesViewModel,
                     OpenCreateRecipeViewModel openCreateRecipeViewModel, OpenCreateRecipeController openCreateRecipeController,
-                    ViewManagerModel viewManagerModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel) {
+                    ViewManagerModel viewManagerModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel,
+                    ShowDailySpecialViewModel showDailySpecialViewModel, ShowDailySpecialController showDailySpecialController) {
         JLabel title = new JLabel("Main Menu");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+//        //logo
+//        // 创建 ImageIcon
+//        ImageIcon originalIcon = new ImageIcon("src/view/platePal-logo.png"); // 将 "path/to/your/image.png" 替换为您的图片文件路径
+//        // 获取原始图片并调整大小
+//        Image image = originalIcon.getImage();
+//        int newWidth = 200;
+//        int newHeight = 200;
+//        Image newimg = image.getScaledInstance(newWidth, newHeight,  java.awt.Image.SCALE_SMOOTH); // newWidth 和 newHeight 是新的宽度和高度
+//        ImageIcon imageIcon = new ImageIcon(newimg);
+//
+//        // 创建 JLabel 并设置新的 ImageIcon
+//        JLabel imageLabel = new JLabel(imageIcon);
+//        // 将 JLabel 添加到 JPanel
+//        this.add(imageLabel);
+
+
 
         // 初始化, 只需要controller和viewmodel
         // // 初始化ViewWarehouse有关
@@ -74,6 +100,9 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         // // 初始化ViewSearch有关
         this.viewSearchViewModel = viewSearchViewModel;
         this.viewSearchController = viewSearchController;
+        // // 初始化ShowDailySpecial有关
+        this.showDailySpecialViewModel = showDailySpecialViewModel;
+        this.showDailySpecialController = showDailySpecialController;
 
 
 
@@ -93,6 +122,8 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         buttons.add(dailySpecial);
         search = new JButton("Search");
         buttons.add(search);
+
+
 
 
 
@@ -149,6 +180,20 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     }
                 }
             }
+        );
+        dailySpecial.addActionListener(//打开菜谱界面（浏览菜谱模式）
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource() == dailySpecial) {//if (e.getSource() == createRecipe)
+                            ShowDailySpecialState currentState = showDailySpecialViewModel.getState();
+                            try {
+                                showDailySpecialController.execute();
+                            } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            }
+                        }
+                    }
+                }
         );
         exit.addActionListener(new ActionListener() {
             @Override

@@ -5,6 +5,9 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeController;
 import interface_adapter.open_create_recipe.OpenCreateRecipePresenter;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
+import interface_adapter.show_daily_special.ShowDailySpecialController;
+import interface_adapter.show_daily_special.ShowDailySpecialPresenter;
+import interface_adapter.show_daily_special.ShowDailySpecialViewModel;
 import interface_adapter.view_favorites.ViewFavoritesController;
 import interface_adapter.view_favorites.ViewFavoritesPresenter;
 import interface_adapter.view_favorites.ViewFavoritesViewModel;
@@ -19,6 +22,10 @@ import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
 import use_case.open_create_recipe.OpenCreateRecipeInputBoundary;
 import use_case.open_create_recipe.OpenCreateRecipeInteractor;
 import use_case.open_create_recipe.OpenCreateRecipeOutputBoundary;
+import use_case.show_daily_special.ShowDailySpecialDataAccessInterface;
+import use_case.show_daily_special.ShowDailySpecialInputBoundary;
+import use_case.show_daily_special.ShowDailySpecialInteractor;
+import use_case.show_daily_special.ShowDailySpecialOutputBoundary;
 import use_case.view_favorites.ViewFavoritesDataAccessInterface;
 import use_case.view_favorites.ViewFavoritesInputBoundary;
 import use_case.view_favorites.ViewFavoritesInteractor;
@@ -39,25 +46,22 @@ import view.MainView;
 public class MainViewUseCaseFactory extends UseCaseFactory {
     public static MainView create(ViewManagerModel viewManagerModel, ViewWarehouseViewModel viewWarehouseViewModel, ViewFavoritesViewModel viewFavoritesViewModel,
                                   OpenCreateRecipeViewModel openCreateRecipeViewModel,
-                                  FileRecipeDataAccessObject dao, ViewRecipeViewModel viewRecipeViewModel, ViewSearchViewModel viewSearchViewModel) {
+                                  FileRecipeDataAccessObject dao, ViewRecipeViewModel viewRecipeViewModel, ViewSearchViewModel viewSearchViewModel,
+                                  ShowDailySpecialViewModel showDailySpecialViewModel) {
         try {
             // 生成各个用例的Controller
             ViewWarehouseController viewWarehouseController = createViewWarehouseController(viewManagerModel, viewWarehouseViewModel, dao, viewRecipeViewModel);
             ViewFavoritesController viewFavoritesController = createViewFavoritesController(viewManagerModel, viewFavoritesViewModel, dao, viewRecipeViewModel);
-            ViewSearchController viewSearchController = createViewSearchController(viewManagerModel, viewSearchViewModel, dao);
+            ViewSearchController viewSearchController = createViewSearchController(viewManagerModel, viewSearchViewModel);
             OpenCreateRecipeController openCreateRecipeController = createOpenCreateRecipeController(viewManagerModel, openCreateRecipeViewModel, dao);
+            ShowDailySpecialController showDailySpecialController = createShowDailySpecialController(viewManagerModel, showDailySpecialViewModel, dao);
 
-            return new MainView(viewWarehouseController, viewWarehouseViewModel, viewFavoritesController, viewFavoritesViewModel, openCreateRecipeViewModel, openCreateRecipeController,viewManagerModel, viewSearchController, viewSearchViewModel);
+            return new MainView(viewWarehouseController, viewWarehouseViewModel, viewFavoritesController, viewFavoritesViewModel, openCreateRecipeViewModel, openCreateRecipeController,viewManagerModel, viewSearchController, viewSearchViewModel,
+                    showDailySpecialViewModel, showDailySpecialController);
         }catch (Exception e) {
             e.printStackTrace();
             return null;
         }
-    }
-
-    static ViewSearchController createViewSearchController(ViewManagerModel viewManagerModel, ViewSearchViewModel viewSearchViewModel, FileRecipeDataAccessObject dao) {
-        ViewSearchOutputBoundary viewSearchOutputBoundary = (ViewSearchOutputBoundary) new ViewSearchPresenter(viewSearchViewModel, viewManagerModel);
-        ViewSearchInputBoundary viewSearchInputBoundary = new ViewSearchInteractor((ViewSearchPresenter) viewSearchOutputBoundary);
-        return new ViewSearchController(viewSearchInputBoundary);
     }
 
     private static ViewFavoritesController createViewFavoritesController(ViewManagerModel viewManagerModel, ViewFavoritesViewModel viewFavoritesViewModel, FileRecipeDataAccessObject dao, ViewRecipeViewModel viewRecipeViewModel) {
@@ -74,6 +78,18 @@ public class MainViewUseCaseFactory extends UseCaseFactory {
         OpenCreateRecipeOutputBoundary openCreateRecipeOutputBoundary = new OpenCreateRecipePresenter(openCreateRecipeViewModel,viewManagerModel);
         OpenCreateRecipeInputBoundary openCreateRecipeInputBoundary = new OpenCreateRecipeInteractor((OpenCreateRecipeOutputBoundary) openCreateRecipeOutputBoundary, (OpenCreateRecipeDataAccessInterface) dao);
         return new OpenCreateRecipeController(openCreateRecipeInputBoundary);
+    }
+
+    private static ShowDailySpecialController createShowDailySpecialController(ViewManagerModel viewManagerModel, ShowDailySpecialViewModel showDailySpecialViewModel, FileRecipeDataAccessObject dao) {
+        ShowDailySpecialOutputBoundary showDailySpecialOutputBoundary = (ShowDailySpecialOutputBoundary) new ShowDailySpecialPresenter(showDailySpecialViewModel,viewManagerModel);
+        ShowDailySpecialInputBoundary showDailySpecialInputBoundary = new ShowDailySpecialInteractor((ShowDailySpecialOutputBoundary) showDailySpecialOutputBoundary, (ShowDailySpecialDataAccessInterface) dao);
+        return new ShowDailySpecialController(showDailySpecialInputBoundary);
+    }
+
+    static ViewSearchController createViewSearchController(ViewManagerModel viewManagerModel, ViewSearchViewModel viewSearchViewModel) {
+        ViewSearchPresenter viewSearchOutputBoundary = new ViewSearchPresenter(viewSearchViewModel, viewManagerModel);
+        ViewSearchInputBoundary viewSearchInputBoundary = new ViewSearchInteractor(viewSearchOutputBoundary);
+        return new ViewSearchController(viewSearchInputBoundary);
     }
 
 

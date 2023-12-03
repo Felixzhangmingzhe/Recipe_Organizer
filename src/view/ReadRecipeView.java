@@ -10,6 +10,9 @@ import interface_adapter.cooked.CookedState;
 import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeState;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
+import interface_adapter.show_daily_special.ShowDailySpecialController;
+import interface_adapter.show_daily_special.ShowDailySpecialState;
+import interface_adapter.show_daily_special.ShowDailySpecialViewModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
 
 import javax.swing.*;
@@ -45,10 +48,14 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
     // Use Case: Cooked
     private CookedController cookedController;
     private CookedViewModel cookedViewModel;
+    // Use Case: Show Daily Special
+    private ShowDailySpecialViewModel showDailySpecialViewModel;
+    private ShowDailySpecialController showDailySpecialController;
 
     public ReadRecipeView(BackViewModel backViewModel, BackController backController, ViewRecipeViewModel viewRecipeViewModel, CreateRecipeViewModel createRecipeViewModel
     , AddToFavoritesController addToFavoritesController, AddToFavoritesViewModel addToFavoritesViewModel,
-                           CookedViewModel cookedViewModel, CookedController cookedController) {
+                           CookedViewModel cookedViewModel, CookedController cookedController,
+                           ShowDailySpecialViewModel showDailySpecialViewModel, ShowDailySpecialController showDailySpecialController) {
         // Initialize view model and controller
         this.backViewModel = backViewModel;
         this.backController = backController;
@@ -62,6 +69,9 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         this.cookedController = cookedController;
         this.cookedViewModel = cookedViewModel;
         this.cookedViewModel.addPropertyChangeListener(this);//Listen to the change of cookedViewModel
+        this.showDailySpecialController = showDailySpecialController;
+        this.showDailySpecialViewModel = showDailySpecialViewModel;
+        this.showDailySpecialViewModel.addPropertyChangeListener(this);//Listen to the change of showDailySpecialViewModel
 
         // Initialize String RecipeName
         recipeName = "";
@@ -143,7 +153,11 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         }else if (evt.getPropertyName().equals("cooked")) {
             System.out.println("cooked property changed");
             getAndDisplay((CookedState) evt.getNewValue());
-        }
+        }else if (evt.getPropertyName().equals("daily special")) {
+            System.out.println("show daily special property changed");
+
+            getAndDisplay((ShowDailySpecialState) evt.getNewValue());
+            updateFavoritesButton(viewRecipeViewModel);}
     }
 
     public void getAndDisplay(CreateRecipeState currentState) {
@@ -190,6 +204,18 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
             JOptionPane.showMessageDialog(this, "You have already cooked this recipe!");
         }
     }
+    public void getAndDisplay(ShowDailySpecialState currentState) {
+        // Update the labels and text area with the recipe information
+        String recipeContent = currentState.getContent();
+        String calories = String.valueOf(currentState.getCalories());
+        String lastEditTime = String.valueOf(currentState.getCreationTime());
+        recipeName = currentState.getTitle();
+        recipeNameLabel.setText("Recipe Name: " + recipeName);
+        recipeContentTextArea.setText(recipeContent);
+        caloriesLabel.setText("Calories: " + calories);
+        lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
+    }
+
     private void updateFavoritesButton(AddToFavoritesState currentState) {
         // 根据 addToFavoritesViewModel 或其他相关信息判断 Recipe 是否在 favorites 中
         String addToFavoritesMessage = currentState.getAddToFavoritesMessage();
