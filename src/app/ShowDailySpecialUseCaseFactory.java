@@ -14,25 +14,6 @@ import view.DailySpecialView;
 
 public class ShowDailySpecialUseCaseFactory extends UseCaseFactory{
 
-//    public static ShowDailySpecialController create(ShowDailySpecialViewModel showDailySpecialViewModel,
-//                                                    ShowDailySpecialOutputBoundary showDailySpecialOutputBoundary,
-//                                                    FileRecipeDataAccessObject dao) {
-//        ShowDailySpecialInputBoundary showDailySpecialInputBoundary = new ShowDailySpecialInteractor(showDailySpecialOutputBoundary, dao);
-//        return new ShowDailySpecialController(showDailySpecialInputBoundary);
-//    }
-
-
-//    public static ReadRecipeView create(BackViewModel backViewModel, ViewManagerModel viewManagerModel,
-//                                        ShowDailySpecialViewModel showDailySpecialViewModel,
-//                                        ViewRecipeViewModel viewRecipeViewModel,
-//                                        CreateRecipeViewModel createRecipeViewModel,
-//                                        FileRecipeDataAccessObject dao) {
-//        BackController backController = createBackController(backViewModel, viewManagerModel);
-//
-//        return new ReadRecipeView(backViewModel, backController,viewRecipeViewModel,createRecipeViewModel, showDailySpecialViewModel);
-//    }
-    //不用你了
-
     public static DailySpecialView create(BackViewModel backViewModel, ViewManagerModel viewManagerModel,
                                           ShowDailySpecialViewModel showDailySpecialViewModel,
                                           ViewRecipeViewModel viewRecipeViewModel,

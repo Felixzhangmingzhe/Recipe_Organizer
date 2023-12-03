@@ -101,7 +101,8 @@ public class Main {
 
         // 创建并将视图添加到主面板:搜索菜谱视图
         SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, backViewModel, clickSearchViewModel, DAO);
-        views.add(viewSearchView.getSearchView(), viewSearchView.viewName);
+        views.add(viewSearchView.getSearchPanel(), viewSearchView.viewName);
+
 
 
 

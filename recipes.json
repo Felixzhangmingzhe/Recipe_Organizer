@@ -76,9 +76,9 @@
     "id": 11,
     "calories": -1,
     "title": "1",
-    "isCooked": false,
+    "isCooked": true,
     "content": "234r432",
-    "isFavorite": false
+    "isFavorite": true
   },
   {
     "date": "2023-11-29T22:42:04.194274",
@@ -537,7 +537,7 @@
     "title": "Electronic Gourmet's French Dressing",
     "isCooked": false,
     "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
+    "isFavorite": true
   },
   {
     "date": "2023-12-02T20:59:44.886399",
@@ -594,12 +594,48 @@
     "isFavorite": false
   },
   {
-    "date": "2023-12-02T01:11:24.549735",
-    "id": 38,
-    "calories": -1,
-    "title": "肉肉",
+    "date": "2023-12-02T21:44:12.393345",
+    "id": 53,
+    "calories": 0,
+    "title": "Electronic Gourmet's French Dressing",
     "isCooked": false,
-    "content": "1234567898765432",
+    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T21:45:59.639353",
+    "id": 54,
+    "calories": 0,
+    "title": "Scallopa Al Pizzaioio",
+    "isCooked": false,
+    "content": "In a shallow bowl, mix flour with salt and freshly ground black pepper. Dredge veal pieces in flour mixture and set aside. In a 12 to 14-inch saute pan, heat olive oil over medium high heat until just smoking. Shake excess flour from veal and place pieces in pan. Cook until golden brown on one side, about 5 to 6 minutes. Turn and continue cooking until golden brown, about 4 to 5 minutes. Remove veal pieces and pour out oil. Add 1/2 cup water to pan and deglaze, scraping lightly with a wooden spoon to loosen brown bits. Add tomato sauce and bring to a boil. Replace veal in pan and coat with sauce. Place 2 pieces of fresh mozzarella over each piece of veal and place pan in a preheated 350 degree oven for 6 to 8 minutes, or until cheese is melted. Remove pan from oven. Place veal on platter, surround with sauce, sprinkle with fresh oregano and serve. Yield: 4 servings",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T21:45:59.642372",
+    "id": 54,
+    "calories": 0,
+    "title": "Bel Gioioso's Basic Tiramisu",
+    "isCooked": false,
+    "content": "The company that makes this particular brand of cheese (Bel Gioioso, pronouced \"bel-joy-oso\" Cheese Inc. of Denmark, Wisconsin) put this recipe on the side of its 8-ounce Mascarpone container. They call it their \"Famous 'Tiramisu' Dessert Recipe,\" but then again, I guess every cheese company, every restaurant has a \"famous\" recipe. This one makes 6 servings. Directions 1. Combine 3 egg yolks, 1 tablespoon Espresso, sugar, and Cognac into the large mixing bowl. 2. Beat 2 to 3 minutes. 3. Add Mascarpone and beat 3 to 5 minutes until consistency is smooth. 4. In another bowl, combine 3 egg whites and a pinch of sugar. Beat until mixture forms stiff peaks. 5. Gently fold into Mascarpone mixture. 6. Pour rest of Espresso into flat dish, dip one side of each Lady Finger, and layer on bottom of serving dish. 7. Spread 1/3 of Mascarpone mixture and sprinkle with cocoa. 8. Continue layering and finish with a Mascarpone layer. 9. Sprinkle and refrigerate 1 hour before serving.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-02T21:45:59.644920",
+    "id": 54,
+    "calories": 0,
+    "title": "Penne Saporite \"Il Frantoio\"(Penne W/tomato&s",
+    "isCooked": false,
+    "content": ": Heat oil in skillet over med low heat. Add onion & cook, stirring, til soft, sweet & slightly carmelized, about 10min. Add garlic & red pepper flakes & cook, stirring for 1min. to release fragrence. Add bell pepper, tomatoes & salt. Cover, adjust heat to maintain simmer, & stew, stirring occasinally, til vegetables are very soft, about 15min. : Transfer mixture to food processor or blender & puree, adding stock or water as needed to make a smooth sauce. Return to skillet. Reheat gently; taste & season w/S&P. Keep warm. : Meanwhile, cook penne in large pot of salted boiling water til al dente, 8-10min. Drain, then transfer to warm bowl. Add sauce & toss. Serve immediately on warm plates. See Eating Well,Oct'95,pp68",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-03T01:12:22.486728",
+    "id": 55,
+    "calories": 0,
+    "title": "Electronic Gourmet's French Dressing",
+    "isCooked": false,
+    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
     "isFavorite": false
   }
 ]
