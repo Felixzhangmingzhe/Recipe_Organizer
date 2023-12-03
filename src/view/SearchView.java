@@ -49,7 +49,6 @@ public class SearchView extends Component implements ActionListener, PropertyCha
         this.searchController = viewSearchController;
         this.searchViewModel = viewSearchViewModel;
         this.searchViewModel.addPropertyChangeListener(this);
-
         this.clickSearchController = clickSearchController;
         this.clickSearchViewModel = clickSearchViewModel;
 
@@ -122,7 +121,6 @@ public class SearchView extends Component implements ActionListener, PropertyCha
                     }
                 }
         );
-
 
         returnButton.addActionListener(new ActionListener() {
             @Override
@@ -206,6 +204,4 @@ public class SearchView extends Component implements ActionListener, PropertyCha
     public JPanel getSearchPanel() {
         return SearchPanel;
     }
-
-
 }

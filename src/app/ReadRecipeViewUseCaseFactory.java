@@ -51,7 +51,7 @@ public class ReadRecipeViewUseCaseFactory extends UseCaseFactory {
         CookedController cookedController = createCookedController(cookedViewModel, viewManagerModel, dao);
         JumpToEditController jumpToEditController = createJumpToEditController(viewManagerModel, jumpToEditViewModel, dao);
         ShowDailySpecialController showDailySpecialController = createShowDailySpecialController(viewManagerModel, showDailySpecialViewModel, dao);
-        return new ReadRecipeView(backViewModel, backController,viewRecipeViewModel, createRecipeViewModel, addToFavotitesController, addToFavoritesViewModel, jumpToEditController,jumpToEditViewModel,cookedViewModel, cookedController, showDailySpecialViewModel, showDailySpecialController);
+        return new ReadRecipeView(backViewModel, backController,viewRecipeViewModel, createRecipeViewModel, addToFavotitesController, addToFavoritesViewModel, jumpToEditController, jumpToEditViewModel, cookedViewModel, cookedController, showDailySpecialViewModel, showDailySpecialController);
     }
 
     private static JumpToEditController createJumpToEditController(ViewManagerModel viewManagerModel, JumpToEditViewModel jumpToEditViewModel,FileRecipeDataAccessObject dao) {

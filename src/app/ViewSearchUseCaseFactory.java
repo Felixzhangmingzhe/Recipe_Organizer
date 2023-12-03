@@ -9,6 +9,7 @@ import interface_adapter.click_search.ClickSearchController;
 import interface_adapter.click_search.ClickSearchPresenter;
 import interface_adapter.click_search.ClickSearchViewModel;
 import interface_adapter.view_search.ViewSearchController;
+import interface_adapter.view_search.ViewSearchPresenter;
 import interface_adapter.view_search.ViewSearchViewModel;
 import use_case.Back.BackInputBoundary;
 import use_case.Back.BackInteractor;
@@ -45,5 +46,4 @@ public class ViewSearchUseCaseFactory {
         ClickSearchInputBoundary clickSearchInputBoundary = new ClickSearchInteractor(clickSearchOutputBoundary, dao);
         return new ClickSearchController(clickSearchInputBoundary);
     }
-
 }

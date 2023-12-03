@@ -16,7 +16,16 @@ sourceSets {
     }
 }
 dependencies {
+    // JUnit 用于单元测试
     testImplementation 'junit:junit:4.13.2'
+
+    // JSON 处理库
     implementation 'org.json:json:20231013'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0' // 使用最新版本
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
+
+    // TestNG 用于测试，如果您同时使用 JUnit 和 TestNG，请保留这一行
+    testImplementation 'org.testng:testng:7.7.0'
+
+    // Hamcrest 用于测试断言
+    testImplementation 'org.hamcrest:hamcrest:2.2'
 }

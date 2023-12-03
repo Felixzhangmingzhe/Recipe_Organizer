@@ -52,6 +52,7 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
     // Use Case: Cooked
     private CookedController cookedController;
     private CookedViewModel cookedViewModel;
+  
     // Use Case: Jump to Edit
     private JumpToEditController jumpToEditController;
     private JumpToEditViewModel jumpToEditViewModel;

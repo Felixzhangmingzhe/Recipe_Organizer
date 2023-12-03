@@ -21,6 +21,5 @@ public class ClickSearchController {
             System.out.println(e.getMessage());
         }
         // TODO: 这里可以FailView吗
-
     }
 }
