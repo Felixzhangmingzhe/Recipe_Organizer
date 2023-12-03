@@ -19,6 +19,7 @@ import use_case.view_warehouse.ViewWarehouseDataAccessInterface;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -272,10 +273,46 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     }
 
     @Override
-    public Recipe getDailySpecial() {
-        List<Recipe> recipes = readRecipes();
-        int random = (int) Math.floor(Math.random()*recipes.size());
-        return recipes.get(random);
+    public Recipe getDailySpecial() throws IOException {
+        String randomChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        int randomInLetter = (int) Math.floor(Math.random()*randomChar.length());
+        List<Recipe> recipes = getRecipesOnlyFromAPI(randomChar.substring(randomInLetter, randomInLetter+1));
+
+        if (recipes!= null){
+            int randomInRecipe = (int) Math.floor(Math.random()*recipes.size());
+            return recipes.get(randomInRecipe);
+        }
+        return null;
+    }
+
+    private List<Recipe> getRecipesOnlyFromAPI(String substring) throws IOException {
+        List<Recipe> resultRecipe = new ArrayList<>();
+
+        URL url = new URL("https://api.api-ninjas.com/v1/recipe?query=" + URLEncoder.encode(substring, StandardCharsets.UTF_8));
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestProperty("X-Api-Key" , apiToken);
+        connection.setRequestProperty("Accept", "application/json");
+
+        try (InputStream responseStream = connection.getInputStream()) {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(responseStream);
+            if (root.isArray()) {
+                // 遍历前10个元素（如果它们存在）
+                for (int i = 0; i < Math.min(root.size(), 5); i++) {
+                    JsonNode recipe = root.get(i);
+                    String recipeTitle = recipe.path("title").asText();
+                    String recipeInstructions = recipe.path("instructions").asText();
+                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, false,0);
+                    resultRecipe.add(newRecipe);
+                }
+            }
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return resultRecipe;
     }
 
     @Override
@@ -290,6 +327,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     public List<Recipe> getRecipesFromAPI(String title) throws IOException {
         List<Recipe> resultRecipe = new ArrayList<>();
         List<Recipe> existRecipe = readRecipes();
+
 
         //先去API获取数据
 
