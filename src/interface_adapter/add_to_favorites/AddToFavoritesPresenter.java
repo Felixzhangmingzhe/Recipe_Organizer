@@ -1,7 +1,8 @@
 package interface_adapter.add_to_favorites;
 
 import interface_adapter.ViewManagerModel;
-import use_case.add_to_favorites.*;
+import use_case.add_to_favorites.AddToFavoritesOutputBoundary;
+import use_case.add_to_favorites.AddToFavoritesOutputData;
 
 public class AddToFavoritesPresenter implements AddToFavoritesOutputBoundary {
     private final AddToFavoritesViewModel viewModel;

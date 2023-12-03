@@ -37,7 +37,6 @@ import use_case.view_warehouse.ViewWarehouseInteractor;
 import use_case.view_warehouse.ViewWarehouseOutputBoundary;
 
 import use_case.view_search.ViewSearchInputBoundary;
-import use_case.view_search.ViewSearchDataAccessInterface;
 import use_case.view_search.ViewSearchOutputBoundary;
 import use_case.view_search.ViewSearchInteractor;
 
@@ -69,11 +68,13 @@ public class MainViewUseCaseFactory extends UseCaseFactory {
         ViewFavoritesInputBoundary viewFavoritesInputBoundary = new ViewFavoritesInteractor((ViewFavoritesPresenter) viewFavoritesOutputBoundary, (ViewFavoritesDataAccessInterface) dao);
         return new ViewFavoritesController(viewFavoritesInputBoundary);
     }
+
     private static ViewWarehouseController createViewWarehouseController(ViewManagerModel viewManagerModel, ViewWarehouseViewModel viewWarehouseViewModel, FileRecipeDataAccessObject dao, ViewRecipeViewModel viewRecipeViewModel) {
         ViewWarehouseOutputBoundary viewWarehouseOutputBoundary = (ViewWarehouseOutputBoundary) new ViewWarehousePresenter(viewWarehouseViewModel, viewRecipeViewModel, viewManagerModel);
         ViewWarehouseInputBoundary viewWarehouseInputBoundary = new ViewWarehouseInteractor((ViewWarehousePresenter) viewWarehouseOutputBoundary, (ViewWarehouseDataAccessInterface) dao);
         return new ViewWarehouseController(viewWarehouseInputBoundary);
     }
+
     private static OpenCreateRecipeController createOpenCreateRecipeController(ViewManagerModel viewManagerModel, OpenCreateRecipeViewModel openCreateRecipeViewModel, FileRecipeDataAccessObject dao) {
         OpenCreateRecipeOutputBoundary openCreateRecipeOutputBoundary = new OpenCreateRecipePresenter(openCreateRecipeViewModel,viewManagerModel);
         OpenCreateRecipeInputBoundary openCreateRecipeInputBoundary = new OpenCreateRecipeInteractor((OpenCreateRecipeOutputBoundary) openCreateRecipeOutputBoundary, (OpenCreateRecipeDataAccessInterface) dao);
@@ -97,6 +98,4 @@ public class MainViewUseCaseFactory extends UseCaseFactory {
         ViewSearchInputBoundary viewSearchInputBoundary = new ViewSearchInteractor(viewSearchOutputBoundary);
         return new ViewSearchController(viewSearchInputBoundary);
     }
-
-
 }
