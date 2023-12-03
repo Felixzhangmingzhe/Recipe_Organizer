@@ -94,28 +94,59 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         cookedButton.addActionListener(this);
         editButton.addActionListener(this);
 
-        // Set layout manager
-        setLayout(new BorderLayout());
+        // Arrange the components on the panel
+        arrangemrnt();
+    }
+    public void arrangemrnt(){
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
 
-        // Add components to the panel
-        add(recipeNameLabel, BorderLayout.NORTH);
-        add(new JScrollPane(recipeContentTextArea), BorderLayout.CENTER);
 
+        // Add components to the panel with GridBagConstraints
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weighty = 0;
+        add(recipeNameLabel, gbc);
 
-        // Create a panel for additional information (calories and last edit time)
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 1;
+        gbc.weighty = 1;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.BOTH;
+        recipeContentTextArea.setLineWrap(true);  // 自动换行
+        JScrollPane scrollPane = new JScrollPane(recipeContentTextArea);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        add(scrollPane, gbc);
+
+// Create a panel for additional information (calories and last edit time)
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         infoPanel.add(caloriesLabel);
         infoPanel.add(lastEditTimeLabel);
-        add(infoPanel, BorderLayout.CENTER);
 
-        // Create a panel for buttons
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.weightx = 0;
+        gbc.weighty = 0;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        add(infoPanel, gbc);
+
+// Create a panel for buttons
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(backButton);
         buttonPanel.add(favoritesButton);
         buttonPanel.add(cookedButton);
         buttonPanel.add(editButton);
-        add(buttonPanel, BorderLayout.SOUTH);
+
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 2;
+        gbc.weighty = 0;
+        gbc.fill = GridBagConstraints.REMAINDER;
+        add(buttonPanel, gbc);
+
     }
 
     @Override
@@ -203,6 +234,7 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         } else {
             JOptionPane.showMessageDialog(this, "You have already cooked this recipe!");
         }
+        cookedButton.setText("Cooked");
     }
     public void getAndDisplay(ShowDailySpecialState currentState) {
         // Update the labels and text area with the recipe information
@@ -213,6 +245,7 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);
         caloriesLabel.setText("Calories: " + calories);
+
         lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
     }
 
@@ -252,5 +285,13 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         } else {
             favoritesButton.setText("Favorite");
         }
+        boolean isCooked = currentState.getIsCooked();
+        // 更新按钮标签
+        if (isCooked) {
+            cookedButton.setText("Cooked");
+        } else {
+            cookedButton.setText("Cook");
+        }
     }
+
 }

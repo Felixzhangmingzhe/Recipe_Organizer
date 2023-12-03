@@ -8,14 +8,16 @@ public class ViewRecipeOutputData {
     private final LocalDateTime creationTime;
     private final double calories;
     private final boolean isFavorite;
+    private final boolean isCooked;
 
 
-    public ViewRecipeOutputData(String title, String content, LocalDateTime creationTime, double calories, boolean isFavorite) {
+    public ViewRecipeOutputData(String title, String content, LocalDateTime creationTime, double calories, boolean isFavorite, boolean isCooked) {
         this.title = title;
         this.content = content;
         this.creationTime = creationTime;
         this.calories = calories;
         this.isFavorite = isFavorite;
+        this.isCooked = isCooked;
     }
 
     public String getTitle() {
@@ -32,5 +34,7 @@ public class ViewRecipeOutputData {
     public boolean getIsFavorite() {
         return isFavorite;
     }
-
+    public boolean getIsCooked() {
+        return isCooked;
+    }
 }

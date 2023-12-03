@@ -1,6 +1,7 @@
 package app;
 
 import data_access.FileRecipeDataAccessObject;
+import interface_adapter.Back.BackViewModel;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeController;
 import interface_adapter.open_create_recipe.OpenCreateRecipePresenter;
@@ -45,7 +46,7 @@ import view.MainView;
 
 public class MainViewUseCaseFactory extends UseCaseFactory {
     public static MainView create(ViewManagerModel viewManagerModel, ViewWarehouseViewModel viewWarehouseViewModel, ViewFavoritesViewModel viewFavoritesViewModel,
-                                  OpenCreateRecipeViewModel openCreateRecipeViewModel,
+                                  OpenCreateRecipeViewModel openCreateRecipeViewModel, BackViewModel backViewModel,
                                   FileRecipeDataAccessObject dao, ViewRecipeViewModel viewRecipeViewModel, ViewSearchViewModel viewSearchViewModel,
                                   ShowDailySpecialViewModel showDailySpecialViewModel) {
         try {
@@ -57,6 +58,7 @@ public class MainViewUseCaseFactory extends UseCaseFactory {
             ShowDailySpecialController showDailySpecialController = createShowDailySpecialController(viewManagerModel, showDailySpecialViewModel, dao);
 
             return new MainView(viewWarehouseController, viewWarehouseViewModel, viewFavoritesController, viewFavoritesViewModel, openCreateRecipeViewModel, openCreateRecipeController,viewManagerModel, viewSearchController, viewSearchViewModel,
+                    backViewModel,
                     showDailySpecialViewModel, showDailySpecialController);
         }catch (Exception e) {
             e.printStackTrace();

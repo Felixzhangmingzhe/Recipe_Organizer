@@ -1,11 +1,8 @@
 TODO list:
-+* Add display of recipe date and calories
-
-
-+* Add a way to calculate cooked vatality of the user.Where to show the result?In mainview, the first tab?Can
-+* Add a way to edit the recipe
-+* Add a way to delete the recipe
-+* Add a cooked recipe list in MainView?
++* Add a way to calculate cooked vatality of the user.Where to show the result?In mainview, the first tab?Can 1
++* Add a way to edit the recipe 4
++* Add a way to delete the recipe 2
++* Add a cooked recipe list in MainView?  3
 
 
 

@@ -15,6 +15,7 @@ public class ViewRecipeViewModel extends ViewModel {
     private double calories;
     private String noRecipeFoundMessage;
     private boolean isFavorite;
+    private boolean isCooked;
 
     public ViewRecipeViewModel() {
         super("Read Recipe");
@@ -43,6 +44,12 @@ public class ViewRecipeViewModel extends ViewModel {
     }
     public double getCalories() {
         return calories;
+    }
+    public void setIsCooked(boolean isCooked) {
+        this.isCooked = isCooked;
+    }
+    public boolean getIsCooked() {
+        return isCooked;
     }
 
     private PropertyChangeSupport support = new PropertyChangeSupport(this);

@@ -6,6 +6,7 @@ import entity.Recipe;
 import entity.RecipeFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.Back.BackDataAccessInterface;
 import use_case.click_search.ClickSearchDataAccessInterface;
 import use_case.cooked.CookedDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
@@ -30,7 +31,8 @@ import java.util.List;
 import java.time.LocalDateTime;
 public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface,
         AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface,
-        OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface, ClickSearchDataAccessInterface {
+        OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface, ClickSearchDataAccessInterface,
+        BackDataAccessInterface {
     private String filePath;
 
     private static final String apiToken = "o2vhKjkn5tmz+/B9kpjD6Q==mOt0YRhnaodNiwxj";
@@ -381,5 +383,17 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
 
 
         return resultRecipe;
+    }
+
+    @Override
+    public int getNumOfCooked() {
+        List<Recipe> recipes = readRecipes();
+        int numOfCooked = 0;
+        for (Recipe recipe : recipes) {
+            if (recipe.getIsCooked()) {
+                numOfCooked++;
+            }
+        }
+        return numOfCooked;
     }
 }

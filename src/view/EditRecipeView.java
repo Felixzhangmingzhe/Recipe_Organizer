@@ -7,6 +7,8 @@ import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.create_recipe.CreateRecipeState;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -77,7 +79,10 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
         gbc.weighty = 1.0;
         gbc.gridwidth = 2;
         gbc.fill = GridBagConstraints.BOTH;
-        add(new JScrollPane(recipeContentArea), gbc);
+        recipeContentArea.setLineWrap(true);  // 自动换行
+        JScrollPane scrollPane = new JScrollPane(recipeContentArea);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        add(scrollPane, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 3;
@@ -119,43 +124,54 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
 
 
 
+        recipeTextListener();
+    }
 
-        // Add AddKeyListener to the recipeNameField
-        recipeNameField.addKeyListener(
-                new KeyListener() {
-                    @Override
-                    public void keyTyped(KeyEvent e) {
-                        CreateRecipeState currentState = createRecipeViewModel.getState();
-                        currentState.setRecipeName(recipeNameField.getText() + e.getKeyChar());
-                        createRecipeViewModel.setState(currentState);
-
-                    }
-
-                    @Override
-                    public void keyPressed(KeyEvent e) {
-                    }
-
-                    @Override
-                    public void keyReleased(KeyEvent e) {
-                }
-            }
-        );
-        // Add AddKeyListener to the recipeContentArea
-        recipeContentArea.addKeyListener(new KeyListener() {
+    private void recipeTextListener() {
+        // 使用 DocumentListener 监听文本内容变化
+        recipeNameField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
+            public void insertUpdate(DocumentEvent e) {
+                updateState();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                updateState();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                updateState();
+            }
+
+            private void updateState() {
                 CreateRecipeState currentState = createRecipeViewModel.getState();
-                currentState.setContent(recipeContentArea.getText() + e.getKeyChar());
+                currentState.setRecipeName(recipeNameField.getText());
                 createRecipeViewModel.setState(currentState);
             }
+        });
 
+        recipeContentArea.getDocument().addDocumentListener(new DocumentListener() {
             @Override
-            public void keyPressed(KeyEvent e) {
-
+            public void insertUpdate(DocumentEvent e) {
+                updateState();
             }
 
             @Override
-            public void keyReleased(KeyEvent e) {
+            public void removeUpdate(DocumentEvent e) {
+                updateState();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                updateState();
+            }
+
+            private void updateState() {
+                CreateRecipeState currentState = createRecipeViewModel.getState();
+                currentState.setContent(recipeContentArea.getText());
+                createRecipeViewModel.setState(currentState);
             }
         });
     }

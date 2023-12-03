@@ -21,6 +21,7 @@ public class ViewRecipePresenter implements ViewRecipeOutputBoundary {
         viewRecipeViewModel.setCreationTime(outputData.getCreationTime());
         viewRecipeViewModel.setCalories(outputData.getCalories());
         viewRecipeViewModel.setIsFavorite(outputData.getIsFavorite());
+        viewRecipeViewModel.setIsCooked(outputData.getIsCooked());
         viewRecipeViewModel.firePropertyChanged();// this evt is recipe.
         viewManagerModel.setActiveView(viewRecipeViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
