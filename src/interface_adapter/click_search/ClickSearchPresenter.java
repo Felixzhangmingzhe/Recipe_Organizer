@@ -37,7 +37,7 @@ public class ClickSearchPresenter implements ClickSearchOutputBoundary {
     public void prepareFailView(String error) {
         if (error.equals("No recipes found")) {
             ClickSearchState state = clickSearchViewModel.getState();
-            state.setRecipesError("Cannot find recipe");
+            state.setSearchError("Cannot find recipe");
             clickSearchViewModel.firePropertyChanged();
         }
 

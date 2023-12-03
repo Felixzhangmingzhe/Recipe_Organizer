@@ -29,13 +29,13 @@ public class ClickSearchState {
     }
 
 
-    public String getRecipesError() {
-        return recipesError;
-    }
-
-    public void setRecipesError(String recipesError) {
-        this.recipesError = recipesError;
-    }
+//    public String getRecipesError() {
+//        return recipesError;
+//    }
+//
+//    public void setRecipesError(String recipesError) {
+//        this.recipesError = recipesError;
+//    }
 
     public String getSearchError() {
         return searchError;

@@ -196,6 +196,7 @@ public class SearchView extends Component implements ActionListener, PropertyCha
         if (state.getSearchError() != null) {
             JOptionPane.showMessageDialog(this, state.getSearchError());
         }
+
     }
     public void refreshSearchView(){
       searchTextField.setText("");
