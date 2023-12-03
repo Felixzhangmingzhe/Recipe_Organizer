@@ -328,8 +328,15 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         List<Recipe> resultRecipe = new ArrayList<>();
         List<Recipe> existRecipe = readRecipes();
 
+        //先从数据库获取数据
+        for (Recipe recipe: existRecipe){
+            if (recipe.getTitle().contains(title)){
+                resultRecipe.add(recipe);
+            }
+        }
 
-        //先去API获取数据
+
+        //再去API获取数据
 
         URL url = new URL("https://api.api-ninjas.com/v1/recipe?query=" + URLEncoder.encode(title, StandardCharsets.UTF_8));
 
@@ -342,7 +349,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
             JsonNode root = mapper.readTree(responseStream);
             if (root.isArray()) {
                 // 遍历前10个元素（如果它们存在）
-                for (int i = 0; i < Math.min(root.size(), 5); i++) {
+                for (int i = 0; i < Math.min(root.size(), 10); i++) {
                     JsonNode recipe = root.get(i);
                     String recipeTitle = recipe.path("title").asText();
                     String recipeInstructions = recipe.path("instructions").asText();
@@ -360,31 +367,16 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         //如果数据库中有，就把API的数据和数据库的数据合并，返回
 
         for (Recipe recipe: resultRecipe){
-            System.out.println("这个是"+recipe.getTitle());
+//            System.out.println("这个是"+recipe.getTitle());
             if (isRecipeExist(recipe.getTitle())){ //如果API的数据在数据库中已经存在，就不加入数据库
-                System.out.println("存在");
+//                System.out.println("存在");
                 continue;
             }else { //如果API的数据在数据库中不存在，就加入数据库
-                System.out.println("不存在");
+//                System.out.println("不存在");
                 addRecipe(recipe);
             }
         } //把API的数据加入数据库
 
-
-//        if (!isRecipeExist(title)){ //不存在完全一样的菜谱
-//            for (Recipe recipe: resultRecipe){
-//                addRecipe(recipe); //把API的数据加入数据库
-//            }
-//            return resultRecipe;
-//        }else{ //存在完全一样的菜谱
-//            for (Recipe recipe: resultRecipe){
-//                if (isRecipeExist(recipe.getTitle())){ //如果API的数据在数据库中已经存在，就不加入数据库
-//                    continue;
-//                }else { //如果API的数据在数据库中不存在，就加入数据库
-//                    addRecipe(recipe);
-//                }
-//            }
-//        }
 
         return resultRecipe;
     }
