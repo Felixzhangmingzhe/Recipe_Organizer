@@ -11,6 +11,7 @@ import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeState;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.edit_recipe.EditRecipeController;
+import interface_adapter.edit_recipe.EditRecipeState;
 import interface_adapter.edit_recipe.EditRecipeViewModel;
 import interface_adapter.jump_to_edit.JumpToEditController;
 import interface_adapter.jump_to_edit.JumpToEditViewModel;
@@ -200,6 +201,9 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
             System.out.println("show daily special property changed");
             getAndDisplay((ShowDailySpecialState) evt.getNewValue());
             updateFavoritesButton(viewRecipeViewModel);
+        } else if (evt.getPropertyName().equals("edit")) {
+            System.out.println("edit property changed");
+            getAndDisplay((EditRecipeState) evt.getNewValue());
         }
     }
 
@@ -209,6 +213,18 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         String recipeContent = currentState.getContent();
         String calories = String.valueOf(currentState.getCalories());
         String lastEditTime = String.valueOf(currentState.getCreatedAt());
+
+        recipeNameLabel.setText("Recipe Name: " + recipeName);
+        recipeContentTextArea.setText(recipeContent);
+        caloriesLabel.setText("Calories: " + calories);
+        lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
+    }
+    public void getAndDisplay(EditRecipeState currentState) {
+        // Update the labels and text area with the recipe information
+        recipeName = currentState.getRecipeTitle();
+        String recipeContent = currentState.getRecipeContent();
+        String calories = String.valueOf(currentState.getRecipeContent());
+        String lastEditTime = String.valueOf(currentState.getRecipeContent());
 
         recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);

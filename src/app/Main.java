@@ -9,6 +9,7 @@ import interface_adapter.add_to_favorites.AddToFavoritesViewModel;
 import interface_adapter.click_search.ClickSearchViewModel;
 import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
+import interface_adapter.edit_recipe.EditRecipeViewModel;
 import interface_adapter.jump_to_edit.JumpToEditViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
 import interface_adapter.show_daily_special.ShowDailySpecialViewModel;
@@ -50,6 +51,7 @@ public class Main {
         ShowDailySpecialViewModel showDailySpecialViewModel = new ShowDailySpecialViewModel();
         ClickSearchViewModel clickSearchViewModel = new ClickSearchViewModel();
         JumpToEditViewModel jumpToEditViewModel = new JumpToEditViewModel();
+        EditRecipeViewModel editRecipeViewModel = new EditRecipeViewModel();
 
 
 
@@ -89,7 +91,7 @@ public class Main {
         FavoritesView favoritesView = FavoritesViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, viewFavoritesViewModel, warehouseDAO,backViewModel);
         views.add(favoritesView, favoritesView.viewName);
         // 创建并将视图添加到主面板:编辑菜谱视图
-        EditRecipeView editRecipeView = EditRecipeViewUseCaseFactory.create(backViewModel, viewManagerModel, createRecipeViewModel, jumpToEditViewModel, DAO);
+        EditRecipeView editRecipeView = EditRecipeViewUseCaseFactory.create(backViewModel, viewManagerModel, createRecipeViewModel, openCreateRecipeViewModel,editRecipeViewModel,jumpToEditViewModel, DAO);
         views.add(editRecipeView, editRecipeView.viewName);
         // 创建并将视图添加到主面板:查看菜谱视图
         ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel, viewManagerModel, createRecipeViewModel, viewRecipeViewModel, addToFavoritesViewModel, cookedViewModel, jumpToEditViewModel, showDailySpecialViewModel, viewRecipeDAO);

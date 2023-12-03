@@ -14,7 +14,7 @@ public class JumpToEditInteractor implements JumpToEditInputBoundary {
     @Override
     public void execute(JumpToEditInputData inputData) {
         Recipe recipe = userDataAccess.getRecipeByTitle(inputData.getRecipeTitle());
-        JumpToEditOutputData outputData = new JumpToEditOutputData(recipe.getTitle(), recipe.getContent());
+        JumpToEditOutputData outputData = new JumpToEditOutputData(recipe.getTitle(), recipe.getContent(), recipe.getId(), recipe.getIsFavorite(), recipe.getCalories(), recipe.getIsCooked(), recipe.getDate());
         presenter.prepareSuccessView(outputData);
     }
 }

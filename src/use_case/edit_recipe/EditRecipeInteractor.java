@@ -15,10 +15,12 @@ public class EditRecipeInteractor implements EditRecipeInputBoundary {
     public void execute(EditRecipeInputData inputData) {
         // 获取现有菜谱
         Recipe recipe = userDataAccess.getRecipeByTitle(inputData.getTitle());
+        String updateTitle = inputData.getTitle();
+        String updateContent = inputData.getContent();
 
         // 更新菜谱内容
-        userDataAccess.updateRecipe(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(), recipe.getIsFavorite(), recipe.getIsCooked(), recipe.getCalories());
-        EditRecipeOutputData outputData = new EditRecipeOutputData("Recipe edited");
+        userDataAccess.updateRecipe(recipe.getId(), updateTitle,updateContent, recipe.getDate(), recipe.getIsFavorite(), recipe.getIsCooked(), recipe.getCalories());
+        EditRecipeOutputData outputData = new EditRecipeOutputData(updateTitle,updateContent, recipe.getId(), recipe.getIsFavorite(), recipe.getCalories(), recipe.getIsCooked(), recipe.getDate());
         presenter.prepareSuccessView(outputData);
     }
 }

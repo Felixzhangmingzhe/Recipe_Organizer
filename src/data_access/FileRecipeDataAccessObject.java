@@ -11,6 +11,7 @@ import use_case.Back.BackDataAccessInterface;
 import use_case.click_search.ClickSearchDataAccessInterface;
 import use_case.cooked.CookedDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
+import use_case.edit_recipe.EditRecipeDataAccessInterface;
 import use_case.jump_to_edit.JumpToEditDataAccessInterface;
 import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
 import use_case.show_daily_special.ShowDailySpecialDataAccessInterface;
@@ -33,7 +34,7 @@ import java.util.List;
 import java.time.LocalDateTime;
 public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface,
         AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface,
-        BackDataAccessInterface, JumpToEditDataAccessInterface,
+        BackDataAccessInterface, JumpToEditDataAccessInterface, EditRecipeDataAccessInterface,
         OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface, ClickSearchDataAccessInterface {
     private String filePath;
 
@@ -251,6 +252,10 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         return null;
     }
 
+    @Override
+    public void updateRecipe(int id, String title, Object content, LocalDateTime date, boolean isFavorite, boolean isCooked, double calories) {
+        update(id, title, (String) content, date, isFavorite, isCooked, calories);
+    }
 
 
     @Override

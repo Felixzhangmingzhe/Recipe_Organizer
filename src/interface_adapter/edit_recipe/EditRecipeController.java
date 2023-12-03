@@ -10,8 +10,8 @@ public class EditRecipeController {
         this.interactor = interactor;
     }
 
-    public void execute(String recipeTitle) {
-        EditRecipeInputData inputData = new EditRecipeInputData(recipeTitle);
+    public void execute(String recipeTitle, String recipeContent) {
+        EditRecipeInputData inputData = new EditRecipeInputData(recipeTitle, recipeContent);
         interactor.execute(inputData);
     }
 }
