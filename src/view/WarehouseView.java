@@ -3,6 +3,8 @@ package view;
 import entity.Recipe;
 import interface_adapter.Back.BackController;
 import interface_adapter.ViewManagerModel;
+import interface_adapter.click_search.ClickSearchState;
+import interface_adapter.click_search.ClickSearchViewModel;
 import interface_adapter.view_recipe.ViewRecipeController;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
 import interface_adapter.view_warehouse.ViewWarehouseState;
@@ -37,12 +39,14 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
     private final BackController backController;
     private final ViewManagerModel viewManagerModel;
     private final ViewWarehouseViewModel viewWarehouseViewModel;
+    private final ClickSearchViewModel clickSearchViewModel;
 
     private JPanel WarehousePanel = new JPanel();
 
     public WarehouseView(ViewRecipeController viewRecipeController, ViewRecipeViewModel viewRecipeViewModel,
                          BackController backController,
                          ViewWarehouseViewModel viewWarehouseViewModel,
+                         ClickSearchViewModel clickSearchViewModel,
                          ViewManagerModel viewManagerModel) {
         JLabel title = new JLabel("Recipe Warehouse");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -53,6 +57,10 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
         this.viewManagerModel = viewManagerModel;
         this.viewWarehouseViewModel = viewWarehouseViewModel;
         this.viewWarehouseViewModel.addPropertyChangeListener(this);
+        this.clickSearchViewModel = clickSearchViewModel;
+        this.clickSearchViewModel.addPropertyChangeListener(this);
+
+
 
 
         // 初始化界面元素
@@ -126,12 +134,33 @@ public class WarehouseView extends JPanel implements ActionListener, PropertyCha
         for (StackTraceElement element : stackTrace) {
             System.out.println(element.toString());
         }
-        ViewWarehouseState state = (ViewWarehouseState) evt.getNewValue();
-        System.out.println("被触发“propertyChange”事件");
-        getDataAndDisplay(state);
+
+
+        if (evt.getPropertyName().equals("state")) {
+            ViewWarehouseState state = (ViewWarehouseState) evt.getNewValue();
+            System.out.println("被触发“propertyChange”事件");
+            getDataAndDisplay(state);
+        }else if (evt.getPropertyName().equals("search")) {
+            ClickSearchState state = (ClickSearchState) evt.getNewValue();
+            System.out.println("被触发“propertyChange”事件");
+            getDataAndDisplay(state);
+        }
     }
 
     private void getDataAndDisplay(ViewWarehouseState state) {
+        recipes = state.getRecipes();
+        System.out.println(recipes.size());
+        DefaultListModel titleList = new DefaultListModel<>();
+        for (Recipe recipe : recipes) {
+            titleList.addElement(recipe.getTitle());
+        }
+        if (recipes != null){
+            System.out.println("recipeList: " + titleList);//说明有
+        }
+        RecipeList.setModel(titleList);
+        display(WarehousePanel);
+    }
+    public void getDataAndDisplay(ClickSearchState state) {
         recipes = state.getRecipes();
         System.out.println(recipes.size());
         DefaultListModel titleList = new DefaultListModel<>();

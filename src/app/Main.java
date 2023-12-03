@@ -78,7 +78,7 @@ public class Main {
         FileRecipeDataAccessObject prDAO = new FileRecipeDataAccessObject("recipes.json");
         recipePresetter.presetData(prDAO);
         // 创建并将视图添加到主面板:仓库视图
-        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewWarehouseViewModel,viewManagerModel, warehouseDAO,backViewModel);
+        WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewWarehouseViewModel,viewManagerModel, warehouseDAO,clickSearchViewModel,backViewModel);
         views.add(warehouseView, warehouseView.viewName);
 
 

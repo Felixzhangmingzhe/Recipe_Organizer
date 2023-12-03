@@ -304,7 +304,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
             JsonNode root = mapper.readTree(responseStream);
             if (root.isArray()) {
                 // 遍历前10个元素（如果它们存在）
-                for (int i = 0; i < Math.min(root.size(), 2); i++) {
+                for (int i = 0; i < Math.min(root.size(), 5); i++) {
                     JsonNode recipe = root.get(i);
                     String recipeTitle = recipe.path("title").asText();
                     String recipeInstructions = recipe.path("instructions").asText();

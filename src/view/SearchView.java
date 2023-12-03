@@ -6,6 +6,7 @@ import interface_adapter.click_search.ClickSearchController;
 import interface_adapter.click_search.ClickSearchState;
 import interface_adapter.click_search.ClickSearchViewModel;
 import interface_adapter.view_search.ViewSearchController;
+import interface_adapter.view_search.ViewSearchState;
 import interface_adapter.view_search.ViewSearchViewModel;
 
 import javax.swing.*;
@@ -194,8 +195,13 @@ public class SearchView extends Component implements ActionListener, PropertyCha
     public void propertyChange(PropertyChangeEvent evt) {
 //        ViewSearchState currentState = searchViewModel.getState();
 //        JOptionPane.showMessageDialog(this, currentState.getSearchResult());
-        ClickSearchState clickSearchState = clickSearchViewModel.getState();
-        getAndDisplaySearchRecipeError(clickSearchState);
+        if (evt.getPropertyName().equals("search")) {
+            ClickSearchState clickSearchState = clickSearchViewModel.getState();
+            getAndDisplaySearchRecipeError(clickSearchState);
+        }
+        else if (evt.getPropertyName().equals("state")) {
+            refreshSearchView();
+        }
     }
 
     public void getAndDisplaySearchRecipeError(ClickSearchState state) {
@@ -203,6 +209,10 @@ public class SearchView extends Component implements ActionListener, PropertyCha
             JOptionPane.showMessageDialog(this, state.getSearchError());
         }
     }
+    public void refreshSearchView(){
+      searchTextField.setText("");
+    }
+
 
 
     public JPanel getSearchPanel() {
