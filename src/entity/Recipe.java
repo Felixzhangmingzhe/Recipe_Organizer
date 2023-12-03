@@ -19,6 +19,9 @@ public class Recipe {
         this.isCooked = isCooked;
         this.calories = calories;
     }
+
+
+
     public int getId() {
         return this.id;
     }

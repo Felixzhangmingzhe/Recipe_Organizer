@@ -274,13 +274,15 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
 
     @Override
     public Recipe getDailySpecial() throws IOException {
-        String randomChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        String randomChar = "ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwyz";
         int randomInLetter = (int) Math.floor(Math.random()*randomChar.length());
         List<Recipe> recipes = getRecipesOnlyFromAPI(randomChar.substring(randomInLetter, randomInLetter+1));
 
         if (recipes!= null){
             int randomInRecipe = (int) Math.floor(Math.random()*recipes.size());
-            return recipes.get(randomInRecipe);
+            Recipe recipe = recipes.get(randomInRecipe);
+            addRecipe(recipe);
+            return recipe;
         }
         return null;
     }

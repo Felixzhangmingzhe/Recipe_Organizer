@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.IOException;
 import java.util.List;
 
 import java.util.concurrent.Executor;
@@ -125,6 +126,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
 
 
+
         createRecipe.addActionListener(//打开菜谱界面（创建菜谱模式）
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -184,7 +186,11 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     public void actionPerformed(ActionEvent e) {
                         if (e.getSource() == dailySpecial) {//if (e.getSource() == createRecipe)
                             ShowDailySpecialState currentState = showDailySpecialViewModel.getState();
-                            showDailySpecialController.execute();
+                            try {
+                                showDailySpecialController.execute();
+                            } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            }
                         }
                     }
                 }
