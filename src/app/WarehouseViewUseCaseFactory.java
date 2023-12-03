@@ -15,15 +15,11 @@ import use_case.Back.BackInteractor;
 import use_case.Back.BackOutputBoundary;
 import use_case.view_recipe.ViewRecipeInputBoundary;
 import use_case.view_recipe.ViewRecipeInteractor;
-import use_case.view_recipe.ViewRecipeOutputBoundary;
-import use_case.view_warehouse.ViewWarehouseInputBoundary;
-import use_case.view_warehouse.ViewWarehouseInteractor;
 import view.WarehouseView;
 
 public class WarehouseViewUseCaseFactory extends UseCaseFactory {
     public static WarehouseView create(ViewRecipeViewModel viewRecipeViewModel, ViewWarehouseViewModel viewWarehouseViewModel,
-                                       ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao,
-                                        ClickSearchViewModel clickSearchViewModel,
+                                       ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao, ClickSearchViewModel clickSearchViewModel,
                                        BackViewModel backViewModel) {
         ViewRecipeController viewRecipeController1 = createViewRecipeController(viewRecipeViewModel, viewManagerModel,dao);
         BackController backController = createBackController(backViewModel, viewManagerModel);
@@ -31,8 +27,8 @@ public class WarehouseViewUseCaseFactory extends UseCaseFactory {
     }
 
     private static ViewRecipeController createViewRecipeController(ViewRecipeViewModel viewRecipeViewModel, ViewManagerModel viewWarehouseViewModel, FileRecipeDataAccessObject dao) {
-        ViewRecipeOutputBoundary viewRecipeOutputBoundary = new ViewRecipePresenter(viewRecipeViewModel, viewWarehouseViewModel);
-        ViewRecipeInputBoundary viewRecipeInputBoundary = new ViewRecipeInteractor(dao, (ViewRecipePresenter) viewRecipeOutputBoundary);
+        ViewRecipePresenter viewRecipeOutputBoundary = new ViewRecipePresenter(viewRecipeViewModel, viewWarehouseViewModel);
+        ViewRecipeInputBoundary viewRecipeInputBoundary = new ViewRecipeInteractor(dao, viewRecipeOutputBoundary);
         return new ViewRecipeController(viewRecipeInputBoundary);
     }
     private static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel) {

@@ -20,7 +20,6 @@ public class ClickSearchController {
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
-        //TODO: 这里可以FailView吗
-
+        // TODO: 这里可以FailView吗
     }
 }

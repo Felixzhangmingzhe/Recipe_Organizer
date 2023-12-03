@@ -1,19 +1,13 @@
 package use_case.edit_recipe;
 
 public class EditRecipeOutputData {
-    private final boolean success;
-    private final String message;
+    private String EditRecipeMessage = "Edit recipe successfully";
 
-    public EditRecipeOutputData(boolean success, String message) {
-        this.success = success;
-        this.message = message;
+    public EditRecipeOutputData(String EditRecipeMessage) {
+        this.EditRecipeMessage = EditRecipeMessage;
     }
 
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public String getMessage() {
-        return message;
+    public String getEditRecipeMessage() {
+        return EditRecipeMessage;
     }
 }

@@ -1,19 +1,13 @@
 package use_case.edit_recipe;
 
 public class EditRecipeInputData {
-    private final String recipeId;
-    private final String updatedRecipeDetails;
+    private final String recipeTitle;
 
-    public EditRecipeInputData(String recipeId, String updatedRecipeDetails) {
-        this.recipeId = recipeId;
-        this.updatedRecipeDetails = updatedRecipeDetails;
+    public EditRecipeInputData(String recipeTitle) {
+        this.recipeTitle = recipeTitle;
     }
 
-    public String getRecipeId() {
-        return recipeId;
-    }
-
-    public String getUpdatedRecipeDetails() {
-        return updatedRecipeDetails;
+    public String getTitle() {
+        return recipeTitle;
     }
 }
