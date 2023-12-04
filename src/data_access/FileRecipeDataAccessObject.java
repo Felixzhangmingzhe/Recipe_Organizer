@@ -285,7 +285,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
 
     @Override
     public Recipe getDailySpecial() throws IOException {
-        String randomChar = "ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwyz";
+        String randomChar = "ABCDEFGHIJKLMNOPQXRSTUVWYZabcdefghijklmxnopqrstuvwyz";
         int randomInLetter = (int) Math.floor(Math.random()*randomChar.length());
         List<Recipe> recipes = getRecipesOnlyFromAPI(randomChar.substring(randomInLetter, randomInLetter+1));
 
