@@ -60,11 +60,14 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
     // Use Case: Show Daily Special
     private ShowDailySpecialViewModel showDailySpecialViewModel;
     private ShowDailySpecialController showDailySpecialController;
+    // Use Case: Edit Recipe
+    private EditRecipeViewModel editRecipeViewModel;
 
     public ReadRecipeView(BackViewModel backViewModel, BackController backController, ViewRecipeViewModel viewRecipeViewModel, CreateRecipeViewModel createRecipeViewModel
     , AddToFavoritesController addToFavoritesController, AddToFavoritesViewModel addToFavoritesViewModel,
                           JumpToEditController jumpToEditController, JumpToEditViewModel jumpToEditViewModel,
                           CookedViewModel cookedViewModel, CookedController cookedController,
+                          EditRecipeViewModel editRecipeViewModel,
                           ShowDailySpecialViewModel showDailySpecialViewModel, ShowDailySpecialController showDailySpecialController) {
         // Initialize view model and controller
         this.backViewModel = backViewModel;
@@ -85,6 +88,8 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         this.showDailySpecialController = showDailySpecialController;
         this.showDailySpecialViewModel = showDailySpecialViewModel;
         this.showDailySpecialViewModel.addPropertyChangeListener(this); // Listen to the change of showDailySpecialViewModel
+        this.editRecipeViewModel = editRecipeViewModel;
+        this.editRecipeViewModel.addPropertyChangeListener(this);       // Listen to the change of editRecipeViewModel
 
         // Initialize String RecipeName
         recipeName = "";
@@ -223,8 +228,8 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         // Update the labels and text area with the recipe information
         recipeName = currentState.getRecipeTitle();
         String recipeContent = currentState.getRecipeContent();
-        String calories = String.valueOf(currentState.getRecipeContent());
-        String lastEditTime = String.valueOf(currentState.getRecipeContent());
+        String calories = String.valueOf(currentState.getRecipeCalories());
+        String lastEditTime = String.valueOf(currentState.getRecipeCreationTime());
 
         recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);

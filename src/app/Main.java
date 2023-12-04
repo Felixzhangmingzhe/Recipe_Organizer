@@ -94,7 +94,7 @@ public class Main {
         EditRecipeView editRecipeView = EditRecipeViewUseCaseFactory.create(backViewModel, viewManagerModel, createRecipeViewModel, openCreateRecipeViewModel,editRecipeViewModel,jumpToEditViewModel, DAO);
         views.add(editRecipeView, editRecipeView.viewName);
         // 创建并将视图添加到主面板:查看菜谱视图
-        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel, viewManagerModel, createRecipeViewModel, viewRecipeViewModel, addToFavoritesViewModel, cookedViewModel, jumpToEditViewModel, showDailySpecialViewModel, viewRecipeDAO);
+        ReadRecipeView viewRecipeView = ReadRecipeViewUseCaseFactory.create(backViewModel, viewManagerModel, createRecipeViewModel, viewRecipeViewModel, addToFavoritesViewModel, cookedViewModel, jumpToEditViewModel, showDailySpecialViewModel, editRecipeViewModel,viewRecipeDAO);
         views.add(viewRecipeView, viewRecipeView.viewName);
         // 创建并将视图添加到主面板:搜索菜谱视图
         SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, backViewModel, clickSearchViewModel, DAO);

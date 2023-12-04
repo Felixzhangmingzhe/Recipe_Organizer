@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class EditRecipeState {
     private String recipeTitle;
     private String recipeContent;
-    
+
     private int recipeId;
     private boolean recipeIsFavorite;
     private double recipeCalories;

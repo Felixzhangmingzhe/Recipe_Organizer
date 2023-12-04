@@ -39,6 +39,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
     private final JumpToEditViewModel jumpToEditViewModel;
     private int recipeId;
     private String recipeName;
+    private String recipeOringinalName;
     private String recipeContent;
     private boolean recipeIsFavorite;
     private double recipeCalories;
@@ -148,6 +149,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
                                 System.out.println("When Save,EditUsecase Run");
                                 EditRecipeState currentState = editRecipeViewModel.getState();
                                 editRecipeController.execute(
+                                        recipeOringinalName,
                                         currentState.getRecipeTitle(),
                                         currentState.getRecipeContent());
                             }
@@ -333,6 +335,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
 
     public void getAndDisplayJumpToEdit(JumpToEditState state) {
         recipeName = state.getRecipeTitle();
+        recipeOringinalName = state.getRecipeTitle();
         recipeContent = state.getRecipeContent() ;
         recipeId = state.getRecipeId();
         recipeIsFavorite = state.getRecipeIsFavorite();
@@ -353,12 +356,12 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
         recipeContentArea.setText("");
         createOrEdit = "create";
     }
-    public void getAndDisplayCreateRecipeError(EditRecipeState state) {
-        if (state.getRecipeNameError() != null) {
-            JOptionPane.showMessageDialog(this, state.getRecipeNameError());
-        }
-        else if (state.getContentError() != null) {
-            JOptionPane.showMessageDialog(this, state.getContentError());
-        }
-    }
+//     public void getAndDisplayCreateRecipeError(EditRecipeState state) {
+//        if (state.getRecipeNameError() != null) {
+//            JOptionPane.showMessageDialog(this, state.getRecipeNameError());
+//        }
+//        else if (state.getContentError() != null) {
+//            JOptionPane.showMessageDialog(this, state.getContentError());
+//        }
+//    }
 }
