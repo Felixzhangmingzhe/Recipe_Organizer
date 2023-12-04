@@ -298,21 +298,13 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         return null;
     }
 
-    public List<Recipe> getRecipesFromAPIByNum(int num) throws IOException {
+    public void saveRecipesFromAPIByNum(int num) throws IOException {
         List<Recipe> resultRecipe = new ArrayList<>();
         while (resultRecipe.size() < num){
             String randomChar = "ABCDEFGHIJKLMNOPQXRSTUVWYZabcdefghijklmxnopqrstuvwyz";
             int randomInLetter = (int) Math.floor(Math.random()*randomChar.length());
             List<Recipe> recipes = getRecipesOnlyFromAPI(randomChar.substring(randomInLetter, randomInLetter+1));
-            if (recipes!= null){
-                for (Recipe recipe: recipes){
-                    if (resultRecipe.size() < num){
-                        resultRecipe.add(recipe);
-                    }
-                }
-            }
         }
-        return resultRecipe;
     }
 
     public List<Recipe> getRecipesOnlyFromAPI(String substring) throws IOException {
