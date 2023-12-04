@@ -10,7 +10,6 @@ import interface_adapter.cooked.CookedState;
 import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeState;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
-import interface_adapter.edit_recipe.EditRecipeController;
 import interface_adapter.edit_recipe.EditRecipeState;
 import interface_adapter.edit_recipe.EditRecipeViewModel;
 import interface_adapter.jump_to_edit.JumpToEditController;
@@ -113,9 +112,9 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         editButton.addActionListener(this);
 
         // Arrange the components on the panel
-        arrangemrnt();
+        arrangement();
     }
-    public void arrangemrnt(){
+    public void arrangement(){
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
