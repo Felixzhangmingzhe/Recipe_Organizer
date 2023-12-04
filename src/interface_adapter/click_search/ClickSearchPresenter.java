@@ -28,19 +28,20 @@ public class ClickSearchPresenter implements ClickSearchOutputBoundary {
 //        System.out.println("这里的viewname应该是warehouse"+clickSearchViewModel.getViewName());
 
         viewManagerModel.firePropertyChanged();
-        System.out.println("click search success presenter"+outputData.getSearchedRecipes());
-
+        System.out.println("SuccessView");
     }
 
 
     @Override
     public void prepareFailView(String error) {
-//        if (error.equals("No recipes found")) {
+        System.out.println("click search presenter error");
+        if (error.equals("No recipes found")) {
             ClickSearchState state = clickSearchViewModel.getState();
-            state.setSearchError(error);
+            state.setRecipesError("Cannot find recipe");
             clickSearchViewModel.firePropertyChanged();
-        System.out.println("click search fail presenter"+error);
-//        }
+            viewManagerModel.setActiveView("search");
+            viewManagerModel.firePropertyChanged();
+        }
 
     }
 }

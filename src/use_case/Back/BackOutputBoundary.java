@@ -1,5 +1,5 @@
 package use_case.Back;
 
 public interface BackOutputBoundary {
-    void prepareSuccessView();
+    void prepareSuccessView(BackOutputData response);
 }

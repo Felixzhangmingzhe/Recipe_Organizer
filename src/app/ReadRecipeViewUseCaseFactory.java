@@ -12,6 +12,7 @@ import interface_adapter.cooked.CookedController;
 import interface_adapter.cooked.CookedPresenter;
 import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
+import interface_adapter.edit_recipe.EditRecipeViewModel;
 import interface_adapter.jump_to_edit.JumpToEditController;
 import interface_adapter.jump_to_edit.JumpToEditPresenter;
 import interface_adapter.jump_to_edit.JumpToEditViewModel;
@@ -45,13 +46,14 @@ public class ReadRecipeViewUseCaseFactory extends UseCaseFactory {
                                         CookedViewModel cookedViewModel,
                                         JumpToEditViewModel jumpToEditViewModel,
                                         ShowDailySpecialViewModel showDailySpecialViewModel,
+                                        EditRecipeViewModel editRecipeViewModel,
                                         FileRecipeDataAccessObject dao) {
-        BackController backController = createBackController(backViewModel, viewManagerModel);
+        BackController backController = createBackController(backViewModel, viewManagerModel,dao);
         AddToFavoritesController addToFavotitesController = createAddToFavoritesController(addToFavoritesViewModel, viewManagerModel, dao);
         CookedController cookedController = createCookedController(cookedViewModel, viewManagerModel, dao);
         JumpToEditController jumpToEditController = createJumpToEditController(viewManagerModel, jumpToEditViewModel, dao);
         ShowDailySpecialController showDailySpecialController = createShowDailySpecialController(viewManagerModel, showDailySpecialViewModel, dao);
-        return new ReadRecipeView(backViewModel, backController,viewRecipeViewModel, createRecipeViewModel, addToFavotitesController, addToFavoritesViewModel, jumpToEditController, jumpToEditViewModel, cookedViewModel, cookedController, showDailySpecialViewModel, showDailySpecialController);
+        return new ReadRecipeView(backViewModel, backController,viewRecipeViewModel, createRecipeViewModel, addToFavotitesController, addToFavoritesViewModel, jumpToEditController, jumpToEditViewModel, cookedViewModel, cookedController,editRecipeViewModel,showDailySpecialViewModel, showDailySpecialController);
     }
 
     private static JumpToEditController createJumpToEditController(ViewManagerModel viewManagerModel, JumpToEditViewModel jumpToEditViewModel,FileRecipeDataAccessObject dao) {
@@ -78,9 +80,9 @@ public class ReadRecipeViewUseCaseFactory extends UseCaseFactory {
         return new ShowDailySpecialController(showDailySpecialInputBoundary);
     }
 
-    public static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel) {
+    public static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao) {
         BackOutputBoundary backOutputBoundary = new BackPresenter(viewManagerModel, backViewModel);
-        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary);
+        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary,dao);
         return new BackController(backInputBoundary);
     }
 }

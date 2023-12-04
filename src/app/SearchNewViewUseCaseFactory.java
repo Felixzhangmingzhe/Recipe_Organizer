@@ -21,9 +21,9 @@ public class SearchNewViewUseCaseFactory {
         return new SearchNewView();
     }
 
-    private static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel) {
+    private static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel,FileRecipeDataAccessObject dao) {
         BackOutputBoundary backOutputBoundary = new BackPresenter(viewManagerModel, backViewModel);
-        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary);
+        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary,dao);
         return new BackController(backInputBoundary);
     }
 
@@ -32,4 +32,5 @@ public class SearchNewViewUseCaseFactory {
         ClickSearchInputBoundary clickSearchInputBoundary = new ClickSearchInteractor(clickSearchOutputBoundary, dao);
         return new ClickSearchController(clickSearchInputBoundary);
     }
+
 }

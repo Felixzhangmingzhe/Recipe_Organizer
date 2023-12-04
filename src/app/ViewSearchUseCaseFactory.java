@@ -29,15 +29,15 @@ public class ViewSearchUseCaseFactory {
 
     public static SearchView create(ViewSearchViewModel viewSearchViewModel, ViewManagerModel viewManagerModel, BackViewModel backViewModel, ClickSearchViewModel clickSearchViewModel, FileRecipeDataAccessObject dao){
         ViewSearchController viewSearchController = createViewSearchController(viewManagerModel, viewSearchViewModel);
-        BackController backController = createBackController(backViewModel, viewManagerModel);
+        BackController backController = createBackController(backViewModel, viewManagerModel,dao);
         ClickSearchController clickSearchController = createClickSearchController(clickSearchViewModel, viewManagerModel, dao);
         return new SearchView(backController, backViewModel, viewSearchController, viewSearchViewModel, clickSearchController, clickSearchViewModel);
     }
 
 
-    private static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel) {
+    private static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel,FileRecipeDataAccessObject dao) {
         BackOutputBoundary backOutputBoundary = new BackPresenter(viewManagerModel, backViewModel);
-        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary);
+        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary,dao);
         return new BackController(backInputBoundary);
     }
 

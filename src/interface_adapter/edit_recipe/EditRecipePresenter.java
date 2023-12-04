@@ -16,7 +16,14 @@ public class EditRecipePresenter implements EditRecipeOutputBoundary {
     @Override
     public void prepareSuccessView(EditRecipeOutputData outputData) {
         EditRecipeState state = viewModel.getState();
-        state.setEditRecipeMessage(outputData.getEditRecipeMessage());
+        state.setRecipeTitle(outputData.getRecipeTitle());
+        state.setRecipeContent(outputData.getRecipeContent());
+        state.setRecipeId(outputData.getRecipeId());
+        state.setRecipeIsFavorite(outputData.getRecipeIsFavorite());
+        state.setRecipeCalories(outputData.getRecipeCalories());
+        state.setRecipeCooked(outputData.getRecipeCooked());
+        state.setRecipeCreationTime(outputData.getRecipeCreationTime());
+
         viewModel.setState(state);
         viewModel.firePropertyChanged();
         viewManagerModel.setActiveView(viewModel.getViewName());
