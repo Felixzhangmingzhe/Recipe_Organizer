@@ -404,8 +404,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                     JsonNode recipe = root.get(i);
                     String recipeTitle = recipe.path("title").asText();
                     String recipeInstructions = recipe.path("instructions").asText();
-                    double RecipeCalories = fetchCaloriesData(recipeTitle);
-                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, false,RecipeCalories);
+                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, false,0);
                     resultRecipe.add(newRecipe);
                 }
             }
