@@ -47,7 +47,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
     private String recipeCreationTime;
     private JScrollPane scrollName;
     private JScrollPane scrollContent;
-    private String createOrEdit = "edit";
+    private String createOrEdit = "create";
 
     public String viewName = "edit recipe";
     // Use Case: Open Create Recipe
@@ -310,6 +310,12 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+//        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+//
+//        // 遍历输出调用栈信息
+//        for (StackTraceElement element : stackTrace) {
+//            System.out.println(element.toString());
+//        }
         if (evt.getPropertyName().equals("state")) {
             CreateRecipeState state = (CreateRecipeState) evt.getNewValue();
             getAndDisplayCreateRecipeError(state);
@@ -318,6 +324,10 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
             System.out.println("EditRecipeView.propertyChange");
             JumpToEditState state = (JumpToEditState) evt.getNewValue();
             getAndDisplayJumpToEdit(state);
+        }
+        else if (evt.getPropertyName().equals("open")) {
+            EditRecipeState state = (EditRecipeState) evt.getNewValue();
+            refresh();
         }
     }
 

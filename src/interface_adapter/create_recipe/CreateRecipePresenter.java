@@ -44,6 +44,6 @@ public class CreateRecipePresenter implements CreateRecipeOutputBoundary {
             createRecipeViewModel.firePropertyChanged();
         }
         System.out.println(error);
-        createRecipeViewModel.firePropertyChanged();
+        // createRecipeViewModel.firePropertyChanged();
     }
 }

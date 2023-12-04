@@ -7,5 +7,167 @@
     "isCooked": false,
     "content": "This is a sample Recipe.",
     "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 2,
+    "calories": 1200,
+    "title": "Pasta Carbonara",
+    "isCooked": false,
+    "content": "Boil the pasta. Mix eggs, cheese, and bacon. Combine with pasta.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 3,
+    "calories": 800,
+    "title": "Caesar Salad",
+    "isCooked": false,
+    "content": "Chop lettuce. Add croutons, parmesan, and dressing. Toss well.",
+    "isFavorite": true
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 4,
+    "calories": 1500,
+    "title": "Pizza Margherita",
+    "isCooked": false,
+    "content": "Make dough. Add tomato sauce and cheese. Bake until crispy.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 5,
+    "calories": 600,
+    "title": "Tomato Soup",
+    "isCooked": false,
+    "content": "Chop tomatoes. Boil them. Add salt and pepper.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 6,
+    "calories": 2000,
+    "title": "Steak",
+    "isCooked": false,
+    "content": "Season steak. Grill it until medium rare.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 7,
+    "calories": 1500,
+    "title": "Roast Chicken",
+    "isCooked": false,
+    "content": "Season chicken. Roast it until cooked.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 8,
+    "calories": 2000,
+    "title": "Chocolate Cake",
+    "isCooked": false,
+    "content": "Mix flour, eggs, and chocolate. Bake until cooked.\n\n** xxxdd",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 9,
+    "calories": 1500,
+    "title": "Chocolate Chip Cookies",
+    "isCooked": false,
+    "content": "Mix flour, eggs, and chocolate chips. Bake until cooked.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 10,
+    "calories": 1000,
+    "title": "Vanilla Ice Cream",
+    "isCooked": false,
+    "content": "Mix cream, sugar, and vanilla. Freeze until solid.  aa",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 11,
+    "calories": 1000,
+    "title": "Sushi",
+    "isCooked": false,
+    "content": "Cook rice. Add fish and vegetables. Roll them together.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 12,
+    "calories": 1200,
+    "title": "Ramen",
+    "isCooked": false,
+    "content": "Boil broth. Add noodles, egg, and pork. Cook until noodles are done.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-04T05:08:30.193824",
+    "id": 13,
+    "calories": 0,
+    "title": "ss",
+    "isCooked": false,
+    "content": "ss",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-04T05:14:07.755291",
+    "id": 14,
+    "calories": 341.1,
+    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
+    "isCooked": false,
+    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-04T05:14:13.458674",
+    "id": 15,
+    "calories": 137.8,
+    "title": "Electronic Gourmet's French Onion Soup",
+    "isCooked": false,
+    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-04T05:14:23.419282",
+    "id": 16,
+    "calories": 609.4,
+    "title": "Electronic Gourmet's Herb Salad Dressing",
+    "isCooked": false,
+    "content": "1) Place oil, herbs, salt and pepper in a shaker bottle or large glass measuring cup. Let stand at room temperature for 3 to 4 hours. The longer the better. 2) Add vinegar and shake or stir well to blend.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-04T05:17:39.105809",
+    "id": 17,
+    "calories": 444,
+    "title": "Electronic Gourmet's French Dressing",
+    "isCooked": false,
+    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-04T05:18:42.316153",
+    "id": 18,
+    "calories": 311.5,
+    "title": "Elegant Mushroom and Olive Salad",
+    "isCooked": false,
+    "content": "Break up enough lettuce into bite-sized pieces to make 2 quarts. Slice the olives and mushrooms. Crumble the cheese and toss lightly. Add lemon juice and olive oil. Do *not* substitute other oils. Add salt and cracked pepper to taste, and toss again.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-04T05:19:07.244297",
+    "id": 19,
+    "calories": 532.8,
+    "title": "Electric Bread - Sticky Buns",
+    "isCooked": false,
+    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.change",
+    "isFavorite": false
   }
 ]

@@ -20,12 +20,7 @@ import view.SearchView;
 
 import static app.MainViewUseCaseFactory.createViewSearchController;
 
-public class ViewSearchUseCaseFactory {
-//    public static WarehouseView create(ViewRecipeViewModel viewRecipeViewModel, ViewWarehouseViewModel viewWarehouseViewModel, ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao, BackViewModel backViewModel) {
-//        ViewRecipeController viewRecipeController1 = createViewRecipeController(viewRecipeViewModel, viewManagerModel, dao);
-//        BackController backController = createBackController(backViewModel, viewManagerModel);
-//        return new WarehouseView(viewRecipeController1, viewRecipeViewModel, backController,viewWarehouseViewModel,viewManagerModel);
-//    }
+public class ViewSearchUseCaseFactory extends UseCaseFactory{
 
     public static SearchView create(ViewSearchViewModel viewSearchViewModel, ViewManagerModel viewManagerModel, BackViewModel backViewModel, ClickSearchViewModel clickSearchViewModel, FileRecipeDataAccessObject dao){
         ViewSearchController viewSearchController = createViewSearchController(viewManagerModel, viewSearchViewModel);

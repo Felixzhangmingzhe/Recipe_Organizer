@@ -66,53 +66,33 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     ViewManagerModel viewManagerModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel,
                     BackViewModel backViewModel,
                     ShowDailySpecialViewModel showDailySpecialViewModel, ShowDailySpecialController showDailySpecialController) {
-        title = new JLabel("Are you hungry?");
-        title.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-//        //logo
-//        // 创建 ImageIcon
-//        ImageIcon originalIcon = new ImageIcon("src/view/platePal-logo.png"); // 将 "path/to/your/image.png" 替换为您的图片文件路径
-//        // 获取原始图片并调整大小
+//// 调整 ImageIcon 大小
+//        ImageIcon originalIcon = new ImageIcon("src/view/platePal-logo.png"); // 替换为您的图片路径
 //        Image image = originalIcon.getImage();
-//        int newWidth = 200;
-//        int newHeight = 200;
-//        Image newimg = image.getScaledInstance(newWidth, newHeight,  java.awt.Image.SCALE_SMOOTH); // newWidth 和 newHeight 是新的宽度和高度
+//// 增加尺寸至原来的1.5倍
+//        // 指定新的宽度和高度，根据需要调整这些值
+//        int newWidth = 250; // 或者根据视图大小更小的值
+//        int newHeight = 250; // 或者根据视图大小更小的值
+//        Image newimg = image.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
 //        ImageIcon imageIcon = new ImageIcon(newimg);
 //
-//        // 创建 JLabel 并设置新的 ImageIcon
+//// 为 JLabel 设置新的 ImageIcon
 //        JLabel imageLabel = new JLabel(imageIcon);
-//        // 将 JLabel 添加到 JPanel
-//        this.add(imageLabel);
-
-        // 假设您已经有了一个名为 imageLabel 的 JLabel 对象
-
-// 调整 ImageIcon 大小
-        ImageIcon originalIcon = new ImageIcon("src/view/platePal-logo.png"); // 替换为您的图片路径
-        Image image = originalIcon.getImage();
-// 增加尺寸至原来的1.5倍
-        // 指定新的宽度和高度，根据需要调整这些值
-        int newWidth = 250; // 或者根据视图大小更小的值
-        int newHeight = 250; // 或者根据视图大小更小的值
-        Image newimg = image.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
-        ImageIcon imageIcon = new ImageIcon(newimg);
-
-// 为 JLabel 设置新的 ImageIcon
-        JLabel imageLabel = new JLabel(imageIcon);
-
-// 将 JLabel 设置为居中对齐
-        imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-// 添加到面板
-// 创建一个新的 JPanel 来放置 JLabel，确保它可以居中
-        JPanel imagePanel = new JPanel();
-        imagePanel.setLayout(new BoxLayout(imagePanel, BoxLayout.LINE_AXIS));
-        imagePanel.add(Box.createHorizontalGlue()); // 添加弹性空白区域
-        imagePanel.add(imageLabel);
-        imagePanel.add(Box.createHorizontalGlue()); // 添加弹性空白区域
-
-// 现在将这个新的 imagePanel 添加到主视图中
-// 例如，如果您的主视图使用 BoxLayout，则可以这样添加：
-        this.add(imagePanel);
+//
+//// 将 JLabel 设置为居中对齐
+//        imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+//
+//// 添加到面板
+//// 创建一个新的 JPanel 来放置 JLabel，确保它可以居中
+//        JPanel imagePanel = new JPanel();
+//        imagePanel.setLayout(new BoxLayout(imagePanel, BoxLayout.LINE_AXIS));
+//        imagePanel.add(Box.createHorizontalGlue()); // 添加弹性空白区域
+//        imagePanel.add(imageLabel);
+//        imagePanel.add(Box.createHorizontalGlue()); // 添加弹性空白区域
+//
+//// 现在将这个新的 imagePanel 添加到主视图中
+//// 例如，如果您的主视图使用 BoxLayout，则可以这样添加：
+//        this.add(imagePanel);
 
 
 
@@ -138,61 +118,57 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         this.backViewModel = backViewModel;
         this.backViewModel.addPropertyChangeListener(this);
 
-
-
-
-//        // 添加菜单按钮
-//        JPanel buttons = new JPanel();
-//        createRecipe = new JButton("Create Recipe");
-//        buttons.add(createRecipe);
-//        favorites = new JButton("Favorites");
-//        buttons.add(favorites);
-//        exit = new JButton("Exit");
-//        buttons.add(exit);
-//        allRecipes = new JButton("All Recipes");
-//        buttons.add(allRecipes);
-//        dailySpecial = new JButton("Daily Recipe");
-//        buttons.add(dailySpecial);
-//        search = new JButton("Search");
-//        buttons.add(search);
-
-
-// 在构造函数中，添加按钮到两个不同的面板
-        JPanel topRowButtons = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
-        JPanel bottomRowButtons = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
-
-// 创建并添加按钮到第一排
-        createRecipe = new JButton("Create Recipe");
-        topRowButtons.add(createRecipe);
-
-        allRecipes = new JButton("All Recipes");
-        topRowButtons.add(allRecipes);
-
-        dailySpecial = new JButton("Daily Recipe");
-        topRowButtons.add(dailySpecial);
-
-// 创建并添加按钮到第二排
         activityLevelButton = new JButton("Activity Level: " + numOfCooked);
-        bottomRowButtons.add(activityLevelButton);
+        JPanel activityLevelPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        activityLevelPanel.add(activityLevelButton);
 
+        // 创建标题和设置对齐
+        title = new JLabel("Are you hungry?");
+        title.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // 创建并调整图像标签的大小
+        ImageIcon originalIcon = new ImageIcon("src/view/platePal-logo.png"); // 请替换为您的图片路径
+        Image image = originalIcon.getImage();
+        Image newimg = image.getScaledInstance(250, 250, Image.SCALE_SMOOTH); // 根据需要调整这些值
+        ImageIcon imageIcon = new ImageIcon(newimg);
+        JLabel imageLabel = new JLabel(imageIcon);
+        imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // 将活动等级面板、标题和图像标签添加到一个箱式布局的面板中
+        JPanel topPanel = new JPanel();
+        topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
+        topPanel.add(activityLevelPanel);
+        topPanel.add(title);
+        topPanel.add(imageLabel);
+
+        // 创建第一行按钮的面板
+        JPanel firstRowButtons = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        createRecipe = new JButton("Create Recipe");
+        allRecipes = new JButton("All Recipes");
+        dailySpecial = new JButton("Daily Recipe");
+        firstRowButtons.add(createRecipe);
+        firstRowButtons.add(allRecipes);
+        firstRowButtons.add(dailySpecial);
+
+        // 创建第二行按钮的面板
+        JPanel secondRowButtons = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         favorites = new JButton("Favorites");
-        bottomRowButtons.add(favorites);
-
         search = new JButton("Search");
-        bottomRowButtons.add(search);
-
         exit = new JButton("Exit");
-        bottomRowButtons.add(exit);
+        secondRowButtons.add(favorites);
+        secondRowButtons.add(search);
+        secondRowButtons.add(exit);
 
-// 设置主面板的布局为 BoxLayout，以便垂直排列组件
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        // 创建一个中心面板来垂直排列两行按钮面板
+        JPanel centerPanel = new JPanel();
+        centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
+        centerPanel.add(firstRowButtons);
+        centerPanel.add(secondRowButtons);
 
-// 添加标题、两排按钮面板和 logo 到主面板
-        this.add(title);
-        this.add(imageLabel);
-        this.add(topRowButtons);
-        this.add(bottomRowButtons);
-
+        // 设置主面板的布局并添加组件
+        this.setLayout(new BorderLayout());
+        this.add(topPanel, BorderLayout.NORTH); // 将顶部面板添加到北区
+        this.add(centerPanel, BorderLayout.CENTER); // 将包含两行按钮的中心面板添加到中央
 
 
 
@@ -216,6 +192,25 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     }
                 }
         );
+        activityLevelButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == activityLevelButton) {
+                    // 加载原始图标
+                    ImageIcon originalIcon = new ImageIcon("src/view/tree.png"); // 替换为你的图标文件路径
+
+                    // 获取原始图像，并进行缩放
+                    Image originalImage = originalIcon.getImage();
+                    Image scaledImage = originalImage.getScaledInstance(80, 80, Image.SCALE_SMOOTH); // 将图标的宽度和高度设置为30像素
+
+                    // 将缩放后的图像转换回 ImageIcon
+                    ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+                    // 显示一个带有自定义图标的消息对话框
+                    JOptionPane.showMessageDialog(null, "这里是你的消息", "标题", JOptionPane.INFORMATION_MESSAGE, scaledIcon);
+                }
+            }
+        });
+
         allRecipes.addActionListener(//打开菜谱界面（浏览菜谱模式）
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
