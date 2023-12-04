@@ -143,7 +143,7 @@ public class SearchView extends Component implements ActionListener, PropertyCha
         buttonSearch = new JButton("Search");
         buttonSearch.addActionListener(this);
 
-        returnButton = new JButton("Return");
+        returnButton = new JButton("Back");
         returnButton.addActionListener(this);
 
         searchTextField = new JTextField(15);

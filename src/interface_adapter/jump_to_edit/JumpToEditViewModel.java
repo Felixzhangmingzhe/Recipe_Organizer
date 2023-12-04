@@ -17,7 +17,7 @@ public class JumpToEditViewModel extends ViewModel {
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
     @Override
     public void firePropertyChanged() {
-        support.firePropertyChange("edit", null, state);
+        support.firePropertyChange("jump", null, state);
     }
 
     @Override

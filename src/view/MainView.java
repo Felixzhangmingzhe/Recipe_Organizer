@@ -1,7 +1,5 @@
 package view;
 
-import entity.Recipe;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,13 +7,9 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
-import java.util.List;
 
-import java.util.concurrent.Executor;
-import data_access.FileRecipeDataAccessObject;
-
-import interface_adapter.create_recipe.CreateRecipeController;
-import interface_adapter.create_recipe.CreateRecipeViewModel;
+import interface_adapter.Back.BackState;
+import interface_adapter.Back.BackViewModel;
 
 // Use Case:View Warehouse
 import interface_adapter.ViewManagerModel;
@@ -37,6 +31,9 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     private final JButton exit;
     private final JButton allRecipes;
     private final JButton search;
+    private JButton activityLevelButton;
+    private final JLabel title;
+    private int numOfCooked = 0;
     // Use Case:View Warehouse
     private final ViewWarehouseController viewWarehouseController;
     private final ViewWarehouseViewModel viewWarehouseViewModel;
@@ -56,7 +53,8 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
     // Use Case:Show Daily Special
     private final ShowDailySpecialViewModel showDailySpecialViewModel;
     private final ShowDailySpecialController showDailySpecialController;
-
+    // Use Case:Back
+    private final BackViewModel backViewModel;
 
 
 
@@ -66,8 +64,9 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     ViewFavoritesController viewFavoritesController, ViewFavoritesViewModel viewFavoritesViewModel,
                     OpenCreateRecipeViewModel openCreateRecipeViewModel, OpenCreateRecipeController openCreateRecipeController,
                     ViewManagerModel viewManagerModel, ViewSearchController viewSearchController, ViewSearchViewModel viewSearchViewModel,
+                    BackViewModel backViewModel,
                     ShowDailySpecialViewModel showDailySpecialViewModel, ShowDailySpecialController showDailySpecialController) {
-        JLabel title = new JLabel("Main Menu");
+        title = new JLabel("Are you hungry?");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 //        //logo
@@ -135,7 +134,9 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         // // 初始化ShowDailySpecial有关
         this.showDailySpecialViewModel = showDailySpecialViewModel;
         this.showDailySpecialController = showDailySpecialController;
-
+        // // 初始化Back有关
+        this.backViewModel = backViewModel;
+        this.backViewModel.addPropertyChangeListener(this);
 
 
 
@@ -171,6 +172,9 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         topRowButtons.add(dailySpecial);
 
 // 创建并添加按钮到第二排
+        activityLevelButton = new JButton("Activity Level: " + numOfCooked);
+        bottomRowButtons.add(activityLevelButton);
+
         favorites = new JButton("Favorites");
         bottomRowButtons.add(favorites);
 
@@ -188,6 +192,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         this.add(imageLabel);
         this.add(topRowButtons);
         this.add(bottomRowButtons);
+
 
 
 
@@ -269,6 +274,10 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
             }
         });
     }
+    public void setNumOfCooked(int numOfCooked) {
+        numOfCooked = numOfCooked;
+        activityLevelButton.setText("Activity Level: " + numOfCooked);
+    }
 
 
 
@@ -289,7 +298,17 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        System.out.println("MainView is running");
-        JOptionPane.showMessageDialog(this, "MainView: " + evt.getPropertyName() + " " + evt.getNewValue());
+        System.out.println("MainView.propertyChange");
+        if (evt.getPropertyName().equals("back")) {
+            BackState state = (BackState) evt.getNewValue();
+            refreshActivityLevelLabel(state);
+        }
+    }
+    public void refreshActivityLevelLabel(BackState state) {
+
+        numOfCooked = state.getNumOfCooked();
+        activityLevelButton.setText("Activity Level: " + numOfCooked);
+        System.out.println("MainView.refreshActivityLevelLabel");
+        title.setText("Have you cooked today?");
     }
 }

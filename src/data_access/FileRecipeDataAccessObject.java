@@ -1,3 +1,4 @@
+// Class: FileRecipeDataAccessObject
 package data_access;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -6,9 +7,11 @@ import entity.Recipe;
 import entity.RecipeFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.Back.BackDataAccessInterface;
 import use_case.click_search.ClickSearchDataAccessInterface;
 import use_case.cooked.CookedDataAccessInterface;
 import use_case.create_recipe.CreateRecipeUserDataAccessInterface;
+import use_case.edit_recipe.EditRecipeDataAccessInterface;
 import use_case.jump_to_edit.JumpToEditDataAccessInterface;
 import use_case.open_create_recipe.OpenCreateRecipeDataAccessInterface;
 import use_case.show_daily_special.ShowDailySpecialDataAccessInterface;
@@ -29,11 +32,10 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
-
 public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInterface, ViewFavoritesDataAccessInterface,
         AddToFavoritesDataAccessInterface , ViewRecipeDataAccessInterface , ViewWarehouseDataAccessInterface,
-        JumpToEditDataAccessInterface, OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface,
-        ShowDailySpecialDataAccessInterface, ClickSearchDataAccessInterface {
+        BackDataAccessInterface, JumpToEditDataAccessInterface, EditRecipeDataAccessInterface,
+        OpenCreateRecipeDataAccessInterface, CookedDataAccessInterface, ShowDailySpecialDataAccessInterface, ClickSearchDataAccessInterface {
     private String filePath;
 
     private static final String apiToken = "o2vhKjkn5tmz+/B9kpjD6Q==mOt0YRhnaodNiwxj";
@@ -199,7 +201,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         List<Recipe> updatedRecipes = new ArrayList<>();
 
         for (Recipe recipe : recipes) {
-            if (recipe.getTitle().equals(title)) {
+            if (recipe.getId() == id) {
                 // 创建新的食谱实例来替换旧的
                 RecipeFactory recipeFactory = new RecipeFactory();
                 Recipe updatedRecipe = recipeFactory.create(id, title, content, date, isFavorite,calories, isCooked);
@@ -250,6 +252,10 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         return null;
     }
 
+    @Override
+    public void updateRecipe(int id, String title, Object content, LocalDateTime date, boolean isFavorite, boolean isCooked, double calories) {
+        update(id, title, (String) content, date, isFavorite, isCooked, calories);
+    }
 
 
     @Override
@@ -374,7 +380,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
 //            System.out.println("这个是"+recipe.getTitle());
             if (isRecipeExist(recipe.getTitle())){ //如果API的数据在数据库中已经存在，就不加入数据库
 //                System.out.println("存在");
-                  continue;
+                continue;
             }else { //如果API的数据在数据库中不存在，就加入数据库
 //                System.out.println("不存在");
                 addRecipe(recipe);
@@ -383,5 +389,17 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
 
 
         return resultRecipe;
+    }
+
+    @Override
+    public int getNumOfCooked() {
+        List<Recipe> recipes = readRecipes();
+        int numOfCooked = 0;
+        for (Recipe recipe : recipes) {
+            if (recipe.getIsCooked()) {
+                numOfCooked++;
+            }
+        }
+        return numOfCooked;
     }
 }

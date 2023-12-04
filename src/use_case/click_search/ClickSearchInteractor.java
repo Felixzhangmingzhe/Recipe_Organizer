@@ -21,9 +21,17 @@ public class ClickSearchInteractor implements ClickSearchInputBoundary{
         try{
             List<Recipe> recipes = clickSearchDataAccess.getRecipesFromAPI(inputData.getTitle());
             ClickSearchOutputData clickSearchOutputData = new ClickSearchOutputData(recipes);
-            clickSearchPresenter.prepareSuccessView(clickSearchOutputData);
+            System.out.println("clickSearchInteractor");
+            for (Recipe recipe : recipes) {
+                System.out.println(recipe.getTitle());
+            }
             if (recipes.size() == 0){
                 clickSearchPresenter.prepareFailView("No recipes found");
+            } else if(recipes == null){
+                clickSearchPresenter.prepareFailView("Cannot find recipe");
+            }
+            else {
+                clickSearchPresenter.prepareSuccessView(clickSearchOutputData);
             }
         }catch (IOException e) {
             clickSearchPresenter.prepareFailView(e.getMessage());

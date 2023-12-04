@@ -11,6 +11,7 @@ import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeState;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
 import interface_adapter.edit_recipe.EditRecipeController;
+import interface_adapter.edit_recipe.EditRecipeState;
 import interface_adapter.edit_recipe.EditRecipeViewModel;
 import interface_adapter.jump_to_edit.JumpToEditController;
 import interface_adapter.jump_to_edit.JumpToEditViewModel;
@@ -59,11 +60,14 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
     // Use Case: Show Daily Special
     private ShowDailySpecialViewModel showDailySpecialViewModel;
     private ShowDailySpecialController showDailySpecialController;
+    // Use Case: Edit Recipe
+    private EditRecipeViewModel editRecipeViewModel;
 
     public ReadRecipeView(BackViewModel backViewModel, BackController backController, ViewRecipeViewModel viewRecipeViewModel, CreateRecipeViewModel createRecipeViewModel
     , AddToFavoritesController addToFavoritesController, AddToFavoritesViewModel addToFavoritesViewModel,
                           JumpToEditController jumpToEditController, JumpToEditViewModel jumpToEditViewModel,
                           CookedViewModel cookedViewModel, CookedController cookedController,
+                          EditRecipeViewModel editRecipeViewModel,
                           ShowDailySpecialViewModel showDailySpecialViewModel, ShowDailySpecialController showDailySpecialController) {
         // Initialize view model and controller
         this.backViewModel = backViewModel;
@@ -84,6 +88,8 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         this.showDailySpecialController = showDailySpecialController;
         this.showDailySpecialViewModel = showDailySpecialViewModel;
         this.showDailySpecialViewModel.addPropertyChangeListener(this); // Listen to the change of showDailySpecialViewModel
+        this.editRecipeViewModel = editRecipeViewModel;
+        this.editRecipeViewModel.addPropertyChangeListener(this);       // Listen to the change of editRecipeViewModel
 
         // Initialize String RecipeName
         recipeName = "";
@@ -106,27 +112,59 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         cookedButton.addActionListener(this);
         editButton.addActionListener(this);
 
-        // Set layout manager
-        setLayout(new BorderLayout());
+        // Arrange the components on the panel
+        arrangemrnt();
+    }
+    public void arrangemrnt(){
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
 
-        // Add components to the frame
-        add(recipeNameLabel, BorderLayout.NORTH);
-        add(new JScrollPane(recipeContentTextArea), BorderLayout.CENTER);
 
-        // Create a panel for additional information (calories and last edit time)
+        // Add components to the panel with GridBagConstraints
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weighty = 0;
+        add(recipeNameLabel, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 1;
+        gbc.weighty = 1;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.BOTH;
+        recipeContentTextArea.setLineWrap(true);  // 自动换行
+        JScrollPane scrollPane = new JScrollPane(recipeContentTextArea);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        add(scrollPane, gbc);
+
+// Create a panel for additional information (calories and last edit time)
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         infoPanel.add(caloriesLabel);
         infoPanel.add(lastEditTimeLabel);
-        add(infoPanel, BorderLayout.SOUTH);
 
-        // Create a panel for buttons
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.weightx = 0;
+        gbc.weighty = 0;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        add(infoPanel, gbc);
+
+// Create a panel for buttons
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(backButton);
         buttonPanel.add(favoritesButton);
         buttonPanel.add(cookedButton);
         buttonPanel.add(editButton);
-        add(buttonPanel, BorderLayout.SOUTH);
+
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 2;
+        gbc.weighty = 0;
+        gbc.fill = GridBagConstraints.REMAINDER;
+        add(buttonPanel, gbc);
+
     }
 
     @Override
@@ -168,6 +206,9 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
             System.out.println("show daily special property changed");
             getAndDisplay((ShowDailySpecialState) evt.getNewValue());
             updateFavoritesButton(viewRecipeViewModel);
+        } else if (evt.getPropertyName().equals("edit")) {
+            System.out.println("edit property changed");
+            getAndDisplay((EditRecipeState) evt.getNewValue());
         }
     }
 
@@ -177,6 +218,18 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         String recipeContent = currentState.getContent();
         String calories = String.valueOf(currentState.getCalories());
         String lastEditTime = String.valueOf(currentState.getCreatedAt());
+
+        recipeNameLabel.setText("Recipe Name: " + recipeName);
+        recipeContentTextArea.setText(recipeContent);
+        caloriesLabel.setText("Calories: " + calories);
+        lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
+    }
+    public void getAndDisplay(EditRecipeState currentState) {
+        // Update the labels and text area with the recipe information
+        recipeName = currentState.getRecipeTitle();
+        String recipeContent = currentState.getRecipeContent();
+        String calories = String.valueOf(currentState.getRecipeCalories());
+        String lastEditTime = String.valueOf(currentState.getRecipeCreationTime());
 
         recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);
@@ -217,6 +270,7 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         } else {
             JOptionPane.showMessageDialog(this, "You have already cooked this recipe!");
         }
+        cookedButton.setText("Cooked");
     }
 
     public void getAndDisplay(ShowDailySpecialState currentState) {
@@ -228,6 +282,7 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);
         caloriesLabel.setText("Calories: " + calories);
+
         lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
     }
 
@@ -269,5 +324,13 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         } else {
             favoritesButton.setText("Favorite");
         }
+        boolean isCooked = currentState.getIsCooked();
+        // 更新按钮标签
+        if (isCooked) {
+            cookedButton.setText("Cooked");
+        } else {
+            cookedButton.setText("Cook");
+        }
     }
+
 }
