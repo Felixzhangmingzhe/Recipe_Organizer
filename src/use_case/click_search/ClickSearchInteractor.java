@@ -6,21 +6,24 @@ import java.io.IOException;
 import java.util.List;
 
 public class ClickSearchInteractor implements ClickSearchInputBoundary{
-
-    private final ClickSearchOutputBoundary clickSearchPresenter;
+    // Data access interface and presenter
     private final ClickSearchDataAccessInterface clickSearchDataAccess;
+    private final ClickSearchOutputBoundary clickSearchPresenter;
 
+    // Constructor
     public ClickSearchInteractor(ClickSearchOutputBoundary clickSearchPresenter, ClickSearchDataAccessInterface clickSearchDataAccess) {
         this.clickSearchPresenter = clickSearchPresenter;
         this.clickSearchDataAccess = clickSearchDataAccess;
     }
 
-
+    // Implementation of execute method in Input Boundary
     @Override
     public void clickSearch(ClickSearchInputData inputData) {
+        // Try to retrieve recipes from API
         try{
             List<Recipe> recipes = clickSearchDataAccess.getRecipesFromAPI(inputData.getTitle());
             ClickSearchOutputData clickSearchOutputData = new ClickSearchOutputData(recipes);
+            // For debugging, print information about the search operation.
             System.out.println("clickSearchInteractor");
             for (Recipe recipe : recipes) {
                 System.out.println(recipe.getTitle());
