@@ -43,4 +43,6 @@ public class Recipe {
     }
 
     public double getCalories() {return this.calories;}
+
+    public void setCalories(double calories) {this.calories = calories;}
 }

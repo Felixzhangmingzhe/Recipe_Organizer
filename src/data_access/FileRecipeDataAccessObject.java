@@ -298,7 +298,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         return null;
     }
 
-    private List<Recipe> getRecipesFromAPIByNum(int num) throws IOException {
+    public List<Recipe> getRecipesFromAPIByNum(int num) throws IOException {
         List<Recipe> resultRecipe = new ArrayList<>();
         while (resultRecipe.size() < num){
             String randomChar = "ABCDEFGHIJKLMNOPQXRSTUVWYZabcdefghijklmxnopqrstuvwyz";
@@ -315,7 +315,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
         return resultRecipe;
     }
 
-    private List<Recipe> getRecipesOnlyFromAPI(String substring) throws IOException {
+    public List<Recipe> getRecipesOnlyFromAPI(String substring) throws IOException {
         List<Recipe> resultRecipe = new ArrayList<>();
 
         URL url = new URL("https://api.api-ninjas.com/v1/recipe?query=" + URLEncoder.encode(substring, StandardCharsets.UTF_8));
@@ -333,7 +333,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                     JsonNode recipe = root.get(i);
                     String recipeTitle = recipe.path("title").asText();
                     String recipeInstructions = recipe.path("instructions").asText();
-                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, false,0);
+                    double RecipeCalories = fetchCaloriesData(recipeTitle);
+                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, false,RecipeCalories);
                     resultRecipe.add(newRecipe);
                 }
             }
@@ -343,6 +344,29 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
             return null;
         }
         return resultRecipe;
+    }
+
+    public static double fetchCaloriesData(String recipeName) throws IOException {
+        URL url = new URL("https://api.api-ninjas.com/v1/nutrition?query=" + URLEncoder.encode(recipeName, StandardCharsets.UTF_8));
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestProperty("X-Api-Key" , apiToken);
+        connection.setRequestProperty("Accept", "application/json");
+
+        try (InputStream responseStream = connection.getInputStream()) {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(responseStream);
+            double totalCalories = 0.0;
+            for(JsonNode node : root) {
+                totalCalories += node.path("calories").asDouble();
+            }
+
+            return totalCalories;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return -1;
+        }
+
     }
 
     @Override
@@ -380,7 +404,8 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
                     JsonNode recipe = root.get(i);
                     String recipeTitle = recipe.path("title").asText();
                     String recipeInstructions = recipe.path("instructions").asText();
-                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, false,0);
+                    double RecipeCalories = fetchCaloriesData(recipeTitle);
+                    Recipe newRecipe = new Recipe(getLastUsedRecipeIdFromDatabase() + 1, recipeTitle, recipeInstructions, LocalDateTime.now(), false, false,RecipeCalories);
                     resultRecipe.add(newRecipe);
                 }
             }

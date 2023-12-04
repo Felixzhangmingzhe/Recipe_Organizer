@@ -2,6 +2,7 @@ package app;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 import data_access.FileRecipeDataAccessObject;
 import interface_adapter.Back.BackViewModel;
@@ -23,7 +24,7 @@ import view.*;
 import interface_adapter.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // 这里创建了一个主应用窗口，然后设置了关闭操作
         JFrame application = new JFrame("PlatePal");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -80,6 +81,7 @@ public class Main {
         RecipePresetter recipePresetter = new RecipePresetter();
         FileRecipeDataAccessObject prDAO = new FileRecipeDataAccessObject("recipes.json");
         recipePresetter.presetData(prDAO);
+//        recipePresetter.presetDataOutside(prDAO, 37);
         // 创建并将视图添加到主面板:仓库视图
         WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewWarehouseViewModel,viewManagerModel, warehouseDAO, clickSearchViewModel, backViewModel);
         views.add(warehouseView, warehouseView.viewName);

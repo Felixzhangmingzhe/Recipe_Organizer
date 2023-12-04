@@ -61,4 +61,7 @@ public class EditRecipeState {
         this.recipeCreationTime = recipeCreationTime;
     }
 
+    public double getCalories() {
+        return this.recipeCalories;
+    }
 }

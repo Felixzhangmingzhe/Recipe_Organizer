@@ -221,7 +221,11 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
 
         recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);
-        caloriesLabel.setText("Calories: " + calories);
+        if (currentState.getCalories() <= 0.0){
+            caloriesLabel.setText("Cannot find its Calories");
+        } else {
+            caloriesLabel.setText("Calories: " + calories);
+        }
         lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
     }
     public void getAndDisplay(EditRecipeState currentState) {
@@ -233,7 +237,11 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
 
         recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);
-        caloriesLabel.setText("Calories: " + calories);
+        if (currentState.getCalories() <= 0.0){
+            caloriesLabel.setText("Cannot find its Calories");
+        } else {
+            caloriesLabel.setText("Calories: " + calories);
+        }
         lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
     }
 
@@ -246,7 +254,11 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
 
         recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);
-        caloriesLabel.setText("Calories: " + calories);
+        if (currentState.getCalories() <= 0.0){
+            caloriesLabel.setText("Cannot find its Calories");
+        } else {
+            caloriesLabel.setText("Calories: " + calories);
+        }
         lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
     }
 
@@ -281,7 +293,11 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
         recipeName = currentState.getTitle();
         recipeNameLabel.setText("Recipe Name: " + recipeName);
         recipeContentTextArea.setText(recipeContent);
-        caloriesLabel.setText("Calories: " + calories);
+        if (currentState.getCalories() <= 0.0){
+            caloriesLabel.setText("Cannot find its Calories");
+        } else {
+            caloriesLabel.setText("Calories: " + calories);
+        }
 
         lastEditTimeLabel.setText("Last Edited: " + lastEditTime);
     }
