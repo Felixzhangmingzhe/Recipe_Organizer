@@ -193,6 +193,7 @@ public class SearchView extends Component implements ActionListener, PropertyCha
     public void getAndDisplaySearchRecipeError(ClickSearchState state) {
         if (state.getSearchError() != null) {
             JOptionPane.showMessageDialog(this, state.getSearchError());
+
         }
 
     }

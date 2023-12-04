@@ -20,11 +20,31 @@ public class ClickSearchInteractor implements ClickSearchInputBoundary{
     public void clickSearch(ClickSearchInputData inputData) {
         try{
             List<Recipe> recipes = clickSearchDataAccess.getRecipesFromAPI(inputData.getTitle());
-            ClickSearchOutputData clickSearchOutputData = new ClickSearchOutputData(recipes);
-            clickSearchPresenter.prepareSuccessView(clickSearchOutputData);
-            if (recipes.size() == 0){
-                clickSearchPresenter.prepareFailView("No recipes found");
+            if (inputData.getTitle().equals("")){
+                clickSearchPresenter.prepareFailView("Please enter a title");
+                System.out.println("Please enter a title");
             }
+            else if(recipes == null){
+                clickSearchPresenter.prepareFailView("No recipes found");
+                System.out.println("No recipes found");
+
+            } else if (recipes.size() == 0){
+                clickSearchPresenter.prepareFailView("No recipes found");
+                System.out.println("No recipes found");
+
+            }else{
+                ClickSearchOutputData clickSearchOutputData = new ClickSearchOutputData(recipes);
+                clickSearchPresenter.prepareSuccessView(clickSearchOutputData);
+            }
+//            List<Recipe> recipes = clickSearchDataAccess.getRecipesFromAPI(inputData.getTitle());
+//            ClickSearchOutputData clickSearchOutputData = new ClickSearchOutputData(recipes);
+//            if (recipes.size() == 0){
+//                clickSearchPresenter.prepareFailView("No recipes found");
+//                System.out.println("No recipes found");
+//            }else{
+//                clickSearchPresenter.prepareSuccessView(clickSearchOutputData);
+//                System.out.println("click search interactor"+recipes);
+//            }
         }catch (IOException e) {
             clickSearchPresenter.prepareFailView(e.getMessage());
         }
