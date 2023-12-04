@@ -206,7 +206,21 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                     ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
                     // 显示一个带有自定义图标的消息对话框
-                    JOptionPane.showMessageDialog(null, "这里是你的消息", "标题", JOptionPane.INFORMATION_MESSAGE, scaledIcon);
+                    JOptionPane.showMessageDialog(null, "Dear PlatePal User,\n" +
+                            "\n" +
+                            "Thank you for tapping into your activity level! "+'\n' +'\n'
+
+                            + "We're excited to let you know that for every 50 points you\n" +
+                            "earn through our app, PlatePal will plant a tree in a virtual\n" +
+                            "world. This is our way of showing gratitude for your efforts\n" +
+                            "in cooking at home, reducing reliance on takeouts and junk \n" +
+                            "food, and consequently, helping reduce environmental pollution.\n" + '\n'+
+                            "Your culinary journey not only brings joy to your table but also\n" +
+                            "contributes to a greener planet. \n" +'\n'+
+                            "Keep cooking, keep earning points, and together, let's grow a forest!\n" +
+                            "\n" +
+                            "Warm regards,\n" +
+                            "The PlatePal Team\n", "PlatePal", JOptionPane.INFORMATION_MESSAGE, scaledIcon);
                 }
             }
         });
