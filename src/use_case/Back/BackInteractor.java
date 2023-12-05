@@ -6,15 +6,16 @@ public class BackInteractor implements BackInputBoundary{
     private final BackOutputBoundary backPresenter;
 
     // Constructor
-    public BackInteractor(BackOutputBoundary presenter , BackDataAccessInterface backDataAccessInterface) {
-        this.backUserDataAccessInterface = backDataAccessInterface;
-        this.backPresenter = presenter;
+    public BackInteractor(BackOutputBoundary backPresenter , BackDataAccessInterface backUserDataAccessInterface) {
+        this.backUserDataAccessInterface = backUserDataAccessInterface;
+        this.backPresenter = backPresenter;
     }
 
     // Implementation of execute method in Input Boundary
     @Override
     public void execute() {
         int numOfCooked = backUserDataAccessInterface.getNumOfCooked();
+        // Output data indicating back to main view
         BackOutputData backOutputData = new BackOutputData(numOfCooked);
         backPresenter.prepareSuccessView(backOutputData);
     }

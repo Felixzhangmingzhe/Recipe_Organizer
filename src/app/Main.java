@@ -1,3 +1,6 @@
+// 之前写的main被我删了重写了一个
+// New main class
+
 package app;
 
 import javax.swing.*;
@@ -5,8 +8,9 @@ import java.awt.*;
 import java.io.IOException;
 
 import data_access.FileRecipeDataAccessObject;
-import interface_adapter.Back.BackViewModel;
+
 import interface_adapter.add_to_favorites.AddToFavoritesViewModel;
+import interface_adapter.Back.BackViewModel;
 import interface_adapter.click_search.ClickSearchViewModel;
 import interface_adapter.cooked.CookedViewModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
@@ -14,32 +18,36 @@ import interface_adapter.edit_recipe.EditRecipeViewModel;
 import interface_adapter.jump_to_edit.JumpToEditViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
 import interface_adapter.show_daily_special.ShowDailySpecialViewModel;
+import interface_adapter.view_favorites.ViewFavoritesViewModel;
+import interface_adapter.view_recipe.ViewRecipeViewModel;
 import interface_adapter.view_search.ViewSearchViewModel;
 import interface_adapter.view_warehouse.ViewWarehouseViewModel;
-import interface_adapter.view_recipe.ViewRecipeViewModel;
-import interface_adapter.view_favorites.ViewFavoritesViewModel;
+import interface_adapter.ViewManagerModel;
 
 import view.*;
-
-import interface_adapter.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         // 这里创建了一个主应用窗口，然后设置了关闭操作
+        // Create a main application window and set the close operation
         JFrame application = new JFrame("PlatePal");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         // 创建一个 CardLayout，用于管理各个卡片
+        // Create a CardLayout to manage the cards
         CardLayout cardLayout = new CardLayout();
         // 创建一个 JPanel，用于存放各个卡片
+        // Create a JPanel to hold the cards
         JPanel views = new JPanel(cardLayout);
         application.add(views);
         // 创建用于管理视图的 ViewManager:
+        // Create a ViewManager to manage the views
         ViewManagerModel viewManagerModel = new ViewManagerModel();
         new ViewManager(views, cardLayout, viewManagerModel);
 
 
-
-        // 为每个ViewModel创建一个实例，大家记得要传入自己对应的ViewModel######################################################IMPORTANT
+        /* ################################################IMPORTANT################################################ */
+        // 为每个ViewModel创建一个实例，大家记得要传入自己对应的ViewModel
+        // Create an instance for each ViewModel
         ViewWarehouseViewModel viewWarehouseViewModel = new ViewWarehouseViewModel();
         ViewFavoritesViewModel viewFavoritesViewModel = new ViewFavoritesViewModel();
         ViewRecipeViewModel viewRecipeViewModel = new ViewRecipeViewModel();
@@ -78,16 +86,17 @@ public class Main {
 
 
         // 在数据库里写入一些菜谱
+        // Preset some recipes in the database
         RecipePresetter recipePresetter = new RecipePresetter();
         FileRecipeDataAccessObject prDAO = new FileRecipeDataAccessObject("recipes.json");
         recipePresetter.presetData(prDAO);
-//        recipePresetter.presetDataOutside(prDAO, 37);
+        // recipePresetter.presetDataOutside(prDAO, 37);
         // 创建并将视图添加到主面板:仓库视图
         WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewWarehouseViewModel,viewManagerModel, warehouseDAO, clickSearchViewModel, backViewModel);
         views.add(warehouseView, warehouseView.viewName);
 
 
-        // viewManagerModel.setActiveView(warehouseView.viewName);//这样写，还是什么都没显示，说明就是warehouseView的问题
+        // viewManagerModel.setActiveView(warehouseView.viewName);  //这样写，还是什么都没显示，说明就是warehouseView的问题
         // viewManagerModel.firePropertyChanged();
         // 创建并将视图添加到主面板:收藏夹视图
         FavoritesView favoritesView = FavoritesViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, viewFavoritesViewModel, warehouseDAO,backViewModel);
@@ -102,6 +111,5 @@ public class Main {
         SearchView viewSearchView = ViewSearchUseCaseFactory.create(viewSearchViewModel, viewManagerModel, backViewModel, clickSearchViewModel, DAO);
         views.add(viewSearchView.getSearchPanel(), viewSearchView.viewName);
     }
-// 之前写的main被我删了重写了一个
 }
 

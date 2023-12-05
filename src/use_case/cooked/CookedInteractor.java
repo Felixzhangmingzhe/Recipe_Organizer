@@ -9,9 +9,9 @@ public class CookedInteractor implements CookedInputBoundary{
     private final CookedOutputBoundary cookedPresenter;
 
     // Constructor
-    public CookedInteractor(CookedOutputBoundary cookedPresenter, CookedDataAccessInterface cookedDataAccessInterface) {
+    public CookedInteractor(CookedDataAccessInterface cookedUserDataAccessInterface, CookedOutputBoundary cookedPresenter) {
+        this.cookedUserDataAccessInterface = cookedUserDataAccessInterface;
         this.cookedPresenter = cookedPresenter;
-        this.cookedUserDataAccessInterface = cookedDataAccessInterface;
     }
 
     // Implementation of execute method in Input Boundary

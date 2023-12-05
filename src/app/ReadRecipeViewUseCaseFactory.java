@@ -64,7 +64,7 @@ public class ReadRecipeViewUseCaseFactory extends UseCaseFactory {
 
     private static CookedController createCookedController(CookedViewModel cookedViewModel, ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao) {
         CookedOutputBoundary cookedOutputBoundary = new CookedPresenter(cookedViewModel, viewManagerModel);
-        CookedInputBoundary cookedInputBoundary = new use_case.cooked.CookedInteractor(cookedOutputBoundary, dao);
+        CookedInputBoundary cookedInputBoundary = new use_case.cooked.CookedInteractor(dao, cookedOutputBoundary);
         return new CookedController(cookedInputBoundary);
     }
 

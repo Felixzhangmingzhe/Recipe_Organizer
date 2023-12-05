@@ -105,13 +105,13 @@
     "title": "Ramen",
     "isCooked": false,
     "content": "Boil broth. Add noodles, egg, and pork. Cook until noodles are done.",
-    "isFavorite": true
+    "isFavorite": false
   },
   {
     "date": "2023-12-04T05:08:30.193824",
     "id": 13,
     "calories": 0,
-    "title": "",
+    "title": "111",
     "isCooked": true,
     "content": "",
     "isFavorite": false
@@ -276,6 +276,15 @@
     "title": "",
     "isCooked": false,
     "content": "asd",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T17:36:58.173117800",
+    "id": 24,
+    "calories": 0,
+    "title": "Test",
+    "isCooked": true,
+    "content": "test",
     "isFavorite": false
   }
 ]
