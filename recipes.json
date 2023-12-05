@@ -105,15 +105,15 @@
     "title": "Ramen",
     "isCooked": false,
     "content": "Boil broth. Add noodles, egg, and pork. Cook until noodles are done.",
-    "isFavorite": false
+    "isFavorite": true
   },
   {
     "date": "2023-12-04T05:08:30.193824",
     "id": 13,
     "calories": 0,
-    "title": "ss",
-    "isCooked": false,
-    "content": "ss",
+    "title": "",
+    "isCooked": true,
+    "content": "",
     "isFavorite": false
   },
   {
@@ -168,6 +168,114 @@
     "title": "Electric Bread - Sticky Buns",
     "isCooked": false,
     "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.change",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T13:45:38.095343900",
+    "id": 20,
+    "calories": 0,
+    "title": "Electronic Gourmet's Garlic Soup",
+    "isCooked": false,
+    "content": "1) Put the oil and garlic into a very heavy large pot. Saute until almost golden brown in colour. Add the water, salt, monosodium glutamate and stock. 2) Simmer for 3 hours. Check the seasoning. 3) To serve: Place a slice of bread in each soup bowl. Put a ladle of the hot soup in the bowl and immediately, on top of the bread, break an egg. The egg will congeal and the bread will go to the bottom of the bowl. Note: Can be made a day ahead and refrigerated. To serve, follow step 3.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T13:45:38.096342800",
+    "id": 20,
+    "calories": 0,
+    "title": "Elegant Mushroom Soup",
+    "isCooked": false,
+    "content": "* NOTE: Use 1 1/2 pounds or MORE of ripe mushrooms. The darker mushroom (older) adds a stronger flavor to the soup, that's what I usually use. I've made this with the regular white, as well as portabello mushrooms - a blend tastes fine, but the portobello tends to overpower slightly. 1. Melt butter in pot. Add sliced mushrooms, and saute gently until liquid is completely cooked out. Do not brown mushrooms. 2. Add at least 2 quarts chicken broth (reserve 1/3 cup), thyme, and bouillon. Bring to a full boil, and simmer, uncovered, until broth is reduced by 75%. Taste should be extremely strong (it will be diluted with the cream). Note: The reduction can take quite a while. 3. Mix cornstarch with reserved broth, and add to soup. Allow mixture to get very thick. 4. Gently add 2 quarts (or more) heavy cream. Blend, and bring to a gentle simmer. Taste, and adjust seasoning if needed. Thin with milk or cream if flavor is too strong, or soup is too thick. : Jocie Moravec",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T13:45:38.097342800",
+    "id": 20,
+    "calories": 0,
+    "title": "Emeril's Onion Soup",
+    "isCooked": false,
+    "content": "Preheat the oven to 400 degrees F. In a large saucepan, over medium-heat, melt the butter. Add the onions. Season with salt and pepper. Saut¨¦ the onions until slightly caramelized, about 8 to 10 minutes. Add the garlic, sherry, Worcestershire sauce and stock. Season with salt and pepper. Bring the liquid to a boil and reduce to a simmer. Cook the soup for 15 minutes. Ladle the soup into oven-proof deep bowls. Spread the each piece of bread with 1/4 cup of the rillette. Float the croutons on top of the soup. Cover each crouton with a piece of cheese. Sprinkle the cheese with parsley. Place the bowls on a sheet pan and place in the oven. Bake until the cheese is bubbly and golden, about 6 to 8 minutes. Remove from the oven and serve. Yield: 8 servings",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T13:45:38.098344600",
+    "id": 20,
+    "calories": 0,
+    "title": "End-Of-Month Vegetable Soup",
+    "isCooked": false,
+    "content": "Make the bouquet garni by tying the herbs up in a cheesecloth or coffee filter. Put a quart of water to boil with about 1/2 t salt (I don't like to use too much salt if I use bouillon), the bouquet garni and the bouillon. Dice the onion, mince the garlic, and add these to the soup together with the bacon and/or prosciutto ends. Bring this to a boil. Simmer 5 minutes. If scum forms on the surface, skim it off. Dice the potatoes and add to the boiling pot. Cut up everything else and add it. Add the wine. Adjust the liquid so that it covers the vegetables. After it boils again, adjust the seasoning and simmer for about an hour, or until it is done (this is quite subjective). NOTES: * Soup with a mixture of vegetables -- I had an eclectic mixture of vegetables going bad in the refrigerator, so I collected them and came up with this soup. It was very good, so I would like to share it with you all. Caveat: I rarely measure anything, so be careful of quantities. * This will serve 6 people at once, or 2 people for three days. It ages well in the refrigerator. : Difficulty: easy. : Time: 10 minutes preparation, 1 hour simmering. : Precision: no need to measure.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T13:45:38.099344900",
+    "id": 20,
+    "calories": 0,
+    "title": "Engadiner Gerstensuppe / Engadine Barley Soup",
+    "isCooked": false,
+    "content": "Bring ham, beef, barley and beans to boil in about 30 fl oz water, and allow to simmer for about 2 hours. Add shredded cabbage and potatoes (other vegetables such as carrots and celery can be added if desired). After a further hour's cooking, thicken soup with cream previously blended with the flour, bring to the boil once more, and serve. From TANTE HEIDI'S SWISS KITCHEN, Eva Marie Borer / shared by Diane Duane",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T13:45:38.100344100",
+    "id": 20,
+    "calories": 0,
+    "title": "English Pea Soup",
+    "isCooked": false,
+    "content": "Comine English peas, lettuce, spinach, green onions, bouillion granules, chervil and pepper in a large saucepan; stir in water. Cover and bring to a boil; reduce heat, and simmer 20 minutes. Process mixture to saucepan, and stir in milk. Cook over medium heat, stirring frequently, until thoroughly heated. Food Exchange per serving: 1/2 STARCH EXCHANGE; CAL: 46; CHO: tr; CAR: 8gm; SOD: 64mg:",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T13:45:38.101346800",
+    "id": 20,
+    "calories": 0,
+    "title": "Fresh Green Chile Soup with Tumbleweed Greens",
+    "isCooked": false,
+    "content": "Roast the chiles and peppers by the Open-Flame Method. Peel the chiles and peppers, pull off the stems, remove the seeds and veins, and set aside. In a medium saucepan, parboil the potatoes in boiling water with 1 teaspoon of the salt until tender. Puree the green chiles and then the red peppers separately in a food processor until smooth. Mix the purees together, add the potatoes and stock, and process in 2-cup batches for another minute, or until smooth. Add the remaining salt, the pepper, and garlic and process again. Press the puree through a fine sieve. Heat the puree in a saucepan. Serve hot, garnished with tumbleweed greens.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T13:45:38.102345",
+    "id": 20,
+    "calories": 0,
+    "title": "Fresh Herb Summer Soup",
+    "isCooked": false,
+    "content": "Pour chicken broth into a large saucepan. Add the fresh herbs. Bring to a boil, lower heat, and simmer for 20 minutes. In a separate bowl, beat the egg yolks lightly with the cream. Slowly whisk 1 cup of the hot broth mixture into the cream-yolk mixture. Pour this mixture into the pan in a stream, whisking constantly. Cook for 6 to 8 minutes or until thickened. Do not boil. Cool completely. Chill, covered, for at least 3 hours, better if chilled overnight. Seasan with white pepper. Garnish with minced fresh herbs. Yield: 8 to 10 servings. BEN HUSSMAN (MRS. WALTER, JR.)",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T13:45:38.103344",
+    "id": 20,
+    "calories": 0,
+    "title": "Fresh Minestrone Soup",
+    "isCooked": false,
+    "content": "In 2 quart microwave safe casserole, combine all ingredients except cheese. Cover; microwave at high 11-13 minutes, stirring once, or until pasta is tender. Serve in bowls sprinkled with cheese, if desired.",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T13:56:32.208377900",
+    "id": 21,
+    "calories": 24.6,
+    "title": "",
+    "isCooked": false,
+    "content": "",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T15:37:30.468176600",
+    "id": 22,
+    "calories": 24.6,
+    "title": "",
+    "isCooked": false,
+    "content": "",
+    "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T16:12:36.578064800",
+    "id": 23,
+    "calories": 0,
+    "title": "",
+    "isCooked": false,
+    "content": "asd",
     "isFavorite": false
   }
 ]

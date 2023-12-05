@@ -7,13 +7,13 @@ import java.util.List;
 
 public class ClickSearchInteractor implements ClickSearchInputBoundary{
     // Data access interface and presenter
-    private final ClickSearchDataAccessInterface clickSearchDataAccess;
+    private final ClickSearchDataAccessInterface clickSearchUserDataAccessInterface;
     private final ClickSearchOutputBoundary clickSearchPresenter;
 
     // Constructor
     public ClickSearchInteractor(ClickSearchOutputBoundary clickSearchPresenter, ClickSearchDataAccessInterface clickSearchDataAccess) {
+        this.clickSearchUserDataAccessInterface = clickSearchDataAccess;
         this.clickSearchPresenter = clickSearchPresenter;
-        this.clickSearchDataAccess = clickSearchDataAccess;
     }
 
     // Implementation of execute method in Input Boundary
@@ -21,14 +21,14 @@ public class ClickSearchInteractor implements ClickSearchInputBoundary{
     public void clickSearch(ClickSearchInputData inputData) {
         // Try to retrieve recipes from API
         try{
-            List<Recipe> recipes = clickSearchDataAccess.getRecipesFromAPI(inputData.getTitle());
+            List<Recipe> recipes = clickSearchUserDataAccessInterface.getRecipesFromAPI(inputData.getTitle());
             ClickSearchOutputData clickSearchOutputData = new ClickSearchOutputData(recipes);
             // For debugging, print information about the search operation.
             System.out.println("clickSearchInteractor");
             for (Recipe recipe : recipes) {
                 System.out.println(recipe.getTitle());
             }
-            if (recipes.size() == 0){
+            if (recipes.isEmpty()){
                 clickSearchPresenter.prepareFailView("No recipes found");
                 System.out.println("No recipes found");
             } else if(recipes == null){

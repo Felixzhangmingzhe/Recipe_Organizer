@@ -4,36 +4,36 @@ import entity.Recipe;
 
 public class AddToFavoritesInteractor implements AddToFavoritesInputBoundary {
     // Data access interface and presenter
-    private final AddToFavoritesDataAccessInterface userDataAccess;
-    private final AddToFavoritesOutputBoundary presenter;
+    private final AddToFavoritesDataAccessInterface AddToFavoritesUserDataAccessInterface;
+    private final AddToFavoritesOutputBoundary AddToFavoritesPresenter;
 
     // Constructor
     public AddToFavoritesInteractor(AddToFavoritesDataAccessInterface userDataAccess, AddToFavoritesOutputBoundary presenter) {
-        this.userDataAccess = userDataAccess;
-        this.presenter = presenter;
+        this.AddToFavoritesUserDataAccessInterface = userDataAccess;
+        this.AddToFavoritesPresenter = presenter;
     }
 
     // Implementation of execute method in Input Boundary
     @Override
     public void execute(AddToFavoritesInputData inputData) {
         // Retrieve recipe by title
-        Recipe recipe = userDataAccess.getRecipeByTitle(inputData.getTitle());
+        Recipe recipe = AddToFavoritesUserDataAccessInterface.getRecipeByTitle(inputData.getTitle());
 
         // Check if recipe is already in favorites
         if (recipe.getIsFavorite()) {
             // remove from favorites
             boolean isFavorite = false;
-            userDataAccess.updateRecipe(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(),isFavorite , recipe.getIsCooked(), recipe.getCalories());
+            AddToFavoritesUserDataAccessInterface.updateRecipe(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(),isFavorite , recipe.getIsCooked(), recipe.getCalories());
             // Output data indicating removed from favorites
             AddToFavoritesOutputData outputData = new AddToFavoritesOutputData("", "Recipe is deleted from favorites");
-            presenter.prepareSuccessView(outputData);
+            AddToFavoritesPresenter.prepareSuccessView(outputData);
         } else {
             // add to favorites
             boolean isFavorite = true;
-            userDataAccess.updateRecipe(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(), isFavorite, recipe.getIsCooked(), recipe.getCalories());
+            AddToFavoritesUserDataAccessInterface.updateRecipe(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getDate(), isFavorite, recipe.getIsCooked(), recipe.getCalories());
             // Output data indicating added to favorites
             AddToFavoritesOutputData outputData = new AddToFavoritesOutputData("Recipe is added to favorites", "" );
-            presenter.prepareSuccessView(outputData);
+            AddToFavoritesPresenter.prepareSuccessView(outputData);
         }
     }
 }
