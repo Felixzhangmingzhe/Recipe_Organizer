@@ -31,8 +31,8 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
 
     // Constructor
     public CreateRecipeInteractor(CreateRecipeOutputBoundary createRecipePresenter, CreateRecipeUserDataAccessInterface createRecipeUserDataAccessInterface, RecipeFactory recipeFactory) {
-        this.createRecipePresenter = createRecipePresenter;
         this.createRecipeUserDataAccessInterface = createRecipeUserDataAccessInterface;
+        this.createRecipePresenter = createRecipePresenter;
         this.recipeFactory = recipeFactory;
     }
 

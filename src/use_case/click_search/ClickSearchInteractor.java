@@ -11,8 +11,8 @@ public class ClickSearchInteractor implements ClickSearchInputBoundary{
     private final ClickSearchOutputBoundary clickSearchPresenter;
 
     // Constructor
-    public ClickSearchInteractor(ClickSearchOutputBoundary clickSearchPresenter, ClickSearchDataAccessInterface clickSearchDataAccess) {
-        this.clickSearchUserDataAccessInterface = clickSearchDataAccess;
+    public ClickSearchInteractor(ClickSearchDataAccessInterface clickSearchUserDataAccessInterface, ClickSearchOutputBoundary clickSearchPresenter) {
+        this.clickSearchUserDataAccessInterface = clickSearchUserDataAccessInterface;
         this.clickSearchPresenter = clickSearchPresenter;
     }
 
@@ -38,9 +38,8 @@ public class ClickSearchInteractor implements ClickSearchInputBoundary{
             else {
                 clickSearchPresenter.prepareSuccessView(clickSearchOutputData);
             }
-        }catch (IOException e) {
+        } catch (IOException e) {
             clickSearchPresenter.prepareFailView(e.getMessage());
         }
-
     }
 }
