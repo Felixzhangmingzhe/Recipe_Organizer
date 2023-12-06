@@ -21,7 +21,7 @@ public class ShowDailySpecialInteractor implements ShowDailySpecialInputBoundary
         Recipe dailySpecial = showDailySpecialDataAccessInterface.getDailySpecial();
         // Output data indicating switching to daily special
         ShowDailySpecialOutputData showDailySpecialOutputData = new ShowDailySpecialOutputData(dailySpecial);
-//        System.out.println("Daily special is " + dailySpecial.getTitle());
+        // System.out.println("Daily special is " + dailySpecial.getTitle());
         showDailySpecialPresenter.prepareSuccessView(showDailySpecialOutputData);
     }
 
