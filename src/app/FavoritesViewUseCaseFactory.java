@@ -2,6 +2,14 @@ package app;
 
 import data_access.FileRecipeDataAccessObject;
 
+import use_case.Back.BackDataAccessInterface;
+import use_case.Back.BackInputBoundary;
+import use_case.Back.BackInteractor;
+import use_case.Back.BackOutputBoundary;
+import use_case.view_recipe.ViewRecipeInputBoundary;
+import use_case.view_recipe.ViewRecipeInteractor;
+import use_case.view_recipe.ViewRecipeOutputBoundary;
+
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackPresenter;
 import interface_adapter.Back.BackViewModel;
@@ -10,14 +18,6 @@ import interface_adapter.view_recipe.ViewRecipeController;
 import interface_adapter.view_recipe.ViewRecipePresenter;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
 import interface_adapter.ViewManagerModel;
-
-import use_case.Back.BackDataAccessInterface;
-import use_case.Back.BackInputBoundary;
-import use_case.Back.BackInteractor;
-import use_case.Back.BackOutputBoundary;
-import use_case.view_recipe.ViewRecipeInputBoundary;
-import use_case.view_recipe.ViewRecipeInteractor;
-import use_case.view_recipe.ViewRecipeOutputBoundary;
 
 import view.FavoritesView;
 

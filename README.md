@@ -1,5 +1,7 @@
 # Recipe Organizer
 
+[//]: # (加logo)
+
 ### Plate Pal: Your Culinary Partner
 
 Are you hungry and willing to cook today? Do you have a lot of ingredients in your fridge but don't know what to cook? Do you want to try something new? Plate Pal is here to help you! Plate Pal is a recipe organizer that helps you to find recipes based on the ingredients you have. It also allows you to save your favorite recipes and share them with your friends. Plate Pal is your culinary partner! In the heart of every kitchen lies not just ingredients and utensils, but cherished recipes that tell stories of family gatherings, beloved traditions, and adventurous culinary experiments. A Recipe Organizer serves as the guardian of these culinary treasures, offering a dedicated space to compile, categorize, and curate every dish that holds meaning. Whether you're a seasoned chef or a budding cook, this tool ensures that your recipes are easily accessible, neatly organized, and preserved for generations to come. Dive into the world of organized cooking and let your flavors tell their tales!
@@ -36,15 +38,15 @@ If you encounter any issues, please do not hesitate to contact us via email for 
 ## About Us
 
 - We are Team JAEX! (Group #197)
-- Aria (Zhihan) Hu
-- [Mingzhe Zhang](mzhe.zhang@mail.utoronto.ca)
-- Qipeng Zheng
-- Shizhao Zheng
+- [Aria (Zhihan) Hu](mailto:aria.hu@mail.utoronto.ca)
+- [Mingzhe Zhang](mailto:mzhe.zhang@mail.utoronto.ca)
+- [Qipeng Zheng](mailto:jamesqp.zheng@mail.utoronto.ca)
+- [Shizhao Zheng](mailto:shizhao.zheng@mail.utoronto.ca)
 
 ## Special Thanks
 
-- Ruihuan He (TA)
-- Thank you for your instructions and help during the semester!
+- Ruihuan He (TA): Thank you for your instructions and help during the semester!
+- Prof. Lindsey Shorser: Thank you for your guidance and support during the semester!
 
 
 ##################Development Plan###################
