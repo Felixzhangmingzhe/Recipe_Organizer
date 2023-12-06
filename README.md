@@ -2,7 +2,7 @@
 
 **Plate Pal: Your Culinary Partner**
 
-In the heart of every kitchen lies not just ingredients and utensils, but cherished recipes that tell stories of family gatherings, beloved traditions, and adventurous culinary experiments. A Recipe Organizer serves as the guardian of these culinary treasures, offering a dedicated space to compile, categorize, and curate every dish that holds meaning. Whether you're a seasoned chef or a budding cook, this tool ensures that your recipes are easily accessible, neatly organized, and preserved for generations to come. Dive into the world of organized cooking and let your flavors tell their tales!
+Are you hungry and willing to cook today? Do you have a lot of ingredients in your fridge but don't know what to cook? Do you want to try something new? Plate Pal is here to help you! Plate Pal is a recipe organizer that helps you to find recipes based on the ingredients you have. It also allows you to save your favorite recipes and share them with your friends. Plate Pal is your culinary partner! In the heart of every kitchen lies not just ingredients and utensils, but cherished recipes that tell stories of family gatherings, beloved traditions, and adventurous culinary experiments. A Recipe Organizer serves as the guardian of these culinary treasures, offering a dedicated space to compile, categorize, and curate every dish that holds meaning. Whether you're a seasoned chef or a budding cook, this tool ensures that your recipes are easily accessible, neatly organized, and preserved for generations to come. Dive into the world of organized cooking and let your flavors tell their tales!
 
 **Features and Functionality**
 
@@ -16,6 +16,12 @@ In the heart of every kitchen lies not just ingredients and utensils, but cheris
 - **Image Upload:** Attach photos to recipes, showcasing the finished dish or specific steps.
 - **Recipe Rating:** Rate recipes.
 - **Recipe Reviews:** Read and write reviews for recipes.
+
+**Special Thanks**
+
+To say thanks for sharing your time and knowledge, for every 50 dishes you cook, we will plant a tree in your honor.
+
+**API Usage**
 
 We have identified an API that can be utilized for our project. The details and endpoint can be accessed at [Recipe - Food - Nutrition API](https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch).
 
@@ -36,12 +42,28 @@ I also test the example output of running my Java code: ![Java Call Tryout](imag
 Based on the entities, we can draw the following UML Diagram: ![UML Diagram](images/UML_Diagram_not_transparent.jpg)
 
 
+**About Us**
 
-Week of 10/23 Plan:
-Implement the usercase: create_recipe
-controller:Shizhao,Qipeng
-presenter: Mingzhe, Aria
-interactor: Aria, Shizhao,
-data_access_object:Shizhao, Aria, Qiepng, Mingzhe
-Design a low-fidelity UI design: Aria, Shizhao
+- Shizhao Zheng
+- Mingzhe Zhang
+- Aria (Zhihan) Hu
+- Qipeng Zheng
+
+
+
+
+
+[//]: # (Week of 10/23 Plan:)
+
+[//]: # (Implement the usercase: create_recipe)
+
+[//]: # (controller:Shizhao,Qipeng)
+
+[//]: # (presenter: Mingzhe, Aria)
+
+[//]: # (interactor: Aria, Shizhao,)
+
+[//]: # (data_access_object:Shizhao, Aria, Qiepng, Mingzhe)
+
+[//]: # (Design a low-fidelity UI design: Aria, Shizhao)
 
