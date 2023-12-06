@@ -1,13 +1,14 @@
 package view;
 
 import entity.Recipe;
+
 import interface_adapter.Back.BackController;
-import interface_adapter.ViewManagerModel;
 import interface_adapter.view_favorites.ViewFavoritesViewModel;
 import interface_adapter.view_recipe.ViewRecipeController;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
-import org.json.JSONArray;
+import interface_adapter.ViewManagerModel;
 
+import org.json.JSONArray;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,11 +28,11 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
     public static final String viewName = "Favorites";
 
     private final ViewRecipeController viewRecipeController;
-    JList<String> RecipeList; // 创建菜谱列表
+    JList<String> RecipeList;
     JScrollPane scrollPane;
     private List<Recipe> favoriteRecipes;
     JPanel FavoritesPanel = new JPanel();
-    JButton back; // 创建菜谱按钮
+    JButton back;
     private final ViewRecipeViewModel viewRecipeViewModel;
 
     private final BackController backController;
@@ -93,7 +94,9 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
             RecipeList.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    if (e.getClickCount() == 1) { // 处理单击事件
+                    if (e.getClickCount() == 1) {
+                        // 处理单击事件
+                        // When clicked, get the selected recipe title
                         String selectedRecipeTitle = RecipeList.getSelectedValue();
                         System.out.println("The program arriving at mouseclicked");
                         if (selectedRecipeTitle != null) {
@@ -121,7 +124,8 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        if (evt.getPropertyName().equals("recipes")) {// since viewRecipeViewModel and viewFavoritesViewModel are both propertyChangeListeners, we need to distinguish them
+        if (evt.getPropertyName().equals("recipes")) {
+            // viewRecipeViewModel and viewFavoritesViewModel are both propertyChangeListeners, distinguish them
             ViewFavoritesViewModel currentState = viewFavoritesViewModel;
             getAndDisplay(currentState);
         }
@@ -134,7 +138,7 @@ public class FavoritesView extends JPanel implements ActionListener, PropertyCha
                 titleList.addElement(recipe.getTitle());
             }
             System.out.println("getAndDisplay run");
-            System.out.println("recipeList: " + titleList);//说明有
+            System.out.println("recipeList: " + titleList);  //说明有
             RecipeList.setModel(titleList);
             display(FavoritesPanel);
     }

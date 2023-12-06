@@ -286,5 +286,14 @@
     "isCooked": true,
     "content": "test",
     "isFavorite": false
+  },
+  {
+    "date": "2023-12-05T22:02:12.456796",
+    "id": 25,
+    "calories": 0,
+    "title": "ss1",
+    "isCooked": false,
+    "content": "ss1",
+    "isFavorite": false
   }
 ]
