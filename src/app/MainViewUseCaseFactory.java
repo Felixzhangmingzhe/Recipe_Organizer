@@ -2,6 +2,19 @@ package app;
 
 import data_access.FileRecipeDataAccessObject;
 
+import use_case.open_create_recipe.OpenCreateRecipeInputBoundary;
+import use_case.open_create_recipe.OpenCreateRecipeInteractor;
+import use_case.open_create_recipe.OpenCreateRecipeOutputBoundary;
+import use_case.show_daily_special.ShowDailySpecialInputBoundary;
+import use_case.show_daily_special.ShowDailySpecialInteractor;
+import use_case.show_daily_special.ShowDailySpecialOutputBoundary;
+import use_case.view_favorites.ViewFavoritesInputBoundary;
+import use_case.view_favorites.ViewFavoritesInteractor;
+import use_case.view_warehouse.ViewWarehouseInputBoundary;
+import use_case.view_warehouse.ViewWarehouseInteractor;
+import use_case.view_search.ViewSearchInputBoundary;
+import use_case.view_search.ViewSearchInteractor;
+
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeController;
 import interface_adapter.open_create_recipe.OpenCreateRecipePresenter;
@@ -20,19 +33,6 @@ import interface_adapter.view_warehouse.ViewWarehouseController;
 import interface_adapter.view_warehouse.ViewWarehousePresenter;
 import interface_adapter.view_warehouse.ViewWarehouseViewModel;
 import interface_adapter.ViewManagerModel;
-
-import use_case.open_create_recipe.OpenCreateRecipeInputBoundary;
-import use_case.open_create_recipe.OpenCreateRecipeInteractor;
-import use_case.open_create_recipe.OpenCreateRecipeOutputBoundary;
-import use_case.show_daily_special.ShowDailySpecialInputBoundary;
-import use_case.show_daily_special.ShowDailySpecialInteractor;
-import use_case.show_daily_special.ShowDailySpecialOutputBoundary;
-import use_case.view_favorites.ViewFavoritesInputBoundary;
-import use_case.view_favorites.ViewFavoritesInteractor;
-import use_case.view_warehouse.ViewWarehouseInputBoundary;
-import use_case.view_warehouse.ViewWarehouseInteractor;
-import use_case.view_search.ViewSearchInputBoundary;
-import use_case.view_search.ViewSearchInteractor;
 
 import view.MainView;
 
