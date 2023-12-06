@@ -25,17 +25,19 @@ To say thanks for sharing your time and knowledge, for every 50 dishes you cook,
 
 To run our software, simply execute the `Main.java` file. This is the primary entry point of our application. Follow these steps to get started:
 
-1. Ensure that Java is installed on your system. If not, download and install it from [Java's official website](https://www.java.com/download/).
-2. Navigate to the `src/app/Main.java` file.
-3. Recipe Organizer should now be spiced up!
+1. Make sure you have IntelliJ IDEA installed, which comes with an integrated Java environment. If not, download and install it from [IntelliJ IDEA's official website](https://www.jetbrains.com/idea/download/).
+2. Open the project in IntelliJ IDEA.
+3. Locate the `src/app/Main.java` file in the project explorer.
+4. Right-click on the `Main.java` file and select `Run 'Main.main()'` to start the application.
+5. Recipe Organizer should now be spiced up!
 
-If you encounter any issues, please contact us .
+If you encounter any issues, please do not hesitate to contact us via email for assistance. Our support team is always ready to help. You can find our contact information in the 'About Us' section of this document.
 
 ## About Us
 
 - We are Team JAEX! (Group #197)
 - Aria (Zhihan) Hu
-- Mingzhe Zhang
+- [Mingzhe Zhang](mzhe.zhang@mail.utoronto.ca)
 - Qipeng Zheng
 - Shizhao Zheng
 
