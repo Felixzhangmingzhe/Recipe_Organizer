@@ -1,19 +1,19 @@
 package app;
 
 import data_access.FileRecipeDataAccessObject;
+
 import entity.Recipe;
 import entity.RecipeFactory;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class RecipePresetter implements DataPresetter{
-    private RecipeFactory recipeFactory;
+    private final RecipeFactory recipeFactory;
     RecipePresetter() {
         this.recipeFactory = new RecipeFactory();
     }
-    public void presetData(FileRecipeDataAccessObject dao) {
+    public void presetData(FileRecipeDataAccessObject DAO) {
         LocalDateTime date = LocalDateTime.of(2021, 1, 1, 0, 0, 0);
 
         // Adding a recipe
@@ -26,7 +26,8 @@ public class RecipePresetter implements DataPresetter{
                 1000,
                 false
         );
-        if (!dao.existsJudgingbyId(newRecipe.getId())){dao.addRecipe(newRecipe);}
+        if (!DAO.existsJudgingbyId(newRecipe.getId())){
+            DAO.addRecipe(newRecipe);}
 
         // Adding more recipes for pre-setting data
         Recipe pastaRecipe = recipeFactory.create(
@@ -38,7 +39,8 @@ public class RecipePresetter implements DataPresetter{
                 1200,
                 false
         );
-        if (!dao.existsJudgingbyId(pastaRecipe.getId())){dao.addRecipe(pastaRecipe);}
+        if (!DAO.existsJudgingbyId(pastaRecipe.getId())){
+            DAO.addRecipe(pastaRecipe);}
 
         Recipe saladRecipe = recipeFactory.create(
                 3,
@@ -49,7 +51,8 @@ public class RecipePresetter implements DataPresetter{
                 800,
                 false
         );
-        if (!dao.existsJudgingbyId(saladRecipe.getId())) {dao.addRecipe(saladRecipe);}
+        if (!DAO.existsJudgingbyId(saladRecipe.getId())) {
+            DAO.addRecipe(saladRecipe);}
 
         Recipe pizzaRecipe = recipeFactory.create(
                 4,
@@ -60,7 +63,8 @@ public class RecipePresetter implements DataPresetter{
                 1500,
                 false
         );
-        if (!dao.existsJudgingbyId(pizzaRecipe.getId())) {dao.addRecipe(pizzaRecipe);}
+        if (!DAO.existsJudgingbyId(pizzaRecipe.getId())) {
+            DAO.addRecipe(pizzaRecipe);}
 
         Recipe soupRecipe = recipeFactory.create(
                 5,
@@ -71,7 +75,8 @@ public class RecipePresetter implements DataPresetter{
                 600,
                 false
         );
-        if (!dao.existsJudgingbyId(soupRecipe.getId())) {dao.addRecipe(soupRecipe);}
+        if (!DAO.existsJudgingbyId(soupRecipe.getId())) {
+            DAO.addRecipe(soupRecipe);}
 
         Recipe steakRecipe = recipeFactory.create(
                 6,
@@ -82,7 +87,8 @@ public class RecipePresetter implements DataPresetter{
                 2000,
                 false
         );
-        if (!dao.existsJudgingbyId(steakRecipe.getId())) {dao.addRecipe(steakRecipe);}
+        if (!DAO.existsJudgingbyId(steakRecipe.getId())) {
+            DAO.addRecipe(steakRecipe);}
 
         Recipe chickenRecipe = recipeFactory.create(
                 7,
@@ -93,7 +99,8 @@ public class RecipePresetter implements DataPresetter{
                 1500,
                 false
         );
-        if (!dao.existsJudgingbyId(chickenRecipe.getId())) {dao.addRecipe(chickenRecipe);}
+        if (!DAO.existsJudgingbyId(chickenRecipe.getId())) {
+            DAO.addRecipe(chickenRecipe);}
 
         Recipe cakeRecipe = recipeFactory.create(
                 8,
@@ -104,7 +111,8 @@ public class RecipePresetter implements DataPresetter{
                 2000,
                 false
         );
-        if (!dao.existsJudgingbyId(cakeRecipe.getId())) {dao.addRecipe(cakeRecipe);}
+        if (!DAO.existsJudgingbyId(cakeRecipe.getId())) {
+            DAO.addRecipe(cakeRecipe);}
 
         Recipe cookieRecipe = recipeFactory.create(
                 9,
@@ -115,7 +123,8 @@ public class RecipePresetter implements DataPresetter{
                 1500,
                 false
         );
-        if (!dao.existsJudgingbyId(cookieRecipe.getId())) {dao.addRecipe(cookieRecipe);}
+        if (!DAO.existsJudgingbyId(cookieRecipe.getId())) {
+            DAO.addRecipe(cookieRecipe);}
 
         Recipe iceCreamRecipe = recipeFactory.create(
                 10,
@@ -126,7 +135,8 @@ public class RecipePresetter implements DataPresetter{
                 1000,
                 false
         );
-        if (!dao.existsJudgingbyId(iceCreamRecipe.getId())) {dao.addRecipe(iceCreamRecipe);}
+        if (!DAO.existsJudgingbyId(iceCreamRecipe.getId())) {
+            DAO.addRecipe(iceCreamRecipe);}
 
         Recipe sushiRecipe = recipeFactory.create(
                 11,
@@ -137,7 +147,8 @@ public class RecipePresetter implements DataPresetter{
                 1000,
                 false
         );
-        if (!dao.existsJudgingbyId(sushiRecipe.getId())) {dao.addRecipe(sushiRecipe);}
+        if (!DAO.existsJudgingbyId(sushiRecipe.getId())) {
+            DAO.addRecipe(sushiRecipe);}
 
         Recipe ramenRecipe = recipeFactory.create(
                 12,
@@ -148,30 +159,29 @@ public class RecipePresetter implements DataPresetter{
                 1200,
                 false
         );
-        if (!dao.existsJudgingbyId(ramenRecipe.getId())) {dao.addRecipe(ramenRecipe);}
+        if (!DAO.existsJudgingbyId(ramenRecipe.getId())) {
+            DAO.addRecipe(ramenRecipe);}
     }
 
     @Override
-    public void presetDataOutside(FileRecipeDataAccessObject dao, int numberOfObject) throws IOException {
+    public void presetDataOutside(FileRecipeDataAccessObject DAO, int numberOfObject) throws IOException {
         LocalDateTime date = LocalDateTime.of(2021, 1, 1, 0, 0, 0);
-        setRecipesFromAPI(dao, numberOfObject);
+        setRecipesFromAPI(DAO, numberOfObject);
     }
 
-    //    @Override
-//    public void prepareData(FileRecipeDataAccessObject dao, List<Object> data) {
-//        for (Object obj : data) {
-//            if (obj instanceof Recipe) {
-//                Recipe recipe = (Recipe) obj;
-//                if (!dao.existsJudgingbyId(recipe.getId())) {
-//                    dao.addRecipe(recipe);
-//                }
-//            }
-//        }
-//    }
+    // @Override
+    // public void prepareData(FileRecipeDataAccessObject DAO, List<Object> data) {
+    //     for (Object obj : data) {
+    //         if (obj instanceof Recipe) {
+    //             Recipe recipe = (Recipe) obj;
+    //             if (!DAO.existsJudgingbyId(recipe.getId())) {
+    //                 DAO.addRecipe(recipe);
+    //             }
+    //         }
+    //     }
+    // }
 
-    public void setRecipesFromAPI(FileRecipeDataAccessObject dao, int numOfRecipes) throws IOException {
-        dao.saveRecipesFromAPIByNum(numOfRecipes);
+    public void setRecipesFromAPI(FileRecipeDataAccessObject DAO, int numOfRecipes) throws IOException {
+        DAO.saveRecipesFromAPIByNum(numOfRecipes);
     }
-
-    // 这里可以使用api来获取一些网络上的菜谱，然后添加到数据库中
 }

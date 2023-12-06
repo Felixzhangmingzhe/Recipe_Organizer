@@ -32,26 +32,38 @@ import use_case.edit_recipe.EditRecipeOutputBoundary;
 import view.EditRecipeView;
 
 public class EditRecipeViewUseCaseFactory extends UseCaseFactory {
-    public static BackController createBackController(BackViewModel backViewModel, ViewManagerModel viewManagerModel, BackDataAccessInterface DAO) {
+    public static BackController createBackController(BackViewModel backViewModel,
+                                                      ViewManagerModel viewManagerModel,
+                                                      BackDataAccessInterface DAO) {
         BackOutputBoundary backOutputBoundary = new BackPresenter(viewManagerModel, backViewModel);
-        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary,DAO);
+        BackInputBoundary backInputBoundary = new BackInteractor(backOutputBoundary, DAO);
         return new BackController(backInputBoundary);
     }
 
-    private static CreateRecipeController createCreateRecipeController(CreateRecipeViewModel createRecipeViewModel, ViewManagerModel viewManagerModel, CreateRecipeUserDataAccessInterface DAO) {
+    private static CreateRecipeController createCreateRecipeController(CreateRecipeViewModel createRecipeViewModel,
+                                                                       ViewManagerModel viewManagerModel,
+                                                                       CreateRecipeUserDataAccessInterface DAO) {
         CreateRecipeOutputBoundary createRecipeOutputBoundary = new CreateRecipePresenter(createRecipeViewModel, viewManagerModel);
         RecipeFactory recipeFactory = new RecipeFactory();
         CreateRecipeInputBoundary createRecipeInputBoundary = new CreateRecipeInteractor(createRecipeOutputBoundary, DAO, recipeFactory);
         return new CreateRecipeController(createRecipeInputBoundary);
     }
 
-    private static EditRecipeController createEditRecipeController(EditRecipeViewModel editRecipeViewModel, ViewManagerModel viewManagerModel, FileRecipeDataAccessObject DAO) {
+    private static EditRecipeController createEditRecipeController(EditRecipeViewModel editRecipeViewModel,
+                                                                   ViewManagerModel viewManagerModel,
+                                                                   FileRecipeDataAccessObject DAO) {
         EditRecipeOutputBoundary editRecipeOutputBoundary = new EditRecipePresenter(editRecipeViewModel, viewManagerModel);
         EditRecipeInputBoundary editRecipeInputBoundary = new EditRecipeInteractor(DAO,editRecipeOutputBoundary);
         return new EditRecipeController(editRecipeInputBoundary);
     }
 
-    public static EditRecipeView create(BackViewModel backViewModel, ViewManagerModel viewManagerModel, CreateRecipeViewModel createRecipeViewModel, OpenCreateRecipeViewModel openCreateRecipeViewModel, EditRecipeViewModel editRecipeViewModel,JumpToEditViewModel jumpToEditViewModel, FileRecipeDataAccessObject DAO) {
+    public static EditRecipeView create(BackViewModel backViewModel,
+                                        ViewManagerModel viewManagerModel,
+                                        CreateRecipeViewModel createRecipeViewModel,
+                                        OpenCreateRecipeViewModel openCreateRecipeViewModel,
+                                        EditRecipeViewModel editRecipeViewModel,
+                                        JumpToEditViewModel jumpToEditViewModel,
+                                        FileRecipeDataAccessObject DAO) {
         BackController backController = createBackController(backViewModel, viewManagerModel, DAO);
         CreateRecipeController createRecipeController = createCreateRecipeController(createRecipeViewModel, viewManagerModel, DAO);
         EditRecipeController editRecipeController = createEditRecipeController(editRecipeViewModel, viewManagerModel, DAO);
