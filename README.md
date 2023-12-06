@@ -17,7 +17,7 @@ Are you hungry and willing to cook today? Do you have a lot of ingredients in yo
 - **Recipe Rating:** Rate recipes.
 - **Recipe Reviews:** Read and write reviews for recipes.
 
-**Special Thanks**
+**Special Commitment**
 
 To say thanks for sharing your time and knowledge, for every 50 dishes you cook, we will plant a tree in your honor.
 
@@ -44,10 +44,16 @@ Based on the entities, we can draw the following UML Diagram: ![UML Diagram](ima
 
 **About Us**
 
+- We are Team JAEX! (Team #197)
 - Shizhao Zheng
 - Mingzhe Zhang
 - Aria (Zhihan) Hu
 - Qipeng Zheng
+
+**Special Thanks**
+
+- Ruihuan He (TA)
+- Thank you for your instructions and help during the semester!
 
 
 
