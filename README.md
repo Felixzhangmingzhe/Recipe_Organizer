@@ -1,6 +1,8 @@
 # Recipe Organizer
 
-[//]: # (加logo)
+<p align="center">
+<img src="images/platePal-logo-for-display.png" width="200" height="200">
+</p>
 
 ### Plate Pal: Your Culinary Partner
 
