@@ -9,5 +9,5 @@ public interface AddToFavoritesDataAccessInterface {
 
     Recipe getRecipeByTitle(String title);
 
-    void updateRecipe(int id, String title, String content, LocalDateTime date, boolean isFavorite, boolean isCooked, double calories);
+    void updateRecipe (int id, String title, String content, LocalDateTime date, boolean isFavorite, boolean isCooked, double calories) throws JSONException;
 }

@@ -40,7 +40,7 @@ public class ClickSearchInteractor implements ClickSearchInputBoundary{
                 clickSearchPresenter.prepareSuccessView(clickSearchOutputData);
             }
         } catch (IOException e) {
-        }catch (IOException | JSONException e) {
+        }catch (JSONException e) {
             clickSearchPresenter.prepareFailView(e.getMessage());
         }
 

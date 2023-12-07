@@ -1,6 +1,7 @@
 package app;
 
 import data_access.FileRecipeDataAccessObject;
+
 import entity.Recipe;
 import entity.RecipeFactory;
 import org.json.JSONException;
@@ -13,8 +14,7 @@ public class RecipePresetter implements DataPresetter{
     RecipePresetter() {
         this.recipeFactory = new RecipeFactory();
     }
-    public void presetData(FileRecipeDataAccessObject dao) throws JSONException {
-    public void presetData(FileRecipeDataAccessObject DAO) {
+    public void presetData(FileRecipeDataAccessObject DAO) throws JSONException {
         LocalDateTime date = LocalDateTime.of(2021, 1, 1, 0, 0, 0);
 
         // Adding a recipe

@@ -2,6 +2,7 @@ package use_case.cooked;
 
 import entity.Recipe;
 import entity.RecipeFactory;
+import org.json.JSONException;
 
 public class CookedInteractor implements CookedInputBoundary{
     // Data access interface and presenter
@@ -16,13 +17,11 @@ public class CookedInteractor implements CookedInputBoundary{
 
     // Implementation of execute method in Input Boundary
     @Override
-    public void execute(CookedInputData inputData) {
+    public void execute(CookedInputData inputData) throws JSONException {
         // Retrieve recipe by title
         Recipe recipe = cookedUserDataAccessInterface.getRecipeByRecipeTitle(inputData.getRecipeTitle());
 
         // Check if recipe is already cooked
-    public void execute(CookedInputData inputData) throws JSONException {
-        Recipe recipe = cookedDataAccessInterface.getRecipeByRecipeTitle(inputData.getRecipeTitle());
         if (recipe.getIsCooked()) {
             // remove from cooked, or uncooked
             CookedOutputData outputData = new CookedOutputData(false);

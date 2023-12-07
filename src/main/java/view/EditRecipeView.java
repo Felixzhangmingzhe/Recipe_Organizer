@@ -60,10 +60,6 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
     private double recipeCalories;
     private boolean recipeCooked;
     private String recipeCreationTime;
-    private JScrollPane scrollName;
-    private JScrollPane scrollContent;
-    private String createOrEdit = "edit";
-
     private String createOrEdit = "create";
     public String viewName = "edit recipe";
 
@@ -166,13 +162,17 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
                                 EditRecipeState currentState = editRecipeViewModel.getState();
                                 try {
                                     editRecipeController.execute(
-                                            recipeOringinalName,
+                                            recipeOriginalTitle,
                                             currentState.getRecipeTitle(),
                                             currentState.getRecipeContent());
                                 } catch (JSONException ex) {
                                     throw new RuntimeException(ex);
                                 }
-                                editRecipeController.execute(recipeOriginalTitle, currentState.getRecipeTitle(), currentState.getRecipeContent());
+                                try {
+                                    editRecipeController.execute(recipeOriginalTitle, currentState.getRecipeTitle(), currentState.getRecipeContent());
+                                } catch (JSONException e) {
+                                    throw new RuntimeException(e);
+                                }
                             }
                             else {
                                 System.out.println("When Save,CreatUsecase Run");
@@ -184,7 +184,11 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
                                 } catch (JSONException ex) {
                                     throw new RuntimeException(ex);
                                 }
-                                createRecipeController.execute(currentState.getRecipeName(), currentState.getContent());
+                                try {
+                                    createRecipeController.execute(currentState.getRecipeName(), currentState.getContent());
+                                } catch (JSONException e) {
+                                    throw new RuntimeException(e);
+                                }
                             }
 
                         }

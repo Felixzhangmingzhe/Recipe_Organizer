@@ -129,7 +129,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         // 创建并调整图像标签的大小
-        ImageIcon originalIcon = new ImageIcon("src/view/platePal-logo.png"); // 请替换为您的图片路径
+        ImageIcon originalIcon = new ImageIcon("src/main/java/view/platePal-logo.png"); // 替换为你的图标文件路径
         Image image = originalIcon.getImage();
         Image newimg = image.getScaledInstance(250, 250, Image.SCALE_SMOOTH); // 根据需要调整这些值
         ImageIcon imageIcon = new ImageIcon(newimg);
@@ -198,7 +198,7 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == activityLevelButton) {
                     // 加载原始图标
-                    ImageIcon originalIcon = new ImageIcon("src/view/tree.png"); // 替换为你的图标文件路径
+                    ImageIcon originalIcon = new ImageIcon("src/main/java/view/tree.png"); // 替换为您的图片路径
 
                     // 获取原始图像，并进行缩放
                     Image originalImage = originalIcon.getImage();

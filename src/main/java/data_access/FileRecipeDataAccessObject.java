@@ -256,7 +256,7 @@ public class FileRecipeDataAccessObject implements CreateRecipeUserDataAccessInt
     }
 
     @Override
-    public void updateRecipe(int id, String title, Object content, LocalDateTime date, boolean isFavorite, boolean isCooked, double calories) {
+    public void updateRecipe(int id, String title, Object content, LocalDateTime date, boolean isFavorite, boolean isCooked, double calories) throws JSONException {
         update(id, title, (String) content, date, isFavorite, isCooked, calories);
     }
 

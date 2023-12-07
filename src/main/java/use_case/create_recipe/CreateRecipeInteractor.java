@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import entity.Recipe;
 import entity.RecipeFactory;
+import org.json.JSONException;
 
 import java.io.IOException;
 
@@ -19,9 +20,6 @@ import java.time.LocalDateTime;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONException;
 
 public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
     // Data access interface and presenter
@@ -41,10 +39,8 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
 
     // Implementation of execute method in Input Boundary
     @Override
-    public void execute(CreateRecipeInputData createRecipeInputData) {
-        if (createRecipeInputData.getTitle().isEmpty()) {
     public void execute(CreateRecipeInputData createRecipeInputData) throws JSONException {
-        if (createRecipeInputData.getTitle().equals("")) {
+        if (createRecipeInputData.getTitle().isEmpty()) {
             createRecipePresenter.prepareFailView("Title is empty");
         } else if (createRecipeInputData.getContent().isEmpty()) {
             createRecipePresenter.prepareFailView("Content is empty");
@@ -79,13 +75,11 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
             for(JsonNode node : root) {
                 totalCalories += node.path("calories").asDouble();
             }
-
             return totalCalories;
         } catch (IOException e) {
             e.printStackTrace();
             return -1;
         }
-
     }
 
     // Helper method to get calories by recipe title

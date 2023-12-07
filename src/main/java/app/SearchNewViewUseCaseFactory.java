@@ -29,7 +29,7 @@ public class SearchNewViewUseCaseFactory {
 
     private static ClickSearchController createClickSearchController(ClickSearchViewModel clickSearchViewModel, ViewManagerModel viewManagerModel, FileRecipeDataAccessObject dao) {
         ClickSearchPresenter clickSearchOutputBoundary = new ClickSearchPresenter(clickSearchViewModel, viewManagerModel);
-        ClickSearchInputBoundary clickSearchInputBoundary = new ClickSearchInteractor(clickSearchOutputBoundary, dao);
+        ClickSearchInputBoundary clickSearchInputBoundary = new ClickSearchInteractor(dao, clickSearchOutputBoundary);
         return new ClickSearchController(clickSearchInputBoundary);
     }
 

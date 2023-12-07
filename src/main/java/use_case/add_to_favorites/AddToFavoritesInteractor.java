@@ -16,13 +16,11 @@ public class AddToFavoritesInteractor implements AddToFavoritesInputBoundary {
 
     // Implementation of execute method in Input Boundary
     @Override
-    public void execute(AddToFavoritesInputData inputData) {
+    public void execute(AddToFavoritesInputData inputData) throws JSONException {
         // Retrieve recipe by title
         Recipe recipe = addToFavoritesUserDataAccessInterface.getRecipeByTitle(inputData.getTitle());
 
         // Check if recipe is already in favorites
-    public void execute(AddToFavoritesInputData inputData) throws JSONException {
-        Recipe recipe = userDataAccess.getRecipeByTitle(inputData.getTitle());
         if (recipe.getIsFavorite()) {
             // remove from favorites
             boolean isFavorite = false;

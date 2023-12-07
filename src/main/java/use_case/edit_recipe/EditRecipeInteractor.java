@@ -17,9 +17,6 @@ public class EditRecipeInteractor implements EditRecipeInputBoundary {
     // Implementation of execute method in Input Boundary
     @Override
     public void execute(EditRecipeInputData inputData) throws JSONException {
-        // 获取现有菜谱
-        Recipe recipe = userDataAccess.getRecipeByTitle(inputData.getOriginalRecipeTiltle());
-    public void execute(EditRecipeInputData inputData) {
         // Retrieve recipe by title
         Recipe recipe = editRecipeDataAccessInterface.getRecipeByTitle(inputData.getOriginalRecipeTiltle());
         String updateTitle = inputData.getTitle();
