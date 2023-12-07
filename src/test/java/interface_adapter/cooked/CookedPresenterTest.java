@@ -36,7 +36,7 @@ class CookedPresenterTest {
 
         verify(state, times(1)).setSetCookedSuccess(true);
         verify(cookedViewModel, times(1)).setState(state);
-        verify(cookedViewModel, times(1)).setSetCookedSuccess(true);
+        verify(state, times(1)).setSetCookedSuccess(true);
         verify(cookedViewModel, times(1)).firePropertyChanged();
         verify(viewManagerModel, times(1)).setActiveView(cookedViewModel.getViewName());
         verify(viewManagerModel, times(1)).firePropertyChanged();
@@ -50,7 +50,7 @@ class CookedPresenterTest {
 
         verify(state, times(1)).setSetCookedSuccess(false);
         verify(cookedViewModel, times(1)).setState(state);
-        verify(cookedViewModel, times(1)).setSetCookedSuccess(false);
+        verify(state, times(1)).setSetCookedSuccess(false);
         verify(cookedViewModel, times(1)).firePropertyChanged();
         verify(viewManagerModel, times(1)).setActiveView(cookedViewModel.getViewName());
         verify(viewManagerModel, times(1)).firePropertyChanged();
