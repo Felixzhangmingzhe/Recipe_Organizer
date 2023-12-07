@@ -1,7 +1,7 @@
 # Recipe Organizer
 
 <p align="center">
-<img src="images/platePal-logo-for-display.png" width="200" height="200">
+<img src="images/platePal-logo-for-display.png" width="200" height="200" alt="Logo">
 </p>
 
 ### Plate Pal: Your Culinary Partner
@@ -61,6 +61,8 @@ We have identified an API that can be utilized for our project. The details and 
 Here's the screenshot of using a tool to try out the API: ![API Tryout](images/API_Tryout.png)![API TRY](images/API_TRY.png)
 
 I also test the example output of running my Java code: ![Java Call Tryout](images/Java_Call_Tryout.png)
+
+
 
 **A list of any technical problems blocking progress**
 
