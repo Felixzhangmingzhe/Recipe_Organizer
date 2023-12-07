@@ -8,7 +8,7 @@
 
 Are you hungry and willing to cook today? Do you have a lot of ingredients in your fridge but don't know what to cook? Do you want to try something new? Plate Pal is here to help you! Plate Pal is a recipe organizer that helps you to find recipes based on the ingredients you have. It also allows you to save your favorite recipes and share them with your friends. Plate Pal is your culinary partner! In the heart of every kitchen lies not just ingredients and utensils, but cherished recipes that tell stories of family gatherings, beloved traditions, and adventurous culinary experiments. A Recipe Organizer serves as the guardian of these culinary treasures, offering a dedicated space to compile, categorize, and curate every dish that holds meaning. Whether you're a seasoned chef or a budding cook, this tool ensures that your recipes are easily accessible, neatly organized, and preserved for generations to come. Dive into the world of organized cooking and let your flavors tell their tales!
 
-## Features and Functionality
+### Features and Functionality
 
 - **Recipe Storage:** Store all your favorite recipes in one repository (We can call it Favorites).
 - **Categorization:** Classify recipes by type, cuisine, dietary preference, etc.
@@ -21,11 +21,11 @@ Are you hungry and willing to cook today? Do you have a lot of ingredients in yo
 - **Recipe Rating:** Rate recipes.
 - **Recipe Reviews:** Read and write reviews for recipes.
 
-## Special Commitment
+### <img src="src/view/tree.png" width="20" height="20" alt="Logo"> Special Commitment <img src="src/view/tree.png" width="20" height="20" alt="Logo">
 
 To say thanks for sharing your time and knowledge, for every 50 dishes you cook, we will plant a tree in your honor.
 
-## Main Program
+### Main Program
 
 To run our software, simply execute the `Main.java` file. This is the primary entry point of our application. Follow these steps to get started:
 
@@ -37,7 +37,7 @@ To run our software, simply execute the `Main.java` file. This is the primary en
 
 If you encounter any issues, please do not hesitate to contact us via email for assistance. Our support team is always ready to help. You can find our contact information in the 'About Us' section of this document.
 
-## About Us
+### About Us
 
 - We are Team JAEX! (Group #197)
 - [Aria (Zhihan) Hu](mailto:aria.hu@mail.utoronto.ca)
@@ -45,7 +45,7 @@ If you encounter any issues, please do not hesitate to contact us via email for 
 - [Qipeng Zheng](mailto:jamesqp.zheng@mail.utoronto.ca)
 - [Shizhao Zheng](mailto:shizhao.zheng@mail.utoronto.ca)
 
-## Special Thanks
+### Special Thanks
 
 - Ruihuan He (TA): Thank you for your instructions and help during the semester!
 - Prof. Lindsey Shorser: Thank you for your guidance and support during the semester!
@@ -55,7 +55,7 @@ If you encounter any issues, please do not hesitate to contact us via email for 
 ##################### Development Plan ######################
 
 
-## API Usage
+### API Usage
 
 **Discarded API**
 
@@ -74,7 +74,7 @@ After comparing several APIs, we decided to use the [API Ninjas](https://api-nin
 
 [//]: # (Screenshots and usage goes here)
 
-**A list of any technical problems blocking progress**
+### A list of any technical problems blocking progress
 
 - [X] Find and Use an API
 - [X] Learn how to use the API
@@ -83,9 +83,9 @@ After comparing several APIs, we decided to use the [API Ninjas](https://api-nin
 - [X] Use Git to manage the project
 - [X] How to visualize the data after calling from the API
 
-Perfect! We have successfully solved the problems and can use the APIs in our project.
+Hooray! We have successfully solved the problems and can use the APIs in our project.
 
-## UML Diagram
+### UML Diagram
 
 In our software design, we apply Clean Architecture. The following diagram shows the relationship between the entities in our project.
 
