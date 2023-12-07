@@ -1,7 +1,5 @@
 package app;
 
-import data_access.FileRecipeDataAccessObject;
-
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackPresenter;
 import interface_adapter.Back.BackViewModel;
@@ -19,6 +17,8 @@ import use_case.click_search.ClickSearchInputBoundary;
 import use_case.click_search.ClickSearchInteractor;
 
 import view.SearchView;
+
+import data_access.FileRecipeDataAccessObject;
 
 import static app.MainViewUseCaseFactory.createViewSearchController;
 
