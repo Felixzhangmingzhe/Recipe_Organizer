@@ -1,16 +1,22 @@
 package use_case.Back;
 
 public class BackInteractor implements BackInputBoundary{
-    private BackOutputBoundary presenter;
-    private BackDataAccessInterface backDataAccessInterface;
-    public BackInteractor(BackOutputBoundary presenter , BackDataAccessInterface backDataAccessInterface) {
-        this.backDataAccessInterface = backDataAccessInterface;
-        this.presenter = presenter;
+    // Data access interface and presenter
+    private final BackDataAccessInterface backUserDataAccessInterface;
+    private final BackOutputBoundary backPresenter;
+
+    // Constructor
+    public BackInteractor(BackOutputBoundary backPresenter , BackDataAccessInterface backUserDataAccessInterface) {
+        this.backUserDataAccessInterface = backUserDataAccessInterface;
+        this.backPresenter = backPresenter;
     }
+
+    // Implementation of execute method in Input Boundary
     @Override
     public void execute() {
-        int numOfCooked = backDataAccessInterface.getNumOfCooked();
+        int numOfCooked = backUserDataAccessInterface.getNumOfCooked();
+        // Output data indicating back to main view
         BackOutputData backOutputData = new BackOutputData(numOfCooked);
-        presenter.prepareSuccessView(backOutputData);
+        backPresenter.prepareSuccessView(backOutputData);
     }
 }

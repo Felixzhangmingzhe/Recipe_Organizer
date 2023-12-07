@@ -78,15 +78,17 @@ public class Main {
 
 
         // 在数据库里写入一些菜谱
+        // Preset some recipes in the database
         RecipePresetter recipePresetter = new RecipePresetter();
         FileRecipeDataAccessObject prDAO = new FileRecipeDataAccessObject("recipes.json");
         recipePresetter.presetData(prDAO);
+        // recipePresetter.presetDataOutside(prDAO, 37);
         // 创建并将视图添加到主面板:仓库视图
         WarehouseView warehouseView = WarehouseViewUseCaseFactory.create(viewRecipeViewModel, viewWarehouseViewModel,viewManagerModel, warehouseDAO, clickSearchViewModel, backViewModel);
         views.add(warehouseView, warehouseView.viewName);
 
 
-        // viewManagerModel.setActiveView(warehouseView.viewName);//这样写，还是什么都没显示，说明就是warehouseView的问题
+        // viewManagerModel.setActiveView(warehouseView.viewName);  //这样写，还是什么都没显示，说明就是warehouseView的问题
         // viewManagerModel.firePropertyChanged();
         // 创建并将视图添加到主面板:收藏夹视图
         FavoritesView favoritesView = FavoritesViewUseCaseFactory.create(viewRecipeViewModel, viewManagerModel, viewFavoritesViewModel, warehouseDAO,backViewModel);

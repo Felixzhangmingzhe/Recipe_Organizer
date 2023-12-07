@@ -1,12 +1,18 @@
 package use_case.create_recipe;
 
+// import Json
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import entity.Recipe;
 import entity.RecipeFactory;
 
 import java.io.IOException;
+
+// import Chinese and English
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+
 import java.time.LocalDateTime;
 
 // import API
@@ -18,35 +24,46 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONException;
 
 public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
-    final CreateRecipeOutputBoundary createRecipePresenter;
-    final CreateRecipeUserDataAccessInterface createRecipeUserDataAccessInterface;
+    // Data access interface and presenter
+    private final CreateRecipeUserDataAccessInterface createRecipeUserDataAccessInterface;
+    private final CreateRecipeOutputBoundary createRecipePresenter;
+    final RecipeFactory recipeFactory;
+
+    // API token
     private static final String apiToken = "o2vhKjkn5tmz+/B9kpjD6Q==mOt0YRhnaodNiwxj";
 
-    final RecipeFactory recipeFactory;
+    // Constructor
     public CreateRecipeInteractor(CreateRecipeOutputBoundary createRecipePresenter, CreateRecipeUserDataAccessInterface createRecipeUserDataAccessInterface, RecipeFactory recipeFactory) {
-        this.createRecipePresenter = createRecipePresenter;
         this.createRecipeUserDataAccessInterface = createRecipeUserDataAccessInterface;
+        this.createRecipePresenter = createRecipePresenter;
         this.recipeFactory = recipeFactory;
     }
+
+    // Implementation of execute method in Input Boundary
     @Override
+    public void execute(CreateRecipeInputData createRecipeInputData) {
+        if (createRecipeInputData.getTitle().isEmpty()) {
     public void execute(CreateRecipeInputData createRecipeInputData) throws JSONException {
         if (createRecipeInputData.getTitle().equals("")) {
             createRecipePresenter.prepareFailView("Title is empty");
-        } else if (createRecipeInputData.getContent().equals("")) {
-            createRecipePresenter.prepareFailView("Content is empty");}
-        else if (createRecipeUserDataAccessInterface.existsByName(createRecipeInputData.getTitle())) {
+        } else if (createRecipeInputData.getContent().isEmpty()) {
+            createRecipePresenter.prepareFailView("Content is empty");
+        } else if (createRecipeUserDataAccessInterface.existsByName(createRecipeInputData.getTitle())) {
             createRecipePresenter.prepareFailView("Recipe already exists");
         } else {
-            int id = getNextRecipeId(); // Implement this method to get the next ID from the database
+            // Create a new recipe
+            int id = getNextRecipeId();
             LocalDateTime now = LocalDateTime.now();
             double calories = getCalsByName(createRecipeInputData.getTitle());
             Recipe recipe = recipeFactory.create(id, createRecipeInputData.getTitle(), createRecipeInputData.getContent(), now, false, calories, false);
             createRecipeUserDataAccessInterface.save(recipe);
             // Output the recipe to the view
-            CreateRecipeOutputData createRecipeOutputData = new CreateRecipeOutputData(recipe.getId(),recipe.getTitle(), recipe.getContent(),recipe.getIsFavorite(), recipe.getCalories(), recipe.getDate());
-            createRecipePresenter.prepareSuccessView(createRecipeOutputData);// 为啥菜谱会清空？
+            CreateRecipeOutputData createRecipeOutputData = new CreateRecipeOutputData(recipe.getId(), recipe.getTitle(), recipe.getContent(), recipe.getIsFavorite(), recipe.getCalories(), recipe.getDate());
+            createRecipePresenter.prepareSuccessView(createRecipeOutputData);
         }
     }
+
+    // Fetch calories data from API
     public static double fetchCaloriesData(String recipeName) throws IOException {
         URL url = new URL("https://api.api-ninjas.com/v1/nutrition?query=" + URLEncoder.encode(recipeName, StandardCharsets.UTF_8));
 
@@ -54,6 +71,7 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
         connection.setRequestProperty("X-Api-Key" , apiToken);
         connection.setRequestProperty("Accept", "application/json");
 
+        // Get response and calculate total calories
         try (InputStream responseStream = connection.getInputStream()) {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode root = mapper.readTree(responseStream);
@@ -70,20 +88,24 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
 
     }
 
+    // Helper method to get calories by recipe title
     public static double getCalsByName(String title) {
         try {
             return fetchCaloriesData(title);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return -2;// 这样当calorie没有被找到时，就会返回-1，然后在之后显示的时候，遇到-1就会显示“未知”
+        return -2;  // If cannot fetch calories, return -1, and if calories is -1, then display "unknown" in view
     }
 
+    // Helper method to get next recipe id
     private int getNextRecipeId() {
         int lastUsedId = createRecipeUserDataAccessInterface.getLastUsedRecipeIdFromDatabase();
         return lastUsedId + 1;
     }
+
     public static void main(String[] args) throws IOException {
+        // Test calories fetching
         System.out.println("hello");
         System.out.println(getCalsByName("1lb brisket and fries"));
         System.out.println(fetchCaloriesData("1lb brisket and fries"));

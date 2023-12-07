@@ -33,14 +33,28 @@ import org.json.JSONException;
 import use_case.open_create_recipe.OpenCreateRecipeInputBoundary;
 
 public class EditRecipeView extends JPanel implements ActionListener, PropertyChangeListener {
+    // UI components
     private final JButton saveButton;
     private final JButton cancelButton;
     private final JTextArea recipeNameField;
     private final JTextArea recipeContentArea;
+    private final JScrollPane scrollName;
+    private final JScrollPane scrollContent;
+
+    // ViewModels and Controllers
+    private final BackController backController;
+    private final BackViewModel backViewModel;
+    private final CreateRecipeController createRecipeController;
+    private final CreateRecipeViewModel createRecipeViewModel;
+    private EditRecipeController editRecipeController;
+    private final EditRecipeViewModel editRecipeViewModel;
     private final JumpToEditViewModel jumpToEditViewModel;
+    private final OpenCreateRecipeViewModel openCreateRecipeViewModel;
+
+    // Variables of recipe entity
     private int recipeId;
-    private String recipeName;
-    private String recipeOringinalName;
+    private String recipeTitle;
+    private String recipeOriginalTitle;
     private String recipeContent;
     private boolean recipeIsFavorite;
     private double recipeCalories;
@@ -50,36 +64,34 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
     private JScrollPane scrollContent;
     private String createOrEdit = "edit";
 
+    private String createOrEdit = "create";
     public String viewName = "edit recipe";
-    // Use Case: Open Create Recipe
-    private OpenCreateRecipeViewModel openCreateRecipeViewModel;
-    // Use Case: Back
-    private BackController backController;
-    private BackViewModel backViewModel;
-    // Use Case: Create Recipe
-    private CreateRecipeController createRecipeController;
-    private CreateRecipeViewModel createRecipeViewModel;
-    // Use Case: Jump To Edit
-    private EditRecipeViewModel editRecipeViewModel;
-    private EditRecipeController editRecipeController;
 
-    public EditRecipeView(BackController backController, BackViewModel backViewModel,
+    // Constructor
+    public EditRecipeView(BackController backController,
+                          BackViewModel backViewModel,
+                          CreateRecipeController createRecipeController,
+                          CreateRecipeViewModel createRecipeViewModel,
+                          EditRecipeController editRecipeController,
+                          EditRecipeViewModel editRecipeViewModel,
                           JumpToEditViewModel jumpToEditViewModel,
-                          OpenCreateRecipeViewModel openCreateRecipeViewModel,
-                          EditRecipeViewModel editRecipeViewModel, EditRecipeController editRecipeController,
-                          CreateRecipeController createRecipeController, CreateRecipeViewModel createRecipeViewModel) {
+                          OpenCreateRecipeViewModel openCreateRecipeViewModel) {
+        // Initialize UI components
+        // Add action listeners to buttons
         this.backController = backController;
         this.backViewModel = backViewModel;
         this.createRecipeController = createRecipeController;
         this.createRecipeViewModel = createRecipeViewModel;
         this.createRecipeViewModel.addPropertyChangeListener(this);
+        this.editRecipeViewModel = editRecipeViewModel;
+        this.editRecipeViewModel.addPropertyChangeListener(this);
         this.jumpToEditViewModel = jumpToEditViewModel;
         this.jumpToEditViewModel.addPropertyChangeListener(this);
         this.openCreateRecipeViewModel = openCreateRecipeViewModel;
         this.openCreateRecipeViewModel.addPropertyChangeListener(this);
-        this.editRecipeViewModel = editRecipeViewModel;
-        this.editRecipeViewModel.addPropertyChangeListener(this);
+
         // 初始化界面元素
+        // Initialize UI
         JLabel titleLabel = new JLabel("Edit Recipe");
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
@@ -89,9 +101,11 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
         cancelButton = new JButton("Back");
 
         // 设置布局
+        // Set layout
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        // 添加元素到面板,使用 GridBagLayout
+        // 添加元素到面板，使用 GridBagLayout
+        // Use GridBagLayout to add elements to the panel
         setLayout(new GridBagLayout());
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -140,11 +154,12 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
         add(cancelButton, gbc);
 
         // 添加事件监听器
+        // Add event listeners
         saveButton.addActionListener(
                 new ActionListener() {
                     @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (e.getSource().equals(saveButton)) {
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getSource().equals(saveButton)) {
                             System.out.println("When Save,CreateOrEdit is " + createOrEdit);
                             if (createOrEdit.equals("edit")) {
                                 System.out.println("When Save,EditUsecase Run");
@@ -157,6 +172,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
                                 } catch (JSONException ex) {
                                     throw new RuntimeException(ex);
                                 }
+                                editRecipeController.execute(recipeOriginalTitle, currentState.getRecipeTitle(), currentState.getRecipeContent());
                             }
                             else {
                                 System.out.println("When Save,CreatUsecase Run");
@@ -168,6 +184,7 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
                                 } catch (JSONException ex) {
                                     throw new RuntimeException(ex);
                                 }
+                                createRecipeController.execute(currentState.getRecipeName(), currentState.getContent());
                             }
 
                         }
@@ -177,35 +194,40 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
         cancelButton.addActionListener(
                 new ActionListener() {
                     @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (e.getSource().equals(cancelButton)) {
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getSource().equals(cancelButton)) {
                         }
                         // 处理取消按钮点击事件，可能需要关闭编辑界面
                         // 执行取消逻辑...
+                        // Execute cancel action
                         backController.execute();
                     }
                 }
         );
 
+        // Add document listeners to recipe title and content
         recipeTextListener();
 
     }
 
     private void recipeTextListener() {
         // 使用 DocumentListener 监听文本内容变化
+        // Use DocumentListener to listen the text content changes
+
+        // Add AddKeyListener to the recipeNameField
         recipeNameField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
-            public void insertUpdate(DocumentEvent e) {
+            public void insertUpdate(DocumentEvent evt) {
                 updateState();
             }
 
             @Override
-            public void removeUpdate(DocumentEvent e) {
+            public void removeUpdate(DocumentEvent evt) {
                 updateState();
             }
 
             @Override
-            public void changedUpdate(DocumentEvent e) {
+            public void changedUpdate(DocumentEvent evt) {
                 updateState();
             }
 
@@ -214,26 +236,26 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
                 CreateRecipeState currentState = createRecipeViewModel.getState();
                 currentState.setRecipeName(recipeNameField.getText());
                 createRecipeViewModel.setState(currentState);
-                //
                 EditRecipeState editState = editRecipeViewModel.getState();
                 editState.setRecipeTitle(recipeNameField.getText());
                 editRecipeViewModel.setState(editState);
-
             }
         });
+
+        // Add AddKeyListener to the recipeContentArea
         recipeContentArea.getDocument().addDocumentListener(new DocumentListener() {
             @Override
-            public void insertUpdate(DocumentEvent e) {
+            public void insertUpdate(DocumentEvent evt) {
                 updateState();
             }
 
             @Override
-            public void removeUpdate(DocumentEvent e) {
+            public void removeUpdate(DocumentEvent evt) {
                 updateState();
             }
 
             @Override
-            public void changedUpdate(DocumentEvent e) {
+            public void changedUpdate(DocumentEvent evt) {
                 updateState();
             }
 
@@ -249,53 +271,55 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
             }
         });
     }
-        // Add AddKeyListener to the recipeNameField
-//        recipeNameField.addKeyListener(
-//                new KeyListener() {
-//                    @Override
-//                    public void keyTyped(KeyEvent e) {
-//                        CreateRecipeState currentState = createRecipeViewModel.getState();
-//                        currentState.setRecipeName(recipeNameField.getText() + e.getKeyChar());
-//                        createRecipeViewModel.setState(currentState);
-//
-//                    }
-//
-//                    @Override
-//                    public void keyPressed(KeyEvent e) {
-//                    }
-//
-//                    @Override
-//                    public void keyReleased(KeyEvent e) {
-//                }
-//            }
-//        );
+
+
+        // ##########################################Discarded Code Blocks##########################################
+
+
+        // recipeNameField.addKeyListener(
+        //         new KeyListener() {
+        //             @Override
+        //             public void keyTyped(KeyEvent evt) {
+        //                 CreateRecipeState currentState = createRecipeViewModel.getState();
+        //                 currentState.setRecipeName(recipeNameField.getText() + evt.getKeyChar());
+        //                 createRecipeViewModel.setState(currentState);
+
+        //             }
+
+        //             @Override
+        //             public void keyPressed(KeyEvent evt) {
+        //             }
+
+        //             @Override
+        //             public void keyReleased(KeyEvent evt) {
+        //         }
+        //     }
+        // );
+
+
+        // recipeContentArea.addKeyListener(new KeyListener() {
+        //     @Override
+        //     public void keyTyped(KeyEvent evt) {
+        //         CreateRecipeState currentState = createRecipeViewModel.getState();
+        //         currentState.setContent(recipeContentArea.getText() + evtgetKeyChar());
+        //         createRecipeViewModel.setState(currentState);
+        //     }
+
+        //     @Override
+        //     public void keyPressed(KeyEvent evt) {
+
+        //     }
+
+        //     @Override
+        //     public void keyReleased(KeyEvent evt) {
+        //     }
+        // }
+
+        // ##########################################Discarded Code Blocks##########################################
 
 
 
-
-//        Add AddKeyListener to the recipeContentArea
-//        recipeContentArea.addKeyListener(new KeyListener() {
-//            @Override
-//            public void keyTyped(KeyEvent e) {
-//                CreateRecipeState currentState = createRecipeViewModel.getState();
-//                currentState.setContent(recipeContentArea.getText() + e.getKeyChar());
-//                createRecipeViewModel.setState(currentState);
-//            }
-//
-//            @Override
-//            public void keyPressed(KeyEvent e) {
-//
-//            }
-//
-//            @Override
-//            public void keyReleased(KeyEvent e) {
-//            }
-//        }
-
-
-
-
-
+    // Add action listener methods
     public void addSaveButtonListener(ActionListener listener) {
         saveButton.addActionListener(listener);
     }
@@ -304,29 +328,44 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
         cancelButton.addActionListener(listener);
     }
 
+
+    // Implement ActionListener
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == saveButton) {
+    public void actionPerformed(ActionEvent evt) {
+        if (evt.getSource() == saveButton) {
             // 处理保存按钮点击事件，可能需要获取输入的菜谱信息并保存
             String recipeName = recipeNameField.getText();
             String recipeContent = recipeContentArea.getText();
             // 执行保存逻辑...
-        } else if (e.getSource() == cancelButton) {
+            // Save action
+        } else if (evt.getSource() == cancelButton) {
             // 处理取消按钮点击事件，可能需要关闭编辑界面
             // 执行取消逻辑...
+            // Cancel action
         }
     }
 
+    // Implement PropertyChangeListener
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+
+        // StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+
+        // 遍历输出调用栈信息
+        // for (StackTraceElement element : stackTrace) {
+        //     System.out.println(element.toString());
+        // }
+
         if (evt.getPropertyName().equals("state")) {
             CreateRecipeState state = (CreateRecipeState) evt.getNewValue();
             getAndDisplayCreateRecipeError(state);
-        }
-        else if (evt.getPropertyName().equals("jump")) {
+        } else if (evt.getPropertyName().equals("jump")) {
             System.out.println("EditRecipeView.propertyChange");
             JumpToEditState state = (JumpToEditState) evt.getNewValue();
             getAndDisplayJumpToEdit(state);
+        } else if (evt.getPropertyName().equals("open")) {
+            EditRecipeState state = (EditRecipeState) evt.getNewValue();
+            refresh();
         }
     }
 
@@ -343,18 +382,18 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
     }
 
     public void getAndDisplayJumpToEdit(JumpToEditState state) {
-        recipeName = state.getRecipeTitle();
-        recipeOringinalName = state.getRecipeTitle();
+        recipeTitle = state.getRecipeTitle();
+        recipeOriginalTitle = state.getRecipeTitle();
         recipeContent = state.getRecipeContent() ;
         recipeId = state.getRecipeId();
         recipeIsFavorite = state.getRecipeIsFavorite();
         recipeCalories = state.getRecipeCalories();
         recipeCooked = state.getRecipeCooked();
         recipeCreationTime = state.getRecipeCreationTime().toString();
-        System.out.println(recipeName);
+        System.out.println(recipeTitle);
         System.out.println(recipeContent);
 
-        recipeNameField.setText(recipeName);
+        recipeNameField.setText(recipeTitle);
         scrollName.setViewportView(recipeNameField);
         recipeContentArea.setText(recipeContent);
         scrollContent.setViewportView(recipeContentArea);
@@ -365,12 +404,14 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
         recipeContentArea.setText("");
         createOrEdit = "create";
     }
-//     public void getAndDisplayCreateRecipeError(EditRecipeState state) {
-//        if (state.getRecipeNameError() != null) {
-//            JOptionPane.showMessageDialog(this, state.getRecipeNameError());
-//        }
-//        else if (state.getContentError() != null) {
-//            JOptionPane.showMessageDialog(this, state.getContentError());
-//        }
-//    }
+
+    // public void getAndDisplayCreateRecipeError(EditRecipeState state) {
+    //     if (state.getRecipeNameError() != null) {
+    //         JOptionPane.showMessageDialog(this, state.getRecipeNameError());
+    //     }
+    //     else if (state.getContentError() != null) {
+    //         JOptionPane.showMessageDialog(this, state.getContentError());
+    //     }
+    // }
+
 }

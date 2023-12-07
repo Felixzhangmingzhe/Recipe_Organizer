@@ -1,20 +1,11 @@
 [
   {
-    "date": "2023-11-29T22:20:25.312016",
-    "id": 6,
-    "calories": -1,
-    "title": "b",
-    "isCooked": false,
-    "content": "12",
-    "isFavorite": false
-  },
-  {
     "date": "2021-01-01T00:00",
     "id": 1,
     "calories": 1000,
-    "title": "Spaghetti Bolognese",
+    "title": "Sample",
     "isCooked": false,
-    "content": "Cook the spaghetti. Cook the ground beef. Mix them together.",
+    "content": "This is a sample Recipe.",
     "isFavorite": false
   },
   {
@@ -36,1668 +27,219 @@
     "isFavorite": true
   },
   {
-    "date": "2023-11-29T22:26:10.033732",
+    "date": "2021-01-01T00:00",
+    "id": 4,
+    "calories": 1500,
+    "title": "Pizza Margherita",
+    "isCooked": false,
+    "content": "Make dough. Add tomato sauce and cheese. Bake until crispy.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 5,
+    "calories": 600,
+    "title": "Tomato Soup",
+    "isCooked": false,
+    "content": "Chop tomatoes. Boil them. Add salt and pepper.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
+    "id": 6,
+    "calories": 2000,
+    "title": "Steak",
+    "isCooked": false,
+    "content": "Season steak. Grill it until medium rare.",
+    "isFavorite": false
+  },
+  {
+    "date": "2021-01-01T00:00",
     "id": 7,
-    "calories": -1,
-    "title": "C",
+    "calories": 1500,
+    "title": "Roast Chicken",
     "isCooked": false,
-    "content": "21",
+    "content": "Season chicken. Roast it until cooked.",
     "isFavorite": false
   },
   {
-    "date": "2023-11-29T22:29:32.326442",
+    "date": "2021-01-01T00:00",
     "id": 8,
-    "calories": -1,
-    "title": "21",
+    "calories": 2000,
+    "title": "Chocolate Cake",
     "isCooked": false,
-    "content": "2023-11-29T22:26:10.033732",
+    "content": "Mix flour, eggs, and chocolate. Bake until cooked.",
     "isFavorite": false
   },
   {
-    "date": "2023-11-29T22:30:36.656641",
+    "date": "2021-01-01T00:00",
     "id": 9,
-    "calories": -1,
-    "title": "12",
-    "isCooked": true,
-    "content": "WW",
+    "calories": 1500,
+    "title": "Chocolate Chip Cookies",
+    "isCooked": false,
+    "content": "Mix flour, eggs, and chocolate chips. Bake until cooked.",
     "isFavorite": false
   },
   {
-    "date": "2023-11-29T22:30:52.094608",
+    "date": "2021-01-01T00:00",
     "id": 10,
-    "calories": -1,
-    "title": "WW",
+    "calories": 1000,
+    "title": "Vanilla Ice Cream",
     "isCooked": false,
-    "content": "2023-11-29T22:30:36.656641",
+    "content": "Mix cream, sugar, and vanilla. Freeze until solid.  aa",
     "isFavorite": false
   },
   {
-    "date": "2023-11-29T22:41:54.589537",
+    "date": "2021-01-01T00:00",
     "id": 11,
-    "calories": -1,
-    "title": "1",
-    "isCooked": true,
-    "content": "234r432",
-    "isFavorite": true
+    "calories": 1000,
+    "title": "Sushi",
+    "isCooked": false,
+    "content": "Cook rice. Add fish and vegetables. Roll them together.",
+    "isFavorite": false
   },
   {
-    "date": "2023-11-29T22:42:04.194274",
+    "date": "2021-01-01T00:00",
     "id": 12,
-    "calories": -1,
-    "title": "234r432",
-    "isCooked": true,
-    "content": "2023-11-29T22:41:54.589537",
+    "calories": 1200,
+    "title": "Ramen",
+    "isCooked": false,
+    "content": "Boil broth. Add noodles, egg, and pork. Cook until noodles are done.",
     "isFavorite": false
   },
   {
-    "date": "2023-11-29T22:57:55.650859",
+    "date": "2023-12-04T05:14:07.755291",
     "id": 13,
-    "calories": -1,
-    "title": "egg",
-    "isCooked": false,
-    "content": "qgfdssfwng",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T22:57:57.787555",
-    "id": 14,
-    "calories": -1,
-    "title": "qgfdssfwng",
-    "isCooked": false,
-    "content": "2023-11-29T22:57:55.650859",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T22:59:53.269643",
-    "id": 15,
-    "calories": -1,
-    "title": "12",
-    "isCooked": false,
-    "content": "23",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T22:59:59.724540",
-    "id": 16,
-    "calories": -1,
-    "title": "23",
-    "isCooked": false,
-    "content": "2023-11-29T22:59:53.269643",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:00:01.109127",
-    "id": 17,
-    "calories": -1,
-    "title": "2023-11-29T22:59:53.269643",
-    "isCooked": false,
-    "content": "2023-11-29T22:59:59.724540",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:00:01.675465",
-    "id": 18,
-    "calories": -1,
-    "title": "2023-11-29T22:59:59.724540",
-    "isCooked": false,
-    "content": "2023-11-29T23:00:01.109127",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:00:09.724019",
-    "id": 19,
-    "calories": -1,
-    "title": "12123change",
-    "isCooked": false,
-    "content": "2023-11-29T23:00:01.675465change",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:01:31.643169",
-    "id": 20,
-    "calories": -1,
-    "title": "2023-",
-    "isCooked": false,
-    "content": "2023-11-29T23:00:09.724019",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:01:33.742220",
-    "id": 21,
-    "calories": -1,
-    "title": "2023-11-29T23:00:09.724019",
-    "isCooked": false,
-    "content": "2023-11-29T23:01:31.643169",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:01:34.082908",
-    "id": 22,
-    "calories": -1,
-    "title": "2023-11-29T23:01:31.643169",
-    "isCooked": false,
-    "content": "2023-11-29T23:01:33.742220",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:01:34.305778",
-    "id": 23,
-    "calories": -1,
-    "title": "2023-11-29T23:01:33.742220",
-    "isCooked": false,
-    "content": "2023-11-29T23:01:34.082908",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:01:34.530120",
-    "id": 24,
-    "calories": -1,
-    "title": "2023-11-29T23:01:34.082908",
-    "isCooked": false,
-    "content": "2023-11-29T23:01:34.305778",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:02:55.157772",
-    "id": 25,
-    "calories": -1,
-    "title": "si",
-    "isCooked": false,
-    "content": "1",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:03:10.940828",
-    "id": 26,
-    "calories": -1,
-    "title": "123",
-    "isCooked": false,
-    "content": "123",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-29T23:03:12.312806",
-    "id": 27,
-    "calories": -1,
-    "title": "123",
-    "isCooked": false,
-    "content": "2023-11-29T23:03:10.940828",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T12:38:07.434201",
-    "id": 28,
-    "calories": -1,
-    "title": "12323456787ytreert",
-    "isCooked": false,
-    "content": "1234",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T13:10:40.448328",
-    "id": 29,
-    "calories": -1,
-    "title": "New",
-    "isCooked": false,
-    "content": "12",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T15:07:16.231324",
-    "id": 30,
-    "calories": -1,
-    "title": "1234",
-    "isCooked": false,
-    "content": "13",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T15:17:47.700163",
-    "id": 31,
-    "calories": -1,
-    "title": "12312345676543212345665432",
-    "isCooked": false,
-    "content": "3422gfvefdfb",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T16:06:51.389017",
-    "id": 32,
-    "calories": -1,
-    "title": "垃圾",
-    "isCooked": false,
-    "content": "1",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T16:08:21.007726",
-    "id": 33,
-    "calories": -1,
-    "title": "1",
-    "isCooked": false,
-    "content": "1111",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T16:08:48.125306",
-    "id": 34,
-    "calories": -1,
-    "title": "123e",
-    "isCooked": false,
-    "content": "d123e",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T16:10:32.946415",
-    "id": 35,
-    "calories": -1,
-    "title": "臭臭",
-    "isCooked": false,
-    "content": "123拉出�?",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T16:13:30.396296",
-    "id": 36,
-    "calories": -1,
-    "title": "的厨房大显身手我的人非常的欣赏我",
-    "isCooked": false,
-    "content": "1\t起啊完色电热毯热瓦全球儿童热",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-11-30T16:16:35.830084",
-    "id": 37,
-    "calories": -1,
-    "title": "瑞环",
-    "isCooked": false,
-    "content": "瑞环肉好�?",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T16:39:41.745113",
-    "id": 38,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup cahnge",
-    "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T16:39:41.745113",
-    "id": 38,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup cahnge",
-    "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T16:58:16.776660",
-    "id": 39,
-    "calories": 0,
-    "title": "Stufffed Pepper Casserole",
-    "isCooked": false,
-    "content": "Cut tops off peppers and clean inside. Cook peppers in water to cover for 20 minutes. Brown ground beef and onions. Add seasonings, rice, corn, and tomato sauce. Heat until bubbly. Spoon filling into peppers; place in casserole dish. Place extra filling, if any, around peppers. Bake at 350 degrees for 20-25 minutes. Mrs. Robert F. Lewis",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T17:52:49.933913",
-    "id": 40,
-    "calories": 0,
-    "title": "Xxxx-Hot Carribbean Habanero Hot Sauce",
-    "isCooked": false,
-    "content": "~Hydrate the dried jalapenos. Retain approx. 1/4 cup of the liquid. ~Chop all solids. Throw into blender with liquid ingredients. \"Liquify\" for a good, long time ... goal here is to do away with all chunks of anything. Note: I left seeds & \"flesh\" of peppers intact. For a more mild sauce, you may want to extract these ~Once mixture is very smooth, cook over very low heat for 30-60 minutes. Stir often. During this time, taste (as much as you are able to), and add add'l amounts of desired ingredients until you acheive the taste you desire. Goal is to come up with a sauce that is sweet at first taste, then leaves a healthy amount of pain as the taste fades away. ~Remove from heat, cool 30-60 minutes. ~Strain mixture to extract liquid, leave behind seeds, pulp, etc. This will take a while - be patient. ~Store extracted liquid in an air-tight container, or in a sealed bottle. Time will increase heat & taste. Note: Like many cooks, I created this with no precise measurements ... it was a total experiment & actually turned out very well (though very painful). Please feel free to alter/experiment.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T17:52:49.937413",
-    "id": 40,
-    "calories": 0,
-    "title": "Fresh Fruit Trifle Xxxj77a",
-    "isCooked": false,
-    "content": "*Suggested: strawberries, nectarines, grapes, oranges and/or pineapple.=14 Heat oven to 350 degrees. Prepare and bake cake mix according to package directions. Cool completely in pan tipped on side on cooling rack. Remove from pan. Tear into bite-sized pieces.=14 In medium bowl, combine milk, yogurt and orange peel; blend well. Add pudding mix; beat until well blended. Let stand 5 minutes.=14",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:31:10.308488",
-    "id": 41,
-    "calories": 0,
-    "title": "Emily's White Cake",
-    "isCooked": false,
-    "content": "Cream Crisco. Add sugar slowly and cream together. Sift dry ingredients and add alternately with the liquid. Add flavoring, beat mixture thoroughly and last fold in stiffly beaten whites of eggs. Prepare layer-cake tins by greasing them with a mixture of Crisco and flour. Pour in cake mixture; put in moderate oven, allow to rise for five minutes, increase heat to bake; at the end of fifteen minutes, reduce heat to allow cake to shrink from pan. Entire time for baking twenty minutes. NOTE: I copied this faithfully from the source, THE WAYS OF COOKING\" circa",
-    "isFavorite": true
-  },
-  {
-    "date": "2023-12-02T19:31:10.308488",
-    "id": 41,
-    "calories": 0,
-    "title": "Emily's White Cake",
-    "isCooked": false,
-    "content": "Cream Crisco. Add sugar slowly and cream together. Sift dry ingredients and add alternately with the liquid. Add flavoring, beat mixture thoroughly and last fold in stiffly beaten whites of eggs. Prepare layer-cake tins by greasing them with a mixture of Crisco and flour. Pour in cake mixture; put in moderate oven, allow to rise for five minutes, increase heat to bake; at the end of fifteen minutes, reduce heat to allow cake to shrink from pan. Entire time for baking twenty minutes. NOTE: I copied this faithfully from the source, THE WAYS OF COOKING\" circa",
-    "isFavorite": true
-  },
-  {
-    "date": "2023-12-02T19:34:36.679681",
-    "id": 42,
-    "calories": 0,
-    "title": "Willie G's Oyster Bar Trash",
-    "isCooked": false,
-    "content": "Heat a cast iron skillet. Add 1 - 2 oz. of clarified butter. Add shrimp and cook until halfway done. Add crab meat and sprinkle with blackening seasoning. Mix shrimp and crab meat together. Spoon onto a plate serve with white rice. Serves 2.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:34:36.681880",
-    "id": 42,
-    "calories": 0,
-    "title": "\"Trash Bag\" Taco Salad",
-    "isCooked": false,
-    "content": "Brown beef, drain. Add taco seasoning and prepare according to package directions. Cool. Toss with remaining ingredients in a large plastic bag or container. MEAL-MASTER RECIPES LIST SERVER",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:43:17.258214",
-    "id": 43,
-    "calories": 0,
-    "title": "No-Yolk Deviled Eggs",
-    "isCooked": false,
-    "content": "Boil 10 eggs. Slice eggs in half lengthwise; remove yolks and discard (or give to your dog or cat). Set whites aside. In a small bowl, prepare mashed potatoes by mashing together boiled potato, sour cream, skim milk, horseradish, and salt and pepper. Add mayonnaise, mustard, and food coloring (if desired) to mashed potato mixture. Mix well. Stuff or pipe into egg whites. Sprinkle with paprika. Refrigerate until serving. NOTES : Original recipe did not give ingredients for mashed potatoes. For a different flavor, you could add 1 or 2 tablespoons of sweet pickle relish to the mashed potatoes. Weight Watchers points per serving: 1 \"This lighter recipe still provides traditional deviled egg flavor and appearance,\" conveys Dottie Burton of Cincinnati, Ohio. \"A mashed-potato mixture magically replaces the yolk filling.\"",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:43:17.263014",
-    "id": 43,
-    "calories": 0,
-    "title": "What To Do with the Egg Yolks Bread",
-    "isCooked": false,
-    "content": "Butter a 10-inch tube pan; set aside. In a large mixing bowl, combine the yeast, 1 teaspoon sugar, and water. Set aside for 10 minutes. Combine the milk, butter, oil, zest, remaining sugar, and salt and stir into the yeast mixture. Add the egg yolks, stirring well. Add the flour 1/2 cut at a time, stirring well after each addition to incorporate the flour throughly. Knead 5 to 10 minutes until the dough is smooth, elastic, and satiny. Knead in cranberries and pecans. Put the dough back into the bowl, cover, and let rise at room temperature until doubled in bulk. Using a wooden spoon, beat down the risen dough for about a minute. Place the dough in the buttered tube pan and allow it to rise at room temperature until doubled in bulk. Preheat the oven to 375. Bake the bread for 45 to 50 minutes or until it is a dark golden brown and sounds hollow when tapped. Place on a rack to cool or serve warm. Once cooled, the bread is also excellent sliced and toasted.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:43:17.266372",
-    "id": 43,
-    "calories": 0,
-    "title": "Egg Yolk",
-    "isCooked": false,
-    "content": "From \"Baby's First Helpings\" by Chris Casson Madden ISBN: 0-385-19143-X Cold water Mother's milk or formula Place egg in a small saucepan and cover with water. Bring to a boil and simmer very gently for 15 minutes. Remove and immediately fill pan with running cold water. Let sit in cold water until shell is cool. Crack open, discard the white and mash the yellow yolk with a fork and add a few drops breast milk or formula. Go easy (small amounts of egg for baby) at first to see if any allergies develop.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:43:17.268075",
-    "id": 43,
-    "calories": 0,
-    "title": "Egg Yolk Paint",
-    "isCooked": false,
-    "content": "Blend well 1 egg yolk & 1/4 tsp. water. Divide mixture among several small custard cups. Add a different food coloring to each cup to make bright colors. Paint designs on cookies with small paintbrushes. If paint thickens on standing, add a few drops of water.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.472924",
-    "id": 44,
-    "calories": 0,
-    "title": "Nutritional Yeast and B12",
-    "isCooked": false,
-    "content": "There's been some discussion of vitamin B12 in recent posts. A generally accepted assumption is that nutritional yeast is a source of B12. A little over a year ago, someone on the Fat-Free list mentioned that all nutritional yeasts are not fortified with B12, naming Red Star T-6635+ as one source. I asked my HFS if theirs had B12. \"Absolutely\", I was told. I asked to see the label of on the 50 pound sack they use for their bulk sales, and there was no mention of B12 on it. After calling Red Star, I received a data sheet for all their nutritional yeasts. Of Red Star's yeasts, only T-6635+ contains a significant amount of B12 (0.5 mcg per gram). When I brought this to the attention of the general manager of the HFS, he immediately ordered the T-6635+ for all future shipments. While I had no immediate concern about a B12 deficiency, I had been consuming a nutritional yeast which added no B12 to my system. I noticed that the B12 fortified yeast was a much darker golden color than the ivory color of the the unfortified yeast, but that may vary from lot to lot. A heaping tablespoon of nutritional yeast is about 8 grams. (4 mcg B12) This yeast is 4.7% fat, 35% carbohydrate and 52% protein, the rest is nitrogen and moisture. There are 2.8 calories of energy per gram. 1.80á",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.473402",
-    "id": 44,
-    "calories": 0,
-    "title": "Barbecue Sauce #12",
-    "isCooked": false,
-    "content": "Combine all ingredients except green onion tops. Simmer for 15 minutes, stirring occasionally. Serve hot with onion sprinkled on top. Yield: 2-1/2 cups.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.473913",
-    "id": 44,
-    "calories": 0,
-    "title": "Red Beans and Rice #12",
-    "isCooked": false,
-    "content": "Soak beans overnight in ample water. The next day, drain the water from the beans, and place in a heavy kettle. Add the ham, onion, celery, parsley, bay leaves, and garlic, and add water to the pot barely to cover the contents. Bring to a boil, and then turn to a simmer. Simmer, uncovered, for 2 hours, being careful that the beans do not stick or become too dry. You may have to add a little water. After the initial two hours of cooking, add the margarine, pepper, Worchestershire, and Tabasco to the pot. Continue cooking for 1 more hour, this time with a lid on the pot and the heat quite low. Correct the seasonings. You may wich to add a bit of salt, but do not add salt until this point because salt cooks out of the ham (if present) and will season the beans. Serve over white rice. Pass additional Tabasco sauce for the brave! (STEPHANIE DA SILVA)",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.474384",
-    "id": 44,
-    "calories": 0,
-    "title": "Sandwich for 12",
-    "isCooked": false,
-    "content": "In a large bowl, combine oats, boiling water and butter; let stand for 5 minutes. Meanwhile, dissolve yeast from hot roll mix in warm water. Add to the oat mixture with eggs and onion. Add flour mixture from hot roll mix; stir well, do not knead. Spread dough inot a 10 inch circle on a well greased pizza pan. Cover with plastic wrap coated with a non stick cooking spray; let rise in a warm place until doubled about 45 minutes. Beat egg and garlic salt; brush gently over dough. Sprinkle with onion and sesame seeds. Bake at 350 degrees for 25-30 minutes or until golden brown. Remove from pan; cool on a wire rack. Split lengthwise. Combine mayonnaise, mustard and horseradish; spread over cut sides of loaf. Layer with remaining filling ingredients. Cut into wedges.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.474820",
-    "id": 44,
-    "calories": 0,
-    "title": "Pizza (12 Inch Frz Crusts",
-    "isCooked": false,
-    "content": "PAN: 18 BY 26-INCH SHEET PAN TEMPERATURE: 450 F. OVEN : 1. PLACE 2 CRUSTS ON EACH GREASED SHEET PAN. 2. POUR 6 OZ (3/4 CUP) SAUCE OVER EACH CRUST. 3. COVER SAUCE WITH CHEESE OVER EACH PIZZA. 4. BAKE ABOUT 20 MINUTES OR UNTIL CRUST IS BROWNED AND CRISP. 5. CUT EACH PIZZA IN 4 WEDGES. : **ALL NOTES ARE PER 100 PORTIONS. NOTE: 1. IN STEP 1, 1 1/2 RECIPE PIZZA CRUST (RECIPE NO. L16500 (STEPS 2 THROUGH 5) MAY BE USED. DIVIDE DOUGH INTO 25-7 1/2 OZ PIECES. ROLL INTO 12 INCH DIAMETER CRUSTS. NOTE: 2. IN STEP 2, 1 1/4 RECIPE (1 1/4 GAL) PIZZA SAUCE (RECIPE NO. O-12). NOTE: 3. IN STEP 3, 5 LB (1 1/4-NO. 10 CN) PIZZA BLEND CHEESE MAY BE USED FOR ALL CHEESES. SERVING SIZE: 1 PIECE",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.475263",
-    "id": 44,
-    "calories": 0,
-    "title": "Herb Stuffing [For a 12-Pound Turkey]",
-    "isCooked": false,
-    "content": "1. Saut\u0082 onion in butter or margarine until soft in a medium-size frying pan; stir in celery, chicken broth, poultry seasoning, salt, pepper and water; heat to boiling. 2. Pour over bread and parsley in a large bowl; toss lightly until evenly moist. Makes approximately 10 Cups or enough to stuff a 12-pound bird.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.475653",
-    "id": 44,
-    "calories": 0,
-    "title": "Greek Feta Dip/spread (Winner:foodday Top 12 for 1996)",
-    "isCooked": false,
-    "content": "Combine the red and green bell pepper, olives, a garlic, onion and oregano in the bowl of a food processor. Pulse on and off until finely minced (it should look like relish); do not over process. Drain in a colander or fine-mesh strainer, pressing with the back of a spoon to remove as much liquid as possible. Place the vegetables in a medium bowl and add the feta and cream cheese; mix with a fork until smooth, stir in the lemon juice and black pepper. Serve with sliced vegetables, crackers and hearty bread. Makes about 2 1/2 cups. * To pit olives, place them on a cutting board and press firmly with the flat side of a knife or bottom of a glass until flesh cracks and pit is exposed. ** Note: This was also tested using chevre, the soft goat cheese. It was judged great too. Per Serving: Calories: 41 per tablespoon (13% from protein, 9% from carbohydrate, 78% from fat), Protein: 1 gram, Cholesterol: 11 mg, Exchanges: 1/2 fat, Total fat: 4 grams, Sodium: 117 mg, Saturated fat: 2 grams, Carbohydrate: 1 gram.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.476077",
-    "id": 44,
-    "calories": 0,
-    "title": "Flan #12",
-    "isCooked": false,
-    "content": "Boil milk with cinnamon, lemon peel and salt and allow to cool. Lightly beat egg yolks with whites, sugar and vanilla. Add the milk, strain, and pour into a mold bathed in caramel. Cook in a double boiler until center is dry. /DESSERTS",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.476438",
-    "id": 44,
-    "calories": 0,
-    "title": "Indian Milk Tea (Chai) #12",
-    "isCooked": false,
-    "content": "This is how I prepare chai. milk, water (1:3 proportion), sugar according to taste are boiled. when it reaches boiling point add the tea leaves. remove from the flame cover it for 5 minutes. stir the mixture , sieve it out and drink and enjoy. grate ginger and add it to the mixture along with the tea leaves if you want ginger chai. the amount of tea leaves you use are as follows 1 cup - 2 spoons 2 cups - 3 spoons 3 cups - 4 spoons ... get the picture. increase or decrease according to taste and type of tea leaves. Try it out this way. If you like it great otherwise try other methods.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.476802",
-    "id": 44,
-    "calories": 0,
-    "title": "Peanut Butter Fudge #12",
-    "isCooked": false,
-    "content": "Cook sugar, milk, and salt until hard ball stage, then add butter, vanilla, and peanut butter. Beat until thick. Pour into a buttered pan.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:58:33.237914",
-    "id": 45,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic Bread",
-    "isCooked": false,
-    "content": "1) Blend garlic with butter and let stand at room temperature 1 hour. 2) About 1/2 hour before serving, preheat oven to 375 F. 3) Meanwhile, slice bread 1 inch thick, cutting to but not through the bottom and holding knife at a slight angle. 4) Spread both sides of each slice with garlic butter and wrap loaf snugly in heavy foil. Place on a baking sheet and warm 20-25 minutes. 5) Unwrap and serve in a long napkin wrapped bread basket, or break into chunks and serve in a round napkin wrapped basket. Variations: =========== Herbed Garlic Bread: Mix 1 ts minced parsely and 1/4 ts each of thyme and oregano or marjoram into garlic butter and proceed as above. Cheese Garlic Bread: Mix 1 tb grated parmesan, 1/4 ts salt, 1/8 ts pepper and 1/4 ts each of savory and oregano or thyme into garlic butter and proceed as above. Curry or Chili Garlic Bread: Mix 1 to 2 ts curry or chili powder into garlic butter and proceed as above. Hints: ====== You can freeze before baking. On serving day open foil and bake at 350 F for 15 minutes. You can also use a microwave.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:58:42.698034",
-    "id": 46,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.change",
-    "isFavorite": true
-  },
-  {
-    "date": "2023-12-02T20:59:44.886399",
-    "id": 47,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic Bread",
-    "isCooked": false,
-    "content": "1) Blend garlic with butter and let stand at room temperature 1 hour. 2) About 1/2 hour before serving, preheat oven to 375 F. 3) Meanwhile, slice bread 1 inch thick, cutting to but not through the bottom and holding knife at a slight angle. 4) Spread both sides of each slice with garlic butter and wrap loaf snugly in heavy foil. Place on a baking sheet and warm 20-25 minutes. 5) Unwrap and serve in a long napkin wrapped bread basket, or break into chunks and serve in a round napkin wrapped basket. Variations: =========== Herbed Garlic Bread: Mix 1 ts minced parsely and 1/4 ts each of thyme and oregano or marjoram into garlic butter and proceed as above. Cheese Garlic Bread: Mix 1 tb grated parmesan, 1/4 ts salt, 1/8 ts pepper and 1/4 ts each of savory and oregano or thyme into garlic butter and proceed as above. Curry or Chili Garlic Bread: Mix 1 to 2 ts curry or chili powder into garlic butter and proceed as above. Hints: ====== You can freeze before baking. On serving day open foil and bake at 350 F for 15 minutes. You can also use a microwave.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:59:54.087438",
-    "id": 48,
-    "calories": 0,
-    "title": "Elegant and Easy Gourmet Gefilte Fish Pate",
-    "isCooked": true,
-    "content": "Grind fish fine. Saute onions in oil till soft but not brown. Put the fish, onions, eggs, water, matzah meal, salt, white pepper, and sugar in a electric mixer bowl and beat on medium speed for 15 minutes. Grate the carrots and mix well. Pour the mixture into a gerased 12 cup bundt pan. Smooth the top with a spatula and bake in a preheated 325 degree oven for 1 hour in a larger pan filled with 2 inches water. Cover with alum foil and continue baking for 1 hour or until the center is solid. Cool for 5 minutes and then invert onto a flat serving plate. Refrigerate for several hours or over night. Slice as you would a torte and serve as an appetizer, garnished with parsley and served with red horseradish.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:00:05.803488",
-    "id": 49,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:00:12.339406",
-    "id": 50,
-    "calories": 0,
-    "title": "Electric Bread - Sticky Buns",
-    "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.\nChange",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:00:26.459243",
-    "id": 51,
-    "calories": 0,
-    "title": "Elegant Strawberry Torte",
-    "isCooked": false,
-    "content": "Combine flour, brown sugar, salt and butter. Mix until crumbly, as for pie crust. Reserve 1 cup of crumbs. Combine egg, milk and baking soda; stir into remaining crumb mixture, blending well. Pour into 2 greased, paper-lined 9 inch layer pans. Sprinkle batter with reserved crumbs, then top with chopped nuts. Bake at 375 for 25 to 30 minutes, or until cake tests done. Cool. Reserve several whole strawberries for garnish. Slightly mash remaining berries, sugaring to taste. Place one layer of cake on serving plate, nut side up. Spread with half of strawberries, top with half of whipped cream and cover with second layer of cake. Spread with remaining berries then swirl whipped cream around edge of top of cake, allowing small circle of strawberries to remain uncovered in center of torte. Garnish with clusters of whole strawberries around bottom of cake.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:03:06.351177",
-    "id": 52,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
-    "isCooked": true,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.change.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:44:12.393345",
-    "id": 53,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:45:59.639353",
-    "id": 54,
-    "calories": 0,
-    "title": "Scallopa Al Pizzaioio",
-    "isCooked": false,
-    "content": "In a shallow bowl, mix flour with salt and freshly ground black pepper. Dredge veal pieces in flour mixture and set aside. In a 12 to 14-inch saute pan, heat olive oil over medium high heat until just smoking. Shake excess flour from veal and place pieces in pan. Cook until golden brown on one side, about 5 to 6 minutes. Turn and continue cooking until golden brown, about 4 to 5 minutes. Remove veal pieces and pour out oil. Add 1/2 cup water to pan and deglaze, scraping lightly with a wooden spoon to loosen brown bits. Add tomato sauce and bring to a boil. Replace veal in pan and coat with sauce. Place 2 pieces of fresh mozzarella over each piece of veal and place pan in a preheated 350 degree oven for 6 to 8 minutes, or until cheese is melted. Remove pan from oven. Place veal on platter, surround with sauce, sprinkle with fresh oregano and serve. Yield: 4 servings",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:45:59.642372",
-    "id": 54,
-    "calories": 0,
-    "title": "Bel Gioioso's Basic Tiramisu",
-    "isCooked": false,
-    "content": "The company that makes this particular brand of cheese (Bel Gioioso, pronouced \"bel-joy-oso\" Cheese Inc. of Denmark, Wisconsin) put this recipe on the side of its 8-ounce Mascarpone container. They call it their \"Famous 'Tiramisu' Dessert Recipe,\" but then again, I guess every cheese company, every restaurant has a \"famous\" recipe. This one makes 6 servings. Directions 1. Combine 3 egg yolks, 1 tablespoon Espresso, sugar, and Cognac into the large mixing bowl. 2. Beat 2 to 3 minutes. 3. Add Mascarpone and beat 3 to 5 minutes until consistency is smooth. 4. In another bowl, combine 3 egg whites and a pinch of sugar. Beat until mixture forms stiff peaks. 5. Gently fold into Mascarpone mixture. 6. Pour rest of Espresso into flat dish, dip one side of each Lady Finger, and layer on bottom of serving dish. 7. Spread 1/3 of Mascarpone mixture and sprinkle with cocoa. 8. Continue layering and finish with a Mascarpone layer. 9. Sprinkle and refrigerate 1 hour before serving.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:45:59.644920",
-    "id": 54,
-    "calories": 0,
-    "title": "Penne Saporite \"Il Frantoio\"(Penne W/tomato&s",
-    "isCooked": false,
-    "content": ": Heat oil in skillet over med low heat. Add onion & cook, stirring, til soft, sweet & slightly carmelized, about 10min. Add garlic & red pepper flakes & cook, stirring for 1min. to release fragrence. Add bell pepper, tomatoes & salt. Cover, adjust heat to maintain simmer, & stew, stirring occasinally, til vegetables are very soft, about 15min. : Transfer mixture to food processor or blender & puree, adding stock or water as needed to make a smooth sauce. Return to skillet. Reheat gently; taste & season w/S&P. Keep warm. : Meanwhile, cook penne in large pot of salted boiling water til al dente, 8-10min. Drain, then transfer to warm bowl. Add sauce & toss. Serve immediately on warm plates. See Eating Well,Oct'95,pp68",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T16:39:41.745113",
-    "id": 38,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup cahnge",
-    "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T22:58:08.950465200",
-    "id": 39,
-    "calories": 0,
-    "title": "shizhao1",
-    "isCooked": false,
-    "content": "ruihuan",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T22:58:43.041485500",
-    "id": 40,
-    "calories": 0,
-    "title": "shizhao2",
-    "isCooked": false,
-    "content": "ruihuan2",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T22:59:38.194230400",
-    "id": 41,
-    "calories": 0,
-    "title": "bb",
-    "isCooked": false,
-    "content": "shizhao",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T23:00:22.442039",
-    "id": 42,
-    "calories": 0,
-    "title": "b\b",
-    "isCooked": false,
-    "content": "shizhao",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T23:10:30.476958700",
-    "id": 43,
-    "calories": 0,
-    "title": "bbb",
-    "isCooked": false,
-    "content": "shizhao1",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T01:12:22.486728",
-    "id": 55,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T12:21:13.183932500",
-    "id": 56,
-    "calories": 0,
+    "calories": 341.1,
     "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
     "isCooked": false,
     "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T12:21:13.987026200",
-    "id": 57,
-    "calories": 0,
-    "title": "Elvis Presley Pound Cake",
-    "isCooked": false,
-    "content": "Butter and flour a 10\" tube pan. Thoroughly cream together sugar and butter. Add eggs one at a time, beating well after each addition. Mix in half the flour, then the whipping cream , then the other half of the flour. Add vanilla. Pour batter into prepared pan. Set in COLD oven and turn heat to 350~. Bake 60-70 minutes, until a sharp knife inserted in cake comes out clean. Cool in pan 5 minutes. Remove from pan and cool thoroughly.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T16:39:41.745113",
-    "id": 38,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup cahnge",
+    "date": "2023-12-04T05:14:13.458674",
+    "id": 14,
+    "calories": 137.8,
+    "title": "Electronic Gourmet's French Onion Soup",
     "isCooked": false,
     "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
     "isFavorite": false
   },
   {
-    "date": "2023-12-02T16:39:41.745113",
-    "id": 38,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup cahnge",
+    "date": "2023-12-04T05:14:23.419282",
+    "id": 15,
+    "calories": 609.4,
+    "title": "Electronic Gourmet's Herb Salad Dressing",
     "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
+    "content": "1) Place oil, herbs, salt and pepper in a shaker bottle or large glass measuring cup. Let stand at room temperature for 3 to 4 hours. The longer the better. 2) Add vinegar and shake or stir well to blend.",
     "isFavorite": false
   },
   {
-    "date": "2023-12-02T16:58:16.776660",
-    "id": 39,
-    "calories": 0,
-    "title": "Stufffed Pepper Casserole",
-    "isCooked": false,
-    "content": "Cut tops off peppers and clean inside. Cook peppers in water to cover for 20 minutes. Brown ground beef and onions. Add seasonings, rice, corn, and tomato sauce. Heat until bubbly. Spoon filling into peppers; place in casserole dish. Place extra filling, if any, around peppers. Bake at 350 degrees for 20-25 minutes. Mrs. Robert F. Lewis",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T17:52:49.933913",
-    "id": 40,
-    "calories": 0,
-    "title": "Xxxx-Hot Carribbean Habanero Hot Sauce",
-    "isCooked": false,
-    "content": "~Hydrate the dried jalapenos. Retain approx. 1/4 cup of the liquid. ~Chop all solids. Throw into blender with liquid ingredients. \"Liquify\" for a good, long time ... goal here is to do away with all chunks of anything. Note: I left seeds & \"flesh\" of peppers intact. For a more mild sauce, you may want to extract these ~Once mixture is very smooth, cook over very low heat for 30-60 minutes. Stir often. During this time, taste (as much as you are able to), and add add'l amounts of desired ingredients until you acheive the taste you desire. Goal is to come up with a sauce that is sweet at first taste, then leaves a healthy amount of pain as the taste fades away. ~Remove from heat, cool 30-60 minutes. ~Strain mixture to extract liquid, leave behind seeds, pulp, etc. This will take a while - be patient. ~Store extracted liquid in an air-tight container, or in a sealed bottle. Time will increase heat & taste. Note: Like many cooks, I created this with no precise measurements ... it was a total experiment & actually turned out very well (though very painful). Please feel free to alter/experiment.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T17:52:49.937413",
-    "id": 40,
-    "calories": 0,
-    "title": "Fresh Fruit Trifle Xxxj77a",
-    "isCooked": false,
-    "content": "*Suggested: strawberries, nectarines, grapes, oranges and/or pineapple.=14 Heat oven to 350 degrees. Prepare and bake cake mix according to package directions. Cool completely in pan tipped on side on cooling rack. Remove from pan. Tear into bite-sized pieces.=14 In medium bowl, combine milk, yogurt and orange peel; blend well. Add pudding mix; beat until well blended. Let stand 5 minutes.=14",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:31:10.308488",
-    "id": 41,
-    "calories": 0,
-    "title": "Emily's White Cake",
-    "isCooked": false,
-    "content": "Cream Crisco. Add sugar slowly and cream together. Sift dry ingredients and add alternately with the liquid. Add flavoring, beat mixture thoroughly and last fold in stiffly beaten whites of eggs. Prepare layer-cake tins by greasing them with a mixture of Crisco and flour. Pour in cake mixture; put in moderate oven, allow to rise for five minutes, increase heat to bake; at the end of fifteen minutes, reduce heat to allow cake to shrink from pan. Entire time for baking twenty minutes. NOTE: I copied this faithfully from the source, THE WAYS OF COOKING\" circa",
-    "isFavorite": true
-  },
-  {
-    "date": "2023-12-02T19:31:10.308488",
-    "id": 41,
-    "calories": 0,
-    "title": "Emily's White Cake",
-    "isCooked": false,
-    "content": "Cream Crisco. Add sugar slowly and cream together. Sift dry ingredients and add alternately with the liquid. Add flavoring, beat mixture thoroughly and last fold in stiffly beaten whites of eggs. Prepare layer-cake tins by greasing them with a mixture of Crisco and flour. Pour in cake mixture; put in moderate oven, allow to rise for five minutes, increase heat to bake; at the end of fifteen minutes, reduce heat to allow cake to shrink from pan. Entire time for baking twenty minutes. NOTE: I copied this faithfully from the source, THE WAYS OF COOKING\" circa",
-    "isFavorite": true
-  },
-  {
-    "date": "2023-12-02T19:34:36.679681",
-    "id": 42,
-    "calories": 0,
-    "title": "Willie G's Oyster Bar Trash",
-    "isCooked": false,
-    "content": "Heat a cast iron skillet. Add 1 - 2 oz. of clarified butter. Add shrimp and cook until halfway done. Add crab meat and sprinkle with blackening seasoning. Mix shrimp and crab meat together. Spoon onto a plate serve with white rice. Serves 2.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:34:36.681880",
-    "id": 42,
-    "calories": 0,
-    "title": "\"Trash Bag\" Taco Salad",
-    "isCooked": false,
-    "content": "Brown beef, drain. Add taco seasoning and prepare according to package directions. Cool. Toss with remaining ingredients in a large plastic bag or container. MEAL-MASTER RECIPES LIST SERVER",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:43:17.258214",
-    "id": 43,
-    "calories": 0,
-    "title": "No-Yolk Deviled Eggs",
-    "isCooked": false,
-    "content": "Boil 10 eggs. Slice eggs in half lengthwise; remove yolks and discard (or give to your dog or cat). Set whites aside. In a small bowl, prepare mashed potatoes by mashing together boiled potato, sour cream, skim milk, horseradish, and salt and pepper. Add mayonnaise, mustard, and food coloring (if desired) to mashed potato mixture. Mix well. Stuff or pipe into egg whites. Sprinkle with paprika. Refrigerate until serving. NOTES : Original recipe did not give ingredients for mashed potatoes. For a different flavor, you could add 1 or 2 tablespoons of sweet pickle relish to the mashed potatoes. Weight Watchers points per serving: 1 \"This lighter recipe still provides traditional deviled egg flavor and appearance,\" conveys Dottie Burton of Cincinnati, Ohio. \"A mashed-potato mixture magically replaces the yolk filling.\"",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:43:17.263014",
-    "id": 43,
-    "calories": 0,
-    "title": "What To Do with the Egg Yolks Bread",
-    "isCooked": false,
-    "content": "Butter a 10-inch tube pan; set aside. In a large mixing bowl, combine the yeast, 1 teaspoon sugar, and water. Set aside for 10 minutes. Combine the milk, butter, oil, zest, remaining sugar, and salt and stir into the yeast mixture. Add the egg yolks, stirring well. Add the flour 1/2 cut at a time, stirring well after each addition to incorporate the flour throughly. Knead 5 to 10 minutes until the dough is smooth, elastic, and satiny. Knead in cranberries and pecans. Put the dough back into the bowl, cover, and let rise at room temperature until doubled in bulk. Using a wooden spoon, beat down the risen dough for about a minute. Place the dough in the buttered tube pan and allow it to rise at room temperature until doubled in bulk. Preheat the oven to 375. Bake the bread for 45 to 50 minutes or until it is a dark golden brown and sounds hollow when tapped. Place on a rack to cool or serve warm. Once cooled, the bread is also excellent sliced and toasted.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:43:17.266372",
-    "id": 43,
-    "calories": 0,
-    "title": "Egg Yolk",
-    "isCooked": false,
-    "content": "From \"Baby's First Helpings\" by Chris Casson Madden ISBN: 0-385-19143-X Cold water Mother's milk or formula Place egg in a small saucepan and cover with water. Bring to a boil and simmer very gently for 15 minutes. Remove and immediately fill pan with running cold water. Let sit in cold water until shell is cool. Crack open, discard the white and mash the yellow yolk with a fork and add a few drops breast milk or formula. Go easy (small amounts of egg for baby) at first to see if any allergies develop.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T19:43:17.268075",
-    "id": 43,
-    "calories": 0,
-    "title": "Egg Yolk Paint",
-    "isCooked": false,
-    "content": "Blend well 1 egg yolk & 1/4 tsp. water. Divide mixture among several small custard cups. Add a different food coloring to each cup to make bright colors. Paint designs on cookies with small paintbrushes. If paint thickens on standing, add a few drops of water.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.472924",
-    "id": 44,
-    "calories": 0,
-    "title": "Nutritional Yeast and B12",
-    "isCooked": false,
-    "content": "There's been some discussion of vitamin B12 in recent posts. A generally accepted assumption is that nutritional yeast is a source of B12. A little over a year ago, someone on the Fat-Free list mentioned that all nutritional yeasts are not fortified with B12, naming Red Star T-6635+ as one source. I asked my HFS if theirs had B12. \"Absolutely\", I was told. I asked to see the label of on the 50 pound sack they use for their bulk sales, and there was no mention of B12 on it. After calling Red Star, I received a data sheet for all their nutritional yeasts. Of Red Star's yeasts, only T-6635+ contains a significant amount of B12 (0.5 mcg per gram). When I brought this to the attention of the general manager of the HFS, he immediately ordered the T-6635+ for all future shipments. While I had no immediate concern about a B12 deficiency, I had been consuming a nutritional yeast which added no B12 to my system. I noticed that the B12 fortified yeast was a much darker golden color than the ivory color of the the unfortified yeast, but that may vary from lot to lot. A heaping tablespoon of nutritional yeast is about 8 grams. (4 mcg B12) This yeast is 4.7% fat, 35% carbohydrate and 52% protein, the rest is nitrogen and moisture. There are 2.8 calories of energy per gram. 1.80á",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.473402",
-    "id": 44,
-    "calories": 0,
-    "title": "Barbecue Sauce #12",
-    "isCooked": false,
-    "content": "Combine all ingredients except green onion tops. Simmer for 15 minutes, stirring occasionally. Serve hot with onion sprinkled on top. Yield: 2-1/2 cups.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.473913",
-    "id": 44,
-    "calories": 0,
-    "title": "Red Beans and Rice #12",
-    "isCooked": false,
-    "content": "Soak beans overnight in ample water. The next day, drain the water from the beans, and place in a heavy kettle. Add the ham, onion, celery, parsley, bay leaves, and garlic, and add water to the pot barely to cover the contents. Bring to a boil, and then turn to a simmer. Simmer, uncovered, for 2 hours, being careful that the beans do not stick or become too dry. You may have to add a little water. After the initial two hours of cooking, add the margarine, pepper, Worchestershire, and Tabasco to the pot. Continue cooking for 1 more hour, this time with a lid on the pot and the heat quite low. Correct the seasonings. You may wich to add a bit of salt, but do not add salt until this point because salt cooks out of the ham (if present) and will season the beans. Serve over white rice. Pass additional Tabasco sauce for the brave! (STEPHANIE DA SILVA)",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.474384",
-    "id": 44,
-    "calories": 0,
-    "title": "Sandwich for 12",
-    "isCooked": false,
-    "content": "In a large bowl, combine oats, boiling water and butter; let stand for 5 minutes. Meanwhile, dissolve yeast from hot roll mix in warm water. Add to the oat mixture with eggs and onion. Add flour mixture from hot roll mix; stir well, do not knead. Spread dough inot a 10 inch circle on a well greased pizza pan. Cover with plastic wrap coated with a non stick cooking spray; let rise in a warm place until doubled about 45 minutes. Beat egg and garlic salt; brush gently over dough. Sprinkle with onion and sesame seeds. Bake at 350 degrees for 25-30 minutes or until golden brown. Remove from pan; cool on a wire rack. Split lengthwise. Combine mayonnaise, mustard and horseradish; spread over cut sides of loaf. Layer with remaining filling ingredients. Cut into wedges.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.474820",
-    "id": 44,
-    "calories": 0,
-    "title": "Pizza (12 Inch Frz Crusts",
-    "isCooked": false,
-    "content": "PAN: 18 BY 26-INCH SHEET PAN TEMPERATURE: 450 F. OVEN : 1. PLACE 2 CRUSTS ON EACH GREASED SHEET PAN. 2. POUR 6 OZ (3/4 CUP) SAUCE OVER EACH CRUST. 3. COVER SAUCE WITH CHEESE OVER EACH PIZZA. 4. BAKE ABOUT 20 MINUTES OR UNTIL CRUST IS BROWNED AND CRISP. 5. CUT EACH PIZZA IN 4 WEDGES. : **ALL NOTES ARE PER 100 PORTIONS. NOTE: 1. IN STEP 1, 1 1/2 RECIPE PIZZA CRUST (RECIPE NO. L16500 (STEPS 2 THROUGH 5) MAY BE USED. DIVIDE DOUGH INTO 25-7 1/2 OZ PIECES. ROLL INTO 12 INCH DIAMETER CRUSTS. NOTE: 2. IN STEP 2, 1 1/4 RECIPE (1 1/4 GAL) PIZZA SAUCE (RECIPE NO. O-12). NOTE: 3. IN STEP 3, 5 LB (1 1/4-NO. 10 CN) PIZZA BLEND CHEESE MAY BE USED FOR ALL CHEESES. SERVING SIZE: 1 PIECE",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.475263",
-    "id": 44,
-    "calories": 0,
-    "title": "Herb Stuffing [For a 12-Pound Turkey]",
-    "isCooked": false,
-    "content": "1. Saut\u0082 onion in butter or margarine until soft in a medium-size frying pan; stir in celery, chicken broth, poultry seasoning, salt, pepper and water; heat to boiling. 2. Pour over bread and parsley in a large bowl; toss lightly until evenly moist. Makes approximately 10 Cups or enough to stuff a 12-pound bird.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.475653",
-    "id": 44,
-    "calories": 0,
-    "title": "Greek Feta Dip/spread (Winner:foodday Top 12 for 1996)",
-    "isCooked": false,
-    "content": "Combine the red and green bell pepper, olives, a garlic, onion and oregano in the bowl of a food processor. Pulse on and off until finely minced (it should look like relish); do not over process. Drain in a colander or fine-mesh strainer, pressing with the back of a spoon to remove as much liquid as possible. Place the vegetables in a medium bowl and add the feta and cream cheese; mix with a fork until smooth, stir in the lemon juice and black pepper. Serve with sliced vegetables, crackers and hearty bread. Makes about 2 1/2 cups. * To pit olives, place them on a cutting board and press firmly with the flat side of a knife or bottom of a glass until flesh cracks and pit is exposed. ** Note: This was also tested using chevre, the soft goat cheese. It was judged great too. Per Serving: Calories: 41 per tablespoon (13% from protein, 9% from carbohydrate, 78% from fat), Protein: 1 gram, Cholesterol: 11 mg, Exchanges: 1/2 fat, Total fat: 4 grams, Sodium: 117 mg, Saturated fat: 2 grams, Carbohydrate: 1 gram.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.476077",
-    "id": 44,
-    "calories": 0,
-    "title": "Flan #12",
-    "isCooked": false,
-    "content": "Boil milk with cinnamon, lemon peel and salt and allow to cool. Lightly beat egg yolks with whites, sugar and vanilla. Add the milk, strain, and pour into a mold bathed in caramel. Cook in a double boiler until center is dry. /DESSERTS",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.476438",
-    "id": 44,
-    "calories": 0,
-    "title": "Indian Milk Tea (Chai) #12",
-    "isCooked": false,
-    "content": "This is how I prepare chai. milk, water (1:3 proportion), sugar according to taste are boiled. when it reaches boiling point add the tea leaves. remove from the flame cover it for 5 minutes. stir the mixture , sieve it out and drink and enjoy. grate ginger and add it to the mixture along with the tea leaves if you want ginger chai. the amount of tea leaves you use are as follows 1 cup - 2 spoons 2 cups - 3 spoons 3 cups - 4 spoons ... get the picture. increase or decrease according to taste and type of tea leaves. Try it out this way. If you like it great otherwise try other methods.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:41:41.476802",
-    "id": 44,
-    "calories": 0,
-    "title": "Peanut Butter Fudge #12",
-    "isCooked": false,
-    "content": "Cook sugar, milk, and salt until hard ball stage, then add butter, vanilla, and peanut butter. Beat until thick. Pour into a buttered pan.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:58:33.237914",
-    "id": 45,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic Bread",
-    "isCooked": false,
-    "content": "1) Blend garlic with butter and let stand at room temperature 1 hour. 2) About 1/2 hour before serving, preheat oven to 375 F. 3) Meanwhile, slice bread 1 inch thick, cutting to but not through the bottom and holding knife at a slight angle. 4) Spread both sides of each slice with garlic butter and wrap loaf snugly in heavy foil. Place on a baking sheet and warm 20-25 minutes. 5) Unwrap and serve in a long napkin wrapped bread basket, or break into chunks and serve in a round napkin wrapped basket. Variations: =========== Herbed Garlic Bread: Mix 1 ts minced parsely and 1/4 ts each of thyme and oregano or marjoram into garlic butter and proceed as above. Cheese Garlic Bread: Mix 1 tb grated parmesan, 1/4 ts salt, 1/8 ts pepper and 1/4 ts each of savory and oregano or thyme into garlic butter and proceed as above. Curry or Chili Garlic Bread: Mix 1 to 2 ts curry or chili powder into garlic butter and proceed as above. Hints: ====== You can freeze before baking. On serving day open foil and bake at 350 F for 15 minutes. You can also use a microwave.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T20:58:42.698034",
-    "id": 46,
-    "calories": 0,
+    "date": "2023-12-04T05:17:39.105809",
+    "id": 16,
+    "calories": 444,
     "title": "Electronic Gourmet's French Dressing",
     "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.change",
-    "isFavorite": true
-  },
-  {
-    "date": "2023-12-02T20:59:44.886399",
-    "id": 47,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic Bread",
-    "isCooked": false,
-    "content": "1) Blend garlic with butter and let stand at room temperature 1 hour. 2) About 1/2 hour before serving, preheat oven to 375 F. 3) Meanwhile, slice bread 1 inch thick, cutting to but not through the bottom and holding knife at a slight angle. 4) Spread both sides of each slice with garlic butter and wrap loaf snugly in heavy foil. Place on a baking sheet and warm 20-25 minutes. 5) Unwrap and serve in a long napkin wrapped bread basket, or break into chunks and serve in a round napkin wrapped basket. Variations: =========== Herbed Garlic Bread: Mix 1 ts minced parsely and 1/4 ts each of thyme and oregano or marjoram into garlic butter and proceed as above. Cheese Garlic Bread: Mix 1 tb grated parmesan, 1/4 ts salt, 1/8 ts pepper and 1/4 ts each of savory and oregano or thyme into garlic butter and proceed as above. Curry or Chili Garlic Bread: Mix 1 to 2 ts curry or chili powder into garlic butter and proceed as above. Hints: ====== You can freeze before baking. On serving day open foil and bake at 350 F for 15 minutes. You can also use a microwave.",
+    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigorously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
     "isFavorite": false
   },
   {
-    "date": "2023-12-02T20:59:54.087438",
-    "id": 48,
-    "calories": 0,
-    "title": "Elegant and Easy Gourmet Gefilte Fish Pate",
-    "isCooked": true,
-    "content": "Grind fish fine. Saute onions in oil till soft but not brown. Put the fish, onions, eggs, water, matzah meal, salt, white pepper, and sugar in a electric mixer bowl and beat on medium speed for 15 minutes. Grate the carrots and mix well. Pour the mixture into a gerased 12 cup bundt pan. Smooth the top with a spatula and bake in a preheated 325 degree oven for 1 hour in a larger pan filled with 2 inches water. Cover with alum foil and continue baking for 1 hour or until the center is solid. Cool for 5 minutes and then invert onto a flat serving plate. Refrigerate for several hours or over night. Slice as you would a torte and serve as an appetizer, garnished with parsley and served with red horseradish.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:00:05.803488",
-    "id": 49,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:00:12.339406",
-    "id": 50,
-    "calories": 0,
-    "title": "Electric Bread - Sticky Buns",
-    "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.\nChange",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:00:26.459243",
-    "id": 51,
-    "calories": 0,
-    "title": "Elegant Strawberry Torte",
-    "isCooked": false,
-    "content": "Combine flour, brown sugar, salt and butter. Mix until crumbly, as for pie crust. Reserve 1 cup of crumbs. Combine egg, milk and baking soda; stir into remaining crumb mixture, blending well. Pour into 2 greased, paper-lined 9 inch layer pans. Sprinkle batter with reserved crumbs, then top with chopped nuts. Bake at 375 for 25 to 30 minutes, or until cake tests done. Cool. Reserve several whole strawberries for garnish. Slightly mash remaining berries, sugaring to taste. Place one layer of cake on serving plate, nut side up. Spread with half of strawberries, top with half of whipped cream and cover with second layer of cake. Spread with remaining berries then swirl whipped cream around edge of top of cake, allowing small circle of strawberries to remain uncovered in center of torte. Garnish with clusters of whole strawberries around bottom of cake.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:03:06.351177",
-    "id": 52,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
-    "isCooked": true,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.change.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:44:12.393345",
-    "id": 53,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:45:59.639353",
-    "id": 54,
-    "calories": 0,
-    "title": "Scallopa Al Pizzaioio",
-    "isCooked": false,
-    "content": "In a shallow bowl, mix flour with salt and freshly ground black pepper. Dredge veal pieces in flour mixture and set aside. In a 12 to 14-inch saute pan, heat olive oil over medium high heat until just smoking. Shake excess flour from veal and place pieces in pan. Cook until golden brown on one side, about 5 to 6 minutes. Turn and continue cooking until golden brown, about 4 to 5 minutes. Remove veal pieces and pour out oil. Add 1/2 cup water to pan and deglaze, scraping lightly with a wooden spoon to loosen brown bits. Add tomato sauce and bring to a boil. Replace veal in pan and coat with sauce. Place 2 pieces of fresh mozzarella over each piece of veal and place pan in a preheated 350 degree oven for 6 to 8 minutes, or until cheese is melted. Remove pan from oven. Place veal on platter, surround with sauce, sprinkle with fresh oregano and serve. Yield: 4 servings",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:45:59.642372",
-    "id": 54,
-    "calories": 0,
-    "title": "Bel Gioioso's Basic Tiramisu",
-    "isCooked": false,
-    "content": "The company that makes this particular brand of cheese (Bel Gioioso, pronouced \"bel-joy-oso\" Cheese Inc. of Denmark, Wisconsin) put this recipe on the side of its 8-ounce Mascarpone container. They call it their \"Famous 'Tiramisu' Dessert Recipe,\" but then again, I guess every cheese company, every restaurant has a \"famous\" recipe. This one makes 6 servings. Directions 1. Combine 3 egg yolks, 1 tablespoon Espresso, sugar, and Cognac into the large mixing bowl. 2. Beat 2 to 3 minutes. 3. Add Mascarpone and beat 3 to 5 minutes until consistency is smooth. 4. In another bowl, combine 3 egg whites and a pinch of sugar. Beat until mixture forms stiff peaks. 5. Gently fold into Mascarpone mixture. 6. Pour rest of Espresso into flat dish, dip one side of each Lady Finger, and layer on bottom of serving dish. 7. Spread 1/3 of Mascarpone mixture and sprinkle with cocoa. 8. Continue layering and finish with a Mascarpone layer. 9. Sprinkle and refrigerate 1 hour before serving.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-02T21:45:59.644920",
-    "id": 54,
-    "calories": 0,
-    "title": "Penne Saporite \"Il Frantoio\"(Penne W/tomato&s",
-    "isCooked": false,
-    "content": ": Heat oil in skillet over med low heat. Add onion & cook, stirring, til soft, sweet & slightly carmelized, about 10min. Add garlic & red pepper flakes & cook, stirring for 1min. to release fragrence. Add bell pepper, tomatoes & salt. Cover, adjust heat to maintain simmer, & stew, stirring occasinally, til vegetables are very soft, about 15min. : Transfer mixture to food processor or blender & puree, adding stock or water as needed to make a smooth sauce. Return to skillet. Reheat gently; taste & season w/S&P. Keep warm. : Meanwhile, cook penne in large pot of salted boiling water til al dente, 8-10min. Drain, then transfer to warm bowl. Add sauce & toss. Serve immediately on warm plates. See Eating Well,Oct'95,pp68",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T01:12:22.486728",
-    "id": 55,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T12:49:09.740715",
-    "id": 56,
-    "calories": 0,
-    "title": "Electronic Gourmet's Chili",
-    "isCooked": true,
-    "content": "1) Chop the steak into 1 inch cubes. Heat the oil and beef a few cubes at a time, turning to brown on all sides. Add the chopped onions and saute over medium heat for 2 or 3 minutes then add the garlic. 2) Season with salt to taste. Add the boiling water, caraway and sesame seeds and oregano. Reduce heat, cover and simmer for 1 hour. 3) Gradually stir in the chili powder, testing frequently until you achieve the degree of flavour and hotness that suits you. Add olives, cover and simmer for another hour. 4) Taste, and correct the seasoning then mix in kidney beans and heat through. Toasted french bread, tortillas or corn bread go well with this and a crisp green salad. Hints: ===== Beer is the only drink that can stand up to the spiciness of the chili. Cool and freeze in containers. Serving day heat over low heat.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:08:25.799007",
-    "id": 57,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:11:26.951047",
-    "id": 58,
-    "calories": 0,
-    "title": "Elida Proenza's Yuca Con Mojo",
-    "isCooked": false,
-    "content": "Cut the yuca into 2-in pieces and peel with a paring knife. Cut the large pieces in half so that all are of uniform size. Bring ar least 2 quarts salted water to a boil. Add the yuca and cook for 20 minutes or until cracks begin to appear in the center (of the yuca) Add 1 c cold water. Cook the yuca for 5-10 more minutes, or until very soft. Meanwhile, make the mojo. Finely chop the garlic, and, in a mortar and pestle, pound it to a paste with the salt and pepper. Stir in the lime juice and correct the seasoning. Just before serving, heat the olive oil in a small frying pan and pour it into the garlic mixture. Stand back - it may spatter. Drain the yuca and pull out any fibers. Arrange on a platter or plates and pour the hot mojo on top. Garnish the yuca with thinly sliced onion and serve",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:12:09.243995",
-    "id": 59,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:12:50.574924",
-    "id": 60,
-    "calories": 0,
+    "date": "2023-12-04T05:18:42.316153",
+    "id": 17,
+    "calories": 311.5,
     "title": "Elegant Mushroom and Olive Salad",
     "isCooked": false,
     "content": "Break up enough lettuce into bite-sized pieces to make 2 quarts. Slice the olives and mushrooms. Crumble the cheese and toss lightly. Add lemon juice and olive oil. Do *not* substitute other oils. Add salt and cracked pepper to taste, and toss again.",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T14:14:12.212331",
-    "id": 61,
-    "calories": 0,
+    "date": "2023-12-04T05:19:07.244297",
+    "id": 18,
+    "calories": 532.8,
     "title": "Electric Bread - Sticky Buns",
     "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.",
+    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.change",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T14:15:43.063941",
-    "id": 62,
+    "date": "2023-12-05T13:45:38.095343900",
+    "id": 19,
     "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
+    "title": "Electronic Gourmet's Garlic Soup",
     "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
+    "content": "1) Put the oil and garlic into a very heavy large pot. Saute until almost golden brown in colour. Add the water, salt, monosodium glutamate and stock. 2) Simmer for 3 hours. Check the seasoning. 3) To serve: Place a slice of bread in each soup bowl. Put a ladle of the hot soup in the bowl and immediately, on top of the bread, break an egg. The egg will congeal and the bread will go to the bottom of the bowl. Note: Can be made a day ahead and refrigerated. To serve, follow step 3.",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T14:15:56.483528",
-    "id": 63,
+    "date": "2023-12-05T13:45:38.096342800",
+    "id": 20,
     "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
+    "title": "Elegant Mushroom Soup",
     "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
+    "content": "* NOTE: Use 1 1/2 pounds or MORE of ripe mushrooms. The darker mushroom (older) adds a stronger flavor to the soup, that's what I usually use. I've made this with the regular white, as well as portabello mushrooms - a blend tastes fine, but the portobello tends to overpower slightly. 1. Melt butter in pot. Add sliced mushrooms, and saute gently until liquid is completely cooked out. Do not brown mushrooms. 2. Add at least 2 quarts chicken broth (reserve 1/3 cup), thyme, and bouillon. Bring to a full boil, and simmer, uncovered, until broth is reduced by 75%. Taste should be extremely strong (it will be diluted with the cream). Note: The reduction can take quite a while. 3. Mix cornstarch with reserved broth, and add to soup. Allow mixture to get very thick. 4. Gently add 2 quarts (or more) heavy cream. Blend, and bring to a gentle simmer. Taste, and adjust seasoning if needed. Thin with milk or cream if flavor is too strong, or soup is too thick. : Jocie Moravec",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T14:17:23.554987",
-    "id": 64,
+    "date": "2023-12-05T13:45:38.097342800",
+    "id": 21,
     "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
+    "title": "Emeril's Onion Soup",
     "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
+    "content": "Preheat the oven to 400 degrees F. In a large saucepan, over medium-heat, melt the butter. Add the onions. Season with salt and pepper. Saut�� the onions until slightly caramelized, about 8 to 10 minutes. Add the garlic, sherry, Worcestershire sauce and stock. Season with salt and pepper. Bring the liquid to a boil and reduce to a simmer. Cook the soup for 15 minutes. Ladle the soup into oven-proof deep bowls. Spread the each piece of bread with 1/4 cup of the rillette. Float the croutons on top of the soup. Cover each crouton with a piece of cheese. Sprinkle the cheese with parsley. Place the bowls on a sheet pan and place in the oven. Bake until the cheese is bubbly and golden, about 6 to 8 minutes. Remove from the oven and serve. Yield: 8 servings",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T14:18:50.135070",
-    "id": 65,
+    "date": "2023-12-05T13:45:38.098344600",
+    "id": 22,
     "calories": 0,
-    "title": "Electronic Gourmet's Chili",
+    "title": "End-Of-Month Vegetable Soup",
     "isCooked": false,
-    "content": "1) Chop the steak into 1 inch cubes. Heat the oil and beef a few cubes at a time, turning to brown on all sides. Add the chopped onions and saute over medium heat for 2 or 3 minutes then add the garlic. 2) Season with salt to taste. Add the boiling water, caraway and sesame seeds and oregano. Reduce heat, cover and simmer for 1 hour. 3) Gradually stir in the chili powder, testing frequently until you achieve the degree of flavour and hotness that suits you. Add olives, cover and simmer for another hour. 4) Taste, and correct the seasoning then mix in kidney beans and heat through. Toasted french bread, tortillas or corn bread go well with this and a crisp green salad. Hints: ===== Beer is the only drink that can stand up to the spiciness of the chili. Cool and freeze in containers. Serving day heat over low heat.",
+    "content": "Make the bouquet garni by tying the herbs up in a cheesecloth or coffee filter. Put a quart of water to boil with about 1/2 t salt (I don't like to use too much salt if I use bouillon), the bouquet garni and the bouillon. Dice the onion, mince the garlic, and add these to the soup together with the bacon and/or prosciutto ends. Bring this to a boil. Simmer 5 minutes. If scum forms on the surface, skim it off. Dice the potatoes and add to the boiling pot. Cut up everything else and add it. Add the wine. Adjust the liquid so that it covers the vegetables. After it boils again, adjust the seasoning and simmer for about an hour, or until it is done (this is quite subjective). NOTES: * Soup with a mixture of vegetables -- I had an eclectic mixture of vegetables going bad in the refrigerator, so I collected them and came up with this soup. It was very good, so I would like to share it with you all. Caveat: I rarely measure anything, so be careful of quantities. * This will serve 6 people at once, or 2 people for three days. It ages well in the refrigerator. : Difficulty: easy. : Time: 10 minutes preparation, 1 hour simmering. : Precision: no need to measure.",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T14:19:31.550719",
-    "id": 66,
+    "date": "2023-12-05T13:45:38.099344900",
+    "id": 23,
     "calories": 0,
-    "title": "Elizabeth David's Gateau Au Chocolat Et Aux Amandes",
+    "title": "Engadiner Gerstensuppe / Engadine Barley Soup",
     "isCooked": false,
-    "content": "Break the chocolate into small pieces; put them with the rum and coffee to melt in a cool oven. Stir the mixture well, put it with the butter, sugar and ground almonds in a saucepan and stir over a low fire for a few minutes until all the ingredients are blended smoothly together. Off the fire, stir in the well-beaten egg yolks, and then fold in the stiffly-whipped whites. Turn into a lightly-buttered shallow sponge-cake tin, of 7 to 8 inches diameter, or a tart tin with a removable base. Stand the tin on a baking sheet and cook in a very low oven, 290 deg. F., for about 45 minutes. This cake, owing to the total absence of flour, is rather fragile, so turn it out, when it is cool, with the utmost caution. It can either be served as it is, or covered with lightly whipped and sweetened cream. It is a cake which is equally good for dessert or for tea-time.",
+    "content": "Bring ham, beef, barley and beans to boil in about 30 fl oz water, and allow to simmer for about 2 hours. Add shredded cabbage and potatoes (other vegetables such as carrots and celery can be added if desired). After a further hour's cooking, thicken soup with cream previously blended with the flour, bring to the boil once more, and serve. From TANTE HEIDI'S SWISS KITCHEN, Eva Marie Borer / shared by Diane Duane",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T14:22:54.605749",
-    "id": 67,
+    "date": "2023-12-05T13:45:38.100344100",
+    "id": 24,
     "calories": 0,
-    "title": "Electric Bread - Sticky Buns",
+    "title": "English Pea Soup",
     "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.",
+    "content": "Comine English peas, lettuce, spinach, green onions, bouillion granules, chervil and pepper in a large saucepan; stir in water. Cover and bring to a boil; reduce heat, and simmer 20 minutes. Process mixture to saucepan, and stir in milk. Cook over medium heat, stirring frequently, until thoroughly heated. Food Exchange per serving: 1/2 STARCH EXCHANGE; CAL: 46; CHO: tr; CAR: 8gm; SOD: 64mg:",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T14:24:52.355088",
-    "id": 68,
+    "date": "2023-12-05T13:45:38.101346800",
+    "id": 25,
     "calories": 0,
-    "title": "Electronic Gourmet's Herb Salad Dressing",
+    "title": "Fresh Green Chile Soup with Tumbleweed Greens",
     "isCooked": false,
-    "content": "1) Place oil, herbs, salt and pepper in a shaker bottle or large glass measuring cup. Let stand at room temperature for 3 to 4 hours. The longer the better. 2) Add vinegar and shake or stir well to blend.",
+    "content": "Roast the chilies and peppers by the Open-Flame Method. Peel the chilies and peppers, pull off the stems, remove the seeds and veins, and set aside. In a medium saucepan, parboil the potatoes in boiling water with 1 teaspoon of the salt until tender. Puree the green chilies and then the red peppers separately in a food processor until smooth. Mix the purees together, add the potatoes and stock, and process in 2-cup batches for another minute, or until smooth. Add the remaining salt, the pepper, and garlic and process again. Press the puree through a fine sieve. Heat the puree in a saucepan. Serve hot, garnished with tumbleweed greens.",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T14:26:56.497783",
-    "id": 69,
+    "date": "2023-12-05T13:45:38.102345",
+    "id": 26,
     "calories": 0,
-    "title": "Electronic Gourmet's Chili",
+    "title": "Fresh Herb Summer Soup",
     "isCooked": false,
-    "content": "1) Chop the steak into 1 inch cubes. Heat the oil and beef a few cubes at a time, turning to brown on all sides. Add the chopped onions and saute over medium heat for 2 or 3 minutes then add the garlic. 2) Season with salt to taste. Add the boiling water, caraway and sesame seeds and oregano. Reduce heat, cover and simmer for 1 hour. 3) Gradually stir in the chili powder, testing frequently until you achieve the degree of flavour and hotness that suits you. Add olives, cover and simmer for another hour. 4) Taste, and correct the seasoning then mix in kidney beans and heat through. Toasted french bread, tortillas or corn bread go well with this and a crisp green salad. Hints: ===== Beer is the only drink that can stand up to the spiciness of the chili. Cool and freeze in containers. Serving day heat over low heat.",
+    "content": "Pour chicken broth into a large saucepan. Add the fresh herbs. Bring to a boil, lower heat, and simmer for 20 minutes. In a separate bowl, beat the egg yolks lightly with the cream. Slowly whisk 1 cup of the hot broth mixture into the cream-yolk mixture. Pour this mixture into the pan in a stream, whisking constantly. Cook for 6 to 8 minutes or until thickened. Do not boil. Cool completely. Chill, covered, for at least 3 hours, better if chilled overnight. Season with white pepper. Garnish with minced fresh herbs. Yield: 8 to 10 servings. BEN HUSSMAN (MRS. WALTER, JR.)",
     "isFavorite": false
   },
   {
-    "date": "2023-12-03T14:28:02.647143",
-    "id": 70,
+    "date": "2023-12-05T13:45:38.103344",
+    "id": 27,
     "calories": 0,
-    "title": "Elizabeth David's Mousse Au Chocolat a L'orange",
+    "title": "Fresh Minestrone Soup",
     "isCooked": false,
-    "content": "French Provincial Cooking [I used this to doctor a chocolate cake that dried out because it had been sitting in the fridge for several days. I crumbled the cake and mixed it with the mousse and put them in individual containers.] E. David writes: Nearly everyone knows and appreciates the old and reliable formula for a chocolate mousse-4 yolks beaten into 4 oz. of melted bitter chocolate, and the 4 whipped whites folded in. Here is a slightly different version, its faint orange flavor giving it originality. Break 4 oz of good quality bitter chocolate into squares and put in a fireproof dish in a low oven. When the chocolate is soft, after a few minutes, take it from the oven, stir in 4 well-beaten yolks, then 1 oz. of softened butter, then the juice of 1 orange. Use a Seville orange when in season; its aromatic flavor comes through better than that of the sweet orange. Beat the 4 egg whites as for a souffle and fold them into the chocolate mixture. Pour into little pots, glasses, or coffee-cups. This quantity will fill 6. Put in the refrigerator or a cool larder until ready to serve. Should you have some orange liqueur such as Grand Marnier or Curaao, add a spoonful in place of the same amount of orange juice.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:28:28.727988",
-    "id": 71,
-    "calories": 0,
-    "title": "Elegant Holiday Ham Glaze",
-    "isCooked": false,
-    "content": "In a saucepan, combine orange and lemon juices and peel, wine or cranberry juice, corn syrup and mustard. Simmer for 30 minutes. Add the cranberry sauce and ham drippings, if desired; heat through. If a thicker glaze is desired, bring just to a boil. Combine cornstarch and water; add to glaze. Cook and stir until slightly thickened. Serve warm over sliced ham. Yield; 3 1/2",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:30:11.023655",
-    "id": 72,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:33:30.010460",
-    "id": 73,
-    "calories": 0,
-    "title": "Elegant Baked Snapper",
-    "isCooked": false,
-    "content": "Place fillets in a baking dish and sprinkle with dill weed. Mix the sour cream, seafood seasoning, and pepper together and use a rubber scraper to \"frost\" the mixture over the fillets. Sprinkle with the chopped onion and the grated cheddar cheese. Bake at 400 degree F. until lightly browned and the fish flakes easily with a fork when tested in the center. Serves 6. Microwave version: Prepare as above, cover and cook in the microwave on high for 8 minutes. Test and continue to cook until the fish flakes easily. Brown in the oven (lightly).",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:44:23.978920",
-    "id": 74,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup change",
-    "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:44:35.814408",
-    "id": 75,
-    "calories": -1,
-    "title": "溜溜",
-    "isCooked": false,
-    "content": "\b",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:44:53.483753",
-    "id": 76,
-    "calories": -1,
-    "title": "溜溜球",
-    "isCooked": false,
-    "content": "\b",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:45:07.896376",
-    "id": 77,
-    "calories": -1,
-    "title": "溜溜球1",
-    "isCooked": false,
-    "content": "\b",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:51:26.090077",
-    "id": 78,
-    "calories": 0,
-    "title": "qqquwdc",
-    "isCooked": false,
-    "content": "sss",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:51:35.272538",
-    "id": 79,
-    "calories": 0,
-    "title": "qqquwdc1",
-    "isCooked": false,
-    "content": "sss",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:51:43.769509",
-    "id": 80,
-    "calories": 0,
-    "title": "Elegant Holiday Ham Glaze",
-    "isCooked": false,
-    "content": "In a saucepan, combine orange and lemon juices and peel, wine or cranberry juice, corn syrup and mustard. Simmer for 30 minutes. Add the cranberry sauce and ham drippings, if desired; heat through. If a thicker glaze is desired, bring just to a boil. Combine cornstarch and water; add to glaze. Cook and stir until slightly thickened. Serve warm over sliced ham. Yield; 3 1/2",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T14:55:19.937399",
-    "id": 81,
-    "calories": -1,
-    "title": "// 使用 DocumentListener 监听文本内容变化\n    recipeNameField.getDocument().addDocumentListener(new DocumentListener() {\n        @Override\n        public void insertUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void removeUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void changedUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        private void updateState() {\n            CreateRecipeState currentState = createRecipeViewModel.getState();\n            currentState.setRecipeName(recipeNameField.getText());\n            createRecipeViewModel.setState(currentState);\n        }\n    });\n\n    recipeContentArea.getDocument().addDocumentListener(new DocumentListener() {\n        @Override\n        public void insertUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void removeUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void changedUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        private void updateState() {\n            CreateRecipeState currentState = createRecipeViewModel.getState();\n            currentState.setContent(recipeContentArea.getText());\n            createRecipeViewModel.setState(currentState);\n        }\n    });",
-    "isCooked": false,
-    "content": "// 使用 DocumentListener 监听文本内容变化\n    recipeNameField.getDocument().addDocumentListener(new DocumentListener() {\n        @Override\n        public void insertUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void removeUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void changedUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        private void updateState() {\n            CreateRecipeState currentState = createRecipeViewModel.getState();\n            currentState.setRecipeName(recipeNameField.getText());\n            createRecipeViewModel.setState(currentState);\n        }\n    });\n\n    recipeContentArea.getDocument().addDocumentListener(new DocumentListener() {\n        @Override\n        public void insertUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void removeUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        @Override\n        public void changedUpdate(DocumentEvent e) {\n            updateState();\n        }\n\n        private void updateState() {\n            CreateRecipeState currentState = createRecipeViewModel.getState();\n            currentState.setContent(recipeContentArea.getText());\n            createRecipeViewModel.setState(currentState);\n        }\n    });",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T15:55:45.908408",
-    "id": 82,
-    "calories": 0,
-    "title": "Elegant and Easy Gourmet Gefilte Fish Pate",
-    "isCooked": false,
-    "content": "Grind fish fine. Saute onions in oil till soft but not brown. Put the fish, onions, eggs, water, matzah meal, salt, white pepper, and sugar in a electric mixer bowl and beat on medium speed for 15 minutes. Grate the carrots and mix well. Pour the mixture into a gerased 12 cup bundt pan. Smooth the top with a spatula and bake in a preheated 325 degree oven for 1 hour in a larger pan filled with 2 inches water. Cover with alum foil and continue baking for 1 hour or until the center is solid. Cool for 5 minutes and then invert onto a flat serving plate. Refrigerate for several hours or over night. Slice as you would a torte and serve as an appetizer, garnished with parsley and served with red horseradish.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:10:57.226815",
-    "id": 83,
-    "calories": 0,
-    "title": "Elegant Seafood Quiche",
-    "isCooked": false,
-    "content": "Preheat oven to 350. Sprinkle cheese, crab flakes, onion, flour, and seasonings on top of pie crust. Beat together eggs and half and half. Pour over cheese mixture. Bake 55-60 minutes or until set. Makes 6 servings. *Can substitute with sharp cheddar cheese",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:11:00.397584",
-    "id": 84,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:28:38.828104",
-    "id": 85,
-    "calories": 0,
-    "title": "Electronic Gourmet's Chili",
-    "isCooked": false,
-    "content": "1) Chop the steak into 1 inch cubes. Heat the oil and beef a few cubes at a time, turning to brown on all sides. Add the chopped onions and saute over medium heat for 2 or 3 minutes then add the garlic. 2) Season with salt to taste. Add the boiling water, caraway and sesame seeds and oregano. Reduce heat, cover and simmer for 1 hour. 3) Gradually stir in the chili powder, testing frequently until you achieve the degree of flavour and hotness that suits you. Add olives, cover and simmer for another hour. 4) Taste, and correct the seasoning then mix in kidney beans and heat through. Toasted french bread, tortillas or corn bread go well with this and a crisp green salad. Hints: ===== Beer is the only drink that can stand up to the spiciness of the chili. Cool and freeze in containers. Serving day heat over low heat.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:41:44.328201",
-    "id": 86,
-    "calories": 0,
-    "title": "Elixir of Portobello",
-    "isCooked": false,
-    "content": "To roast the onion, if you have a gas range, simply place the onion right on the burner, in a high flame, and roast, turning with tongs, until the outer skin is charred all the way around. If range is electric, you can roast in a preheated 500 oven. Plunge the onion into ice water to stop the cooking, then rub off the black skin under running water. Render the bacon in a 5 quart pot over high heat until crisp, about 8 minutes. Add 1 pound of the mushrooms, all the bell peppers, the celery and onions and cook, stirring occasionally, for about 5 minutes. Add the syrup, flour, and seasoning mix and stir until the flour is completely absorbed. Stir in the stock and scrape the pot bottom thoroughly. Bring to a boil, add the remaining mushrooms, reduce the heat to medium low and cook at a brisk simmer for 30 minutes. Remove from the heat and serve.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:41:44.383111",
-    "id": 86,
-    "calories": 0,
-    "title": "Emeril's Bloody Mary Mix",
-    "isCooked": false,
-    "content": "In a blender, combine first four ingredients together. Blend until smooth. Season the mixture to taste with the Worcestershire Sauce, hot sauce, salt and pepper. Store the mixture in a non-reactive container. Refrigerate the mixture for a least 6 hours before serving. Yield: about 1 quart",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:41:44.401811",
-    "id": 86,
-    "calories": 0,
-    "title": "Emeril's Rustic Brown Roux",
-    "isCooked": false,
-    "content": "ESSENCE OF EMERIL SHOW#EE2315 In a large saute pan, add the oil. When the pan is smoking hot, carefully whisk in the flour and reduce the heat. Season with salt and pepper. Stir the mixture constantly for 30 minutes or dark brown in color with a nutty aroma. Remove from heat.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:41:44.424412",
-    "id": 86,
-    "calories": 0,
-    "title": "Enchiladas South Texas Style",
-    "isCooked": false,
-    "content": "Melt shortening in heavy skillet. Add the ground meat and brown. Sprinkle meat with flour; mix in skillet. Add tomato sauce and 1 cup water. Mix 1/2 cup water with the chili powder to form a smooth paste; add to the meat mixture. Add salt to taste and garlic powder. Cook over medium heat, uncovered, until it is of gravy consistency. Cover and simmer over very low heat. Add more water if the chili gravy becomes too thick. Dip tortillas one at a time in the hot chili gravy with a wide metal spatula. The tortillas will become pliable almost immediately, which will make rolling the enchiladas easier. Soaking too long will cause the tortillas to fall apart. Place a good sprinkling of grated cheese and minced onion and about a tablespoon of the meat mixture to one side of the center of the tortilla. Roll tortilla tightly around the filling and place loose side down in a glass casserole baking dish. For best results place the enchilidas in a row with sides touching. When all enchiladas have been formed, pour the remaining hot chili gravy over all, and sprinkle generously with grated cheese, and top with chopped onion. Bake at 350 deg. F until the cheese is melted. Serve immediately. NOTES : Serve with canned refried beans, guacamole, picante sauce, tortilla chips, spanish rice, steamed tortillas and butter. For faster preparation, you can layer mixture in a casserole, starting with a little meat sauce in the bottom of the casserole, a layer of torn (in quarters) tortillas, another meat layer, sprinke of cheese and onions, and repeat layers, ending up with a layer of meat sauce topped with cheese and onion on top. Then bake until casserole is hot and cheese is melted.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:41:44.432954",
-    "id": 86,
-    "calories": 0,
-    "title": "Enchiladas with Salsa Mexicana",
-    "isCooked": false,
-    "content": "1. Preheat oven to 350F. Prepare Salsa Mexicana (see recipe) or use a prepared salsa. 2. Lightly spray a 1 2-in. nonstick skillet with vegetable oil cooking spray. Add bell pepper and onion, and cook over medium heat, stirring until softened, about 5 minutes. Add mushrooms, potatoes, garlic and 1/4 cup water and cook, stirring occasionally, until all vegetables are softened, about 10 minutes. Remove the skillet from the heat and stir in spinach, cilantro and red pepper flakes until spinach is wilted. Add feta and stir to blend. 3. Lightly spray an 8-in. square baking pan with vegetable oil. Warm each tortilla in a dry skillet over medium heat, about 1 minute per side. Place 1/3 cup of vegetable mixture in the lower part of each tortilla and roll up. Carefully place enchiladas seam side down in the baking pan, brush lightly with some of the liquid from the salsa, cover with foil and bake for 20 minutes. 4. To serve, divide lettuce among 6 plates. Place enchiladas on top of the lettuce. Top with salsa and garnish with cilantro sprigs. Notes: A nicely spiced entree, these light enchiladas are filled with veggies instead of the typical beef, pork or chicken. A bit of feta cheese is in the wrap for tangy flavor and creaminess. >from Kitpath with a little help from mcbuster 2.0d",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:41:44.445694",
-    "id": 86,
-    "calories": 0,
-    "title": "Fresh Green and Wax Beans",
-    "isCooked": false,
-    "content": "1. Wash and cut beans into 1 1/2 inch pieces. 2. Place in a deep 2-quart, heat-resistant, non-metallic casserole with the water. 3. Heat, covered, in Microwave Oven 12 minutes or until tender. Stir occasionally during cooking. 4. Drain water and season to taste.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:41:44.451707",
-    "id": 86,
-    "calories": 0,
-    "title": "Grandma Elaine's Ice Box Cake",
-    "isCooked": false,
-    "content": "Use a glass pyrex dish or brownie pan. Whip in a medium bowl all of the cream, when whipped add sugar and vanilla extract. Drain pinapple. Wash and slice strawberries. Peel and slice bananas. Layer in whipped cream, cookies, fruit, whipped cream, cookies, fruit until the dish is almost filled to the top (about 4 or 5 layers). Chill for a few hours and serve. NOTES : Recipe courtesy of Erica Miller and her Grandma Elaine",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:41:44.456411",
-    "id": 86,
-    "calories": 0,
-    "title": "Gravad Lax",
-    "isCooked": false,
-    "content": "Fillet and debone the salmon. Rinse, dry and lay fillets (flesh up) side-by-side on a sheet of foil. Roughly chop the dill; mix with the other ingredients and sprinkle over one of the fillets. Place the other fillet flesh down on top; fold over the foil and seal it tightly all the way around. Put into a dish and add a weight to the top; then place into a refrigerator for 48 hours. Turn the parcel after 12 hours and baste both sides with juices. Carve into thin slices as you would for smoked salmon. Arrange on each plate, accompanied with a dressing or green salad.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:41:44.461701",
-    "id": 86,
-    "calories": 0,
-    "title": "Gravad Lax ( Tessa )",
-    "isCooked": false,
-    "content": "This is method of curing fresh fish, in this case salmon, which is very easy to do at home and which is gentler (and therefore often more acceptable to children) than the more usual smoked salmon. The cured dish is not at all salty and makes a simple and fresh starter. Skin and pin-bone the salmon, taking care that all visible bones are removed. Remove and discard any dark flesh under the skin. Wash and dry the fish. Mix together the salt, sugar, pepper and half the dill. Sprinkle half the cure mixture over the fish (patting it into the flesh), put the salmon into a shallow dish (china is good), turn and sprinkle the remainder. Cover the fish tightly with food wrap and keep refrigerated overnight, turning the fish and basting it with the juices at frequent intervals. The next day remove the salmon, rinse it and then pat dry with kitchen paper. Sprinkle the remaining dill over the top side of the dish, patting it in with your hands. To serve slice very thinly with a sharp knife from top to bottom giving small thin slices edged with bright green dill. Some spring onion and creme fraiche goes well with it. Per serving: 1 Calories (kcal); trace Total Fat; (18% calories from fat); trace Protein; trace Carbohydrate; 0mg Cholesterol; 2mg Sodium Food Exchanges: 0 Grain(Starch); 0 Lean Meat; 0 Vegetable; 0 Fruit; 0 Fat; 0 Other Carbohydrates",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T16:54:47.791755",
-    "id": 87,
-    "calories": 0,
-    "title": "Electric Bread - Sticky Buns",
-    "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T17:07:36.970290",
-    "id": 88,
-    "calories": 156,
-    "title": "yummy pasta",
-    "isCooked": false,
-    "content": "12",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T17:08:24.103935",
-    "id": 89,
-    "calories": 0,
-    "title": "pasta34",
-    "isCooked": false,
-    "content": "1",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T17:35:12.220243",
-    "id": 90,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
-    "isCooked": false,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T17:47:28.107856",
-    "id": 91,
-    "calories": 0,
-    "title": "Elizabeth David's Gateau Au Chocolat Et Aux Amandes",
-    "isCooked": false,
-    "content": "Break the chocolate into small pieces; put them with the rum and coffee to melt in a cool oven. Stir the mixture well, put it with the butter, sugar and ground almonds in a saucepan and stir over a low fire for a few minutes until all the ingredients are blended smoothly together. Off the fire, stir in the well-beaten egg yolks, and then fold in the stiffly-whipped whites. Turn into a lightly-buttered shallow sponge-cake tin, of 7 to 8 inches diameter, or a tart tin with a removable base. Stand the tin on a baking sheet and cook in a very low oven, 290 deg. F., for about 45 minutes. This cake, owing to the total absence of flour, is rather fragile, so turn it out, when it is cool, with the utmost caution. It can either be served as it is, or covered with lightly whipped and sweetened cream. It is a cake which is equally good for dessert or for tea-time.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T17:53:05.207503",
-    "id": 92,
-    "calories": 0,
-    "title": "Electronic Gourmet's Herb Salad Dressing",
-    "isCooked": false,
-    "content": "1) Place oil, herbs, salt and pepper in a shaker bottle or large glass measuring cup. Let stand at room temperature for 3 to 4 hours. The longer the better. 2) Add vinegar and shake or stir well to blend.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T17:54:12.808686",
-    "id": 93,
-    "calories": 0,
-    "title": "Elizabeth Burris' Broccoli Salad",
-    "isCooked": false,
-    "content": "CLEAN AND CUT the whole broccoli into small pieces. Use all of the broccoli except the end chunks. Mix together the broccoli, onion, sunflower seeds, raisins and mushrooms. Make the dressing by mixing the mayonnaise, vinegar and sugar. Twenty minutes before serving, toss the salad. Toss with the bacon and the dressing.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T17:59:28.515296",
-    "id": 94,
-    "calories": 0,
-    "title": "Elote Con Queso",
-    "isCooked": false,
-    "content": "Preheat oven to 350. Butter a 3-quart baking dish. In a food processor, combine corn, baking powder, cheeses, chiles & sugar; process just until corn kernels are broken down. In a very large bowl, whisk together eggs & cream. Add corn mixture and stir to combine, then stir in salt. Pour into buttered baking dish. Bake 45 to 55 minutes or until custard is just set & a knife inserted in center comes out clean. Serve immediately. Makes 12 servings.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:00:50.111521",
-    "id": 95,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup Change.",
-    "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:01:13.712552",
-    "id": 96,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup change",
-    "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:02:05.967458",
-    "id": 97,
-    "calories": 0,
-    "title": "Elida Proenza's Yuca Con Mojo",
-    "isCooked": false,
-    "content": "Cut the yuca into 2-in pieces and peel with a paring knife. Cut the large pieces in half so that all are of uniform size. Bring ar least 2 quarts salted water to a boil. Add the yuca and cook for 20 minutes or until cracks begin to appear in the center (of the yuca) Add 1 c cold water. Cook the yuca for 5-10 more minutes, or until very soft. Meanwhile, make the mojo. Finely chop the garlic, and, in a mortar and pestle, pound it to a paste with the salt and pepper. Stir in the lime juice and correct the seasoning. Just before serving, heat the olive oil in a small frying pan and pour it into the garlic mixture. Stand back - it may spatter. Drain the yuca and pull out any fibers. Arrange on a platter or plates and pour the hot mojo on top. Garnish the yuca with thinly sliced onion and serve",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:11:27.382581",
-    "id": 98,
-    "calories": 0,
-    "title": "Electric Bread - Sticky Buns",
-    "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:12:37.199207",
-    "id": 99,
-    "calories": 0,
-    "title": "Emeril's Cigars with Corn and Cheese Queso Sauce",
-    "isCooked": false,
-    "content": "Preheat the vegetable oil to 360 degrees F in a large pan. In a large saut\u0082 pan, heat the olive oil. Season the beef with salt and cayenne. Sear the beef for 1 to 2 minutes. Add the onions and saut\u0082 for 2 minutes. Add the garlic and tomatoes. Season with salt and cayenne. Saut\u0082 for 1 minute. Remove from the heat. Season with salt and pepper. Spoon a couple of tablespoons of the filling in the center of each tortilla. Spread the filling evenly in the center of each tortilla. Roll up each tortilla tightly and secure with toothpicks, making each into a flautta. Fry the flauttas in batches until golden brown, about 3 minutes. Remove the flauttas from the oil and drain on a paper-lined plate. Season the flauttas with Emeril's Creole Seasoning. Continue frying until all the flauttas are fried. To assemble into a hero, spoon the queso on the bottom of a large platter. Arrange the flauttas over the sauce. Garnish with the guacamole and salsa. Yields: 6 servings. Air date on GMA 1/23/98",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:28:22.893118",
-    "id": 100,
-    "calories": 0,
-    "title": "Electronic Gourmet's Herb Salad Dressing",
-    "isCooked": false,
-    "content": "1) Place oil, herbs, salt and pepper in a shaker bottle or large glass measuring cup. Let stand at room temperature for 3 to 4 hours. The longer the better. 2) Add vinegar and shake or stir well to blend.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:28:23.998977",
-    "id": 101,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
-    "isCooked": false,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:28:27.653868",
-    "id": 102,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
-    "isCooked": false,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:28:28.844804",
-    "id": 103,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
-    "isCooked": false,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:28:34.950934",
-    "id": 104,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
-    "isCooked": false,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:28:35.274519",
-    "id": 105,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:28:55.331709",
-    "id": 106,
-    "calories": 0,
-    "title": "Electric Bread - Sticky Buns",
-    "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:36:33.278740",
-    "id": 107,
-    "calories": 0,
-    "title": "Electric Bread - Sticky Buns",
-    "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:37:58.891851",
-    "id": 108,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:38:40.350326",
-    "id": 109,
-    "calories": 0,
-    "title": "Elizabeth David's Mousse Au Chocolat a L'orange",
-    "isCooked": false,
-    "content": "French Provincial Cooking [I used this to doctor a chocolate cake that dried out because it had been sitting in the fridge for several days. I crumbled the cake and mixed it with the mousse and put them in individual containers.] E. David writes: Nearly everyone knows and appreciates the old and reliable formula for a chocolate mousse-4 yolks beaten into 4 oz. of melted bitter chocolate, and the 4 whipped whites folded in. Here is a slightly different version, its faint orange flavor giving it originality. Break 4 oz of good quality bitter chocolate into squares and put in a fireproof dish in a low oven. When the chocolate is soft, after a few minutes, take it from the oven, stir in 4 well-beaten yolks, then 1 oz. of softened butter, then the juice of 1 orange. Use a Seville orange when in season; its aromatic flavor comes through better than that of the sweet orange. Beat the 4 egg whites as for a souffle and fold them into the chocolate mixture. Pour into little pots, glasses, or coffee-cups. This quantity will fill 6. Put in the refrigerator or a cool larder until ready to serve. Should you have some orange liqueur such as Grand Marnier or Curaao, add a spoonful in place of the same amount of orange juice.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:38:44.137761",
-    "id": 110,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup",
-    "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.change",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:43:22.652153",
-    "id": 111,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:45:46.586940",
-    "id": 112,
-    "calories": 0,
-    "title": "Elegant Fondue Chocolate (Sweet)",
-    "isCooked": false,
-    "content": "From the Oster (blender) brochure \"Fun and Fancy Fondue Feasts\" Break Toblerone into triangular pieces and melt in cream in fondue pot, stirring frequently until chocolate is melted. Add liqueur and stir well. (For a thinner fondue, add 1 to 2 tablespoons of cream). Variation: Use two 3-oz. bars Toblerone milk chocolate and one 3-oz. bar Toblerone bittersweet chocolate for a semisweet chocolate fondue. Dippers: Assorted fruit pieces - firm bananas, tart apples, rasp- berries, strawberries, pears; cubes of cream cheese; cubes of angel or sponge cake; marshmallows. This is a fun party dessert...you will need fondue forks. I use a teflon lined small casserole for my fondue pot and keep it warm on a Salton Hot Tray. /DESSERTS",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:45:48.674784",
-    "id": 113,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
-    "isCooked": false,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:46:08.463589",
-    "id": 114,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
-    "isCooked": false,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:48:29.541146",
-    "id": 115,
-    "calories": 0,
-    "title": "Electric Bread - Sticky Buns",
-    "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:49:42.237800",
-    "id": 116,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
-    "isCooked": false,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:49:48.054017",
-    "id": 117,
-    "calories": 0,
-    "title": "Electric Bread - Sticky Buns",
-    "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:49:59.561038",
-    "id": 118,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Dressing",
-    "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:50:12.451440",
-    "id": 119,
-    "calories": 0,
-    "title": "Elegant and Easy Wild Rice",
-    "isCooked": false,
-    "content": "Combine first 7 ingredients. Add 1-1/2 cans mushroom soup and 1/2 shrimp. Place mixture in baking dish. Bake at 350 for 1-1/2 hours. Sauce: Brown mushrooms in small amount of butter. Add remaining 1-1/2 cans of mushroom soup and remaining 1/2 shrimp. Heat through. Serve crab and rice mixture with the hot mushroom sauce. Makes about 20 servings.change",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:58:19.786007",
-    "id": 120,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup",
-    "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-03T18:59:29.341873",
-    "id": 121,
-    "calories": 0,
-    "title": "Electronic Gourmet's French Onion Soup",
-    "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
+    "content": "In 2 quart microwave safe casserole, combine all ingredients except cheese. Cover; microwave at high 11-13 minutes, stirring once, or until pasta is tender. Serve in bowls sprinkled with cheese, if desired.",
     "isFavorite": false
   }
 ]
