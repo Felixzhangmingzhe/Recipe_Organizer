@@ -32,7 +32,7 @@ public class CookedInteractorTest {
         CookedInputData inputData = new CookedInputData("MockedRecipeTitle");
 
         // Create CookedInteractor object
-        CookedInteractor cookedInteractor = new CookedInteractor(cookedPresenter, cookedDataAccessInterface);
+        CookedInteractor cookedInteractor = new CookedInteractor(cookedDataAccessInterface, cookedPresenter);
 
         // Call execute method
         cookedInteractor.execute(inputData);
@@ -65,7 +65,7 @@ public class CookedInteractorTest {
         CookedInputData inputData = new CookedInputData("MockedRecipeTitle");
 
         // 创建CookedInteractor对象
-        CookedInteractor cookedInteractor = new CookedInteractor(cookedPresenter, cookedDataAccessInterface);
+        CookedInteractor cookedInteractor = new CookedInteractor(cookedDataAccessInterface, cookedPresenter);
 
         // 调用execute方法
         cookedInteractor.execute(inputData);

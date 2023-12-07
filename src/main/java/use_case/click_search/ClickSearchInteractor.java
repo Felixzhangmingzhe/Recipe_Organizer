@@ -32,17 +32,12 @@ public class ClickSearchInteractor implements ClickSearchInputBoundary{
             if (recipes.isEmpty()){
                 clickSearchPresenter.prepareFailView("No recipes found");
                 System.out.println("No recipes found");
-            } else if(recipes == null){
-                clickSearchPresenter.prepareFailView("Cannot find recipe");
-                System.out.println("Cannot find recipe");
             }
             else {
                 clickSearchPresenter.prepareSuccessView(clickSearchOutputData);
             }
         } catch (IOException e) {
         }catch (JSONException e) {
-            clickSearchPresenter.prepareFailView(e.getMessage());
         }
-
     }
 }

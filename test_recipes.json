@@ -1,0 +1,92 @@
+[
+  {
+    "calories": 75,
+    "content": "Favorite instructions",
+    "date": "2023-12-07T10:52:30.328773",
+    "id": 2,
+    "isCooked": false,
+    "isFavorite": true,
+    "title": "Favorite Recipe"
+  },
+  {
+    "calories": 50,
+    "content": "Test instructions",
+    "date": "2023-12-07T10:52:30.453272",
+    "id": 1,
+    "isCooked": false,
+    "isFavorite": false,
+    "title": "Test Recipe"
+  },
+  {
+    "calories": 75,
+    "content": "Favorite instructions",
+    "date": "2023-12-07T12:02:32.123346",
+    "id": 2,
+    "isCooked": false,
+    "isFavorite": true,
+    "title": "Favorite Recipe"
+  },
+  {
+    "calories": 50,
+    "content": "Test instructions",
+    "date": "2023-12-07T12:02:32.197251",
+    "id": 1,
+    "isCooked": false,
+    "isFavorite": false,
+    "title": "Test Recipe"
+  },
+  {
+    "calories": 75,
+    "content": "Favorite instructions",
+    "date": "2023-12-07T12:13:27.147474",
+    "id": 2,
+    "isCooked": false,
+    "isFavorite": true,
+    "title": "Favorite Recipe"
+  },
+  {
+    "calories": 50,
+    "content": "Test instructions",
+    "date": "2023-12-07T12:13:27.164469",
+    "id": 1,
+    "isCooked": false,
+    "isFavorite": false,
+    "title": "Test Recipe"
+  },
+  {
+    "calories": 75,
+    "content": "Favorite instructions",
+    "date": "2023-12-07T12:15:50.728602",
+    "id": 2,
+    "isCooked": false,
+    "isFavorite": true,
+    "title": "Favorite Recipe"
+  },
+  {
+    "calories": 50,
+    "content": "Test instructions",
+    "date": "2023-12-07T12:15:50.818355",
+    "id": 1,
+    "isCooked": false,
+    "isFavorite": false,
+    "title": "Test Recipe"
+  },
+  {
+    "calories": 75,
+    "content": "Favorite instructions",
+    "date": "2023-12-07T12:38:15.228796",
+    "id": 2,
+    "isCooked": false,
+    "isFavorite": true,
+    "title": "Favorite Recipe"
+  },
+  {
+    "calories": 50,
+    "content": "Test instructions",
+    "date": "2023-12-07T12:38:15.273256",
+    "id": 1,
+    "isCooked": false,
+    "isFavorite": false,
+    "title": "Test Recipe"
+  }
+]

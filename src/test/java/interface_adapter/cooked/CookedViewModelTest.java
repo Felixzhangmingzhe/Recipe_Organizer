@@ -42,10 +42,11 @@ class CookedViewModelTest {
 
     @Test
     void getAndSetSetCookedSuccess() {
-        viewModel.setSetCookedSuccess(true);
-        assertTrue(viewModel.getSetCookedSuccess(), "getSetCookedSuccess should return true when setSetCookedSuccess(true) is called.");
+        CookedState state = viewModel.getState();
+        state.setSetCookedSuccess(true);
+        assertTrue(state.getSetCookedSuccess(), "getSetCookedSuccess should return true when setSetCookedSuccess(true) is called.");
 
-        viewModel.setSetCookedSuccess(false);
-        assertFalse(viewModel.getSetCookedSuccess(), "getSetCookedSuccess should return false when setSetCookedSuccess(false) is called.");
+        state.setSetCookedSuccess(false);
+        assertFalse(state.getSetCookedSuccess(), "getSetCookedSuccess should return false when setSetCookedSuccess(false) is called.");
     }
 }
