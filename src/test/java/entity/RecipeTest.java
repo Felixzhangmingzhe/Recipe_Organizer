@@ -1,10 +1,9 @@
 package entity;
 
-import org.junit.jupiter.api.Test;
+import entity.Recipe;
 import java.time.LocalDateTime;
-
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 class RecipeTest {
 
@@ -36,13 +35,13 @@ class RecipeTest {
     @Test
     void testGetIsFavorite() {
         Recipe recipe = new Recipe(1, "Title", "Content", LocalDateTime.now(), true, false, 300.0);
-        assertEquals(true, recipe.getIsFavorite());
+        assertTrue(recipe.getIsFavorite());
     }
 
     @Test
     void testGetIsCooked() {
         Recipe recipe = new Recipe(1, "Title", "Content", LocalDateTime.now(), true, false, 300.0);
-        assertEquals(false, recipe.getIsCooked());
+        assertFalse(recipe.getIsCooked());
     }
 
     @Test
