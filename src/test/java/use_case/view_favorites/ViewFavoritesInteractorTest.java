@@ -25,6 +25,8 @@ class ViewFavoritesInteractorTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
+        interactor = new ViewFavoritesInteractor(mockDataAccess, mockPresenter);
+=======
         mockInteractor = new ViewFavoritesInteractor(mockDataAccessInterface, mockPresenter);
     }
 

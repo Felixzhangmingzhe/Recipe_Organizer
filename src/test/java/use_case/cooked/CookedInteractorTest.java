@@ -22,6 +22,8 @@ class CookedInteractorTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
+        interactor = new CookedInteractor(cookedDataAccessInterface, cookedPresenter);
+=======
         cookedInteractor = new CookedInteractor(cookedDataAccessInterface, cookedPresenter);
     }
 

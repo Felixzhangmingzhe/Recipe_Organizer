@@ -17,7 +17,7 @@ import view.SearchNewView;
 
 public class SearchNewViewUseCaseFactory {
 
-    public SearchNewView create() {
+    public static SearchNewView create() {
         return new SearchNewView();
     }
 
