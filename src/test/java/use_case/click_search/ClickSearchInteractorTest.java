@@ -18,16 +18,18 @@ import static org.mockito.Mockito.*;
 class ClickSearchInteractorTest {
 
     @Mock
-    private ClickSearchDataAccessInterface clickSearchDataAccess;
+    private ClickSearchDataAccessInterface clickSearchDataAccessInterface;
     @Mock
     private ClickSearchOutputBoundary clickSearchPresenter;
 
-    private ClickSearchInteractor interactor;
+    private ClickSearchInteractor clickSearchInteractor;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
         interactor = new ClickSearchInteractor(clickSearchDataAccess, clickSearchPresenter);
+=======
+        clickSearchInteractor = new ClickSearchInteractor(clickSearchDataAccessInterface, clickSearchPresenter);
     }
 
     @Test
@@ -35,34 +37,34 @@ class ClickSearchInteractorTest {
         String title = "Test Recipe";
         Recipe recipe = new Recipe(1, title, "Test Content", LocalDateTime.now(), false, false, 300.0);
         List<Recipe> recipes = Arrays.asList(recipe);
-        when(clickSearchDataAccess.getRecipesFromAPI(title)).thenReturn(recipes);
+        when(clickSearchDataAccessInterface.getRecipesFromAPI(title)).thenReturn(recipes);
 
         ClickSearchInputData inputData = new ClickSearchInputData(title);
-        interactor.clickSearch(inputData);
+        clickSearchInteractor.clickSearch(inputData);
 
-        verify(clickSearchDataAccess, times(1)).getRecipesFromAPI(title);
+        verify(clickSearchDataAccessInterface, times(1)).getRecipesFromAPI(title);
         verify(clickSearchPresenter, times(1)).prepareSuccessView(any(ClickSearchOutputData.class));
     }
 
     @Test
     void clickSearch_NoRecipesFound() throws IOException, JSONException {
         String title = "Test Recipe";
-        when(clickSearchDataAccess.getRecipesFromAPI(title)).thenReturn(Collections.emptyList());
+        when(clickSearchDataAccessInterface.getRecipesFromAPI(title)).thenReturn(Collections.emptyList());
 
         ClickSearchInputData inputData = new ClickSearchInputData(title);
-        interactor.clickSearch(inputData);
+        clickSearchInteractor.clickSearch(inputData);
 
-        verify(clickSearchDataAccess, times(1)).getRecipesFromAPI(title);
+        verify(clickSearchDataAccessInterface, times(1)).getRecipesFromAPI(title);
         verify(clickSearchPresenter, times(1)).prepareFailView("No recipes found");
     }
 
     @Test
     void clickSearch_ErrorOccurs() throws IOException, JSONException {
         String title = "Test Recipe";
-        when(clickSearchDataAccess.getRecipesFromAPI(title)).thenThrow(new IOException("Network Error"));
+        when(clickSearchDataAccessInterface.getRecipesFromAPI(title)).thenThrow(new IOException("Network Error"));
 
         ClickSearchInputData inputData = new ClickSearchInputData(title);
-        interactor.clickSearch(inputData);
+        clickSearchInteractor.clickSearch(inputData);
 
         verify(clickSearchDataAccess, times(1)).getRecipesFromAPI(title);
 
@@ -77,5 +79,8 @@ class ClickSearchInteractorTest {
 
         verify(clickSearchDataAccess, times(1)).getRecipesFromAPI(title);
 
+=======
+        verify(clickSearchDataAccessInterface, times(1)).getRecipesFromAPI(title);
+        verify(clickSearchPresenter, times(1)).prepareFailView("Network Error");
     }
 }

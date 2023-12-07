@@ -15,17 +15,19 @@ import static org.mockito.Mockito.*;
 class ViewFavoritesInteractorTest {
 
     @Mock
-    private ViewFavoritesOutputBoundary mockPresenter;
+    private ViewFavoritesDataAccessInterface mockDataAccessInterface;
 
     @Mock
-    private ViewFavoritesDataAccessInterface mockDataAccess;
+    private ViewFavoritesOutputBoundary mockPresenter;
 
-    private ViewFavoritesInteractor interactor;
+    private ViewFavoritesInteractor mockInteractor;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
         interactor = new ViewFavoritesInteractor(mockDataAccess, mockPresenter);
+=======
+        mockInteractor = new ViewFavoritesInteractor(mockDataAccessInterface, mockPresenter);
     }
 
     @Test
@@ -35,12 +37,12 @@ class ViewFavoritesInteractorTest {
                 new Recipe(2, "Recipe 2", "Content 2", LocalDateTime.now(), true, true, 300)
         );
 
-        when(mockDataAccess.getFavorites()).thenReturn(mockFavorites);
+        when(mockDataAccessInterface.getFavorites()).thenReturn(mockFavorites);
 
-        interactor.execute();
+        mockInteractor.execute();
 
         // Verify that getFavorites is called on the data access object
-        verify(mockDataAccess, times(1)).getFavorites();
+        verify(mockDataAccessInterface, times(1)).getFavorites();
 
         // Verify that prepareSuccessView is called on the presenter with the correct data
         verify(mockPresenter, times(1)).prepareSuccessView(any(ViewFavoritesOutputData.class));

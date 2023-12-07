@@ -16,17 +16,19 @@ import static org.mockito.Mockito.*;
 class ViewWarehouseInteractorTest {
 
     @Mock
-    private ViewWarehousePresenter mockPresenter;
+    private ViewWarehouseDataAccessInterface mockDataAccessInterface;
 
     @Mock
-    private ViewWarehouseDataAccessInterface mockDataAccess;
+    private ViewWarehousePresenter mockPresenter;
 
-    private ViewWarehouseInteractor interactor;
+    private ViewWarehouseInteractor mockInteractor;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
         interactor = new ViewWarehouseInteractor(mockDataAccess, mockPresenter);
+=======
+        mockInteractor = new ViewWarehouseInteractor(mockDataAccessInterface, mockPresenter);
     }
 
     @Test
@@ -35,12 +37,12 @@ class ViewWarehouseInteractorTest {
                 new Recipe(1, "Test Recipe 1", "Content 1", LocalDateTime.now(), true, false, 200),
                 new Recipe(2, "Test Recipe 2", "Content 2", LocalDateTime.now(), false, true, 300)
         );
-        when(mockDataAccess.getAllRecipe()).thenReturn(testRecipes);
+        when(mockDataAccessInterface.getAllRecipe()).thenReturn(testRecipes);
 
-        interactor.execute();
+        mockInteractor.execute();
 
         // Verify that the data access interface method is called
-        verify(mockDataAccess, times(1)).getAllRecipe();
+        verify(mockDataAccessInterface, times(1)).getAllRecipe();
 
         // Verify that the presenter's method is called with the correct data
         verify(mockPresenter, times(1)).prepareSuccessView(any(ViewWarehouseOutputData.class));
