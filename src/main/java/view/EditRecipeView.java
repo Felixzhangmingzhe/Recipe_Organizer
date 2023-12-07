@@ -161,9 +161,13 @@ public class EditRecipeView extends JPanel implements ActionListener, PropertyCh
                             else {
                                 System.out.println("When Save,CreatUsecase Run");
                                 CreateRecipeState currentState = createRecipeViewModel.getState();
-                                createRecipeController.execute(
-                                        currentState.getRecipeName(),
-                                        currentState.getContent());
+                                try {
+                                    createRecipeController.execute(
+                                            currentState.getRecipeName(),
+                                            currentState.getContent());
+                                } catch (JSONException ex) {
+                                    throw new RuntimeException(ex);
+                                }
                             }
 
                         }

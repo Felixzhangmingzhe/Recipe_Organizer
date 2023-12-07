@@ -176,7 +176,11 @@ public class ReadRecipeView extends JPanel implements ActionListener, PropertyCh
             backController.execute();
         } else if (evt.getSource() == favoritesButton) {
             // Implement action for favorites button
-            addToFavoritesController.execute(recipeName);
+            try {
+                addToFavoritesController.execute(recipeName);
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
             System.out.println("favorites button clicked");
         } else if (evt.getSource() == cookedButton) {
             // Implement action for cooked button

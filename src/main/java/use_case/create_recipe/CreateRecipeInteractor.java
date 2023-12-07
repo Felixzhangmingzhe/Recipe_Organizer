@@ -15,6 +15,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONException;
 
 public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
     final CreateRecipeOutputBoundary createRecipePresenter;
@@ -28,7 +29,7 @@ public class CreateRecipeInteractor implements CreateRecipeInputBoundary{
         this.recipeFactory = recipeFactory;
     }
     @Override
-    public void execute(CreateRecipeInputData createRecipeInputData) {
+    public void execute(CreateRecipeInputData createRecipeInputData) throws JSONException {
         if (createRecipeInputData.getTitle().equals("")) {
             createRecipePresenter.prepareFailView("Title is empty");
         } else if (createRecipeInputData.getContent().equals("")) {

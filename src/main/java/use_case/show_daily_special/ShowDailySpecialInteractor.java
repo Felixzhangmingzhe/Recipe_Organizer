@@ -1,6 +1,7 @@
 package use_case.show_daily_special;
 
 import entity.Recipe;
+import org.json.JSONException;
 
 import java.io.IOException;
 
@@ -15,7 +16,7 @@ public class ShowDailySpecialInteractor implements ShowDailySpecialInputBoundary
         this.showDailySpecialDataAccessInterface = showDailySpecialDataAccessInterface;
     }
 
-    public void execute() throws IOException {
+    public void execute() throws IOException, JSONException {
         Recipe dailySpecial = showDailySpecialDataAccessInterface.getDailySpecial();
         ShowDailySpecialOutputData showDailySpecialOutputData = new ShowDailySpecialOutputData(dailySpecial);
 //        System.out.println("Daily special is " + dailySpecial.getTitle());

@@ -1,6 +1,7 @@
 package use_case.add_to_favorites;
 
 import entity.Recipe;
+import org.json.JSONException;
 
 public class AddToFavoritesInteractor implements AddToFavoritesInputBoundary {
     private final AddToFavoritesDataAccessInterface userDataAccess;
@@ -12,7 +13,7 @@ public class AddToFavoritesInteractor implements AddToFavoritesInputBoundary {
     }
 
     @Override
-    public void execute(AddToFavoritesInputData inputData) {
+    public void execute(AddToFavoritesInputData inputData) throws JSONException {
         Recipe recipe = userDataAccess.getRecipeByTitle(inputData.getTitle());
         if (recipe.getIsFavorite()) {
             boolean isFavorite = false;

@@ -1,6 +1,7 @@
 package use_case.click_search;
 
 import entity.Recipe;
+import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.List;
@@ -33,7 +34,7 @@ public class ClickSearchInteractor implements ClickSearchInputBoundary{
             else {
                 clickSearchPresenter.prepareSuccessView(clickSearchOutputData);
             }
-        }catch (IOException e) {
+        }catch (IOException | JSONException e) {
             clickSearchPresenter.prepareFailView(e.getMessage());
         }
 

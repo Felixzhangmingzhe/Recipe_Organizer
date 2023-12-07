@@ -23,6 +23,8 @@ import interface_adapter.view_search.ViewSearchViewModel;
 import interface_adapter.view_warehouse.*;
 // Use Case:View Favorites
 import interface_adapter.view_favorites.*;
+import org.json.JSONException;
+
 public class MainView extends JPanel implements ActionListener, PropertyChangeListener{
     public final String viewName = "Initial Interface";
     private final JButton createRecipe;
@@ -260,6 +262,8 @@ public class MainView extends JPanel implements ActionListener, PropertyChangeLi
                             try {
                                 showDailySpecialController.execute();
                             } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            } catch (JSONException ex) {
                                 throw new RuntimeException(ex);
                             }
                         }
