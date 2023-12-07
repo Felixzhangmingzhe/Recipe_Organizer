@@ -50,11 +50,14 @@ If you encounter any issues, please do not hesitate to contact us via email for 
 - Ruihuan He (TA): Thank you for your instructions and help during the semester!
 - Prof. Lindsey Shorser: Thank you for your guidance and support during the semester!
 
+<br><br><br><br>
 
-##################Development Plan###################
+##################### Development Plan ######################
 
 
 ## API Usage
+
+**Discarded API**
 
 We have identified an API that can be utilized for our project. The details and endpoint can be accessed at [Recipe - Food - Nutrition API](https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch).
 
@@ -62,20 +65,53 @@ Here's the screenshot of using a tool to try out the API: ![API Tryout](images/A
 
 I also test the example output of running my Java code: ![Java Call Tryout](images/Java_Call_Tryout.png)
 
+**API Ninjas**
 
+After comparing several APIs, we decided to use the [API Ninjas](https://api-ninjas.com/) for our project. The reason is that the Ninja API provides more information about the recipes, including the ingredients, instructions, nutrition, and calories. It also provides more endpoints for us to use. The Ninja API is also easier to use and has a better user interface.
+
+- [Recipe API](https://api-ninjas.com/api/recipe): Our project leverages the Recipe API, providing users with an extensive array of recipes through a straightforward search. This enhances the overall home cooking experience by offering a diverse selection of culinary options.
+- [Nutrition API](https://api-ninjas.com/api/nutrition): Our project﻿ utilizes the Nutrition API to retrieve detailed nutritional information for our recipes based on the cuisine's name, presenting this valuable data to users.
+
+[//]: # (Screenshots and usage goes here)
 
 **A list of any technical problems blocking progress**
 
-- Find and Use an API
-- Learn how to use the API
-- Learn how to use the API in Java
-- Push the code   to GitHub successfully
-- Use Git to manage the project
-- How to visualize the data after calling from the API
+- [X] Find and Use an API
+- [X] Learn how to use the API
+- [X] Learn how to use the API in Java
+- [X] Push the code to GitHub successfully
+- [X] Use Git to manage the project
+- [X] How to visualize the data after calling from the API
+
+Perfect! We have successfully solved the problems and can use the APIs in our project.
 
 ## UML Diagram
+
+In our software design, we apply Clean Architecture. The following diagram shows the relationship between the entities in our project.
+
+**Preliminary Diagram Design**
+
 Based on the entities, we can draw the following UML Diagram: ![UML Diagram](images/UML_Diagram_not_transparent.jpg)
 
+**Final Diagram Design**
+
+Here are two examples of the UML Diagrams we have designed for our project.
+
+- `createRecipe` use case: ![UML Diagram](images/UML_Diagram_createRecipe.jpg)
+The architecture ensures communication between higher and lower-level modules via abstractions and has better independence, maintainability, and flexibility.
+
+- `Cooked` use case: ![UML Diagram](images/UML_Diagram_Cooked.png)
+The process demonstrates Clean Architecture, with distinct roles for the UI, Controller, Interactor, DataAccessObject, and Presenter, promoting maintainability through clear interfaces and following the Single Responsibility Principle (SRP).
+
+**Design Pattern**
+
+Now, let me introduce how we apply the Observer Design Pattern in our program. For example, when the user does an action, assume it triggers a series of operations in the ViewWarehouseViewModel, including setting the state and firing a property change. 'Set state' updates the ViewWarehouseState, while 'fire property change' go through this way notifies observers that their state has changed. This is particularly relevant for the WarehouseView, which implements the PropertyChangeListener interface. After receiving this notification, the WarehouseView responds to the event, typically by calling getDataAndDisplay to update the user interface. Through this strategy, we ensure that the ViewModel, as the publisher, can effectively notify about state changes without directly interacting with the observer. This allows the WarehouseView, acting as a listener, to always display the latest recipe information. As a result, every time a user visits the warehouse, they are presented with the most updated and comprehensive list of recipes.
+
+In addition to this, we also used the strategy design pattern. We want the program to have some predefined recipes to serve, partly from local database and partly from the recommendation of the API. In order to achieve this, Main calls the methods of Context. like this, to create predefined recipe. The strategy pattern allows our "Context" class to choose dynamically which algorithms to execute without having to implement those algorithms inside the class, Specifically, the "LocalStrategy" provides access to a local database, while the "APIStrategy" provides access to the latest globalized recipes via an API. Both strategies implement the "Strategy" interface, which ensures the consistency of behavior between different strategies. In this way, every time the user open or update our application, they can get the most updated and popular recipes from local database and API.
+
+**Organization**
+
+Our directory structure adopts a 'layered' approach, enhancing modularity and clarity. Each layer focuses on specific functionalities, improving maintainability. The code is well-organized and uses camel case naming for better readability. Modular design facilitates testing and reduces code coupling. Documentation and comments elucidate decisions, aiding team understanding and increasing collaborative efficiency
 
 
 

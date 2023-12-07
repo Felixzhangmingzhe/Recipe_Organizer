@@ -2,8 +2,6 @@ package app;
 
 import entity.RecipeFactory;
 
-import data_access.FileRecipeDataAccessObject;
-
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackPresenter;
 import interface_adapter.Back.BackViewModel;
@@ -30,6 +28,8 @@ import use_case.edit_recipe.EditRecipeInteractor;
 import use_case.edit_recipe.EditRecipeOutputBoundary;
 
 import view.EditRecipeView;
+
+import data_access.FileRecipeDataAccessObject;
 
 public class EditRecipeViewUseCaseFactory extends UseCaseFactory {
     public static BackController createBackController(BackViewModel backViewModel,

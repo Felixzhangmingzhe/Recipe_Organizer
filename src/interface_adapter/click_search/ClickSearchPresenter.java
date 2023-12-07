@@ -1,6 +1,7 @@
 package interface_adapter.click_search;
 
 import interface_adapter.ViewManagerModel;
+
 import use_case.click_search.ClickSearchOutputBoundary;
 import use_case.click_search.ClickSearchOutputData;
 
@@ -19,18 +20,15 @@ public class ClickSearchPresenter implements ClickSearchOutputBoundary {
     public void prepareSuccessView(ClickSearchOutputData outputData) {
         ClickSearchState state = clickSearchViewModel.getState();
         state.setRecipes(outputData.getSearchedRecipes());
-//        System.out.println(state.getRecipes());
-//        state.setSearchedRecipes(outputData.getSearchedRecipes()); //这是用warehouseView之前的
+        // System.out.println(state.getRecipes());
+        // state.setSearchedRecipes(outputData.getSearchedRecipes()); //这是用warehouseView之前的数据
         clickSearchViewModel.setState(state);
         clickSearchViewModel.firePropertyChanged();
         viewManagerModel.setActiveView(clickSearchViewModel.getViewName());
-
-//        System.out.println("这里的viewname应该是warehouse"+clickSearchViewModel.getViewName());
-
+        // System.out.println("这里的viewname应该是warehouse"+clickSearchViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
         System.out.println("SuccessView");
     }
-
 
     @Override
     public void prepareFailView(String error) {
@@ -42,6 +40,5 @@ public class ClickSearchPresenter implements ClickSearchOutputBoundary {
             viewManagerModel.setActiveView("search");
             viewManagerModel.firePropertyChanged();
         }
-
     }
 }
