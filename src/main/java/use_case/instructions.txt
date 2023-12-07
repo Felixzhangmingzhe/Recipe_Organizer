@@ -1,0 +1,10 @@
+add_to_favorites: 在recipe view上有一个按钮，点击这个按钮可以把这个recipe加入favorites
+view_search: 在main page里点击搜索按钮，显示search view
+click_search: 在search view里键入关键词并点击搜索键，返回search result
+create_recipe: 在main page里点击create按钮，出现一个default recipe view，可以编辑它然后保存
+delete_recipe_from_favorites: 在favorites view里，每个recipe（一行一个）后面有一个delete按钮，点击可以把这个recipe从favorite里删去
+edit_recipe: 在recipe view里点击edit按钮，可以编辑这个recipe
+show_daily_special: 在main page里点击daily special，显示一个随机的recipe view
+view_favorites: 在main page里点击favorite按钮，显示favorite view
+view_recipe: 从search view, favorite view, warehouse view都可以点击一条recipe结果，显示recipe view
+view_warehouse： 在main page里点击warehouse按钮，显示warehouse view
