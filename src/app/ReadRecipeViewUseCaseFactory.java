@@ -1,7 +1,5 @@
 package app;
 
-import data_access.FileRecipeDataAccessObject;
-
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackPresenter;
 import interface_adapter.Back.BackViewModel;
@@ -38,6 +36,8 @@ import use_case.show_daily_special.ShowDailySpecialInteractor;
 import use_case.show_daily_special.ShowDailySpecialOutputBoundary;
 
 import view.ReadRecipeView;
+
+import data_access.FileRecipeDataAccessObject;
 
 public class ReadRecipeViewUseCaseFactory extends UseCaseFactory {
     public static ReadRecipeView create(BackViewModel backViewModel,

@@ -4,6 +4,16 @@
 <img src="images/platePal-logo-for-display.png" width="200" height="200" alt="Logo">
 </p>
 
+<pre><p align="center">
+ ____    ___             __                 ____          ___      
+/\  _`\ /\_ \           /\ \__             /\  _`\       /\_ \     
+\ \ \L\ \//\ \      __  \ \ ,_\    __      \ \ \L\ \ __  \//\ \    
+ \ \ ,__/ \ \ \   /'__`\ \ \ \/  /'__`\     \ \ ,__/'__`\  \ \ \   
+  \ \ \/   \_\ \_/\ \L\.\_\ \ \_/\  __/      \ \ \/\ \L\.\_ \_\ \_
+   \ \_\   /\____\ \__/.\_\\ \__\ \____\      \ \_\ \__/.\_\/\____\
+    \/_/   \/____/\/__/\/_/ \/__/\/____/       \/_/\/__/\/_/\/____/
+</p></pre>
+
 ### Plate Pal: Your Culinary Partner
 
 Are you hungry and willing to cook today? Do you have a lot of ingredients in your fridge but don't know what to cook? Do you want to try something new? Plate Pal is here to help you! Plate Pal is a recipe organizer that helps you to find recipes based on the ingredients you have. It also allows you to save your favorite recipes and share them with your friends. Plate Pal is your culinary partner! In the heart of every kitchen lies not just ingredients and utensils, but cherished recipes that tell stories of family gatherings, beloved traditions, and adventurous culinary experiments. A Recipe Organizer serves as the guardian of these culinary treasures, offering a dedicated space to compile, categorize, and curate every dish that holds meaning. Whether you're a seasoned chef or a budding cook, this tool ensures that your recipes are easily accessible, neatly organized, and preserved for generations to come. Dive into the world of organized cooking and let your flavors tell their tales!
@@ -11,15 +21,32 @@ Are you hungry and willing to cook today? Do you have a lot of ingredients in yo
 ### Features and Functionality
 
 - **Recipe Storage:** Store all your favorite recipes in one repository (We can call it Favorites).
-- **Categorization:** Classify recipes by type, cuisine, dietary preference, etc.
+
 - **Searching:** Find recipes based on ingredients, name, or other keywords.
-- **Recipe Scaling:** Adjust ingredient quantities based on the number of servings.
-- **Meal Planning:** Plan your meals and create a shopping list.
-- **Social Sharing:** Share recipes with friends and family across various platforms.
-- **Personal Notes:** Add personal tips, tricks, and notes recipes.
-- **Image Upload:** Attach photos to recipes, showcasing the finished dish or specific steps.
-- **Recipe Rating:** Rate recipes.
-- **Recipe Reviews:** Read and write reviews for recipes.
+
+- **Recipe Creation:** Create your own recipes and store them in the repository.
+
+- **Recipe Deletion:** Delete recipes from the repository.
+
+- **Recipe Editing:** Edit your recipes and update them in the repository.
+
+- **Daily Specials:** Get recommendations for popular recipes.
+
+[//]: # (- **Categorization:** Classify recipes by type, cuisine, dietary preference, etc.)
+
+[//]: # (- **Recipe Scaling:** Adjust ingredient quantities based on the number of servings.)
+
+[//]: # (- **Meal Planning:** Plan your meals and create a shopping list.)
+
+[//]: # (- **Social Sharing:** Share recipes with friends and family across various platforms.)
+
+[//]: # (- **Personal Notes:** Add personal tips, tricks, and notes recipes.)
+
+[//]: # (- **Image Upload:** Attach photos to recipes, showcasing the finished dish or specific steps.)
+
+[//]: # (- **Recipe Rating:** Rate recipes.)
+
+[//]: # (- **Recipe Reviews:** Read and write reviews for recipes.)
 
 ### <img src="src/view/tree.png" width="20" height="20" alt="Logo"> Special Commitment <img src="src/view/tree.png" width="20" height="20" alt="Logo">
 

@@ -1,7 +1,5 @@
 package app;
 
-import data_access.FileRecipeDataAccessObject;
-
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeController;
 import interface_adapter.open_create_recipe.OpenCreateRecipePresenter;
@@ -35,6 +33,8 @@ import use_case.view_search.ViewSearchInputBoundary;
 import use_case.view_search.ViewSearchInteractor;
 
 import view.MainView;
+
+import data_access.FileRecipeDataAccessObject;
 
 public class MainViewUseCaseFactory extends UseCaseFactory {
     public static MainView create(ViewManagerModel viewManagerModel, ViewWarehouseViewModel viewWarehouseViewModel, ViewFavoritesViewModel viewFavoritesViewModel,
