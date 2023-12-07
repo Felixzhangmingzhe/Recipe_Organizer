@@ -68,7 +68,7 @@
     "calories": 2000,
     "title": "Chocolate Cake",
     "isCooked": false,
-    "content": "Mix flour, eggs, and chocolate. Bake until cooked.\n\n** xxxdd",
+    "content": "Mix flour, eggs, and chocolate. Bake until cooked.",
     "isFavorite": false
   },
   {
@@ -108,17 +108,8 @@
     "isFavorite": false
   },
   {
-    "date": "2023-12-04T05:08:30.193824",
-    "id": 13,
-    "calories": 0,
-    "title": "111",
-    "isCooked": true,
-    "content": "",
-    "isFavorite": false
-  },
-  {
     "date": "2023-12-04T05:14:07.755291",
-    "id": 14,
+    "id": 13,
     "calories": 341.1,
     "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
     "isCooked": false,
@@ -127,7 +118,7 @@
   },
   {
     "date": "2023-12-04T05:14:13.458674",
-    "id": 15,
+    "id": 14,
     "calories": 137.8,
     "title": "Electronic Gourmet's French Onion Soup",
     "isCooked": false,
@@ -136,7 +127,7 @@
   },
   {
     "date": "2023-12-04T05:14:23.419282",
-    "id": 16,
+    "id": 15,
     "calories": 609.4,
     "title": "Electronic Gourmet's Herb Salad Dressing",
     "isCooked": false,
@@ -145,16 +136,16 @@
   },
   {
     "date": "2023-12-04T05:17:39.105809",
-    "id": 17,
+    "id": 16,
     "calories": 444,
     "title": "Electronic Gourmet's French Dressing",
     "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigerously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
+    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigorously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
     "isFavorite": false
   },
   {
     "date": "2023-12-04T05:18:42.316153",
-    "id": 18,
+    "id": 17,
     "calories": 311.5,
     "title": "Elegant Mushroom and Olive Salad",
     "isCooked": false,
@@ -163,7 +154,7 @@
   },
   {
     "date": "2023-12-04T05:19:07.244297",
-    "id": 19,
+    "id": 18,
     "calories": 532.8,
     "title": "Electric Bread - Sticky Buns",
     "isCooked": false,
@@ -172,7 +163,7 @@
   },
   {
     "date": "2023-12-05T13:45:38.095343900",
-    "id": 20,
+    "id": 19,
     "calories": 0,
     "title": "Electronic Gourmet's Garlic Soup",
     "isCooked": false,
@@ -190,7 +181,7 @@
   },
   {
     "date": "2023-12-05T13:45:38.097342800",
-    "id": 20,
+    "id": 21,
     "calories": 0,
     "title": "Emeril's Onion Soup",
     "isCooked": false,
@@ -199,7 +190,7 @@
   },
   {
     "date": "2023-12-05T13:45:38.098344600",
-    "id": 20,
+    "id": 22,
     "calories": 0,
     "title": "End-Of-Month Vegetable Soup",
     "isCooked": false,
@@ -208,7 +199,7 @@
   },
   {
     "date": "2023-12-05T13:45:38.099344900",
-    "id": 20,
+    "id": 23,
     "calories": 0,
     "title": "Engadiner Gerstensuppe / Engadine Barley Soup",
     "isCooked": false,
@@ -217,7 +208,7 @@
   },
   {
     "date": "2023-12-05T13:45:38.100344100",
-    "id": 20,
+    "id": 24,
     "calories": 0,
     "title": "English Pea Soup",
     "isCooked": false,
@@ -226,74 +217,29 @@
   },
   {
     "date": "2023-12-05T13:45:38.101346800",
-    "id": 20,
+    "id": 25,
     "calories": 0,
     "title": "Fresh Green Chile Soup with Tumbleweed Greens",
     "isCooked": false,
-    "content": "Roast the chiles and peppers by the Open-Flame Method. Peel the chiles and peppers, pull off the stems, remove the seeds and veins, and set aside. In a medium saucepan, parboil the potatoes in boiling water with 1 teaspoon of the salt until tender. Puree the green chiles and then the red peppers separately in a food processor until smooth. Mix the purees together, add the potatoes and stock, and process in 2-cup batches for another minute, or until smooth. Add the remaining salt, the pepper, and garlic and process again. Press the puree through a fine sieve. Heat the puree in a saucepan. Serve hot, garnished with tumbleweed greens.",
+    "content": "Roast the chilies and peppers by the Open-Flame Method. Peel the chilies and peppers, pull off the stems, remove the seeds and veins, and set aside. In a medium saucepan, parboil the potatoes in boiling water with 1 teaspoon of the salt until tender. Puree the green chilies and then the red peppers separately in a food processor until smooth. Mix the purees together, add the potatoes and stock, and process in 2-cup batches for another minute, or until smooth. Add the remaining salt, the pepper, and garlic and process again. Press the puree through a fine sieve. Heat the puree in a saucepan. Serve hot, garnished with tumbleweed greens.",
     "isFavorite": false
   },
   {
     "date": "2023-12-05T13:45:38.102345",
-    "id": 20,
+    "id": 26,
     "calories": 0,
     "title": "Fresh Herb Summer Soup",
     "isCooked": false,
-    "content": "Pour chicken broth into a large saucepan. Add the fresh herbs. Bring to a boil, lower heat, and simmer for 20 minutes. In a separate bowl, beat the egg yolks lightly with the cream. Slowly whisk 1 cup of the hot broth mixture into the cream-yolk mixture. Pour this mixture into the pan in a stream, whisking constantly. Cook for 6 to 8 minutes or until thickened. Do not boil. Cool completely. Chill, covered, for at least 3 hours, better if chilled overnight. Seasan with white pepper. Garnish with minced fresh herbs. Yield: 8 to 10 servings. BEN HUSSMAN (MRS. WALTER, JR.)",
+    "content": "Pour chicken broth into a large saucepan. Add the fresh herbs. Bring to a boil, lower heat, and simmer for 20 minutes. In a separate bowl, beat the egg yolks lightly with the cream. Slowly whisk 1 cup of the hot broth mixture into the cream-yolk mixture. Pour this mixture into the pan in a stream, whisking constantly. Cook for 6 to 8 minutes or until thickened. Do not boil. Cool completely. Chill, covered, for at least 3 hours, better if chilled overnight. Season with white pepper. Garnish with minced fresh herbs. Yield: 8 to 10 servings. BEN HUSSMAN (MRS. WALTER, JR.)",
     "isFavorite": false
   },
   {
     "date": "2023-12-05T13:45:38.103344",
-    "id": 20,
+    "id": 27,
     "calories": 0,
     "title": "Fresh Minestrone Soup",
     "isCooked": false,
     "content": "In 2 quart microwave safe casserole, combine all ingredients except cheese. Cover; microwave at high 11-13 minutes, stirring once, or until pasta is tender. Serve in bowls sprinkled with cheese, if desired.",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-05T13:56:32.208377900",
-    "id": 21,
-    "calories": 24.6,
-    "title": "",
-    "isCooked": false,
-    "content": "",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-05T15:37:30.468176600",
-    "id": 22,
-    "calories": 24.6,
-    "title": "",
-    "isCooked": false,
-    "content": "",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-05T16:12:36.578064800",
-    "id": 23,
-    "calories": 0,
-    "title": "",
-    "isCooked": false,
-    "content": "asd",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-05T17:36:58.173117800",
-    "id": 24,
-    "calories": 0,
-    "title": "Test",
-    "isCooked": true,
-    "content": "test",
-    "isFavorite": false
-  },
-  {
-    "date": "2023-12-05T22:02:12.456796",
-    "id": 25,
-    "calories": 0,
-    "title": "ss1",
-    "isCooked": false,
-    "content": "ss1",
     "isFavorite": false
   }
 ]
