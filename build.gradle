@@ -1,31 +1,27 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group = 'main'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
 
 repositories {
     mavenCentral()
 }
-sourceSets {
-    main {
-        java {
-            srcDirs = ['src']
-        }
-    }
-}
+
 dependencies {
-    // JUnit 用于单元测试
-    testImplementation 'junit:junit:4.13.2'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+    implementation group: 'org.json', name: 'json', version: '20090211'
+}
 
-    // JSON 处理库
-    implementation 'org.json:json:20231013'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
-
-    // TestNG 用于测试，如果您同时使用 JUnit 和 TestNG，请保留这一行
-    testImplementation 'org.testng:testng:7.7.0'
-
-    // Hamcrest 用于测试断言
-    testImplementation 'org.hamcrest:hamcrest:2.2'
+tasks.named('test') {
+    useJUnitPlatform()
 }

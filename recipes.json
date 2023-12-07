@@ -1,245 +1,254 @@
 [
   {
+    "calories": 1000,
+    "content": "This is a sample Recipe.",
     "date": "2021-01-01T00:00",
     "id": 1,
-    "calories": 1000,
-    "title": "Sample",
     "isCooked": false,
-    "content": "This is a sample Recipe.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Sample"
   },
   {
+    "calories": 1200,
+    "content": "Boil the pasta. Mix eggs, cheese, and bacon. Combine with pasta.",
     "date": "2021-01-01T00:00",
     "id": 2,
-    "calories": 1200,
-    "title": "Pasta Carbonara",
     "isCooked": false,
-    "content": "Boil the pasta. Mix eggs, cheese, and bacon. Combine with pasta.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Pasta Carbonara"
   },
   {
+    "calories": 800,
+    "content": "Chop lettuce. Add croutons, parmesan, and dressing. Toss well.",
     "date": "2021-01-01T00:00",
     "id": 3,
-    "calories": 800,
-    "title": "Caesar Salad",
     "isCooked": false,
-    "content": "Chop lettuce. Add croutons, parmesan, and dressing. Toss well.",
-    "isFavorite": true
+    "isFavorite": true,
+    "title": "Caesar Salad"
   },
   {
+    "calories": 1500,
+    "content": "Make dough. Add tomato sauce and cheese. Bake until crispy.",
     "date": "2021-01-01T00:00",
     "id": 4,
-    "calories": 1500,
-    "title": "Pizza Margherita",
     "isCooked": false,
-    "content": "Make dough. Add tomato sauce and cheese. Bake until crispy.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Pizza Margherita"
   },
   {
+    "calories": 600,
+    "content": "Chop tomatoes. Boil them. Add salt and pepper.",
     "date": "2021-01-01T00:00",
     "id": 5,
-    "calories": 600,
-    "title": "Tomato Soup",
     "isCooked": false,
-    "content": "Chop tomatoes. Boil them. Add salt and pepper.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Tomato Soup"
   },
   {
+    "calories": 2000,
+    "content": "Season steak. Grill it until medium rare.",
     "date": "2021-01-01T00:00",
     "id": 6,
-    "calories": 2000,
-    "title": "Steak",
     "isCooked": false,
-    "content": "Season steak. Grill it until medium rare.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Steak"
   },
   {
+    "calories": 1500,
+    "content": "Season chicken. Roast it until cooked.",
     "date": "2021-01-01T00:00",
     "id": 7,
-    "calories": 1500,
-    "title": "Roast Chicken",
     "isCooked": false,
-    "content": "Season chicken. Roast it until cooked.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Roast Chicken"
   },
   {
+    "calories": 2000,
+    "content": "Mix flour, eggs, and chocolate. Bake until cooked.",
     "date": "2021-01-01T00:00",
     "id": 8,
-    "calories": 2000,
-    "title": "Chocolate Cake",
     "isCooked": false,
-    "content": "Mix flour, eggs, and chocolate. Bake until cooked.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Chocolate Cake"
   },
   {
+    "calories": 1500,
+    "content": "Mix flour, eggs, and chocolate chips. Bake until cooked.",
     "date": "2021-01-01T00:00",
     "id": 9,
-    "calories": 1500,
-    "title": "Chocolate Chip Cookies",
     "isCooked": false,
-    "content": "Mix flour, eggs, and chocolate chips. Bake until cooked.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Chocolate Chip Cookies"
   },
   {
+    "calories": 1000,
+    "content": "Mix cream, sugar, and vanilla. Freeze until solid.  aa",
     "date": "2021-01-01T00:00",
     "id": 10,
-    "calories": 1000,
-    "title": "Vanilla Ice Cream",
     "isCooked": false,
-    "content": "Mix cream, sugar, and vanilla. Freeze until solid.  aa",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Vanilla Ice Cream"
   },
   {
+    "calories": 1000,
+    "content": "Cook rice. Add fish and vegetables. Roll them together.",
     "date": "2021-01-01T00:00",
     "id": 11,
-    "calories": 1000,
-    "title": "Sushi",
     "isCooked": false,
-    "content": "Cook rice. Add fish and vegetables. Roll them together.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Sushi"
   },
   {
+    "calories": 1200,
+    "content": "Boil broth. Add noodles, egg, and pork. Cook until noodles are done.",
     "date": "2021-01-01T00:00",
     "id": 12,
-    "calories": 1200,
-    "title": "Ramen",
     "isCooked": false,
-    "content": "Boil broth. Add noodles, egg, and pork. Cook until noodles are done.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Ramen"
   },
   {
+    "calories": 341.1,
+    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
     "date": "2023-12-04T05:14:07.755291",
     "id": 13,
-    "calories": 341.1,
-    "title": "Electronic Gourmet's Garlic and Herb Salad Dr",
     "isCooked": false,
-    "content": "1) Shake all ingredients in a small jar with a tight fitting lid. Let stand at room temperature for at least 1 hour. The longer the better. 2) Shake again and use to dress any crisp green salad. Hint: ~---- Store in jar and refrigerate 4-5 days. Always shake before using.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Electronic Gourmet's Garlic and Herb Salad Dr"
   },
   {
+    "calories": 137.8,
+    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
     "date": "2023-12-04T05:14:13.458674",
     "id": 14,
-    "calories": 137.8,
-    "title": "Electronic Gourmet's French Onion Soup",
     "isCooked": false,
-    "content": "1) Cook the onions slowly with the butter and oil in a covered saucepan for 15 minutes. 2) Uncover, raise the heat to moderate and stir in the salt and sugar. Cook for 30 to 40 minutes stirring frequently until the onions have turned and even, deep golden brown. 3) Sprinkle in the flour and stir 3 minutes. 4) Off heat, blend in the boiling liquid. Note that instead of brown stock you may use canned beef bouillon (same quantity). Or, and equal part of boiling water plus stock or bouillon. 5) Add the wine and season to taste. Simmer partially covered for 30 to 40 minutes or more, skimming occasionally. Correct Seasoning. 6) Set aside uncovered until ready to serve, then reheat to simmer. 7) Just before serving, stir in the cognac. Pour into french onion soup bowls over the rounds of bread. Cover with cheese. Bake at 350 F until cheese melts.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Electronic Gourmet's French Onion Soup"
   },
   {
+    "calories": 609.4,
+    "content": "1) Place oil, herbs, salt and pepper in a shaker bottle or large glass measuring cup. Let stand at room temperature for 3 to 4 hours. The longer the better. 2) Add vinegar and shake or stir well to blend.",
     "date": "2023-12-04T05:14:23.419282",
     "id": 15,
-    "calories": 609.4,
-    "title": "Electronic Gourmet's Herb Salad Dressing",
     "isCooked": false,
-    "content": "1) Place oil, herbs, salt and pepper in a shaker bottle or large glass measuring cup. Let stand at room temperature for 3 to 4 hours. The longer the better. 2) Add vinegar and shake or stir well to blend.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Electronic Gourmet's Herb Salad Dressing"
   },
   {
+    "calories": 444,
+    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigorously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
     "date": "2023-12-04T05:17:39.105809",
     "id": 16,
-    "calories": 444,
-    "title": "Electronic Gourmet's French Dressing",
     "isCooked": false,
-    "content": "In a bowl mix vinegar, salt and pepper with a fork. Add oil and mix vigorously until well blended and slightly thickened. Variations: ========== Garlic French Dressing: Drop 1 peeled, bruised clove of garlic into dressing and let stand 2-3 days at room temperature. Remove garlic before using dressing. Sweet French Dressing: Prepare as directed. Then mix in 1/4 c each of orange juice and honey or super fine sugar. Use to dress fruit salads. Hints: ===== For a creamier dressing, beat over ice for 1 to 2 minutes.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Electronic Gourmet's French Dressing"
   },
   {
+    "calories": 311.5,
+    "content": "Break up enough lettuce into bite-sized pieces to make 2 quarts. Slice the olives and mushrooms. Crumble the cheese and toss lightly. Add lemon juice and olive oil. Do *not* substitute other oils. Add salt and cracked pepper to taste, and toss again.",
     "date": "2023-12-04T05:18:42.316153",
     "id": 17,
-    "calories": 311.5,
-    "title": "Elegant Mushroom and Olive Salad",
     "isCooked": false,
-    "content": "Break up enough lettuce into bite-sized pieces to make 2 quarts. Slice the olives and mushrooms. Crumble the cheese and toss lightly. Add lemon juice and olive oil. Do *not* substitute other oils. Add salt and cracked pepper to taste, and toss again.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Elegant Mushroom and Olive Salad"
   },
   {
+    "calories": 532.8,
+    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.change",
     "date": "2023-12-04T05:19:07.244297",
     "id": 18,
-    "calories": 532.8,
-    "title": "Electric Bread - Sticky Buns",
     "isCooked": false,
-    "content": "Remove dough from the machine after the dough or manual cycle is completed. Prepare sticky sauce by warming all the sauce ingredients, except the pecans, over medium heat until sugar dissolves. Pour into 13 X 9 pan. Sprinkle with broken nuts. Turn dough out onto floured surface (it will be sticky), and punch down. Roll dough to a 16 X 10 rectangle. Dot with soft butter and sprinkle with cinnamon. Roll jellyroll style and pinch seams together. Slice 1 1/2-inch thick pieces, place into pan on top of sticky sauce, and let double in size (about one hour). Bake at 375F for 20-25 minutes. Cool for no more than three minutes, then invert pan so sauce and nuts are on top of buns. Ingredients for regular pan - 3/4 cups water; 2 cups white bread flour; 1 1/2 tbs dry milk; 2 tbs sugar; 1/2 tsp salt; 2 tbs butter; 1 tsp fast rise yeast; OR 2 tsp active dry yeast. Sticky Sauce: 1/4 cup butter; 1/2 cup brown sugar; 1/4 cup corn syrup (light); 1/4 cup pecans (broken). Filling: 1/4 cup soft butter; 1/2 tsp cinnamon. Use an 8 X 8 pan and roll the dough 12 X 8 rectangle.change",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Electric Bread - Sticky Buns"
   },
   {
+    "calories": 0,
+    "content": "1) Put the oil and garlic into a very heavy large pot. Saute until almost golden brown in colour. Add the water, salt, monosodium glutamate and stock. 2) Simmer for 3 hours. Check the seasoning. 3) To serve: Place a slice of bread in each soup bowl. Put a ladle of the hot soup in the bowl and immediately, on top of the bread, break an egg. The egg will congeal and the bread will go to the bottom of the bowl. Note: Can be made a day ahead and refrigerated. To serve, follow step 3.",
     "date": "2023-12-05T13:45:38.095343900",
     "id": 19,
-    "calories": 0,
-    "title": "Electronic Gourmet's Garlic Soup",
     "isCooked": false,
-    "content": "1) Put the oil and garlic into a very heavy large pot. Saute until almost golden brown in colour. Add the water, salt, monosodium glutamate and stock. 2) Simmer for 3 hours. Check the seasoning. 3) To serve: Place a slice of bread in each soup bowl. Put a ladle of the hot soup in the bowl and immediately, on top of the bread, break an egg. The egg will congeal and the bread will go to the bottom of the bowl. Note: Can be made a day ahead and refrigerated. To serve, follow step 3.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Electronic Gourmet's Garlic Soup"
   },
   {
+    "calories": 0,
+    "content": "* NOTE: Use 1 1/2 pounds or MORE of ripe mushrooms. The darker mushroom (older) adds a stronger flavor to the soup, that's what I usually use. I've made this with the regular white, as well as portabello mushrooms - a blend tastes fine, but the portobello tends to overpower slightly. 1. Melt butter in pot. Add sliced mushrooms, and saute gently until liquid is completely cooked out. Do not brown mushrooms. 2. Add at least 2 quarts chicken broth (reserve 1/3 cup), thyme, and bouillon. Bring to a full boil, and simmer, uncovered, until broth is reduced by 75%. Taste should be extremely strong (it will be diluted with the cream). Note: The reduction can take quite a while. 3. Mix cornstarch with reserved broth, and add to soup. Allow mixture to get very thick. 4. Gently add 2 quarts (or more) heavy cream. Blend, and bring to a gentle simmer. Taste, and adjust seasoning if needed. Thin with milk or cream if flavor is too strong, or soup is too thick. : Jocie Moravec",
     "date": "2023-12-05T13:45:38.096342800",
     "id": 20,
-    "calories": 0,
-    "title": "Elegant Mushroom Soup",
     "isCooked": false,
-    "content": "* NOTE: Use 1 1/2 pounds or MORE of ripe mushrooms. The darker mushroom (older) adds a stronger flavor to the soup, that's what I usually use. I've made this with the regular white, as well as portabello mushrooms - a blend tastes fine, but the portobello tends to overpower slightly. 1. Melt butter in pot. Add sliced mushrooms, and saute gently until liquid is completely cooked out. Do not brown mushrooms. 2. Add at least 2 quarts chicken broth (reserve 1/3 cup), thyme, and bouillon. Bring to a full boil, and simmer, uncovered, until broth is reduced by 75%. Taste should be extremely strong (it will be diluted with the cream). Note: The reduction can take quite a while. 3. Mix cornstarch with reserved broth, and add to soup. Allow mixture to get very thick. 4. Gently add 2 quarts (or more) heavy cream. Blend, and bring to a gentle simmer. Taste, and adjust seasoning if needed. Thin with milk or cream if flavor is too strong, or soup is too thick. : Jocie Moravec",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Elegant Mushroom Soup"
   },
   {
+    "calories": 0,
+    "content": "Preheat the oven to 400 degrees F. In a large saucepan, over medium-heat, melt the butter. Add the onions. Season with salt and pepper. Sautï¿½ï¿½ the onions until slightly caramelized, about 8 to 10 minutes. Add the garlic, sherry, Worcestershire sauce and stock. Season with salt and pepper. Bring the liquid to a boil and reduce to a simmer. Cook the soup for 15 minutes. Ladle the soup into oven-proof deep bowls. Spread the each piece of bread with 1/4 cup of the rillette. Float the croutons on top of the soup. Cover each crouton with a piece of cheese. Sprinkle the cheese with parsley. Place the bowls on a sheet pan and place in the oven. Bake until the cheese is bubbly and golden, about 6 to 8 minutes. Remove from the oven and serve. Yield: 8 servings",
     "date": "2023-12-05T13:45:38.097342800",
     "id": 21,
-    "calories": 0,
-    "title": "Emeril's Onion Soup",
     "isCooked": false,
-    "content": "Preheat the oven to 400 degrees F. In a large saucepan, over medium-heat, melt the butter. Add the onions. Season with salt and pepper. Saut¨¦ the onions until slightly caramelized, about 8 to 10 minutes. Add the garlic, sherry, Worcestershire sauce and stock. Season with salt and pepper. Bring the liquid to a boil and reduce to a simmer. Cook the soup for 15 minutes. Ladle the soup into oven-proof deep bowls. Spread the each piece of bread with 1/4 cup of the rillette. Float the croutons on top of the soup. Cover each crouton with a piece of cheese. Sprinkle the cheese with parsley. Place the bowls on a sheet pan and place in the oven. Bake until the cheese is bubbly and golden, about 6 to 8 minutes. Remove from the oven and serve. Yield: 8 servings",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Emeril's Onion Soup"
   },
   {
+    "calories": 0,
+    "content": "Make the bouquet garni by tying the herbs up in a cheesecloth or coffee filter. Put a quart of water to boil with about 1/2 t salt (I don't like to use too much salt if I use bouillon), the bouquet garni and the bouillon. Dice the onion, mince the garlic, and add these to the soup together with the bacon and/or prosciutto ends. Bring this to a boil. Simmer 5 minutes. If scum forms on the surface, skim it off. Dice the potatoes and add to the boiling pot. Cut up everything else and add it. Add the wine. Adjust the liquid so that it covers the vegetables. After it boils again, adjust the seasoning and simmer for about an hour, or until it is done (this is quite subjective). NOTES: * Soup with a mixture of vegetables -- I had an eclectic mixture of vegetables going bad in the refrigerator, so I collected them and came up with this soup. It was very good, so I would like to share it with you all. Caveat: I rarely measure anything, so be careful of quantities. * This will serve 6 people at once, or 2 people for three days. It ages well in the refrigerator. : Difficulty: easy. : Time: 10 minutes preparation, 1 hour simmering. : Precision: no need to measure.",
     "date": "2023-12-05T13:45:38.098344600",
     "id": 22,
-    "calories": 0,
-    "title": "End-Of-Month Vegetable Soup",
     "isCooked": false,
-    "content": "Make the bouquet garni by tying the herbs up in a cheesecloth or coffee filter. Put a quart of water to boil with about 1/2 t salt (I don't like to use too much salt if I use bouillon), the bouquet garni and the bouillon. Dice the onion, mince the garlic, and add these to the soup together with the bacon and/or prosciutto ends. Bring this to a boil. Simmer 5 minutes. If scum forms on the surface, skim it off. Dice the potatoes and add to the boiling pot. Cut up everything else and add it. Add the wine. Adjust the liquid so that it covers the vegetables. After it boils again, adjust the seasoning and simmer for about an hour, or until it is done (this is quite subjective). NOTES: * Soup with a mixture of vegetables -- I had an eclectic mixture of vegetables going bad in the refrigerator, so I collected them and came up with this soup. It was very good, so I would like to share it with you all. Caveat: I rarely measure anything, so be careful of quantities. * This will serve 6 people at once, or 2 people for three days. It ages well in the refrigerator. : Difficulty: easy. : Time: 10 minutes preparation, 1 hour simmering. : Precision: no need to measure.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "End-Of-Month Vegetable Soup"
   },
   {
+    "calories": 0,
+    "content": "Bring ham, beef, barley and beans to boil in about 30 fl oz water, and allow to simmer for about 2 hours. Add shredded cabbage and potatoes (other vegetables such as carrots and celery can be added if desired). After a further hour's cooking, thicken soup with cream previously blended with the flour, bring to the boil once more, and serve. From TANTE HEIDI'S SWISS KITCHEN, Eva Marie Borer / shared by Diane Duane",
     "date": "2023-12-05T13:45:38.099344900",
     "id": 23,
-    "calories": 0,
-    "title": "Engadiner Gerstensuppe / Engadine Barley Soup",
     "isCooked": false,
-    "content": "Bring ham, beef, barley and beans to boil in about 30 fl oz water, and allow to simmer for about 2 hours. Add shredded cabbage and potatoes (other vegetables such as carrots and celery can be added if desired). After a further hour's cooking, thicken soup with cream previously blended with the flour, bring to the boil once more, and serve. From TANTE HEIDI'S SWISS KITCHEN, Eva Marie Borer / shared by Diane Duane",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Engadiner Gerstensuppe / Engadine Barley Soup"
   },
   {
+    "calories": 0,
+    "content": "Comine English peas, lettuce, spinach, green onions, bouillion granules, chervil and pepper in a large saucepan; stir in water. Cover and bring to a boil; reduce heat, and simmer 20 minutes. Process mixture to saucepan, and stir in milk. Cook over medium heat, stirring frequently, until thoroughly heated. Food Exchange per serving: 1/2 STARCH EXCHANGE; CAL: 46; CHO: tr; CAR: 8gm; SOD: 64mg:",
     "date": "2023-12-05T13:45:38.100344100",
     "id": 24,
-    "calories": 0,
-    "title": "English Pea Soup",
     "isCooked": false,
-    "content": "Comine English peas, lettuce, spinach, green onions, bouillion granules, chervil and pepper in a large saucepan; stir in water. Cover and bring to a boil; reduce heat, and simmer 20 minutes. Process mixture to saucepan, and stir in milk. Cook over medium heat, stirring frequently, until thoroughly heated. Food Exchange per serving: 1/2 STARCH EXCHANGE; CAL: 46; CHO: tr; CAR: 8gm; SOD: 64mg:",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "English Pea Soup"
   },
   {
+    "calories": 0,
+    "content": "Roast the chilies and peppers by the Open-Flame Method. Peel the chilies and peppers, pull off the stems, remove the seeds and veins, and set aside. In a medium saucepan, parboil the potatoes in boiling water with 1 teaspoon of the salt until tender. Puree the green chilies and then the red peppers separately in a food processor until smooth. Mix the purees together, add the potatoes and stock, and process in 2-cup batches for another minute, or until smooth. Add the remaining salt, the pepper, and garlic and process again. Press the puree through a fine sieve. Heat the puree in a saucepan. Serve hot, garnished with tumbleweed greens.",
     "date": "2023-12-05T13:45:38.101346800",
     "id": 25,
-    "calories": 0,
-    "title": "Fresh Green Chile Soup with Tumbleweed Greens",
     "isCooked": false,
-    "content": "Roast the chilies and peppers by the Open-Flame Method. Peel the chilies and peppers, pull off the stems, remove the seeds and veins, and set aside. In a medium saucepan, parboil the potatoes in boiling water with 1 teaspoon of the salt until tender. Puree the green chilies and then the red peppers separately in a food processor until smooth. Mix the purees together, add the potatoes and stock, and process in 2-cup batches for another minute, or until smooth. Add the remaining salt, the pepper, and garlic and process again. Press the puree through a fine sieve. Heat the puree in a saucepan. Serve hot, garnished with tumbleweed greens.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Fresh Green Chile Soup with Tumbleweed Greens"
   },
   {
+    "calories": 0,
+    "content": "Pour chicken broth into a large saucepan. Add the fresh herbs. Bring to a boil, lower heat, and simmer for 20 minutes. In a separate bowl, beat the egg yolks lightly with the cream. Slowly whisk 1 cup of the hot broth mixture into the cream-yolk mixture. Pour this mixture into the pan in a stream, whisking constantly. Cook for 6 to 8 minutes or until thickened. Do not boil. Cool completely. Chill, covered, for at least 3 hours, better if chilled overnight. Season with white pepper. Garnish with minced fresh herbs. Yield: 8 to 10 servings. BEN HUSSMAN (MRS. WALTER, JR.)",
     "date": "2023-12-05T13:45:38.102345",
     "id": 26,
-    "calories": 0,
-    "title": "Fresh Herb Summer Soup",
     "isCooked": false,
-    "content": "Pour chicken broth into a large saucepan. Add the fresh herbs. Bring to a boil, lower heat, and simmer for 20 minutes. In a separate bowl, beat the egg yolks lightly with the cream. Slowly whisk 1 cup of the hot broth mixture into the cream-yolk mixture. Pour this mixture into the pan in a stream, whisking constantly. Cook for 6 to 8 minutes or until thickened. Do not boil. Cool completely. Chill, covered, for at least 3 hours, better if chilled overnight. Season with white pepper. Garnish with minced fresh herbs. Yield: 8 to 10 servings. BEN HUSSMAN (MRS. WALTER, JR.)",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Fresh Herb Summer Soup"
   },
   {
+    "calories": 0,
+    "content": "In 2 quart microwave safe casserole, combine all ingredients except cheese. Cover; microwave at high 11-13 minutes, stirring once, or until pasta is tender. Serve in bowls sprinkled with cheese, if desired.",
     "date": "2023-12-05T13:45:38.103344",
     "id": 27,
-    "calories": 0,
-    "title": "Fresh Minestrone Soup",
     "isCooked": false,
-    "content": "In 2 quart microwave safe casserole, combine all ingredients except cheese. Cover; microwave at high 11-13 minutes, stirring once, or until pasta is tender. Serve in bowls sprinkled with cheese, if desired.",
-    "isFavorite": false
+    "isFavorite": false,
+    "title": "Fresh Minestrone Soup"
+  },
+  {
+    "calories": 368.59999999999997,
+    "content": "Combine flour, brown sugar, salt and butter. Mix until crumbly, as for pie crust. Reserve 1 cup of crumbs. Combine egg, milk and baking soda; stir into remaining crumb mixture, blending well. Pour into 2 greased, paper-lined 9 inch layer pans. Sprinkle batter with reserved crumbs, then top with chopped nuts. Bake at 375 for 25 to 30 minutes, or until cake tests done. Cool. Reserve several whole strawberries for garnish. Slightly mash remaining berries, sugaring to taste. Place one layer of cake on serving plate, nut side up. Spread with half of strawberries, top with half of whipped cream and cover with second layer of cake. Spread with remaining berries then swirl whipped cream around edge of top of cake, allowing small circle of strawberries to remain uncovered in center of torte. Garnish with clusters of whole strawberries around bottom of cake.",
+    "date": "2023-12-07T03:18:50.480286",
+    "id": 28,
+    "isCooked": false,
+    "isFavorite": false,
+    "title": "Elegant Strawberry Torte"
   }
 ]
