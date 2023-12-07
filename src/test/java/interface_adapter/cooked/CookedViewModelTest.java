@@ -2,6 +2,8 @@ package interface_adapter.cooked;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
 import java.beans.PropertyChangeListener;
 
 import static org.mockito.Mockito.*;
@@ -10,11 +12,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class CookedViewModelTest {
 
     private CookedViewModel viewModel;
+    private CookedState state;
     private PropertyChangeListener listener;
 
     @BeforeEach
     void setUp() {
         viewModel = new CookedViewModel();
+        when(viewModel.getState()).thenReturn(state);
         listener = mock(PropertyChangeListener.class);
         viewModel.addPropertyChangeListener(listener);
     }
@@ -42,10 +46,10 @@ class CookedViewModelTest {
 
     @Test
     void getAndSetSetCookedSuccess() {
-        viewModel.setSetCookedSuccess(true);
-        assertTrue(viewModel.getSetCookedSuccess(), "getSetCookedSuccess should return true when setSetCookedSuccess(true) is called.");
+         state.setSetCookedSuccess(true);
+         assertTrue(state.getSetCookedSuccess(), "getSetCookedSuccess should return true when setSetCookedSuccess(true) is called.");
 
-        viewModel.setSetCookedSuccess(false);
-        assertFalse(viewModel.getSetCookedSuccess(), "getSetCookedSuccess should return false when setSetCookedSuccess(false) is called.");
+         state.setSetCookedSuccess(false);
+         assertFalse(state.getSetCookedSuccess(), "getSetCookedSuccess should return false when setSetCookedSuccess(false) is called.");
     }
 }

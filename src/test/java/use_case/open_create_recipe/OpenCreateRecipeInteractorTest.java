@@ -10,22 +10,22 @@ import static org.mockito.Mockito.*;
 class OpenCreateRecipeInteractorTest {
 
     @Mock
-    private OpenCreateRecipeDataAccessInterface mockDataAccess;
+    private OpenCreateRecipeDataAccessInterface mockDataAccessInterface;
 
     @Mock
     private OpenCreateRecipeOutputBoundary mockPresenter;
 
-    private OpenCreateRecipeInteractor interactor;
+    private OpenCreateRecipeInteractor mockInteractor;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        interactor = new OpenCreateRecipeInteractor(mockPresenter, mockDataAccess);
+        mockInteractor = new OpenCreateRecipeInteractor(mockPresenter, mockDataAccessInterface);
     }
 
     @Test
     void execute_CallsPrepareSuccessView() {
-        interactor.execute();
+        mockInteractor.execute();
 
         // Verify that prepareSuccessView is called on the presenter
         verify(mockPresenter, times(1)).prepareSuccessView();

@@ -12,14 +12,14 @@ class BackInteractorTest {
     @Mock
     private BackDataAccessInterface backDataAccessInterface;
     @Mock
-    private BackOutputBoundary presenter;
+    private BackOutputBoundary backPresenter;
 
-    private BackInteractor interactor;
+    private BackInteractor backInteractor;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        interactor = new BackInteractor(presenter, backDataAccessInterface);
+        backInteractor = new BackInteractor(backPresenter, backDataAccessInterface);
     }
 
     @Test
@@ -27,9 +27,9 @@ class BackInteractorTest {
         int expectedNumOfCooked = 5;
         when(backDataAccessInterface.getNumOfCooked()).thenReturn(expectedNumOfCooked);
 
-        interactor.execute();
+        backInteractor.execute();
 
         verify(backDataAccessInterface, times(1)).getNumOfCooked();
-        verify(presenter, times(1)).prepareSuccessView(any(BackOutputData.class));
+        verify(backPresenter, times(1)).prepareSuccessView(any(BackOutputData.class));
     }
 }

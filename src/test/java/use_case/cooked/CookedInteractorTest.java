@@ -1,7 +1,6 @@
 package use_case.cooked;
 
 import entity.Recipe;
-import entity.RecipeFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -14,16 +13,16 @@ import static org.mockito.Mockito.*;
 class CookedInteractorTest {
 
     @Mock
-    private CookedOutputBoundary cookedPresenter;
-    @Mock
     private CookedDataAccessInterface cookedDataAccessInterface;
+    @Mock
+    private CookedOutputBoundary cookedPresenter;
 
-    private CookedInteractor interactor;
+    private CookedInteractor cookedInteractor;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        interactor = new CookedInteractor(cookedPresenter, cookedDataAccessInterface);
+        cookedInteractor = new CookedInteractor(cookedDataAccessInterface, cookedPresenter);
     }
 
     @Test
@@ -32,7 +31,7 @@ class CookedInteractorTest {
         when(cookedDataAccessInterface.getRecipeByRecipeTitle("Test Recipe")).thenReturn(recipe);
 
         CookedInputData inputData = new CookedInputData("Test Recipe");
-        interactor.execute(inputData);
+        cookedInteractor.execute(inputData);
 
         verify(cookedPresenter, times(1)).prepareFailView(any(CookedOutputData.class));
     }
@@ -43,7 +42,7 @@ class CookedInteractorTest {
         when(cookedDataAccessInterface.getRecipeByRecipeTitle("Test Recipe")).thenReturn(recipe);
 
         CookedInputData inputData = new CookedInputData("Test Recipe");
-        interactor.execute(inputData);
+        cookedInteractor.execute(inputData);
 
         verify(cookedDataAccessInterface, times(1)).updateCookedRecipe(eq(1), anyString(), anyString(), any(LocalDateTime.class), anyBoolean(), eq(true), anyDouble());
         verify(cookedPresenter, times(1)).prepareSuccessView(any(CookedOutputData.class));

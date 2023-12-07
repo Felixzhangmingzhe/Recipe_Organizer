@@ -48,7 +48,7 @@ Are you hungry and willing to cook today? Do you have a lot of ingredients in yo
 
 [//]: # (- **Recipe Reviews:** Read and write reviews for recipes.)
 
-### <img src="src/view/tree.png" width="20" height="20" alt="Logo"> Special Commitment <img src="src/view/tree.png" width="20" height="20" alt="Logo">
+### <img src="src/main/java/view/tree.png" width="20" height="20" alt="Logo"> Special Commitment <img src="src/main/java/view//tree.png" width="20" height="20" alt="Logo">
 
 To say thanks for sharing your time and knowledge, for every 50 dishes you cook, we will plant a tree in your honor.
 
