@@ -8,5 +8,4 @@ class ShowDailySpecialInputDataTest {
         ShowDailySpecialInputData showDailySpecialInputData = new ShowDailySpecialInputData();
         assertNotNull(showDailySpecialInputData);
     }
-
 }

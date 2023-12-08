@@ -1,6 +1,7 @@
 package use_case.add_to_favorites;
 
 import entity.Recipe;
+
 import org.json.JSONException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

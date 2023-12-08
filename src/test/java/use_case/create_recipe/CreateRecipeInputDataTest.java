@@ -1,8 +1,8 @@
 package use_case.create_recipe;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 public class CreateRecipeInputDataTest {
 

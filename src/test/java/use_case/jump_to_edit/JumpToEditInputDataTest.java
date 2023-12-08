@@ -1,7 +1,6 @@
 package use_case.jump_to_edit;
 
 import org.junit.jupiter.api.Test;
-import use_case.jump_to_edit.JumpToEditInputData;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,8 +1,8 @@
 package use_case.show_daily_special;
 
 import entity.Recipe;
+
 import org.json.JSONException;
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mock;

@@ -8,5 +8,4 @@ class SearchOutputDataTest {
         SearchOutputData actualSearchOutputData = new SearchOutputData();
         assertSame(actualSearchOutputData.getClass(), SearchOutputData.class);
     }
-
 }
