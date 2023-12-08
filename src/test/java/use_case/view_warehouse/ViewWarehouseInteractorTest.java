@@ -28,8 +28,6 @@ class ViewWarehouseInteractorTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        interactor = new ViewWarehouseInteractor(mockDataAccess, mockPresenter);
-=======
         mockInteractor = new ViewWarehouseInteractor(mockDataAccessInterface, mockPresenter);
     }
 
