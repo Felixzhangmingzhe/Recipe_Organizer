@@ -1,12 +1,14 @@
 package interface_adapter.cooked;
 
+import interface_adapter.ViewManagerModel;
+
+import use_case.cooked.CookedOutputData;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.beans.PropertyChangeListener;
+
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import interface_adapter.ViewManagerModel;
-import use_case.cooked.CookedOutputData;
 
 import static org.mockito.Mockito.*;
 

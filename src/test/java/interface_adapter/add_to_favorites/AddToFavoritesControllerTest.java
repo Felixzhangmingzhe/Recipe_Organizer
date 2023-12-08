@@ -1,12 +1,13 @@
 package interface_adapter.add_to_favorites;
 
+import use_case.add_to_favorites.AddToFavoritesInputBoundary;
+import use_case.add_to_favorites.AddToFavoritesInputData;
+
 import org.json.JSONException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import use_case.add_to_favorites.AddToFavoritesInputBoundary;
-import use_case.add_to_favorites.AddToFavoritesInputData;
 
 import static org.mockito.Mockito.*;
 

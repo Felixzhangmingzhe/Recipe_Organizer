@@ -1,10 +1,11 @@
 package interface_adapter.view_favorites;
 
+import use_case.view_favorites.ViewFavoritesInputBoundary;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import use_case.view_favorites.ViewFavoritesInputBoundary;
 
 import static org.mockito.Mockito.*;
 

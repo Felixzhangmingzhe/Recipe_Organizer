@@ -1,6 +1,7 @@
 package interface_adapter.click_search;
 
 import entity.Recipe;
+
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;

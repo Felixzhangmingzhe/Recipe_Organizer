@@ -2,6 +2,7 @@ package interface_adapter.add_to_favorites;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import java.beans.PropertyChangeListener;
 
 import static org.mockito.Mockito.*;

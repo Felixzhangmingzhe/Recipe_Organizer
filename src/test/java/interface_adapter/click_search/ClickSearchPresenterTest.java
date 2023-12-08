@@ -1,13 +1,15 @@
 package interface_adapter.click_search;
 
 import entity.Recipe;
+
 import interface_adapter.ViewManagerModel;
+
+import use_case.click_search.ClickSearchOutputData;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.beans.PropertyChangeListener;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import use_case.click_search.ClickSearchOutputData;
 
 import static org.mockito.Mockito.*;
 

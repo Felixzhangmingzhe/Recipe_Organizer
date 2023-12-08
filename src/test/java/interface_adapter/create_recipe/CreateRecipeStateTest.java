@@ -1,6 +1,5 @@
 package interface_adapter.create_recipe;
 
-import interface_adapter.create_recipe.CreateRecipeState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,7 @@
 package app;
 
 import data_access.FileRecipeDataAccessObject;
+
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_recipe.CreateRecipeViewModel;
@@ -8,9 +9,11 @@ import interface_adapter.edit_recipe.EditRecipeController;
 import interface_adapter.edit_recipe.EditRecipeViewModel;
 import interface_adapter.jump_to_edit.JumpToEditViewModel;
 import interface_adapter.open_create_recipe.OpenCreateRecipeViewModel;
+
+import view.EditRecipeView;
+
 import org.json.JSONException;
 import org.junit.jupiter.api.Test;
-import view.EditRecipeView;
 
 import static org.mockito.Mockito.*;
 

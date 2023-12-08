@@ -1,12 +1,13 @@
 package interface_adapter.Back;
 
+import interface_adapter.ViewManagerModel;
+
+import use_case.Back.BackOutputData;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.beans.PropertyChangeListener;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import interface_adapter.ViewManagerModel;
-import use_case.Back.BackOutputData;
 
 import static org.mockito.Mockito.*;
 

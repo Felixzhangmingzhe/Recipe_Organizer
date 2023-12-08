@@ -1,11 +1,12 @@
 package interface_adapter.click_search;
 
+import use_case.click_search.ClickSearchInputBoundary;
+import use_case.click_search.ClickSearchInputData;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import use_case.click_search.ClickSearchInputBoundary;
-import use_case.click_search.ClickSearchInputData;
 
 import java.io.IOException;
 

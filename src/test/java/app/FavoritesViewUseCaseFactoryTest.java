@@ -1,6 +1,7 @@
 package app;
 
 import data_access.FileRecipeDataAccessObject;
+
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.ViewManagerModel;
@@ -8,13 +9,16 @@ import interface_adapter.view_favorites.ViewFavoritesViewModel;
 import interface_adapter.view_recipe.ViewRecipeController;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
 import interface_adapter.view_recipe.ViewRecipePresenter;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+
 import use_case.Back.BackDataAccessInterface;
 import use_case.view_recipe.ViewRecipeInputBoundary;
 import use_case.view_recipe.ViewRecipeInteractor;
+
 import view.FavoritesView;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;

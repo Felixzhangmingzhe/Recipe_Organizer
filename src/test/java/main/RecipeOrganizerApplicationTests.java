@@ -9,5 +9,4 @@ class RecipeOrganizerApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

@@ -1,21 +1,23 @@
 package app;
 
 import data_access.FileRecipeDataAccessObject;
+
 import interface_adapter.Back.BackViewModel;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.click_search.ClickSearchViewModel;
 import interface_adapter.view_favorites.ViewFavoritesViewModel;
 import interface_adapter.view_recipe.ViewRecipeViewModel;
 import interface_adapter.view_warehouse.ViewWarehouseViewModel;
-import org.json.JSONException;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import use_case.seach_recipe.SearchOutputData;
+
 import view.FavoritesView;
 import view.SearchNewView;
 import view.SearchView;
 import view.WarehouseView;
+
+import org.json.JSONException;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mock;
@@ -64,6 +66,5 @@ public class MainTest {
 
         assertNotNull(favoritesView);
         assertNotNull(warehouseView);
-
     }
 }

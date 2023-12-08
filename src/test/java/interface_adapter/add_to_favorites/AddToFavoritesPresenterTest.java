@@ -1,11 +1,13 @@
 package interface_adapter.add_to_favorites;
 
 import interface_adapter.ViewManagerModel;
+
+import use_case.add_to_favorites.AddToFavoritesOutputData;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import use_case.add_to_favorites.AddToFavoritesOutputData;
 
 import static org.mockito.Mockito.*;
 
