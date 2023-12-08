@@ -1,10 +1,11 @@
 package interface_adapter.Back;
 
+import use_case.Back.BackInputBoundary;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import use_case.Back.BackInputBoundary;
 
 import static org.mockito.Mockito.*;
 

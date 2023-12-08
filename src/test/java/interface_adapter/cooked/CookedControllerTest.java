@@ -1,11 +1,12 @@
 package interface_adapter.cooked;
 
+import use_case.cooked.CookedInputBoundary;
+import use_case.cooked.CookedInputData;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import use_case.cooked.CookedInputBoundary;
-import use_case.cooked.CookedInputData;
 
 import static org.mockito.Mockito.*;
 

@@ -2,6 +2,7 @@ package interface_adapter.click_search;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import java.beans.PropertyChangeListener;
 
 import static org.mockito.Mockito.*;

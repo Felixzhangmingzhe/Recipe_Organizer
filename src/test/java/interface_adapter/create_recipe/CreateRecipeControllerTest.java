@@ -1,11 +1,12 @@
 package interface_adapter.create_recipe;
 
+import use_case.create_recipe.CreateRecipeInputBoundary;
+import use_case.create_recipe.CreateRecipeInputData;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import use_case.create_recipe.CreateRecipeInputBoundary;
-import use_case.create_recipe.CreateRecipeInputData;
 
 import static org.mockito.Mockito.*;
 

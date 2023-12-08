@@ -1,6 +1,5 @@
 package interface_adapter.edit_recipe;
 
-import interface_adapter.edit_recipe.EditRecipeState;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;

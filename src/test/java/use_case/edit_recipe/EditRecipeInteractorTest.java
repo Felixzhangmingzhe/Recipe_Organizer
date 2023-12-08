@@ -4,27 +4,21 @@ import entity.Recipe;
 import org.json.JSONException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import use_case.edit_recipe.EditRecipeDataAccessInterface;
-import use_case.edit_recipe.EditRecipeInputData;
-import use_case.edit_recipe.EditRecipeInteractor;
-import use_case.edit_recipe.EditRecipeOutputBoundary;
-import use_case.edit_recipe.EditRecipeOutputData;
 
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class EditRecipeInteractorTest {
     private EditRecipeDataAccessInterface userDataAccess;
     private EditRecipeOutputBoundary presenter;
-    private EditRecipeInteractor interactor;
+    private EditRecipeInteractor EditRecipeInteractor;
 
     @BeforeEach
     void setUp() {
         userDataAccess = mock(EditRecipeDataAccessInterface.class);
         presenter = mock(EditRecipeOutputBoundary.class);
-        interactor = new EditRecipeInteractor(userDataAccess, presenter);
+        EditRecipeInteractor = new EditRecipeInteractor(userDataAccess, presenter);
     }
 
     @Test
@@ -39,7 +33,7 @@ class EditRecipeInteractorTest {
         when(userDataAccess.getRecipeByTitle("Original Title")).thenReturn(originalRecipe);
 
         // 执行use case
-        interactor.execute(inputData);
+        EditRecipeInteractor.execute(inputData);
 
         // 验证数据访问层方法是否被调用
         verify(userDataAccess, times(1)).getRecipeByTitle("Original Title");
