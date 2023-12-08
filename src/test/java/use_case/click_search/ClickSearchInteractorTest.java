@@ -28,8 +28,6 @@ class ClickSearchInteractorTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        interactor = new ClickSearchInteractor(clickSearchDataAccess, clickSearchPresenter);
-=======
         clickSearchInteractor = new ClickSearchInteractor(clickSearchDataAccessInterface, clickSearchPresenter);
     }
 
@@ -67,20 +65,16 @@ class ClickSearchInteractorTest {
         ClickSearchInputData inputData = new ClickSearchInputData(title);
         clickSearchInteractor.clickSearch(inputData);
 
-        verify(clickSearchDataAccess, times(1)).getRecipesFromAPI(title);
-
+        verify(clickSearchDataAccessInterface, times(1)).getRecipesFromAPI(title);
     }
     @Test
     void clickSearch_ErrorOccurs2() throws IOException, JSONException {
         String title = "Test Recipe";
-        when(clickSearchDataAccess.getRecipesFromAPI(title)).thenThrow(new JSONException("JSON Error"));
+        when(clickSearchDataAccessInterface.getRecipesFromAPI(title)).thenThrow(new JSONException("JSON Error"));
 
         ClickSearchInputData inputData = new ClickSearchInputData(title);
-        interactor.clickSearch(inputData);
+        clickSearchInteractor.clickSearch(inputData);
 
-        verify(clickSearchDataAccess, times(1)).getRecipesFromAPI(title);
-
-=======
         verify(clickSearchDataAccessInterface, times(1)).getRecipesFromAPI(title);
         verify(clickSearchPresenter, times(1)).prepareFailView("Network Error");
     }
