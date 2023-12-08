@@ -1,7 +1,6 @@
 package use_case.edit_recipe;
 
 import org.junit.jupiter.api.Test;
-import use_case.edit_recipe.EditRecipeOutputData;
 
 import java.time.LocalDateTime;
 

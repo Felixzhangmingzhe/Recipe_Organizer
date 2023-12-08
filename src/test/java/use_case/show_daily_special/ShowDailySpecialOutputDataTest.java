@@ -12,5 +12,4 @@ class ShowDailySpecialOutputDataTest {
         ShowDailySpecialOutputData showDailySpecialOutputData = new ShowDailySpecialOutputData(mockDailySpecialRecipe);
         assertEquals(mockDailySpecialRecipe, showDailySpecialOutputData.getDailySpecialRecipe());
     }
-
 }

@@ -10,5 +10,4 @@ class SearchInputDataTest {
         SearchInputData actualSearchInputData = new SearchInputData();
         assertSame(actualSearchInputData.getClass(), SearchInputData.class);
     }
-
 }

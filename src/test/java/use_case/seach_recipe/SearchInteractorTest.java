@@ -10,5 +10,4 @@ class SearchInteractorTest {
         SearchInteractor actualSearchInteractor = new SearchInteractor();
         assertSame(actualSearchInteractor.getClass(), SearchInteractor.class);
     }
-
 }

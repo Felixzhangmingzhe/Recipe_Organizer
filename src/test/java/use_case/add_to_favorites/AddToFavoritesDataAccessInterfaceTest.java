@@ -1,17 +1,10 @@
 package use_case.add_to_favorites;
 
 import entity.Recipe;
-import interface_adapter.ViewManagerModel;
-import interface_adapter.add_to_favorites.AddToFavoritesController;
-import interface_adapter.add_to_favorites.AddToFavoritesPresenter;
-import interface_adapter.add_to_favorites.AddToFavoritesViewModel;
-import org.json.JSONException;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDateTime;
 

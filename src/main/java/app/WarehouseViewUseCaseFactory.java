@@ -1,5 +1,7 @@
 package app;
 
+import data_access.FileRecipeDataAccessObject;
+
 import interface_adapter.Back.BackController;
 import interface_adapter.Back.BackPresenter;
 import interface_adapter.Back.BackViewModel;
@@ -18,8 +20,6 @@ import use_case.view_recipe.ViewRecipeInputBoundary;
 import use_case.view_recipe.ViewRecipeInteractor;
 
 import view.WarehouseView;
-
-import data_access.FileRecipeDataAccessObject;
 
 public class WarehouseViewUseCaseFactory extends UseCaseFactory {
     public static WarehouseView create(ViewRecipeViewModel viewRecipeViewModel,
